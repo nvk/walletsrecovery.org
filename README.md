@@ -8,11 +8,11 @@ Users should not have to digg or read the source code of a wallet to figure-out 
 
 If I went to your website and couldn't find it => ☠️ [EXTERNAL RECOVERY NOT DOCUMENTED]
 
-Status|Wallet|Link|Path and/or Script|Status
+Status|Wallet|Link|Path and/or Script|Note
 --|--|:-:|:-:|--
 ⁉️|Bitcoin Wallet App|[🔗](https://github.com/bitcoin-wallet/bitcoin-wallet)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ⁉️|Bither|[🔗](https://bither.net/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|BlockStream Green|[🔗](https://blockstream.com/green/)| 2of2 Script|[recovery tool](https://github.com/greenaddress/garecovery)
+✅|BlockStream Green|[🔗](https://blockstream.com/green/)| 2of2 Script|[Recovery tool](https://github.com/greenaddress/garecovery)
 ☠️|BlueWallet|[🔗](https://bluewallet.io/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ⁉️|BRD (Bread Wallet)|[🔗](https://brd.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ⁉️|BTC.com app|[🔗](https://btc.com/applications/app)||[EXTERNAL RECOVERY NOT DOCUMENTED]
