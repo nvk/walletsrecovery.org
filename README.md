@@ -17,7 +17,7 @@ Status|Wallet|Path and/or Script|Note
 🛑|BRD (Bread Wallet)[↗︎](https://brd.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|BTC.com app[↗︎](https://btc.com/applications/app)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|Coin Wallet[↗︎](https://www.coin.space/) ||[EXTERNAL RECOVERY NOT DOCUMENTED]
-🛑|Coinomi[↗︎](https://www.coinomi.com)||[EXTERNAL RECOVERY NOT DOCUMENTED]
+✅|Coinomi[↗︎](https://www.coinomi.com)|`m/44'/0'/0'`|[recovery docs](https://coinomi.freshdesk.com/support/solutions/articles/29000009717-what-is-the-recovery-tool-and-how-do-i-export-my-private-keys-)
 🛑|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|Edge Wallet[↗︎](https://edge.app/) || [EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|Mycelium[↗︎](https://wallet.mycelium.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
@@ -40,4 +40,5 @@ Icon|Legend
 ---
 
 Did I get it wrong? Just let me know, and this will be updated :)
+
 Want to contribute, make a [Pull Request](https://github.com/nvk/wallets-info/pulls)
