@@ -13,7 +13,7 @@ Status|Wallet|Link|Path and/or Script|Note
 ⁉️|Bitcoin Wallet App|[🔗](https://github.com/bitcoin-wallet/bitcoin-wallet)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ⁉️|Bither|[🔗](https://bither.net/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|BlockStream Green|[🔗](https://blockstream.com/green/)| 2of2 Script|[Recovery tool](https://github.com/greenaddress/garecovery)
-☠️|BlueWallet|[🔗](https://bluewallet.io/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
+⚠️|BlueWallet|[🔗](https://bluewallet.io/)|`m/49'`\|`84'``/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ⁉️|BRD (Bread Wallet)|[🔗](https://brd.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ⁉️|BTC.com app|[🔗](https://btc.com/applications/app)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ⁉️|Coin Wallet|[🔗](https://www.coin.space/) ||[EXTERNAL RECOVERY NOT DOCUMENTED]
