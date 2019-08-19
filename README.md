@@ -40,3 +40,4 @@ Icon|Legend
 ---
 
 Did I get it wrong? Just let me know, and this will be updated :)
+Want to contribute, make a [Pull Request](https://github.com/nvk/wallets-info/pulls)
