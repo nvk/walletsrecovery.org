@@ -40,8 +40,8 @@ Status|Wallet|Path and/or Script|Note
 
 Notes / Todo:
 - Complex desktop and special purpose wallets (ie Core, Electrum, BTCPay, etc...) are not listed yet.
-- Hardware wallets need to be separated as they don't care about derivation in certain modes
-- Hardware wallet wallet-as-a-services need to be listed separate from their hardware 
+- Hardware wallets need to be in separated list as they don't care about derivation in certain modes.
+- Hardware wallet's wallet-as-a-services need to be listed separate from their hardware.
 
 Icon|Legend
 :-:|--
