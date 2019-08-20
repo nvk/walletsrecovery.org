@@ -1,7 +1,7 @@
 # Wallets Recovery
 
 
-**Giving users their seed is not enough.**
+**Giving users their seed phrase is not enough.**
 
 While great advances have been made in interoperability and recoverability, developers across the industry continue to build wallets that either:
 + Don't implement BIP standard(s).
@@ -19,35 +19,39 @@ Status|Wallet|Path and/or Script|Note
 --|:-|:-:|--
 🛑|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|Bither[↗︎](https://bither.net/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|Blockstream Green[↗︎](https://blockstream.com/green/)| Custom 2of2 Script|[Recovery tool](https://github.com/greenaddress/garecovery)
+✅|Blockstream Green[↗︎](https://blockstream.com/green/)| Custom 2-of-2 Script|[Recovery tool](https://github.com/greenaddress/garecovery)
 ⚠️|BlueWallet[↗︎](https://bluewallet.io/)|`m/49'`\|`84'``/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|BRD (Bread Wallet)[↗︎](https://brd.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|BTC.com app[↗︎](https://btc.com/applications/app)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ☠️|CasaHODL[↗︎](https://keys.casa/)|☠️2-of-3 or 3-of-5☠️|[EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|ColdCard[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'``/0'/0'` +Custom|[Docs](https://coldcardwallet.com/docs/)
 🛑|Coin Wallet[↗︎](https://www.coin.space/) ||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Coinomi[↗︎](https://www.coinomi.com)|`m/44'/0'/0'`|[Docs](https://coinomi.freshdesk.com/support/solutions/articles/29000009717-what-is-the-recovery-tool-and-how-do-i-export-my-private-keys-)
 🛑|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|Edge Wallet[↗︎](https://edge.app/) || [EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|Ledger S/Nano[↗︎](https://ledger.com/)|`m/44'/0'/0'`|[Docs](https://support.ledger.com/hc/en-us)
 🛑|Mycelium[↗︎](https://wallet.mycelium.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|OpenBazaar[↗︎](https://openbazaar.org/)|`m/44'/0'|1'|133'|145'/0'`|[Docs](https://openbazaar.zendesk.com/hc/en-us/articles/360002820331-How-do-I-restore-OpenBazaar-from-a-mnemonic-seed-)
 ✅|Opendime[↗︎](https://opendime.com)|WIF|[On FAQ](https://opendime.com/faq), [Archived](https://web.archive.org/save/https://opendime.com/faq)
 ⚠️|Rise Wallet[↗︎](https://www.risewallet.com/)|`m/49'/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ⚠️|Samourai[↗︎](https://samouraiwallet.com/)|`m/44'`\|`49'`\|`84'`\|`47'``/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|Trezor 1/t[↗︎](https://trezor.com)|`m/44'`\|`49'``/0'/0'`|[Docs](https://wiki.trezor.io)
 ☠️|Wasabi[↗︎](https://docs.wasabiwallet.io/)|☠️Complex & Custom☠️|[EXTERNAL RECOVERY NOT DOCUMENTED]
 
+Status|Hardware Wallets|Supported Paths|Note
+--|:-|:-:|--
+✅|ColdCard[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'``/0'/0'` +Custom|[Docs](https://coldcardwallet.com/docs/)
+✅|Ledger S/Nano[↗︎](https://ledger.com/)|`m/44'/0'/0'`|[Docs](https://support.ledger.com/hc/en-us)
+✅|Trezor 1/t[↗︎](https://trezor.com)|`m/44'`\|`49'``/0'/0'`|[Docs](https://wiki.trezor.io)
 
-Notes / Todo:
+Notes:
+- Hardware wallets don't care about derivation in certain modes.
+
+Todo:
 - Complex desktop and special purpose wallets (ie Core, Electrum, BTCPay, etc...) are not listed yet.
-- Hardware wallets need to be in a separated list as they don't care about derivation in certain modes.
-- Hardware wallet's wallet-as-a-services need to be listed separately from their hardware.
+- List hardware wallet's apps/services on the main table, needs to be listed separately from their hardware. (ie Ledger Live)
 
 Icon|Legend
 :-:|--
 🛑|Unknown. No obvious docs, research in progress
-☠️|Not publicaly available or complex without a external tool available for the average user.
+☠️|Not publicaly available or complex without a external tool available for the average user
 ⚠️|Known, but unofficially documented
 ✅|Documented + Link to doc
 
@@ -60,8 +64,8 @@ Icon|Legend
 + [**Paper wallets**](https://en.bitcoin.it/wiki/Paper_wallet) are not actually wallets, but rather private keys and addresses printed out on paper. While the keys and addresses can technically be generated non-deterministically or deterministically, the usability is basically the same or poorer than a non-deterministic software wallet. They have a number of significant drawbacks, including encouraging address reuse, exposing keys to poorly secured networked devices (printer), and not handling change addresses. They should not be confused with [recovery seeds](https://wiki.trezor.io/Recovery_seed).
 + **Non-deterministic wallets** randomly generate all private / public key pairs independent of each other. [*Keypool buffer*](https://en.bitcoin.it/wiki/Key_pool) was added to the Bitcoin-Qt / Bitcoin Core wallet in [October](https://bitcointalk.org/index.php?topic=1414.0) [2010](https://bitcointalk.org/index.php?topic=1528.0), which allowed the wallet to create a collection of unused addresses, rather than generating new addresses one by one upon use. While this feature allowed for less frequent backups than before, the non-determinism still carried the risk of key loss if the pool was exhausted and a new key was generated beyond what was saved in backup.
 + **Deterministic wallets** are essentially any wallet where "[you can backup once... because all future addresses are determined in advance](https://bitcointalk.org/index.php?topic=19137.msg239768#msg239768)," which was a massive improvement in recoverability. There are [two different forms](https://bitcoin.stackexchange.com/questions/18102/does-a-wallet-containing-multiple-addresses-have-a-single-private-key):
-   + **Sequential deterministic wallets** take a single seed / passphrase and repeatedly increment it in order to generate new keypairs. This meant that the system would only need to store addresses, and then re-generate the private keys when needed.
-   + **Hierarchical deterministic wallets** take the single seed and randomly generate a master private / public key pair, which is then used to derive child key pairs that generate addresses. This system allows for the generation of addresses to occur without the master private key, with only the public key.
+   + **Sequential deterministic wallets** take a single seed phrase / passphrase and repeatedly increment it in order to generate new keypairs. This meant that the system would only need to store addresses, and then re-generate the private keys when needed.
+   + **Hierarchical deterministic wallets** take a single seed phrase and randomly generate a master private / public key pair, which is then used to derive child key pairs that generate addresses. This system allows for the generation of addresses to occur without the master private key, with only the public key.
 + **Multi-signature wallets** require multiple signatures or parties to sign a transaction in order to spend bitcoin. An M-of-N [BIP-11](https://github.com/bitcoin/bips/blob/master/bip-0011.mediawiki) address must first be generated in order to receive bitcoin for spending in multi-signature transactions. While the 2-of-2 and 2-of-3 schemes are the most common, the [maximum number of public keys](https://bitcoin.stackexchange.com/questions/81223/why-is-20-the-maximum-public-keys-in-a-multisig-transaction) is higher, and this could increase much more in the future [with Schnorr signatures](https://twitter.com/J9Roem/status/991098233828139008) and [Taproot](https://bitcoinops.org/en/newsletters/2019/05/14/).
 
 
@@ -72,19 +76,19 @@ In hierarchical deterministic wallets ([BIP-32](https://github.com/bitcoin/bips/
 
 m / purpose' / coin_type' / account' / change / address_index
 
-+ **Purpose:** This field, which was added through [BIP-43](https://github.com/bitcoin/bips/blob/master/bip-0043.mediawiki), indicates which standard the derivation path follows. Possibilities include `44` referring to the default [BIP-44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) P2PKH / '1' legacy addresses [**Double check your wallet, BIP44 is inconsistenly implemented**], `45` referring to [BIP-45](https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki) P2SH multi-party multi-signature wallets (proposed), `47` referring to [BIP-47](https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki) reusable payment codes (draft), `48` referring to hardware multisignature wallets (no BIP or standard proposal), `49` referring to [BIP-49](https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki) P2WPKH-nested-in-P2SH / '3' SegWit addresses, or `84` referring to [BIP-84](https://github.com/bitcoin/bips/blob/master/bip-0084.mediawiki) P2WPKH / 'bc1' native SegWit addresses. Some wallet services are supporting more than one (as in, they can display both legacy and SegWit addresses derived from the same seed).
++ **Purpose:** This field, which was added through [BIP-43](https://github.com/bitcoin/bips/blob/master/bip-0043.mediawiki), indicates which standard the derivation path follows. Possibilities include `44` referring to the default [BIP-44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) P2PKH / '1' legacy addresses [**Double check your wallet, BIP44 is inconsistenly implemented**], `45` referring to [BIP-45](https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki) P2SH multi-party multi-signature wallets (proposed), `47` referring to [BIP-47](https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki) reusable payment codes (draft), `48` referring to hardware multisignature wallets (no BIP or standard proposal), `49` referring to [BIP-49](https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki) P2WPKH-nested-in-P2SH / '3' SegWit addresses, or `84` referring to [BIP-84](https://github.com/bitcoin/bips/blob/master/bip-0084.mediawiki) P2WPKH / 'bc1' native SegWit addresses. Some wallet services are supporting more than one (as in, they can display both legacy and SegWit addresses derived from the same seed phrase).
 + **Coin Type:** This field indicates which cryptocurrency is being used in a multi-currency wallet. All coins, including testnet bitcoin, are assigned [a constant number](https://github.com/satoshilabs/slips/blob/master/slip-0044.md). For example, a derivation path for a Monero (XMR) account would be `m/44'/128'`. *Note that if finalized, BIP-45 would designate this level as the 'Cosigner Index' instead.*
 + **Account:** This field, in a multi-account wallet, indicates the identity or collection of addresses, which allows users to segregate funds for different things (ex. savings, donations). *Note that if finalized, BIP-45 would not include this field. If BIP-47 is finalized, this level would be designated as 'Identity', though it is equivalent to 'Account.'*
 + **Change:** This field, if the constant `0` is present, indicates "external chain" (regular) addresses; if the constant `1`, indicates "internal chain" (change) addresses. *Note that if finalized, BIP-47 would designate this level as space for the notification keys and ephemeral payment codes.*
 + **Address Index:** This field indicates the specific address number in a sequence, within an account.
 
-Note how many of the sequential fields start at zero (0), like how the first / ground floor is level zero in the U.K. and Europe. If a user has a wallet that displays them, the derivation path sequence for a **BIP-44** compliant **bitcoin** wallet, in which there is a **second change address** in the **third account**, would look like this: `m/44'/0'/2'/1/1`
+Note how many of the sequential fields start at zero (0), like how the first / ground floor is level zero in the U.K. and Europe. If a user has a wallet that displays them, the derivation path sequence for a **BIP-44** compliant **bitcoin** wallet, in which there is a **second change address** in the **third account**, would look like this: `m/44'/0'/2'/1/1`.
 
 The meaning of "public" / unhardened versus hardened derivation, indicated in the fields by apostrophes, is explained [here](https://wiki.trezor.io/Hardened_and_non-hardened_derivation), [here](https://medium.com/@sevcsik/working-with-bitcoin-hd-wallets-ii-deriving-public-keys-c48341629388), and [here](https://bitcoin.stackexchange.com/questions/62533/key-derivation-in-hd-wallets-using-the-extended-private-key-vs-hardened-derivati?rq=1).
 
 ---
 
 
-Did we get it wrong? Just let us know, and this will be updated :)
+Did we get it wrong? Just let us know, and this will be updated. :)
 
 Want to contribute, make a [Pull Request](https://github.com/nvk/wallets-recovery/pulls).
