@@ -38,7 +38,7 @@ Complex desktop and special purpose wallets (ie Core, Electrum, BTCPay, etc...) 
 
 Icon|Legend
 :-:|--
-🛑|Unknown
+🛑|WIP/Unknown
 ☠️|Not publicaly available or complex without a external tool available for the avarage user.
 ⚠️|Known, but unofficially documented
 ✅|Documented + Link to doc
