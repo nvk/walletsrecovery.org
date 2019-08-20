@@ -45,7 +45,9 @@ Icon|Legend
 
 ---
 
-### Explainer: Wallet Types
+
+
+## Explainer: Wallet Types
 
 + [**Paper wallets**](https://en.bitcoin.it/wiki/Paper_wallet) are not actually wallets, but rather private keys and addresses printed out on paper. While the keys and addresses can technically be generated non-deterministically or deterministically, the usability is basically the same or poorer than a non-deterministic software wallet. They have a number of significant drawbacks, including encouraging address reuse, exposing keys to poorly secured networked devices (printer), and not handling change addresses. They should not be confused with [recovery seeds](https://wiki.trezor.io/Recovery_seed).
 + **Non-deterministic wallets** randomly generate all private / public key pairs independent of each other. [*Keypool buffer*](https://en.bitcoin.it/wiki/Key_pool) was added to the Bitcoin-Qt / Bitcoin Core wallet in [October](https://bitcointalk.org/index.php?topic=1414.0) [2010](https://bitcointalk.org/index.php?topic=1528.0), which allowed the wallet to create a collection of unused addresses, rather than generating new addresses one by one upon use. While this feature allowed for less frequent backups than before, the non-determinism still carried the risk of key loss if the pool was exhausted and a new key was generated beyond what was saved in backup.
@@ -56,7 +58,7 @@ Icon|Legend
 
 
 
-### Explainer: Derivation Paths
+## Explainer: Derivation Paths
 
 In hierarchical deterministic wallets ([BIP-32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)), a derivation path is a sequence of fields or levels through which a wallet organizes coins in a multi-currency, multi-account, and multi-address system. According to [BIP-44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki), this hierarchy consists of five levels, in addition to the master extended private key ('xpriv') represented by `m` (alternatively, derivation paths for the master extended public key or 'xpub' use `M`).
 
@@ -75,6 +77,6 @@ The meaning of "public" / unhardened versus hardened derivation, indicated in th
 ---
 
 
-Did we get it wrong? Just let me know, and this will be updated :)
+Did we get it wrong? Just let us know, and this will be updated :)
 
-Want to contribute, make a [Pull Request](https://github.com/nvk/wallets-info/pulls)
+Want to contribute, make a [Pull Request](https://github.com/nvk/wallets-recovery/pulls)
