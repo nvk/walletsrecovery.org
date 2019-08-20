@@ -1,4 +1,4 @@
-# wallets-info
+# Wallets Recovery
 
 
 **Giving users their seed is not enough.**
