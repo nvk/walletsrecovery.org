@@ -20,7 +20,7 @@ Status|Wallet|Path and/or Script|Note
 🛑|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|Bither[↗︎](https://bither.net/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Blockstream Green[↗︎](https://blockstream.com/green/)| Custom 2-of-2 Script|[Recovery tool](https://github.com/greenaddress/garecovery)
-⚠️|BlueWallet[↗︎](https://bluewallet.io/)|`m/49'`\|`84'``/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
+⚠️|BlueWallet[↗︎](https://bluewallet.io/)|`m/49'|84'/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|BRD (Bread Wallet)[↗︎](https://brd.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|BTC.com app[↗︎](https://btc.com/applications/app)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ☠️|CasaHODL[↗︎](https://keys.casa/)|☠️2-of-3 or 3-of-5☠️|[EXTERNAL RECOVERY NOT DOCUMENTED]
@@ -31,14 +31,14 @@ Status|Wallet|Path and/or Script|Note
 🛑|Mycelium[↗︎](https://wallet.mycelium.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|OpenBazaar[↗︎](https://openbazaar.org/)|`m/44'/0'|1'|133'|145'/0'`|[Docs](https://openbazaar.zendesk.com/hc/en-us/articles/360002820331-How-do-I-restore-OpenBazaar-from-a-mnemonic-seed-)
 ⚠️|Rise Wallet[↗︎](https://www.risewallet.com/)|`m/49'/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
-⚠️|Samourai[↗︎](https://samouraiwallet.com/)|`m/44'`\|`49'`\|`84'`\|`47'``/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
+⚠️|Samourai[↗︎](https://samouraiwallet.com/)|`m/44'|49'|84'|47'/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ☠️|Wasabi[↗︎](https://docs.wasabiwallet.io/)|☠️Complex & Custom☠️|[EXTERNAL RECOVERY NOT DOCUMENTED]
 
 Status|Hardware Wallets|Supported Paths|Note
 --|:-|:-:|--
-✅|ColdCard[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'``/0'/0'` +Custom|[Docs](https://coldcardwallet.com/docs/)
+✅|ColdCard[↗︎](https://coldcardwallet.com/)|`m/44'|49'|84'/0'/0'` +Custom|[Docs](https://coldcardwallet.com/docs/)
 ✅|Ledger S/Nano[↗︎](https://ledger.com/)|`m/44'/0'/0'`|[Docs](https://support.ledger.com/hc/en-us)
-✅|Trezor 1/t[↗︎](https://trezor.com)|`m/44'`\|`49'``/0'/0'`|[Docs](https://wiki.trezor.io)
+✅|Trezor 1/t[↗︎](https://trezor.com)|`m/44'|49'/0'/0'`|[Docs](https://wiki.trezor.io)
 ✅|Opendime[↗︎](https://opendime.com)|WIF|[On FAQ](https://opendime.com/faq), [Archived](https://web.archive.org/save/https://opendime.com/faq)
 
 Notes:
