@@ -1,12 +1,12 @@
 # wallets-info
 
-**Giving users their seed is not all.**
+**Giving users their seed is not enough.**
 
-This list is meant to gather information about wallet defaults for external recovery.
+This list is meant to gather information about wallet defaults for external recovery. Wallets come and go, information gets lost and users are left with tears. Resposible wallet makers document external recovery. 
 
 Users should not have to digg or read the source code of a wallet to figure-out the Derivation Path or Redeem Scripts. 
 
-If I went to your website and couldn't find it => ☠️ [EXTERNAL RECOVERY NOT DOCUMENTED]
+If I went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL RECOVERY NOT DOCUMENTED]
 
 Status|Wallet|Path and/or Script|Note
 --|:-|:-:|--
