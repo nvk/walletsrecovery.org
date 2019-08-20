@@ -36,14 +36,15 @@ Status|Wallet|Path and/or Script|Note
 
 Complex desktop and special purpose wallets (ie Core, Electrum, BTCPay, etc...) are not listed.
 
----
+#### Legend
 
-Icon|Legend
-:-:|--
-🛑|Unknown
-☠️|Not publicaly available or complex without a external tool available for the avarage user.
-⚠️|Known, but unofficially documented
-✅|Documented + Link to doc
+🛑 Unknown
+
+☠️ Not publicaly available or complex without a external tool available for the avarage user.
+
+⚠️ Known, but unofficially documented
+
+✅ Documented + Link to doc
 
 ---
 
@@ -55,6 +56,8 @@ Icon|Legend
    + **Sequential deterministic wallets** take a single seed / passphrase and repeatedly increment it in order to generate new keypairs. This meant that the system would only need to store addresses, and then re-generate the private keys when needed.
    + **Hierarchical deterministic wallets** take the single seed and randomly generate a master private / public key pair, which is then used to derive child key pairs that generate addresses. This system allows for the generation of addresses to occur without the master private key, with only the public key.
 + **Multi-signature wallets** require multiple signatures or parties to sign a transaction in order to spend bitcoin. An M-of-N [BIP-11](https://github.com/bitcoin/bips/blob/master/bip-0011.mediawiki) address must first be generated in order to receive bitcoin for spending in multi-signature transactions. While the 2-of-2 and 2-of-3 schemes are the most common, the [maximum number of public keys](https://bitcoin.stackexchange.com/questions/81223/why-is-20-the-maximum-public-keys-in-a-multisig-transaction) is higher, and this could increase much more in the future [with Schnorr signatures](https://twitter.com/J9Roem/status/991098233828139008) and [Taproot](https://bitcoinops.org/en/newsletters/2019/05/14/).
+
+
 
 ### Explainer: Derivation Paths
 
