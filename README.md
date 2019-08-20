@@ -31,7 +31,6 @@ Status|Wallet|Path and/or Script|Note
 🛑|Mycelium[↗︎](https://wallet.mycelium.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ⚠️|Rise Wallet[↗︎](https://www.risewallet.com/)|`m/49'/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ⚠️|Samourai[↗︎](https://samouraiwallet.com/)|`m/44'`\|`49'`\|`84'`\|`47'``/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
-(https://web.archive.org/save/https://opendime.com/faq)
 ☠️|Wasabi[↗︎](https://docs.wasabiwallet.io/)|☠️Complex & Custom☠️|[EXTERNAL RECOVERY NOT DOCUMENTED]
 
 Status|Hardware Wallets|Supported Paths|Note
@@ -39,7 +38,7 @@ Status|Hardware Wallets|Supported Paths|Note
 ✅|ColdCard[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'``/0'/0'` +Custom|[Docs](https://coldcardwallet.com/docs/)
 ✅|Ledger S/Nano[↗︎](https://ledger.com/)|`m/44'/0'/0'`|[Docs](https://support.ledger.com/hc/en-us)
 ✅|Trezor 1/t[↗︎](https://trezor.com)|`m/44'`\|`49'``/0'/0'`|[Docs](https://wiki.trezor.io)
-✅|Opendime[↗︎](https://opendime.com)|WIF|[On FAQ](https://opendime.com/faq), [Archived]
+✅|Opendime[↗︎](https://opendime.com)|WIF|[On FAQ](https://opendime.com/faq), [Archived](https://web.archive.org/save/https://opendime.com/faq)
 
 Notes:
 - Hardware wallets don't care about derivation in certain modes.
