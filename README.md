@@ -13,7 +13,7 @@ This list is meant to gather information about wallet defaults for external reco
 
 Users should not have to digg or read the source code of a wallet to figure-out the Derivation Path or Redeem Scripts. 
 
-If I went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL RECOVERY NOT DOCUMENTED]
+If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL RECOVERY NOT DOCUMENTED]
 
 Status|Wallet|Path and/or Script|Note
 --|:-|:-:|--
@@ -73,6 +73,7 @@ The meaning of "public" / unhardened versus hardened derivation, indicated in th
 
 ---
 
-Did I get it wrong? Just let me know, and this will be updated :)
+
+Did we get it wrong? Just let me know, and this will be updated :)
 
 Want to contribute, make a [Pull Request](https://github.com/nvk/wallets-info/pulls)
