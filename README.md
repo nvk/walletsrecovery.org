@@ -19,7 +19,7 @@ Status|Wallet|Path and/or Script|Note
 --|:-|:-:|--
 🛑|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|Bither[↗︎](https://bither.net/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|Blockstream Green[↗︎](https://blockstream.com/green/)| Custom 2of2 Script|[Recovery tool](https://github.com/greenaddress/garecovery)
+✅|Blockstream Green[↗︎](https://blockstream.com/green/)| Custom 2-of-2 Script|[Recovery tool](https://github.com/greenaddress/garecovery)
 ⚠️|BlueWallet[↗︎](https://bluewallet.io/)|`m/49'`\|`84'``/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|BRD (Bread Wallet)[↗︎](https://brd.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|BTC.com app[↗︎](https://btc.com/applications/app)||[EXTERNAL RECOVERY NOT DOCUMENTED]
@@ -46,7 +46,7 @@ Notes / Todo:
 Icon|Legend
 :-:|--
 🛑|Unknown. No obvious docs, research in progress
-☠️|Not publicaly available or complex without a external tool available for the average user.
+☠️|Not publicaly available or complex without a external tool available for the average user
 ⚠️|Known, but unofficially documented
 ✅|Documented + Link to doc
 
@@ -60,7 +60,7 @@ Icon|Legend
 + **Non-deterministic wallets** randomly generate all private / public key pairs independent of each other. [*Keypool buffer*](https://en.bitcoin.it/wiki/Key_pool) was added to the Bitcoin-Qt / Bitcoin Core wallet in [October](https://bitcointalk.org/index.php?topic=1414.0) [2010](https://bitcointalk.org/index.php?topic=1528.0), which allowed the wallet to create a collection of unused addresses, rather than generating new addresses one by one upon use. While this feature allowed for less frequent backups than before, the non-determinism still carried the risk of key loss if the pool was exhausted and a new key was generated beyond what was saved in backup.
 + **Deterministic wallets** are essentially any wallet where "[you can backup once... because all future addresses are determined in advance](https://bitcointalk.org/index.php?topic=19137.msg239768#msg239768)," which was a massive improvement in recoverability. There are [two different forms](https://bitcoin.stackexchange.com/questions/18102/does-a-wallet-containing-multiple-addresses-have-a-single-private-key):
    + **Sequential deterministic wallets** take a single seed / passphrase and repeatedly increment it in order to generate new keypairs. This meant that the system would only need to store addresses, and then re-generate the private keys when needed.
-   + **Hierarchical deterministic wallets** take the single seed and randomly generate a master private / public key pair, which is then used to derive child key pairs that generate addresses. This system allows for the generation of addresses to occur without the master private key, with only the public key.
+   + **Hierarchical deterministic wallets** take a single seed and randomly generate a master private / public key pair, which is then used to derive child key pairs that generate addresses. This system allows for the generation of addresses to occur without the master private key, with only the public key.
 + **Multi-signature wallets** require multiple signatures or parties to sign a transaction in order to spend bitcoin. An M-of-N [BIP-11](https://github.com/bitcoin/bips/blob/master/bip-0011.mediawiki) address must first be generated in order to receive bitcoin for spending in multi-signature transactions. While the 2-of-2 and 2-of-3 schemes are the most common, the [maximum number of public keys](https://bitcoin.stackexchange.com/questions/81223/why-is-20-the-maximum-public-keys-in-a-multisig-transaction) is higher, and this could increase much more in the future [with Schnorr signatures](https://twitter.com/J9Roem/status/991098233828139008) and [Taproot](https://bitcoinops.org/en/newsletters/2019/05/14/).
 
 
@@ -77,13 +77,13 @@ m / purpose' / coin_type' / account' / change / address_index
 + **Change:** This field, if the constant `0` is present, indicates "external chain" (regular) addresses; if the constant `1`, indicates "internal chain" (change) addresses. *Note that if finalized, BIP-47 would designate this level as space for the notification keys and ephemeral payment codes.*
 + **Address Index:** This field indicates the specific address number in a sequence, within an account.
 
-Note how many of the sequential fields start at zero (0), like how the first / ground floor is level zero in the U.K. and Europe. If a user has a wallet that displays them, the derivation path sequence for a **BIP-44** compliant **bitcoin** wallet, in which there is a **second change address** in the **third account**, would look like this: `m/44'/0'/2'/1/1`
+Note how many of the sequential fields start at zero (0), like how the first / ground floor is level zero in the U.K. and Europe. If a user has a wallet that displays them, the derivation path sequence for a **BIP-44** compliant **bitcoin** wallet, in which there is a **second change address** in the **third account**, would look like this: `m/44'/0'/2'/1/1`.
 
 The meaning of "public" / unhardened versus hardened derivation, indicated in the fields by apostrophes, is explained [here](https://wiki.trezor.io/Hardened_and_non-hardened_derivation), [here](https://medium.com/@sevcsik/working-with-bitcoin-hd-wallets-ii-deriving-public-keys-c48341629388), and [here](https://bitcoin.stackexchange.com/questions/62533/key-derivation-in-hd-wallets-using-the-extended-private-key-vs-hardened-derivati?rq=1).
 
 ---
 
 
-Did we get it wrong? Just let us know, and this will be updated :)
+Did we get it wrong? Just let us know, and this will be updated. :)
 
 Want to contribute, make a [Pull Request](https://github.com/nvk/wallets-recovery/pulls).
