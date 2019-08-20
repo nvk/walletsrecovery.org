@@ -24,7 +24,7 @@ Status|Wallet|Path and/or Script|Note
 ⚠️|Rise Wallet[↗︎](https://www.risewallet.com/)|`m/49'/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ⚠️|Samourai[↗︎](https://samouraiwallet.com/)|`m/44'`\|`49'`\|`84'`\|`47'``/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Opendime[↗︎](https://opendime.com)|WIF|[On FAQ](https://opendime.com/faq), [Archived](https://web.archive.org/save/https://opendime.com/faq)
-🛑|Wassabi[↗︎](https://docs.wasabiwallet.io/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
+☠️|Wassabi[↗︎](https://docs.wasabiwallet.io/)|☠️Complex & Custom☠️|[EXTERNAL RECOVERY NOT DOCUMENTED]
 
 Complex desktop and special purpose wallets (ie Core, Electrum, BTCPay, etc...) are not listed.
 
