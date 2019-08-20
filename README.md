@@ -1,4 +1,4 @@
-# Wallets Recovery
+# Wallets Recovery [DRAFT]
 
 
 **Giving users their seed phrase is not enough.**
