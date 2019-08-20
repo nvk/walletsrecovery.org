@@ -35,7 +35,7 @@ Status|Wallet|Path and/or Script|Note
 ⚠️|Samourai[↗︎](https://samouraiwallet.com/)|`m/44'`\|`49'`\|`84'`\|`47'``/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Trezor 1/t[↗︎](https://trezor.com)|`m/44'`\|`49'``/0'/0'`|[Docs](https://wiki.trezor.io)
 ✅|Opendime[↗︎](https://opendime.com)|WIF|[On FAQ](https://opendime.com/faq), [Archived](https://web.archive.org/save/https://opendime.com/faq)
-☠️|Wassabi[↗︎](https://docs.wasabiwallet.io/)|☠️Complex & Custom☠️|[EXTERNAL RECOVERY NOT DOCUMENTED]
+☠️|Wasabi[↗︎](https://docs.wasabiwallet.io/)|☠️Complex & Custom☠️|[EXTERNAL RECOVERY NOT DOCUMENTED]
 
 Complex desktop and special purpose wallets (ie Core, Electrum, BTCPay, etc...) are not listed.
 
