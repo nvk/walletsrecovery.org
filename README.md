@@ -36,15 +36,12 @@ Status|Wallet|Path and/or Script|Note
 
 Complex desktop and special purpose wallets (ie Core, Electrum, BTCPay, etc...) are not listed.
 
-#### Legend
-
-🛑 Unknown
-
-☠️ Not publicaly available or complex without a external tool available for the avarage user.
-
-⚠️ Known, but unofficially documented
-
-✅ Documented + Link to doc
+Icon|Legend
+:-:|--
+🛑|Unknown
+☠️|Not publicaly available or complex without a external tool available for the avarage user.
+⚠️|Known, but unofficially documented
+✅|Documented + Link to doc
 
 ---
 
