@@ -24,24 +24,29 @@ Status|Wallet|Path and/or Script|Note
 🛑|BRD (Bread Wallet)[↗︎](https://brd.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|BTC.com app[↗︎](https://btc.com/applications/app)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ☠️|CasaHODL[↗︎](https://keys.casa/)|☠️2-of-3 or 3-of-5☠️|[EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|ColdCard[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'``/0'/0'` +Custom|[Docs](https://coldcardwallet.com/docs/)
 🛑|Coin Wallet[↗︎](https://www.coin.space/) ||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Coinomi[↗︎](https://www.coinomi.com)|`m/44'/0'/0'`|[Docs](https://coinomi.freshdesk.com/support/solutions/articles/29000009717-what-is-the-recovery-tool-and-how-do-i-export-my-private-keys-)
 🛑|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|Edge Wallet[↗︎](https://edge.app/) || [EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|Ledger S/Nano[↗︎](https://ledger.com/)|`m/44'/0'/0'`|[Docs](https://support.ledger.com/hc/en-us)
 🛑|Mycelium[↗︎](https://wallet.mycelium.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ⚠️|Rise Wallet[↗︎](https://www.risewallet.com/)|`m/49'/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ⚠️|Samourai[↗︎](https://samouraiwallet.com/)|`m/44'`\|`49'`\|`84'`\|`47'``/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|Trezor 1/t[↗︎](https://trezor.com)|`m/44'`\|`49'``/0'/0'`|[Docs](https://wiki.trezor.io)
-✅|Opendime[↗︎](https://opendime.com)|WIF|[On FAQ](https://opendime.com/faq), [Archived](https://web.archive.org/save/https://opendime.com/faq)
+(https://web.archive.org/save/https://opendime.com/faq)
 ☠️|Wasabi[↗︎](https://docs.wasabiwallet.io/)|☠️Complex & Custom☠️|[EXTERNAL RECOVERY NOT DOCUMENTED]
 
+Status|Hardware Wallets|Supported Paths|Note
+--|:-|:-:|--
+✅|ColdCard[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'``/0'/0'` +Custom|[Docs](https://coldcardwallet.com/docs/)
+✅|Ledger S/Nano[↗︎](https://ledger.com/)|`m/44'/0'/0'`|[Docs](https://support.ledger.com/hc/en-us)
+✅|Trezor 1/t[↗︎](https://trezor.com)|`m/44'`\|`49'``/0'/0'`|[Docs](https://wiki.trezor.io)
+✅|Opendime[↗︎](https://opendime.com)|WIF|[On FAQ](https://opendime.com/faq), [Archived]
 
-Notes / Todo:
+Notes:
+- Hardware wallets don't care about derivation in certain modes.
+
+Todo:
 - Complex desktop and special purpose wallets (ie Core, Electrum, BTCPay, etc...) are not listed yet.
-- Hardware wallets need to be in a separated list as they don't care about derivation in certain modes.
-- Hardware wallet's wallet-as-a-services need to be listed separately from their hardware.
+- List hardware wallet's apps/services on the main table, needs to be listed separately from their hardware. (ie Ledger Live)
 
 Icon|Legend
 :-:|--
