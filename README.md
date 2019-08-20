@@ -45,7 +45,7 @@ Notes / Todo:
 
 Icon|Legend
 :-:|--
-🛑|WIP / Unknown
+🛑|Unknown. No obvious docs, research in progress
 ☠️|Not publicaly available or complex without a external tool available for the average user.
 ⚠️|Known, but unofficially documented
 ✅|Documented + Link to doc
