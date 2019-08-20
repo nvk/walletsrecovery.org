@@ -4,22 +4,22 @@
 **Giving users their seed is not enough.**
 
 While great advances have been made in interoperability and recoverability, developers across the industry continue to build wallets that either:
-+ Don't implement BIP standard(s)
-+ Implement a BIP standard, but with important differences from other wallets that also implemented it
-+ Implement a BIP standard, but one that has not been widely adopted (and perhaps only by them)
-+ Don't have clear documentation about their derivation paths, backup and recovery processes
++ Don't implement BIP standard(s).
++ Implement a BIP standard, but with important differences from other wallets that also implemented it.
++ Implement a BIP standard, but one that has not been widely adopted (and perhaps only by them).
++ Don't have clear documentation about their derivation paths, backup and recovery processes.
 
-This list is meant to gather information about wallet defaults for external recovery. Wallets come and go, information gets lost and users are left with tears. Resposible wallet makers document external recovery. 
+This list is meant to gather information about wallet defaults for external recovery. Wallets come and go, information gets lost and users are left with tears. Responsible wallet makers document external recovery.
 
 Users should not have to digg or read the source code of a wallet to figure-out the Derivation Path or Redeem Scripts. 
 
-If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL RECOVERY NOT DOCUMENTED]
+If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL RECOVERY NOT DOCUMENTED].
 
 Status|Wallet|Path and/or Script|Note
 --|:-|:-:|--
-🛑|Bitcoin Wallet App[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)||[EXTERNAL RECOVERY NOT DOCUMENTED]
+🛑|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|Bither[↗︎](https://bither.net/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|BlockStream Green[↗︎](https://blockstream.com/green/)| Custom 2of2 Script|[Recovery tool](https://github.com/greenaddress/garecovery)
+✅|Blockstream Green[↗︎](https://blockstream.com/green/)| Custom 2of2 Script|[Recovery tool](https://github.com/greenaddress/garecovery)
 ⚠️|BlueWallet[↗︎](https://bluewallet.io/)|`m/49'`\|`84'``/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|BRD (Bread Wallet)[↗︎](https://brd.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|BTC.com app[↗︎](https://btc.com/applications/app)||[EXTERNAL RECOVERY NOT DOCUMENTED]
@@ -40,13 +40,13 @@ Status|Wallet|Path and/or Script|Note
 
 Notes / Todo:
 - Complex desktop and special purpose wallets (ie Core, Electrum, BTCPay, etc...) are not listed yet.
-- Hardware wallets need to be in separated list as they don't care about derivation in certain modes.
-- Hardware wallet's wallet-as-a-services need to be listed separate from their hardware.
+- Hardware wallets need to be in a separated list as they don't care about derivation in certain modes.
+- Hardware wallet's wallet-as-a-services need to be listed separately from their hardware.
 
 Icon|Legend
 :-:|--
 🛑|WIP / Unknown
-☠️|Not publicaly available or complex without a external tool available for the avarage user.
+☠️|Not publicaly available or complex without a external tool available for the avarage user
 ⚠️|Known, but unofficially documented
 ✅|Documented + Link to doc
 
@@ -71,11 +71,11 @@ In hierarchical deterministic wallets ([BIP-32](https://github.com/bitcoin/bips/
 
 m / purpose' / coin_type' / account' / change / address_index
 
-+ **Purpose:** This field, which was added through [BIP-43](https://github.com/bitcoin/bips/blob/master/bip-0043.mediawiki), indicates which standard the derivation path follows. Possibilities include `44` referring to the default [BIP-44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) P2PKH / '1' legacy addresses, `45` referring to [BIP-45](https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki) P2SH multi-party multi-signature wallets (proposed), `47` referring to [BIP-47](https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki) reusable payment codes (draft), `48` referring to hardware multisignature wallets (no BIP or standard proposal), `49` referring to [BIP-49](https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki) P2WPKH-nested-in-P2SH / '3' SegWit addresses, or `84` referring to [BIP-84](https://github.com/bitcoin/bips/blob/master/bip-0084.mediawiki) P2WPKH / 'bc1' native SegWit addresses. Some wallet services are supporting more than one (as in, they can display both legacy and SegWit accounts derived from the same seed).
++ **Purpose:** This field, which was added through [BIP-43](https://github.com/bitcoin/bips/blob/master/bip-0043.mediawiki), indicates which standard the derivation path follows. Possibilities include `44` referring to the default [BIP-44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) P2PKH / '1' legacy addresses, `45` referring to [BIP-45](https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki) P2SH multi-party multi-signature wallets (proposed), `47` referring to [BIP-47](https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki) reusable payment codes (draft), `48` referring to hardware multisignature wallets (no BIP or standard proposal), `49` referring to [BIP-49](https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki) P2WPKH-nested-in-P2SH / '3' SegWit addresses, or `84` referring to [BIP-84](https://github.com/bitcoin/bips/blob/master/bip-0084.mediawiki) P2WPKH / 'bc1' native SegWit addresses. Some wallet services are supporting more than one (as in, they can display both legacy and SegWit addresses derived from the same seed).
 + **Coin Type:** This field indicates which cryptocurrency is being used in a multi-currency wallet. All coins, including testnet bitcoin, are assigned [a constant number](https://github.com/satoshilabs/slips/blob/master/slip-0044.md). For example, a derivation path for a Monero (XMR) account would be `m/44'/128'`. *Note that if finalized, BIP-45 would designate this level as the 'Cosigner Index' instead.*
-+ **Account:** This field, in a multi-account wallet, indicates the identity or collection of addresses, which allow users to segregate funds for different things (ex. savings, donations). *Note that if finalized, BIP-45 would not include this field. If BIP-47 is finalized, this level would be designated as 'Identity', though it is equivalent to 'Account.'*
++ **Account:** This field, in a multi-account wallet, indicates the identity or collection of addresses, which allows users to segregate funds for different things (ex. savings, donations). *Note that if finalized, BIP-45 would not include this field. If BIP-47 is finalized, this level would be designated as 'Identity', though it is equivalent to 'Account.'*
 + **Change:** This field, if the constant `0` is present, indicates "external chain" (regular) addresses; if the constant `1`, indicates "internal chain" (change) addresses. *Note that if finalized, BIP-47 would designate this level as space for the notification keys and ephemeral payment codes.*
-+ **Address Index:** This field is for indicating the specific address number in a sequence, within an account.
++ **Address Index:** This field indicates the specific address number in a sequence, within an account.
 
 Note how many of the sequential fields start at zero (0), like how the first / ground floor is level zero in the U.K. and Europe. If a user has a wallet that displays them, the derivation path sequence for a **BIP-44** compliant **bitcoin** wallet, in which there is a **second change address** in the **third account**, would look like this: `m/44'/0'/2'/1/1`
 
@@ -86,4 +86,4 @@ The meaning of "public" / unhardened versus hardened derivation, indicated in th
 
 Did we get it wrong? Just let us know, and this will be updated :)
 
-Want to contribute, make a [Pull Request](https://github.com/nvk/wallets-recovery/pulls)
+Want to contribute, make a [Pull Request](https://github.com/nvk/wallets-recovery/pulls).
