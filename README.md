@@ -11,7 +11,7 @@ While great advances have been made in interoperability and recoverability, deve
 
 This list is meant to gather information about wallet defaults for external recovery. Wallets come and go, information gets lost and users are left with tears. Responsible wallet makers document external recovery.
 
-Users should not have to digg or read the source code of a wallet to figure-out the Derivation Path or Redeem Scripts. 
+Users should not have to dig or read the source code of a wallet to figure-out the Derivation Path or Redeem Scripts. 
 
 If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL RECOVERY NOT DOCUMENTED].
 
@@ -45,8 +45,8 @@ Notes / Todo:
 
 Icon|Legend
 :-:|--
-🛑|WIP / Unknown
-☠️|Not publicaly available or complex without a external tool available for the avarage user
+🛑|Unknown. No obvious docs, research in progress
+☠️|Not publicaly available or complex without a external tool available for the average user.
 ⚠️|Known, but unofficially documented
 ✅|Documented + Link to doc
 
