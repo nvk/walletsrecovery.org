@@ -37,7 +37,11 @@ Status|Wallet|Path and/or Script|Note
 ✅|Opendime[↗︎](https://opendime.com)|WIF|[On FAQ](https://opendime.com/faq), [Archived](https://web.archive.org/save/https://opendime.com/faq)
 ☠️|Wassabi[↗︎](https://docs.wasabiwallet.io/)|☠️Complex & Custom☠️|[EXTERNAL RECOVERY NOT DOCUMENTED]
 
-Complex desktop and special purpose wallets (ie Core, Electrum, BTCPay, etc...) are not listed.
+
+Notes / Todo:
+- Complex desktop and special purpose wallets (ie Core, Electrum, BTCPay, etc...) are not listed yet.
+- Hardware wallets need to be separated as they don't care about derivation in certain modes
+- Hardware wallet wallet-as-a-services need to be listed separate from their hardware 
 
 Icon|Legend
 :-:|--
