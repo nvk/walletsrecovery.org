@@ -16,14 +16,14 @@ Users should not have to dig or read the source code of a wallet to figure-out t
 If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL RECOVERY NOT DOCUMENTED].
 
 Status|Wallet|Path and/or Script|Note
-:-:|:-|:-:|--
+:---:|:---|:---:|---
 🛑|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|Bither[↗︎](https://bither.net/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Blockstream Green[↗︎](https://blockstream.com/green/)| Custom 2-of-2 Script|[Recovery tool](https://github.com/greenaddress/garecovery)
 ✅|BlueWallet[↗︎](https://bluewallet.io/)|`m/49'`\|`84'/0'/0'`|[Docs](http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet),[Archive](https://web.archive.org/save/http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet)
 🛑|BRD (Bread Wallet)[↗︎](https://brd.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|BTC.com app[↗︎](https://btc.com/applications/app)||[EXTERNAL RECOVERY NOT DOCUMENTED]
-⚠️|CasaHODL[↗︎](https://keys.casa/)|`m/49/0/X` (X increments with each key rotation)|[Docs](https://github.com/nvk/wallets-recovery/blob/master/recovery-docs/casahodl-recovery.md) Non Official
+⚠️|CasaHODL[↗︎](https://keys.casa/)|`m/49/0/X` (X increments with each key rotation)|[Docs](https://github.com/nvk/wallets-recovery/blob/master/recovery-docs/casahodl-recovery.md) Unofficial
 🛑|Coin Wallet[↗︎](https://www.coin.space/) ||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Coinomi[↗︎](https://www.coinomi.com)|`m/44'/0'/0'`|[Docs](https://coinomi.freshdesk.com/support/solutions/articles/29000009717-what-is-the-recovery-tool-and-how-do-i-export-my-private-keys-)
 🛑|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)||[EXTERNAL RECOVERY NOT DOCUMENTED]
@@ -36,7 +36,7 @@ Status|Wallet|Path and/or Script|Note
 ✅|Wasabi[↗︎](https://docs.wasabiwallet.io/)|`m/84'/0'/0'` Very Deep Depths|[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#what-derivation-paths-does-wasabi-use), [BIPs Supported](https://docs.wasabiwallet.io/using-wasabi/BIP.html)
 
 Status|Hardware Wallets|Supported Paths|Note
-:-:|:-|:-:|--
+:---:|:---|:---:|---
 ✅|ColdCard[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|[Docs](https://coldcardwallet.com/docs/)
 ✅|Ledger S/Nano[↗︎](https://ledger.com/)|`m/44'/0'/0'`|[Docs](https://support.ledger.com/hc/en-us)
 ✅|Trezor 1/t[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|[Docs](https://wiki.trezor.io)
@@ -50,7 +50,7 @@ Todo:
 - List hardware wallet's apps / services on the main table, need to be listed separately from their hardware. (i.e. Ledger Live)
 
 Icon|Legend
-:-:|--
+:---:|---
 🛑|Unknown. No obvious docs, research in progress
 ☠️|Not publicaly available or complex without a external tool available for the average user
 ⚠️|Known, but unofficially documented
