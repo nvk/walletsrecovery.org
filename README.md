@@ -36,7 +36,7 @@ Status|Wallet|Path and/or Script|Note
 
 Status|Hardware Wallets|Supported Paths|Note
 --|:-|:-:|--
-✅|ColdCard[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` +Custom|[Docs](https://coldcardwallet.com/docs/)
+✅|ColdCard[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|[Docs](https://coldcardwallet.com/docs/)
 ✅|Ledger S/Nano[↗︎](https://ledger.com/)|`m/44'/0'/0'`|[Docs](https://support.ledger.com/hc/en-us)
 ✅|Trezor 1/t[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|[Docs](https://wiki.trezor.io)
 ✅|Opendime[↗︎](https://opendime.com)|WIF|[On FAQ](https://opendime.com/faq), [Archived](https://web.archive.org/save/https://opendime.com/faq)
@@ -45,8 +45,8 @@ Notes:
 - Hardware wallets don't care about derivation in certain modes.
 
 Todo:
-- Complex desktop and special purpose wallets (ie Core, Electrum, BTCPay, etc...) are not listed yet.
-- List hardware wallet's apps/services on the main table, needs to be listed separately from their hardware. (ie Ledger Live)
+- Complex desktop and special purpose wallets (i.e. Core, Electrum, BTCPay, etc...) are not listed yet.
+- List hardware wallet's apps / services on the main table, need to be listed separately from their hardware. (i.e. Ledger Live)
 
 Icon|Legend
 :-:|--
