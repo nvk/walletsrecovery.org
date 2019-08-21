@@ -1,67 +1,67 @@
 # CasaHODL recovery
 
-How to recover funds from a 3-of-5 Casa Bitcoin Wallet without using Casa software or servers
-Install Electrum 3.2.3 or later: https://electrum.org/#download
+How to recover funds from a 3-of-5 Casa Bitcoin Wallet without using Casa software or servers.</br>
+Install Electrum 3.2.3 or later: https://electrum.org/#download.
 
-NOTE: Electrum can be finicky with hardware signing device support, especially on Linux. In order to prevent errors, ensure that you only have ONE electrum instance running and plug ALL of your hardware devices in simultaneously rather than plugging and unplugging the devices as you sign.
-
-## Linux Only
-
-Install the appropriate libraries for your hardware wallets:
-sudo apt-get install libusb-1.0-0-dev libudev-dev
-sudo pip3 install btchip-python
-sudo pip3 install trezor
-sudo pip3 install keepkey
+NOTE: Electrum can be finicky with hardware signing device support, especially on Linux. In order to prevent errors, ensure that you only have ONE Electrum instance running and make sure ALL your hardware devices are plugged in rather than plugging and unplugging the devices as you sign.
 
 ## Linux Only
 
-Run electrum. For testnet, run `electrum --testnet`
-Create a new wallet and give it a name
-Choose “multi-signature wallet”
-Select “From 5 cosigners”
-Select “Require 3 signatures”
-Click next
+Install the appropriate libraries for your hardware wallets:</br>
+`sudo apt-get install libusb-1.0-0-dev libudev-dev`</br>
+`sudo pip3 install btchip-python`</br>
+`sudo pip3 install trezor`</br>
+`sudo pip3 install keepkey`
 
-For cosigner 1 of 5:
-Choose “hardware wallet”
-Plug in hardware device 1 if it isn’t already
-Click next
-Select your hardware device and click next
-Select p2sh-segwit multisig
-The derivation path should change to something like m/48'/0'/0'/1' - replace it with the derivation path from your recovery data, which will look something like: m/49/0/0
-Click next, then next again on the master public key screen
+## Linux Only
 
-For cosigner 2 of 5:
-Choose “cosign with hardware device”
-Plug in hardware device 2 if it isn’t already
-Click next
-Select your hardware device and click next
-Select p2sh-segwit multisig
-The derivation path should change to something like `m/48'/1'/0'/1'` - replace it with the derivation path from your recovery data
-Click next
+Run electrum. For testnet, run `electrum --testnet`.</br>
+Create a new wallet and give it a name.</br>
+Choose “multi-signature wallet”.</br>
+Select “From 5 cosigners”.</br>
+Select “Require 3 signatures”.</br>
+Click next.
 
-For cosigner 3 of 5:
-Choose “cosign with hardware device”
-Plug in hardware device 3 if it isn’t already
-Click next
-Select your hardware device and click next
-Select p2sh-segwit multisig
-The derivation path should change to something like `m/48'/1'/0'/1'` - replace it with the derivation path from your recovery data
-Click next
+For cosigner 1 of 5:</br>
+Choose “hardware wallet”.</br>
+Plug in the hardware device 1 if it isn’t already plugged in.</br>
+Click next.</br>
+Select your hardware device and click next.</br>
+Select p2sh-segwit multisig.</br>
+The derivation path should change to something like: `m/48'/0'/0'/1'`. Replace it with the derivation path from your recovery data, which will look something like: `m/49/0/0`.</br>
+Click next, then next again on the master public key screen.
 
-For cosigner 4 of 5:
-Choose “Enter cosigner key” and click next
-Paste the “Mobile Device Key” for the appropriate account from your recovery data
-Click next
+For cosigner 2 of 5:</br>
+Choose “cosign with hardware device”.</br>
+Plug in the hardware device 2 if it isn’t already plugged in.</br>
+Click next.</br>
+Select your hardware device and click next.</br>
+Select p2sh-segwit multisig.</br>
+The derivation path should change to something like: `m/48'/1'/0'/1'`. Replace it with the derivation path from your recovery data.</br>
+Click next.
 
-For cosigner 5 of 5:
-Choose “Enter cosigner key” and click next
-Paste the “Recovery Device Key” for the appropriate account from your recovery data
-Click next
+For cosigner 3 of 5:</br>
+Choose “cosign with hardware device”.</br>
+Plug in the hardware device 3 if it isn’t already plugged in.</br>
+Click next.</br>
+Select your hardware device and click next.</br>
+Select p2sh-segwit multisig.</br>
+The derivation path should change to something like `m/48'/1'/0'/1'`. Replace it with the derivation path from your recovery data.</br>
+Click next.
 
-On the password screen, leave both fields blank and click next
+For cosigner 4 of 5:</br>
+Choose “Enter cosigner key” and click next.</br>
+Paste the “Mobile Device Key” for the appropriate account from your recovery data.</br>
+Click next.</br>
 
-Electrum will now initialize your wallet and display all of the transactions that have been received and sent by it. If you don’t see your transactions show up after a minute or so, something went wrong during the process and electrum derived the wrong set of addresses.
+For cosigner 5 of 5:</br>
+Choose “Enter cosigner key” and click next.</br>
+Paste the “Recovery Device Key” for the appropriate account from your recovery data.</br>
+Click next.
+
+On the password screen, leave both fields blank and click next.
+
+Electrum will now initialize your wallet and display all of the transactions that have been received and sent by it. If you don’t see your transactions show up after a minute or so, something went wrong during the process and Electrum derived the wrong set of addresses.
 
 To send your assets to a new wallet, click on the “send” tab and fill in the “pay to” field with and address owned by your new wallet. Click the “max” button to sweep all of the value out of the wallet, and slide the “fee” bar to an appropriate fee depending upon your urgency.
 
