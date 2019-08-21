@@ -27,7 +27,7 @@ Status|Wallet|Path and/or Script|Note
 🛑|Coin Wallet[↗︎](https://www.coin.space/) ||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Coinomi[↗︎](https://www.coinomi.com)|`m/44'/0'/0'`|[Docs](https://coinomi.freshdesk.com/support/solutions/articles/29000009717-what-is-the-recovery-tool-and-how-do-i-export-my-private-keys-)
 🛑|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)||[EXTERNAL RECOVERY NOT DOCUMENTED]
-🛑|Edge Wallet[↗︎](https://edge.app/) || [EXTERNAL RECOVERY NOT DOCUMENTED]
+✅|Edge Wallet[↗︎](https://edge.app/) |`m/44'`\|`49'/0'/0'`|[Docs](https://support.edge.app/support/solutions/articles/8000080183-edge-private-seeds-derivation-and-export)
 🛑|Mycelium[↗︎](https://wallet.mycelium.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|OpenBazaar[↗︎](https://openbazaar.org/)|`m/44'/0'`\|`1'`\|`133'`\|`145'/0'`|[Docs](https://openbazaar.zendesk.com/hc/en-us/articles/360002820331-How-do-I-restore-OpenBazaar-from-a-mnemonic-seed-)
 ⚠️|Rise Wallet[↗︎](https://www.risewallet.com/)|`m/49'/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
