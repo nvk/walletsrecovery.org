@@ -31,7 +31,7 @@ Status|Wallet|Path and/or Script|Note
 🛑|Mycelium[↗︎](https://wallet.mycelium.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|OpenBazaar[↗︎](https://openbazaar.org/)|`m/44'/0'`\|`1'`\|`133'`\|`145'/0'`|[Docs](https://openbazaar.zendesk.com/hc/en-us/articles/360002820331-How-do-I-restore-OpenBazaar-from-a-mnemonic-seed-)
 ⚠️|Rise Wallet[↗︎](https://www.risewallet.com/)|`m/49'/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|Samourai[↗︎](https://samouraiwallet.com/)|`m/44'`\|`49'`\|`84'`\|`47'/0'/0'`|[Doc](https://support.samourai.io/article/46-reveal-all-individual-private-keys-in-the-wallet)
+✅|Samourai[↗︎](https://samouraiwallet.com/)|`m/44'`\|`49'`\|`84'`\|`47'/0'/0'`|[Docs](https://support.samourai.io/article/46-reveal-all-individual-private-keys-in-the-wallet)
 ⚠️|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45’/0’/0’/0/0`+Redeem Script|[Docs](https://www.unchained-capital.com/faq/),[Archived](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/) [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig)
 ✅|Wasabi[↗︎](https://docs.wasabiwallet.io/)|`m/84'/0'/0'` Very Deep Depths|[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#what-derivation-paths-does-wasabi-use)
 
