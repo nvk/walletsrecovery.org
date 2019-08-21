@@ -1,62 +1,62 @@
 # CasaHODL recovery
 
-How to recover funds from a 3-of-5 Casa Bitcoin Wallet without using Casa software or servers.</br>
+How to recover funds from a 3-of-5 Casa Bitcoin Wallet without using Casa software or servers.\
 Install Electrum 3.2.3 or later: https://electrum.org/#download.
 
 NOTE: Electrum can be finicky with hardware signing device support, especially on Linux. In order to prevent errors, ensure that you only have ONE Electrum instance running and make sure ALL your hardware devices are plugged in rather than plugging and unplugging the devices as you sign.
 
 ## Linux Only
 
-Install the appropriate libraries for your hardware wallets:</br>
-`sudo apt-get install libusb-1.0-0-dev libudev-dev`</br>
-`sudo pip3 install btchip-python`</br>
-`sudo pip3 install trezor`</br>
+Install the appropriate libraries for your hardware wallets:\
+`sudo apt-get install libusb-1.0-0-dev libudev-dev`\
+`sudo pip3 install btchip-python`\
+`sudo pip3 install trezor`\
 `sudo pip3 install keepkey`
 
 ## Linux Only
 
-Run electrum. For testnet, run `electrum --testnet`.</br>
-Create a new wallet and give it a name.</br>
-Choose “multi-signature wallet”.</br>
-Select “From 5 cosigners”.</br>
-Select “Require 3 signatures”.</br>
+Run electrum. For testnet, run `electrum --testnet`.\
+Create a new wallet and give it a name.\
+Choose “multi-signature wallet”.\
+Select “From 5 cosigners”.\
+Select “Require 3 signatures”.\
 Click next.
 
-For cosigner 1 of 5:</br>
-Choose “hardware wallet”.</br>
-Plug in the hardware device 1 if it isn’t already plugged in.</br>
-Click next.</br>
-Select your hardware device and click next.</br>
-Select p2sh-segwit multisig.</br>
-The derivation path should change to something like: `m/48'/0'/0'/1'`. Replace it with the derivation path from your recovery data, which will look something like: `m/49/0/0`.</br>
+For cosigner 1 of 5:\
+Choose “hardware wallet”.\
+Plug in the hardware device 1 if it isn’t already plugged in.\
+Click next.\
+Select your hardware device and click next.\
+Select p2sh-segwit multisig.\
+The derivation path should change to something like: `m/48'/0'/0'/1'`. Replace it with the derivation path from your recovery data, which will look something like: `m/49/0/0`.\
 Click next, then next again on the master public key screen.
 
-For cosigner 2 of 5:</br>
-Choose “cosign with hardware device”.</br>
-Plug in the hardware device 2 if it isn’t already plugged in.</br>
-Click next.</br>
-Select your hardware device and click next.</br>
-Select p2sh-segwit multisig.</br>
-The derivation path should change to something like: `m/48'/1'/0'/1'`. Replace it with the derivation path from your recovery data.</br>
+For cosigner 2 of 5:\
+Choose “cosign with hardware device”.\
+Plug in the hardware device 2 if it isn’t already plugged in.\
+Click next.\
+Select your hardware device and click next.\
+Select p2sh-segwit multisig.\
+The derivation path should change to something like: `m/48'/1'/0'/1'`. Replace it with the derivation path from your recovery data.\
 Click next.
 
-For cosigner 3 of 5:</br>
-Choose “cosign with hardware device”.</br>
-Plug in the hardware device 3 if it isn’t already plugged in.</br>
-Click next.</br>
-Select your hardware device and click next.</br>
-Select p2sh-segwit multisig.</br>
-The derivation path should change to something like `m/48'/1'/0'/1'`. Replace it with the derivation path from your recovery data.</br>
+For cosigner 3 of 5:\
+Choose “cosign with hardware device”.\
+Plug in the hardware device 3 if it isn’t already plugged in.\
+Click next.\
+Select your hardware device and click next.\
+Select p2sh-segwit multisig.\
+The derivation path should change to something like `m/48'/1'/0'/1'`. Replace it with the derivation path from your recovery data.\
 Click next.
 
-For cosigner 4 of 5:</br>
-Choose “Enter cosigner key” and click next.</br>
-Paste the “Mobile Device Key” for the appropriate account from your recovery data.</br>
-Click next.</br>
+For cosigner 4 of 5:\
+Choose “Enter cosigner key” and click next.\
+Paste the “Mobile Device Key” for the appropriate account from your recovery data.\
+Click next.
 
-For cosigner 5 of 5:</br>
-Choose “Enter cosigner key” and click next.</br>
-Paste the “Recovery Device Key” for the appropriate account from your recovery data.</br>
+For cosigner 5 of 5:\
+Choose “Enter cosigner key” and click next.\
+Paste the “Recovery Device Key” for the appropriate account from your recovery data.\
 Click next.
 
 On the password screen, leave both fields blank and click next.
