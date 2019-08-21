@@ -20,7 +20,7 @@ Status|Wallet|Path and/or Script|Note
 🛑|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|Bither[↗︎](https://bither.net/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Blockstream Green[↗︎](https://blockstream.com/green/)| Custom 2-of-2 Script|[Recovery tool](https://github.com/greenaddress/garecovery)
-⚠️|BlueWallet[↗︎](https://bluewallet.io/)|`m/49'`\|`84'/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
+✅|BlueWallet[↗︎](https://bluewallet.io/)|`m/49'`\|`84'/0'/0'`|[Docs](http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet),[Archive](https://web.archive.org/save/http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet)
 🛑|BRD (Bread Wallet)[↗︎](https://brd.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|BTC.com app[↗︎](https://btc.com/applications/app)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ☠️|CasaHODL[↗︎](https://keys.casa/)|`m/49/0/X` (X increments with each key rotation)|[EXTERNAL RECOVERY NOT DOCUMENTED]
