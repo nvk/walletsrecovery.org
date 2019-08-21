@@ -16,7 +16,7 @@ Users should not have to dig or read the source code of a wallet to figure-out t
 If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL RECOVERY NOT DOCUMENTED].
 
 Status|Wallet|Path and/or Script|Note
---|:-|:-:|--
+:--:|:-|:-:|--
 🛑|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|Bither[↗︎](https://bither.net/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Blockstream Green[↗︎](https://blockstream.com/green/)| Custom 2-of-2 Script|[Recovery tool](https://github.com/greenaddress/garecovery)
