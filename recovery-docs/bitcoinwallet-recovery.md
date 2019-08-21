@@ -18,7 +18,7 @@ Normally, this shouldn't be needed. It is much preferred to just use **Options >
 
 Be aware some of the steps in this tutorial require handling your private keys in the unencrypted
 form. Do not expose them to anyone. Whoever knows your private keys can spend your coins on these
-keys. It'd good practice that after you are finished handling these keys, they should be
+keys. It'd be good practice that after you are finished handling these keys, they should be
 considered compromised, even if they are not. Make sure your system is free of any malware.
 
 We recommend using Ubuntu Linux. You can boot from a Live CD if you want, but if you do please
@@ -96,7 +96,7 @@ Now use wallet-tool to sync the wallet from your backup:
     ./wallet-tool sync --wallet=/tmp/bitcoin-wallet-decrypted-backup --debuglog
 
 The sync process will take anywhere from a few minutes to hours. Wallet-tool will return to the
-shell prompt if its finished syncing. Have a look at the wallet:
+shell prompt if it's finished syncing. Have a look at the wallet:
 
     ./wallet-tool dump --wallet=/tmp/bitcoin-wallet-decrypted-backup
 
