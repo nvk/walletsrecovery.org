@@ -41,7 +41,7 @@ Status|Hardware Wallets|Supported Paths|Note
 ✅|Ledger S/Nano[↗︎](https://ledger.com/)|`m/44'/0'/0'`|[Docs](https://support.ledger.com/hc/en-us)
 ✅|Trezor 1/t[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|[Docs](https://wiki.trezor.io)
 ✅|Opendime[↗︎](https://opendime.com)|WIF|[Docs](https://opendime.com/faq), [Archive](https://web.archive.org/save/https://opendime.com/faq)
-⚠️|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)| |[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
+✅|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)|`m/44'/0'/0'`|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
 ☠️|BitBox01[↗︎](https://shiftcrypto.ch/bitbox01/)| |[Docs](https://shiftcrypto.ch/bitbox01/wallet-sweep/), [Hosted Insecure Recovery Tool](https://shiftcrypto.ch/bitbox01/backup-center/)|
 🛑|BitBox02[↗︎](https://shiftcrypto.ch/bitbox02/)| |[EXTERNAL RECOVERY NOT DOCUMENTED]|
 
