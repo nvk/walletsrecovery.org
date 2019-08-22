@@ -21,7 +21,7 @@ Status|Wallet|Path and/or Script|Note
 🛑|Bither[↗︎](https://bither.net/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Blockstream Green[↗︎](https://blockstream.com/green/)| Custom 2-of-2 Script|[Recovery tool](https://github.com/greenaddress/garecovery)
 ✅|BlueWallet[↗︎](https://bluewallet.io/)|`m/49'`\|`84'/0'/0'`|[Docs](http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet), [Archive](https://web.archive.org/save/http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet)
-🛑|BRD (Bread Wallet)[↗︎](https://brd.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
+️⚠️|BRD (Bread Wallet)[↗︎](https://brd.com/)|BIP32 non 44 Compatible|[Github Issue](https://github.com/voisine/breadwallet-ios/issues/131), [Blog Post](https://bitcoinelectrum.com/restoring-your-multibithd-wallet-in-electrum/)
 🛑|BTC.com app[↗︎](https://btc.com/applications/app)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ⚠️|Casa Keymaster[↗︎](https://keys.casa/keymaster/)|`m/49/0/X` (X increments with each key rotation)|[Unofficial Docs](https://github.com/nvk/wallets-recovery/blob/master/recovery-docs/casakeymaster-recovery.md)
 🛑|Coin Wallet[↗︎](https://www.coin.space/) ||[EXTERNAL RECOVERY NOT DOCUMENTED]
