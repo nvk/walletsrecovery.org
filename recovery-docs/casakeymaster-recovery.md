@@ -1,4 +1,4 @@
-# CasaHODL recovery
+# Casa Keymaster recovery
 
 How to recover funds from a 3-of-5 Casa Bitcoin Wallet without using Casa software or servers.
 
