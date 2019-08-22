@@ -10,93 +10,63 @@ NOTE: Electrum can be finicky with hardware signing device support, especially o
 
 Install the appropriate libraries for your hardware wallets:
 
-`sudo apt-get install libusb-1.0-0-dev libudev-dev`
-
-`sudo pip3 install btchip-python`
-
-`sudo pip3 install trezor`
-
-`sudo pip3 install keepkey`
+1. `sudo apt-get install libusb-1.0-0-dev libudev-dev`
+2. `sudo pip3 install btchip-python`
+3. `sudo pip3 install trezor`
+4. `sudo pip3 install keepkey`
 
 ## Linux Only
 
-Run electrum. For testnet, run `electrum --testnet`.
+1. Run electrum. For testnet, run `electrum --testnet`.
+2. Create a new wallet and give it a name.
+3. Choose “multi-signature wallet”.
+4. Select “From 5 cosigners”.
+5. Select “Require 3 signatures”.
+6. Click next.
 
-Create a new wallet and give it a name.
 
-Choose “multi-signature wallet”.
+### For cosigner 1 of 5:
 
-Select “From 5 cosigners”.
+1. Choose “hardware wallet”.
+2. Plug in the hardware device 1 if it isn’t already plugged in.
+3. Click next.
+4. Select your hardware device and click next.
+5. Select p2sh-segwit multisig.
+   - The derivation path should change to something like: `m/48'/0'/0'/1'`. Replace it with the derivation path from your recovery data, which will look something like: `m/49/0/0`.
+6. Click next, then next again on the master public key screen.
 
-Select “Require 3 signatures”.
+### For cosigner 2 of 5:
 
-Click next.
+1. Choose “cosign with hardware device”.
+2. Plug in the hardware device 2 if it isn’t already plugged in.
+3. Click next.
+4. Select your hardware device and click next.
+5. Select p2sh-segwit multisig.
+   - The derivation path should change to something like: `m/48'/1'/0'/1'`. Replace it with the derivation path from your recovery data.
+6. Click next.
 
-For cosigner 1 of 5:
+### For cosigner 3 of 5:
 
-Choose “hardware wallet”.
+1. Choose “cosign with hardware device”.
+2. Plug in the hardware device 3 if it isn’t already plugged in.
+3. Click next.
+4. Select your hardware device and click next.
+5. Select p2sh-segwit multisig.
+   - The derivation path should change to something like `m/48'/1'/0'/1'`. Replace it with the derivation path from your recovery data.
+6. Click next.
 
-Plug in the hardware device 1 if it isn’t already plugged in.
+### For cosigner 4 of 5:
 
-Click next.
+1. Choose “Enter cosigner key” and click next.
+2. Paste the “Mobile Device Key” for the appropriate account from your recovery data.
+3. Click next.
 
-Select your hardware device and click next.
+### For cosigner 5 of 5:
 
-Select p2sh-segwit multisig.
-
-The derivation path should change to something like: `m/48'/0'/0'/1'`. Replace it with the derivation path from your recovery data, which will look something like: `m/49/0/0`.
-
-Click next, then next again on the master public key screen.
-
-For cosigner 2 of 5:
-
-Choose “cosign with hardware device”.
-
-Plug in the hardware device 2 if it isn’t already plugged in.
-
-Click next.
-
-Select your hardware device and click next.
-
-Select p2sh-segwit multisig.
-
-The derivation path should change to something like: `m/48'/1'/0'/1'`. Replace it with the derivation path from your recovery data.
-
-Click next.
-
-For cosigner 3 of 5:
-
-Choose “cosign with hardware device”.
-
-Plug in the hardware device 3 if it isn’t already plugged in.
-
-Click next.
-
-Select your hardware device and click next.
-
-Select p2sh-segwit multisig.
-
-The derivation path should change to something like `m/48'/1'/0'/1'`. Replace it with the derivation path from your recovery data.
-
-Click next.
-
-For cosigner 4 of 5:
-
-Choose “Enter cosigner key” and click next.
-
-Paste the “Mobile Device Key” for the appropriate account from your recovery data.
-
-Click next.
-
-For cosigner 5 of 5:
-
-Choose “Enter cosigner key” and click next.
-
-Paste the “Recovery Device Key” for the appropriate account from your recovery data.
-
-Click next.
-
-On the password screen, leave both fields blank and click next.
+1. Choose “Enter cosigner key” and click next.
+2. Paste the “Recovery Device Key” for the appropriate account from your recovery data.
+3. Click next.
+4. On the password screen, leave both fields blank and click next.
 
 Electrum will now initialize your wallet and display all of the transactions that have been received and sent by it. If you don’t see your transactions show up after a minute or so, something went wrong during the process and Electrum derived the wrong set of addresses.
 
