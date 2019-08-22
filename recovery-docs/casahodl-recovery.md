@@ -15,7 +15,7 @@ Install the appropriate libraries for your hardware wallets:
 3. `sudo pip3 install trezor`
 4. `sudo pip3 install keepkey`
 
-## Linux Only
+## Step-By-Step Guide
 
 1. Run electrum. For testnet, run `electrum --testnet`.
 2. Create a new wallet and give it a name.
