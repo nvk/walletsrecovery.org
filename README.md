@@ -15,7 +15,7 @@ Users should not have to dig or read the source code of a wallet to figure-out t
 
 If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL RECOVERY NOT DOCUMENTED].
 
-**This list is not an endorsement of the security or quality of any of the wallets**
+**This list is not an endorsement of the security or the quality of any of the wallets.**
 
 
 Status|Wallet|Path and/or Script|Note
@@ -45,7 +45,7 @@ Status|Hardware Wallets|Supported Paths|Note
 ✅|Trezor 1/t[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|[Docs](https://wiki.trezor.io)
 ✅|Opendime[↗︎](https://opendime.com)|WIF|[Docs](https://opendime.com/faq), [Archive](https://web.archive.org/save/https://opendime.com/faq)
 ✅|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)|`m/44'/0'/0'`|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
-⚠️|BitBox01[↗︎](https://shiftcrypto.ch/bitbox01/)|Single Signer:`m/44'/0'/0'`  Multisig: `m/100'/45'/0'`|[Docs](https://shiftcrypto.ch/bitbox01/wallet-sweep/), [☠️ Hosted Insecure Recovery Tool](https://shiftcrypto.ch/bitbox01/backup-center/)|
+⚠️|BitBox01[↗︎](https://shiftcrypto.ch/bitbox01/)|Single Signer: `m/44'/0'/0'` Multisig: `m/100'/45'/0'`|[Docs](https://shiftcrypto.ch/bitbox01/wallet-sweep/), [☠️ Hosted Insecure Recovery Tool](https://shiftcrypto.ch/bitbox01/backup-center/)|
 🛑|BitBox02[↗︎](https://shiftcrypto.ch/bitbox02/)| |[EXTERNAL RECOVERY NOT DOCUMENTED]|
 
 
