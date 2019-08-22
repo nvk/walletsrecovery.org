@@ -15,6 +15,9 @@ Users should not have to dig or read the source code of a wallet to figure-out t
 
 If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL RECOVERY NOT DOCUMENTED].
 
+**This list is not an endorsement of the security or quality of any of the wallets**
+
+
 Status|Wallet|Path and/or Script|Note
 :---:|:---|:---:|---
 ✅|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)|BIP32 non 44 Compatible|[Docs](https://github.com/bitcoin-wallet/bitcoin-wallet/blob/master/wallet/README.recover.md), [Archive](https://github.com/nvk/wallets-recovery/blob/master/recovery-docs/bitcoinwallet-recovery.md)
