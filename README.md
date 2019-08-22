@@ -41,7 +41,7 @@ Status|Hardware Wallets|Supported Paths|Note
 ✅|Ledger S/Nano[↗︎](https://ledger.com/)|`m/44'/0'/0'`|[Docs](https://support.ledger.com/hc/en-us)
 ✅|Trezor 1/t[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|[Docs](https://wiki.trezor.io)
 ✅|Opendime[↗︎](https://opendime.com)|WIF|[Docs](https://opendime.com/faq), [Archive](https://web.archive.org/save/https://opendime.com/faq)
-🛑|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)| |[EXTERNAL RECOVERY NOT DOCUMENTED]|
+🛑|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)| |[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey)|
 
 Notes:
 - Hardware wallets don't care about derivation in certain modes.
