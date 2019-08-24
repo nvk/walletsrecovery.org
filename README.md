@@ -11,36 +11,44 @@ While great advances have been made in interoperability and recoverability, deve
 
 This list is meant to gather information about wallet defaults for external recovery. Wallets come and go, information gets lost and users are left with tears. Responsible wallet makers document external recovery.
 
-Users should not have to dig or read the source code of a wallet to figure-out the Derivation Path or Redeem Scripts.
+Users should not have to read or dig through the source code of a wallet to figure out the Derivation Paths or Redeem Scripts.
 
 If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL RECOVERY NOT DOCUMENTED].
 
+**This list is not an endorsement of the security or the quality of any of the wallets.**
+
+Status|Hardware Wallets|Supported Paths|Note
+:---:|:---|:---:|---
+✅|ColdCard[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|[Docs](https://coldcardwallet.com/docs/)
+✅|Ledger S/Nano[↗︎](https://ledger.com/)|`m/44'/0'/0'`|[Docs](https://support.ledger.com/hc/en-us)
+✅|Trezor 1/t[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|[Docs](https://wiki.trezor.io)
+✅|Opendime[↗︎](https://opendime.com)|WIF|[Docs](https://opendime.com/faq), [Archive](https://web.archive.org/save/https://opendime.com/faq)
+✅|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)|`m/44'/0'/0'`|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
+⚠️|BitBox01[↗︎](https://shiftcrypto.ch/bitbox01/)|Single Signer: `m/44'/0'/0'` Multisig: `m/100'/45'/0'`|[Docs](https://shiftcrypto.ch/bitbox01/wallet-sweep/), [☠️ Hosted Insecure Recovery Tool](https://shiftcrypto.ch/bitbox01/backup-center/)|
+🛑|BitBox02[↗︎](https://shiftcrypto.ch/bitbox02/)| |[EXTERNAL RECOVERY NOT DOCUMENTED]|
+
+
 Status|Wallet|Path and/or Script|Note
-:-:|:-|:-:|--
-🛑|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)||[EXTERNAL RECOVERY NOT DOCUMENTED]
+:---:|:---|:---:|---
+✅|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)|BIP32 non 44 Compatible|[Docs](https://github.com/bitcoin-wallet/bitcoin-wallet/blob/master/wallet/README.recover.md), [Archive](https://github.com/nvk/wallets-recovery/blob/master/recovery-docs/bitcoinwallet-recovery.md)
 🛑|Bither[↗︎](https://bither.net/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Blockstream Green[↗︎](https://blockstream.com/green/)| Custom 2-of-2 Script|[Recovery tool](https://github.com/greenaddress/garecovery)
-✅|BlueWallet[↗︎](https://bluewallet.io/)|`m/49'`\|`84'/0'/0'`|[Docs](http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet),[Archive](https://web.archive.org/save/http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet)
-🛑|BRD (Bread Wallet)[↗︎](https://brd.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
+✅|BlueWallet[↗︎](https://bluewallet.io/)|`m/49'`\|`84'/0'/0'`|[Docs](http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet), [Archive](https://web.archive.org/save/http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet)
+️⚠️|BRD (Bread Wallet)[↗︎](https://brd.com/)|BIP32 non 44 Compatible|[Github Issue](https://github.com/voisine/breadwallet-ios/issues/131), [Blog Post](https://bitcoinelectrum.com/restoring-your-multibithd-wallet-in-electrum/)
 🛑|BTC.com app[↗︎](https://btc.com/applications/app)||[EXTERNAL RECOVERY NOT DOCUMENTED]
-☠️|CasaHODL[↗︎](https://keys.casa/)|`m/49/0/X` (X increments with each key rotation)|[EXTERNAL RECOVERY NOT DOCUMENTED]
+⚠️|Casa Keymaster[↗︎](https://keys.casa/keymaster/)|`m/49/0/X` (X increments with each key rotation)|[Unofficial Docs](https://github.com/nvk/wallets-recovery/blob/master/recovery-docs/casakeymaster-recovery.md)
 🛑|Coin Wallet[↗︎](https://www.coin.space/) ||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Coinomi[↗︎](https://www.coinomi.com)|`m/44'`\|`49'`\|`84'/0'/0'`|[Export](https://coinomi.freshdesk.com/support/solutions/articles/29000009717-what-is-the-recovery-tool-and-how-do-i-export-my-private-keys-), [Import](https://coinomi.freshdesk.com/support/solutions/articles/29000009715-how-to-import-a-coinomi-seed-into-electrum-)
-🛑|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)||[EXTERNAL RECOVERY NOT DOCUMENTED]
-🛑|Edge Wallet[↗︎](https://edge.app/) || [EXTERNAL RECOVERY NOT DOCUMENTED]
+✅|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)|`m/49'/0'/0'`|[Docs](https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-)
+✅|Edge Wallet[↗︎](https://edge.app/) |`m/44'`\|`49'/0'/0'`|[Docs](https://support.edge.app/support/solutions/articles/8000080183-edge-private-seeds-derivation-and-export)
+✅|JoinMarket[↗︎](https://github.com/JoinMarket-Org/joinmarket-clientserver)|`m/49'/n'/0'`\|`1'/0'`|[Docs](https://github.com/JoinMarket-Org/joinmarket/wiki/Using-the-JoinMarket-internal-wallet) (not updated for BIP49)
 🛑|Mycelium[↗︎](https://wallet.mycelium.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|OpenBazaar[↗︎](https://openbazaar.org/)|`m/44'/0'`\|`1'`\|`133'`\|`145'/0'`|[Docs](https://openbazaar.zendesk.com/hc/en-us/articles/360002820331-How-do-I-restore-OpenBazaar-from-a-mnemonic-seed-)
 ⚠️|Rise Wallet[↗︎](https://www.risewallet.com/)|`m/49'/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Samourai[↗︎](https://samouraiwallet.com/)|`m/44'`\|`49'`\|`84'`\|`47'/0'/0'`|[Docs](https://support.samourai.io/article/46-reveal-all-individual-private-keys-in-the-wallet), [BIPs Supported](https://samouraiwallet.com/bips)
-⚠️|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45’/0’/0’/0/0`+Redeem Script|[Docs](https://www.unchained-capital.com/faq/),[Archived](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/) [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig)
+⚠️|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45’/0’/0’/0/0` + Redeem Script|[Docs](https://www.unchained-capital.com/faq/), [Archive](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/), [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig)
 ✅|Wasabi[↗︎](https://docs.wasabiwallet.io/)|`m/84'/0'/0'` Very Deep Depths|[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#what-derivation-paths-does-wasabi-use), [BIPs Supported](https://docs.wasabiwallet.io/using-wasabi/BIP.html)
-
-Status|Hardware Wallets|Supported Paths|Note
-:-:|:-|:-:|--
-✅|ColdCard[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|[Docs](https://coldcardwallet.com/docs/)
-✅|Ledger S/Nano[↗︎](https://ledger.com/)|`m/44'/0'/0'`|[Docs](https://support.ledger.com/hc/en-us)
-✅|Trezor 1/t[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|[Docs](https://wiki.trezor.io)
-✅|Opendime[↗︎](https://opendime.com)|WIF|[On FAQ](https://opendime.com/faq), [Archived](https://web.archive.org/save/https://opendime.com/faq)
+✅|BLW (Bitcoin Lightning Wallet)[↗︎](https://lightning-wallet.com/)|`m/84'/0'/0'` BIP32, non 44 Compatible|[Docs](https://lightning-wallet.com/recovering-lost-balance)
 
 Notes:
 - Hardware wallets don't care about derivation in certain modes.
@@ -50,7 +58,7 @@ Todo:
 - List hardware wallet's apps / services on the main table, need to be listed separately from their hardware. (i.e. Ledger Live)
 
 Icon|Legend
-:-:|--
+:---:|---
 🛑|Unknown. No obvious docs, research in progress
 ☠️|Not publicaly available or complex without a external tool available for the average user
 ⚠️|Known, but unofficially documented
@@ -77,7 +85,7 @@ In hierarchical deterministic wallets ([BIP-32](https://github.com/bitcoin/bips/
 
 m / purpose' / coin_type' / account' / change / address_index
 
-+ **Purpose:** This field, which was added through [BIP-43](https://github.com/bitcoin/bips/blob/master/bip-0043.mediawiki), indicates which standard the derivation path follows. Possibilities include `44` referring to the default [BIP-44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) P2PKH / '1' legacy addresses [**Double check your wallet, BIP44 is inconsistenly implemented**], `45` referring to [BIP-45](https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki) P2SH multi-party multi-signature wallets (proposed), `47` referring to [BIP-47](https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki) reusable payment codes (draft), `48` referring to hardware multisignature wallets (no BIP or standard proposal), `49` referring to [BIP-49](https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki) P2WPKH-nested-in-P2SH / '3' SegWit addresses, or `84` referring to [BIP-84](https://github.com/bitcoin/bips/blob/master/bip-0084.mediawiki) P2WPKH / 'bc1' native SegWit addresses. Some wallet services are supporting more than one (as in, they can display both legacy and SegWit addresses derived from the same seed phrase).
++ **Purpose:** This field, which was added through [BIP-43](https://github.com/bitcoin/bips/blob/master/bip-0043.mediawiki), indicates which standard the derivation path follows. Possibilities include `0` or `44` referring to the default [BIP-44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) P2PKH / '1' legacy addresses [**Double check your wallet, BIP44 is inconsistenly implemented**], `45` referring to [BIP-45](https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki) P2SH multi-party multi-signature wallets (proposed), `47` referring to [BIP-47](https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki) reusable payment codes (draft), `48` referring to hardware multisignature wallets (no BIP or standard proposal), `49` referring to [BIP-49](https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki) P2WPKH-nested-in-P2SH / '3' SegWit addresses, or `84` referring to [BIP-84](https://github.com/bitcoin/bips/blob/master/bip-0084.mediawiki) P2WPKH / 'bc1' native SegWit addresses. Some wallet services are supporting more than one (as in, they can display both legacy and SegWit addresses derived from the same seed phrase).
 + **Coin Type:** This field indicates which cryptocurrency is being used in a multi-currency wallet. All coins, including testnet bitcoin, are assigned [a constant number](https://github.com/satoshilabs/slips/blob/master/slip-0044.md). For example, a derivation path for a Monero (XMR) account would be `m/44'/128'`. *Note that if finalized, BIP-45 would designate this level as the 'Cosigner Index' instead.*
 + **Account:** This field, in a multi-account wallet, indicates the identity or collection of addresses, which allows users to segregate funds for different things (ex. savings, donations). *Note that if finalized, BIP-45 would not include this field. If BIP-47 is finalized, this level would be designated as 'Identity', though it is equivalent to 'Account.'*
 + **Change:** This field, if the constant `0` is present, indicates "external chain" (regular) addresses; if the constant `1`, indicates "internal chain" (change) addresses. *Note that if finalized, BIP-47 would designate this level as space for the notification keys and ephemeral payment codes.*
