@@ -25,7 +25,7 @@ Status|Wallet|Path and/or Script|Note
 🛑|BTC.com app[↗︎](https://btc.com/applications/app)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ☠️|CasaHODL[↗︎](https://keys.casa/)|`m/49/0/X` (X increments with each key rotation)|[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|Coin Wallet[↗︎](https://www.coin.space/) ||[EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|Coinomi[↗︎](https://www.coinomi.com)|`m/44'/0'/0'`|[Docs](https://coinomi.freshdesk.com/support/solutions/articles/29000009717-what-is-the-recovery-tool-and-how-do-i-export-my-private-keys-)
+✅|Coinomi[↗︎](https://www.coinomi.com)|`m/44'`\|`49'`\|`84'/0'/0'`|[Export](https://coinomi.freshdesk.com/support/solutions/articles/29000009717-what-is-the-recovery-tool-and-how-do-i-export-my-private-keys-), [Import](https://coinomi.freshdesk.com/support/solutions/articles/29000009715-how-to-import-a-coinomi-seed-into-electrum-)
 🛑|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|Edge Wallet[↗︎](https://edge.app/) || [EXTERNAL RECOVERY NOT DOCUMENTED]
 🛑|Mycelium[↗︎](https://wallet.mycelium.com/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
