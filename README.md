@@ -17,41 +17,41 @@ If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL 
 
 **This list is not an endorsement of the security or the quality of any of the wallets.**
 
-Status|Hardware Wallets|Supported Paths|Note
-:---:|:---|:---:|---
-✅|ColdCard[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|[Docs](https://coldcardwallet.com/docs/)
-✅|Ledger S/Nano[↗︎](https://ledger.com/)|`m/44'/0'/0'`|[Docs](https://support.ledger.com/hc/en-us)
-✅|Trezor 1/t[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|[Docs](https://wiki.trezor.io)
-✅|Opendime[↗︎](https://opendime.com)|WIF|[Docs](https://opendime.com/faq), [Archive](https://web.archive.org/save/https://opendime.com/faq)
-✅|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)|`m/44'/0'/0'`|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
-⚠️|BitBox01[↗︎](https://shiftcrypto.ch/bitbox01/)|Single Signer: `m/44'/0'/0'` Multisig: `m/100'/45'/0'`|[Docs](https://shiftcrypto.ch/bitbox01/wallet-sweep/), [☠️ Hosted Insecure Recovery Tool](https://shiftcrypto.ch/bitbox01/backup-center/)|
-🛑|BitBox02[↗︎](https://shiftcrypto.ch/bitbox02/)| |[EXTERNAL RECOVERY NOT DOCUMENTED]|
+Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP74 PSBT|Note
+:---:|:---|:---:|---|---|---
+✅|ColdCard[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|||[Docs](https://coldcardwallet.com/docs/)
+✅|Ledger S/Nano[↗︎](https://ledger.com/)|`m/44'/0'/0'`|||[Docs](https://support.ledger.com/hc/en-us)
+✅|Trezor 1/t[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|||[Docs](https://wiki.trezor.io)
+✅|Opendime[↗︎](https://opendime.com)|WIF|||[Docs](https://opendime.com/faq), [Archive](https://web.archive.org/save/https://opendime.com/faq)
+✅|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)|`m/44'/0'/0'`|||[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
+⚠️|BitBox01[↗︎](https://shiftcrypto.ch/bitbox01/)|Single Signer: `m/44'/0'/0'` Multisig: `m/100'/45'/0'`|||[Docs](https://shiftcrypto.ch/bitbox01/wallet-sweep/), [☠️ Hosted Insecure Recovery Tool](https://shiftcrypto.ch/bitbox01/backup-center/)|
+🛑|BitBox02[↗︎](https://shiftcrypto.ch/bitbox02/)| |||[EXTERNAL RECOVERY NOT DOCUMENTED]|
 
 
-Status|Wallet|Path and/or Script|Note
-:---:|:---|:---:|---
-️⚠️|Bitcoin Core[↗︎](https://bitcoin.org)|`m/0'/0'`|[Github Issue](https://github.com/bitcoin/bitcoin/issues/13302)
-✅|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)|BIP32 non 44 Compatible|[Docs](https://github.com/bitcoin-wallet/bitcoin-wallet/blob/master/wallet/README.recover.md), [Archive](https://github.com/nvk/wallets-recovery/blob/master/recovery-docs/bitcoinwallet-recovery.md)
-️⚠️|Bisq[↗︎](https://bisq.network/)|`m/44'/0'/0'`|[Github Issue](https://github.com/bisq-network/bisq/issues/1853)
-🛑|Bither[↗︎](https://bither.net/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|Blockstream Green[↗︎](https://blockstream.com/green/)| Custom 2-of-2 Script|[Recovery tool](https://github.com/greenaddress/garecovery)
-✅|BlueWallet[↗︎](https://bluewallet.io/)|`m/44'`\|`m/49'`\|`84'/0'/0'`|[Docs](http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet), [Archive](https://web.archive.org/save/http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet), [Features](https://bluewallet.io/features.html)
-️⚠️|BRD (Bread Wallet)[↗︎](https://brd.com/)|`m/0'`|[Github Issue](https://github.com/voisine/breadwallet-ios/issues/131), [Reddit Post](https://www.reddit.com/r/Bitcoin/comments/6btevz/how_do_i_import_my_12_breadwallet_seed_words_into/)
-🛑|BTC.com app[↗︎](https://btc.com/applications/app)||[EXTERNAL RECOVERY NOT DOCUMENTED]
-⚠️|Casa Keymaster[↗︎](https://keys.casa/keymaster/)|`m/49/0/X` (X increments with each key rotation)|[Unofficial Docs](https://github.com/nvk/wallets-recovery/blob/master/recovery-docs/casakeymaster-recovery.md)
-🛑|Coin Wallet[↗︎](https://www.coin.space/) ||[EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|Coinomi[↗︎](https://www.coinomi.com)|`m/44'`\|`49'`\|`84'/0'/0'`|[Export](https://coinomi.freshdesk.com/support/solutions/articles/29000009717-what-is-the-recovery-tool-and-how-do-i-export-my-private-keys-), [Import](https://coinomi.freshdesk.com/support/solutions/articles/29000009715-how-to-import-a-coinomi-seed-into-electrum-)
-✅|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)|`m/49'/0'/0'`|[Docs](https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-)
-✅|Edge Wallet[↗︎](https://edge.app/) |`m/44'`\|`49'/0'/0'`|[Docs](https://support.edge.app/support/solutions/articles/8000080183-edge-private-seeds-derivation-and-export)
-✅|JoinMarket[↗︎](https://github.com/JoinMarket-Org/joinmarket-clientserver)|`m/49'/0'/n'`|[Docs](https://github.com/JoinMarket-Org/joinmarket/wiki/Using-the-JoinMarket-internal-wallet) (not updated for BIP49)
-⚠ |Multibit HD[↗︎](https://multibit.org/)|`m/0'`|[Github Issue](https://github.com/Multibit-Legacy/multibit-hd/issues/445)
-✅|Mycelium[↗︎](https://wallet.mycelium.com/)|`m/44'/0'/0'`|[Docs](https://mycelium-support.zendesk.com/hc/en-us/articles/115003713872-Hierarchical-Deterministic-Wallets)
-✅|OpenBazaar[↗︎](https://openbazaar.org/)|`m/44'/0'`\|`1'`\|`133'`\|`145'/0'`|[Docs](https://openbazaar.zendesk.com/hc/en-us/articles/360002820331-How-do-I-restore-OpenBazaar-from-a-mnemonic-seed-)
-⚠️|Rise Wallet[↗︎](https://www.risewallet.com/)|`m/49'/0'/0'`|[EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|Samourai[↗︎](https://samouraiwallet.com/)|`m/44'`\|`49'`\|`84'`\|`47'/0'/0'`|[Docs](https://support.samourai.io/article/46-reveal-all-individual-private-keys-in-the-wallet), [BIPs Supported](https://samouraiwallet.com/bips)
-⚠️|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45’/0’/0’/0/0` + Redeem Script|[Docs](https://www.unchained-capital.com/faq/), [Archive](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/), [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig)
-✅|Wasabi[↗︎](https://docs.wasabiwallet.io/)|`m/84'/0'/0'` Very Deep Depths|[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#what-derivation-paths-does-wasabi-use), [BIPs Supported](https://docs.wasabiwallet.io/using-wasabi/BIP.html)
-✅|BLW (Bitcoin Lightning Wallet)[↗︎](https://lightning-wallet.com/)|`m/84'/0'/0'` BIP32, non 44 Compatible|[Docs](https://lightning-wallet.com/recovering-lost-balance)
+Status|Wallet|Path and/or Script|BIP39 Pass|BIP74 PSBT|Note
+:---:|:---|:---:|---|---|---
+️⚠️|Bitcoin Core[↗︎](https://bitcoin.org)|`m/0'/0'`|||[Github Issue](https://github.com/bitcoin/bitcoin/issues/13302)
+✅|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)|BIP32 non 44 Compatible|||[Docs](https://github.com/bitcoin-wallet/bitcoin-wallet/blob/master/wallet/README.recover.md), [Archive](https://github.com/nvk/wallets-recovery/blob/master/recovery-docs/bitcoinwallet-recovery.md)
+️⚠️|Bisq[↗︎](https://bisq.network/)|`m/44'/0'/0'`|||[Github Issue](https://github.com/bisq-network/bisq/issues/1853)
+🛑|Bither[↗︎](https://bither.net/)||||[EXTERNAL RECOVERY NOT DOCUMENTED]
+✅|Blockstream Green[↗︎](https://blockstream.com/green/)| Custom 2-of-2 Script|||[Recovery tool](https://github.com/greenaddress/garecovery)
+✅|BlueWallet[↗︎](https://bluewallet.io/)|`m/44'`\|`m/49'`\|`84'/0'/0'`|||[Docs](http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet), [Archive](https://web.archive.org/save/http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet), [Features](https://bluewallet.io/features.html)
+️⚠️|BRD (Bread Wallet)[↗︎](https://brd.com/)|`m/0'`|||[Github Issue](https://github.com/voisine/breadwallet-ios/issues/131), [Reddit Post](https://www.reddit.com/r/Bitcoin/comments/6btevz/how_do_i_import_my_12_breadwallet_seed_words_into/)
+🛑|BTC.com app[↗︎](https://btc.com/applications/app)||||[EXTERNAL RECOVERY NOT DOCUMENTED]
+⚠️|Casa Keymaster[↗︎](https://keys.casa/keymaster/)|`m/49/0/X` (X increments with each key rotation)|||[Unofficial Docs](https://github.com/nvk/wallets-recovery/blob/master/recovery-docs/casakeymaster-recovery.md)
+🛑|Coin Wallet[↗︎](https://www.coin.space/) ||||[EXTERNAL RECOVERY NOT DOCUMENTED]
+✅|Coinomi[↗︎](https://www.coinomi.com)|`m/44'`\|`49'`\|`84'/0'/0'`|||[Export](https://coinomi.freshdesk.com/support/solutions/articles/29000009717-what-is-the-recovery-tool-and-how-do-i-export-my-private-keys-), [Import](https://coinomi.freshdesk.com/support/solutions/articles/29000009715-how-to-import-a-coinomi-seed-into-electrum-)
+✅|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)|`m/49'/0'/0'`|||[Docs](https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-)
+✅|Edge Wallet[↗︎](https://edge.app/) |`m/44'`\|`49'/0'/0'`|||[Docs](https://support.edge.app/support/solutions/articles/8000080183-edge-private-seeds-derivation-and-export)
+✅|JoinMarket[↗︎](https://github.com/JoinMarket-Org/joinmarket-clientserver)|`m/49'/0'/n'`|||[Docs](https://github.com/JoinMarket-Org/joinmarket/wiki/Using-the-JoinMarket-internal-wallet) (not updated for BIP49)
+⚠ |Multibit HD[↗︎](https://multibit.org/)|`m/0'`|||[Github Issue](https://github.com/Multibit-Legacy/multibit-hd/issues/445)
+✅|Mycelium[↗︎](https://wallet.mycelium.com/)|`m/44'/0'/0'`|||[Docs](https://mycelium-support.zendesk.com/hc/en-us/articles/115003713872-Hierarchical-Deterministic-Wallets)
+✅|OpenBazaar[↗︎](https://openbazaar.org/)|`m/44'/0'`\|`1'`\|`133'`\|`145'/0'`|||[Docs](https://openbazaar.zendesk.com/hc/en-us/articles/360002820331-How-do-I-restore-OpenBazaar-from-a-mnemonic-seed-)
+⚠️|Rise Wallet[↗︎](https://www.risewallet.com/)|`m/49'/0'/0'`|||[EXTERNAL RECOVERY NOT DOCUMENTED]
+✅|Samourai[↗︎](https://samouraiwallet.com/)|`m/44'`\|`49'`\|`84'`\|`47'/0'/0'`|||[Docs](https://support.samourai.io/article/46-reveal-all-individual-private-keys-in-the-wallet), [BIPs Supported](https://samouraiwallet.com/bips)
+⚠️|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45’/0’/0’/0/0` + Redeem Script|||[Docs](https://www.unchained-capital.com/faq/), [Archive](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/), [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig)
+✅|Wasabi[↗︎](https://docs.wasabiwallet.io/)|`m/84'/0'/0'` Very Deep Depths|||[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#what-derivation-paths-does-wasabi-use), [BIPs Supported](https://docs.wasabiwallet.io/using-wasabi/BIP.html)
+✅|BLW (Bitcoin Lightning Wallet)[↗︎](https://lightning-wallet.com/)|`m/84'/0'/0'` BIP32, non 44 Compatible|||[Docs](https://lightning-wallet.com/recovering-lost-balance)
 
 Notes:
 - Hardware wallets don't care about derivation in certain modes.
