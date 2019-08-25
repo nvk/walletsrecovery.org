@@ -55,6 +55,7 @@ Status|Wallet|Path and/or Script|Note
 
 Notes:
 - Hardware wallets don't care about derivation in certain modes.
+- Wallets that haven been exploited too many times or endangeur users misrepresenting Bitcoin/BTC for other forks may only be included with a warning. 
 
 Todo:
 - Complex desktop and special purpose wallets (i.e. Core, Electrum, BTCPay, etc...) are not listed yet.
