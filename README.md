@@ -30,6 +30,7 @@ Status|Hardware Wallets|Supported Paths|Note
 
 Status|Wallet|Path and/or Script|Note
 :---:|:---|:---:|---
+️⚠️|Bitcoin Core[↗︎](https://bitcoin.org)|`m/0'/0'`|[Github Issue](https://github.com/bitcoin/bitcoin/issues/13302)
 ✅|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)|BIP32 non 44 Compatible|[Docs](https://github.com/bitcoin-wallet/bitcoin-wallet/blob/master/wallet/README.recover.md), [Archive](https://github.com/nvk/wallets-recovery/blob/master/recovery-docs/bitcoinwallet-recovery.md)
 🛑|Bither[↗︎](https://bither.net/)||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Blockstream Green[↗︎](https://blockstream.com/green/)| Custom 2-of-2 Script|[Recovery tool](https://github.com/greenaddress/garecovery)
