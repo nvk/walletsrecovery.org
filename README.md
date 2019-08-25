@@ -56,10 +56,7 @@ Status|Wallet|Path and/or Script|Note
 Notes:
 - Hardware wallets don't care about derivation in certain modes.
 - Wallets which have been frequently exploited, or which have endangered users by misrepresenting forked coins as if they are Bitcoin, may only be included with a warning. 
-
-Todo:
-- Complex desktop and special purpose wallets (i.e. Core, Electrum, BTCPay, etc...) are not listed yet.
-- List hardware wallet's apps / services on the main table, need to be listed separately from their hardware. (i.e. Ledger Live)
+- Todo moved to GitHub Issues
 
 Icon|Legend
 :---:|---
