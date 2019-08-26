@@ -25,7 +25,7 @@ Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP74 PSBT|Note
 ✅|Opendime[↗︎](https://opendime.com)|WIF|||[Docs](https://opendime.com/faq), [Archive](https://web.archive.org/save/https://opendime.com/faq)
 ✅|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)|`m/44'/0'/0'`|||[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
 ⚠️|BitBox01[↗︎](https://shiftcrypto.ch/bitbox01/)|Single Signer: `m/44'/0'/0'` Multisig: `m/100'/45'/0'`|||[Docs](https://shiftcrypto.ch/bitbox01/wallet-sweep/), [☠️ Hosted Insecure Recovery Tool](https://shiftcrypto.ch/bitbox01/backup-center/)|
-🛑|BitBox02[↗︎](https://shiftcrypto.ch/bitbox02/)| |||[EXTERNAL RECOVERY NOT DOCUMENTED]|
+🛑|BitBox02[↗︎](https://shiftcrypto.ch/bitbox02/)||||[EXTERNAL RECOVERY NOT DOCUMENTED]|
 
 
 Status|Wallet|Path and/or Script|BIP39 Pass|BIP74 PSBT|Note
@@ -51,12 +51,11 @@ Status|Wallet|Path and/or Script|BIP39 Pass|BIP74 PSBT|Note
 ✅|Samourai[↗︎](https://samouraiwallet.com/)|`m/44'`\|`49'`\|`84'`\|`47'/0'/0'`|||[Docs](https://support.samourai.io/article/46-reveal-all-individual-private-keys-in-the-wallet), [BIPs Supported](https://samouraiwallet.com/bips)
 ⚠️|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45’/0’/0’/0/0` + Redeem Script|||[Docs](https://www.unchained-capital.com/faq/), [Archive](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/), [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig)
 ✅|Wasabi[↗︎](https://docs.wasabiwallet.io/)|`m/84'/0'/0'` Very Deep Depths|||[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#what-derivation-paths-does-wasabi-use), [BIPs Supported](https://docs.wasabiwallet.io/using-wasabi/BIP.html)
-✅|BLW (Bitcoin Lightning Wallet)[↗︎](https://lightning-wallet.com/)|`m/84'/0'/0'` BIP32, non 44 Compatible|||[Docs](https://lightning-wallet.com/recovering-lost-balance)
+✅|BLW (Bitcoin Lightning Wallet)[↗︎](https://lightning-wallet.com/)|`m/84'/0'/0'` BIP32 non 44 Compatible|||[Docs](https://lightning-wallet.com/recovering-lost-balance)
 
 Notes:
 - Hardware wallets don't care about derivation in certain modes.
-- Wallets which have been frequently exploited, or which have endangered users by misrepresenting forked coins as if they are Bitcoin, may only be included with a warning. 
-- Todo moved to GitHub Issues
+- Wallets which have been frequently exploited, or which have endangered users by misrepresenting forked coins as if they are Bitcoin, may only be included with a warning.
 
 Icon|Legend
 :---:|---
