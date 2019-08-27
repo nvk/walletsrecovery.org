@@ -46,6 +46,7 @@ Status|Wallet|Path and/or Script|BIP39 Pass|BIP74 PSBT|Note
 ✅|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)|`m/49'/0'/0'`|Optional||[Docs](https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-)
 ✅|Edge Wallet[↗︎](https://edge.app/) |`m/44'`\|`49'/0'/0'`|||[Docs](https://support.edge.app/support/solutions/articles/8000080183-edge-private-seeds-derivation-and-export)
 ✅|Electrum[↗︎](https://electrum.org) |Single Signer: `m/44'`\|`49'`\|`84/0'/0'` Multisig: `m/45'/0/0/0`\|`m/48'/0'/0'/1' `\|`m/48'/0'/0'/2'` [Does not use BIP39 seeds](https://electrum.readthedocs.io/en/latest/seedphrase.html) but can import them|Optional|Yes|[Docs](https://electrum.readthedocs.io)
+✅|Hodl Wallet[↗︎](https://hodlwallet.com) | `m/0'` | N/A | |[Docs iOS](https://github.com/hodlwallet/hodl-wallet-ios/blob/master/README.md), [Docs Android](https://github.com/hodlwallet/hodl-wallet-android/blob/master/README.md)
 ✅|JoinMarket[↗︎](https://github.com/JoinMarket-Org/joinmarket-clientserver)|`m/49'/0'/n'`|||[Docs](https://github.com/JoinMarket-Org/joinmarket/wiki/Using-the-JoinMarket-internal-wallet) (not updated for BIP49)
 ⚠ |Multibit HD[↗︎](https://multibit.org/)|`m/0'`|N/A||[Github Issue](https://github.com/Multibit-Legacy/multibit-hd/issues/445)
 ✅|Mycelium[↗︎](https://wallet.mycelium.com/)|`m/44'/0'/0'`|Optional (on restore)||[Docs](https://mycelium-support.zendesk.com/hc/en-us/articles/115003713872-Hierarchical-Deterministic-Wallets)
