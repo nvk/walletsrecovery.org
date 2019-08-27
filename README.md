@@ -101,5 +101,3 @@ The meaning of "public" / unhardened versus hardened derivation, indicated in th
 
 
 Did we get it wrong? Just let us know, and this will be updated. :)
-
-Want to contribute, make a [Pull Request](https://github.com/nvk/wallets-recovery/pulls).
