@@ -1,4 +1,6 @@
-# Wallet Name
+---
+title: Wallet Name
+---
 
 ## Description
 
