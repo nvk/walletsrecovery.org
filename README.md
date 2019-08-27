@@ -45,7 +45,7 @@ Status|Wallet|Path and/or Script|BIP39 Pass|BIP174 PSBT|Note
 ✅|Copay[↗︎](https://copay.io/)|`m/44'`\|`48'/0'/0'`|Optional||[Docs](https://github.com/bitpay/copay#wallet-export-format), [Recovery tool](https://bitpay.github.io/copay-recovery/),❌[Endangered users by misrepresenting Bitcoin](https://web.archive.org/web/20170817153138/https://blog.bitpay.com/bitcore-segwit-activation/)
 ✅|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)|`m/49'/0'/0'`|Optional||[Docs](https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-)
 ✅|Edge Wallet[↗︎](https://edge.app/) |`m/44'`\|`49'/0'/0'`|||[Docs](https://support.edge.app/support/solutions/articles/8000080183-edge-private-seeds-derivation-and-export)
-✅|Electrum[↗︎](https://electrum.org) |Single Signer: `m/44'`\|`49'`\|`84/0'/0'` Multisig: `m/45'/0/0/0`\|`m/48'/0'/0'/1' `\|`m/48'/0'/0'/2'` [Does not use BIP39 seeds](https://electrum.readthedocs.io/en/latest/seedphrase.html) but can import them|Optional|Yes|[Docs](https://electrum.readthedocs.io)
+✅|Electrum[↗︎](https://electrum.org) |Single Signer: `m/44'`\|`49'`\|`84/0'/0'` Multisig: `m/45'/0/0/0`\|`m/48'/0'/0'/1' `\|`m/48'/0'/0'/2'` [Does not use BIP39 seeds](https://electrum.readthedocs.io/en/latest/seedphrase.html) but can import them|Optional|Supported|[Docs](https://electrum.readthedocs.io)
 ✅|Hodl Wallet[↗︎](https://hodlwallet.com) | `m/0'` | N/A | |[Docs iOS](https://github.com/hodlwallet/hodl-wallet-ios/blob/master/README.md), [Docs Android](https://github.com/hodlwallet/hodl-wallet-android/blob/master/README.md)
 ✅|JoinMarket[↗︎](https://github.com/JoinMarket-Org/joinmarket-clientserver)|`m/49'/0'/n'`|||[Docs](https://github.com/JoinMarket-Org/joinmarket/wiki/Using-the-JoinMarket-internal-wallet) (not updated for BIP49)
 ⚠ |Multibit HD[↗︎](https://multibit.org/)|`m/0'`|N/A||[Github Issue](https://github.com/Multibit-Legacy/multibit-hd/issues/445)
@@ -54,7 +54,7 @@ Status|Wallet|Path and/or Script|BIP39 Pass|BIP174 PSBT|Note
 ⚠️|Rise Wallet[↗︎](https://www.risewallet.com/)|`m/49'/0'/0'`|||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Samourai[↗︎](https://samouraiwallet.com/)|Deposit: `m/44'`\|`49'`\|`84'`\|`47'/0'/0'`Post Mix: `m/84'/0'/2147483646'`|Required|Experimental|[Docs](https://support.samourai.io/article/46-reveal-all-individual-private-keys-in-the-wallet), [BIPs Supported](https://samouraiwallet.com/bips)
 ⚠️|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45’/0’/0’/0/0` + Redeem Script|||[Docs](https://www.unchained-capital.com/faq/), [Archive](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/), [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig)
-✅|Wasabi[↗︎](https://docs.wasabiwallet.io/)|`m/84'/0'/0'` Very Deep Depths|Optional||[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#what-derivation-paths-does-wasabi-use), [BIPs Supported](https://docs.wasabiwallet.io/using-wasabi/BIP.html)
+✅|Wasabi[↗︎](https://docs.wasabiwallet.io/)|`m/84'/0'/0'` Very Deep Depths|Optional|Supported|[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#what-derivation-paths-does-wasabi-use), [BIPs Supported](https://docs.wasabiwallet.io/using-wasabi/BIP.html)
 ✅|BLW (Bitcoin Lightning Wallet)[↗︎](https://lightning-wallet.com/)|`m/84'/0'/0'` BIP32 non 44 Compatible|N/A||[Docs](https://lightning-wallet.com/recovering-lost-balance)
 
 Notes:
