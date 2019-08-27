@@ -63,7 +63,7 @@ Notes:
 Icon|Legend
 :---:|---
 🛑|Unknown. No obvious docs, research in progress
-☠️|Not publicaly available or complex without a external tool available for the average user
+☠️|Not publicly available, or complex without a external tool available for the average user
 ⚠️|Known, but unofficially documented
 ✅|Documented + Link to doc
 
@@ -73,7 +73,7 @@ Icon|Legend
 
 ## Explainer: Wallet Types
 
-+ [**Paper wallets**](https://en.bitcoin.it/wiki/Paper_wallet) are not actually wallets, but rather private keys and addresses printed out on paper. While the keys and addresses can technically be generated non-deterministically or deterministically, the usability is basically the same or poorer than a non-deterministic software wallet. They have a number of significant drawbacks, including encouraging address reuse, exposing keys to poorly secured networked devices (printer), and not handling change addresses. They should not be confused with [recovery seeds](https://wiki.trezor.io/Recovery_seed).
++ [**Paper wallets**](https://en.bitcoin.it/wiki/Paper_wallet) are not actually wallets, but rather private keys and addresses printed out on paper. While the keys and addresses can technically be generated non-deterministically or deterministically, the usability is basically the same or poorer than a non-deterministic software wallet. Paper wallets have a number of significant drawbacks, including encouraging address reuse, exposing keys to poorly secured networked devices (printer), and not handling change addresses. Paper wallets should not be confused with [recovery seeds](https://wiki.trezor.io/Recovery_seed).
 + **Non-deterministic wallets** randomly generate all private / public key pairs independent of each other. [*Keypool buffer*](https://en.bitcoin.it/wiki/Key_pool) was added to the Bitcoin-Qt / Bitcoin Core wallet in [October](https://bitcointalk.org/index.php?topic=1414.0) [2010](https://bitcointalk.org/index.php?topic=1528.0), which allowed the wallet to create a collection of unused addresses, rather than generating new addresses one by one upon use. While this feature allowed for less frequent backups than before, the non-determinism still carried the risk of key loss if the pool was exhausted and a new key was generated beyond what was saved in backup.
 + **Deterministic wallets** are essentially any wallet where "[you can backup once... because all future addresses are determined in advance](https://bitcointalk.org/index.php?topic=19137.msg239768#msg239768)," which was a massive improvement in recoverability. There are [two different forms](https://bitcoin.stackexchange.com/questions/18102/does-a-wallet-containing-multiple-addresses-have-a-single-private-key):
    + **Sequential deterministic wallets** take a single seed phrase / passphrase and repeatedly increment it in order to generate new keypairs. This meant that the system would only need to store addresses, and then re-generate the private keys when needed.
@@ -94,7 +94,9 @@ m / purpose' / coin_type' / account' / change / address_index
 + **Change:** This field, if the constant `0` is present, indicates "external chain" (regular) addresses; if the constant `1`, indicates "internal chain" (change) addresses. *Note that if finalized, BIP-47 would designate this level as space for the notification keys and ephemeral payment codes.*
 + **Address Index:** This field indicates the specific address number in a sequence, within an account.
 
-Note how many of the sequential fields start at zero (0), like how the first / ground floor is level zero in the U.K. and Europe. If a user has a wallet that displays them, the derivation path sequence for a **BIP-44** compliant **bitcoin** wallet, in which there is a **second change address** in the **third account**, would look like this: `m/44'/0'/2'/1/1`.
+Note that many of the sequential fields start at zero (0), like how the first / ground floor of a building is level zero in the U.K. and Europe. 
+
+Practical Example: A user has a wallet that displays the derivation path sequence for a **BIP-44** compliant **bitcoin** wallet, and wants to locate the **second** change address in their **third** account. The **second change address** in the **third account** would look like this: `m/44'/0'/2'/1/1`.
 
 The meaning of "public" / unhardened versus hardened derivation, indicated in the fields by apostrophes, is explained [here](https://wiki.trezor.io/Hardened_and_non-hardened_derivation), [here](https://medium.com/@sevcsik/working-with-bitcoin-hd-wallets-ii-deriving-public-keys-c48341629388), and [here](https://bitcoin.stackexchange.com/questions/62533/key-derivation-in-hd-wallets-using-the-extended-private-key-vs-hardened-derivati?rq=1).
 
