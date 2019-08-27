@@ -17,7 +17,7 @@ If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL 
 
 **This list is not an endorsement of the security or the quality of any of the wallets.**
 
-Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP74 PSBT|Note
+Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---
 ✅|ColdCard[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional||[Docs](https://coldcardwallet.com/docs/)
 ✅|Ledger S/Nano[↗︎](https://ledger.com/)|`m/44'/0'/0'`|Optional||[Docs](https://support.ledger.com/hc/en-us)
@@ -28,7 +28,7 @@ Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP74 PSBT|Note
 🛑|BitBox02[↗︎](https://shiftcrypto.ch/bitbox02/)||||[EXTERNAL RECOVERY NOT DOCUMENTED]|
 
 
-Status|Wallet|Path and/or Script|BIP39 Pass|BIP74 PSBT|Note
+Status|Wallet|Path and/or Script|BIP39 Pass|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---
 ️⚠️|Bitcoin Core[↗︎](https://bitcoin.org)|`m/0'/0'`|N/A||[Github Issue](https://github.com/bitcoin/bitcoin/issues/13302)
 ✅|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)|BIP32 non 44 Compatible|||[Docs](https://github.com/bitcoin-wallet/bitcoin-wallet/blob/master/wallet/README.recover.md), [Archive](https://github.com/nvk/wallets-recovery/blob/master/recovery-docs/bitcoinwallet-recovery.md)
