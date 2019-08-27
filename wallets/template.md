@@ -6,4 +6,8 @@ title: Wallet Name
 
 ## History
 
+ie Launch, people, bips, fork support, etc...
+
+## Special Features
+
 ## Security Events
