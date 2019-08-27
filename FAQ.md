@@ -3,18 +3,19 @@ title: Frequently Asked Questions
 ---
 
 * [How to contribute?](#how-to-contribute)
+* [How to develop locally?](#how-to-develop-locally)
 
 ## How to contribute?
 
 Make a [Pull Request](https://github.com/nvk/wallets-recovery/pulls).
 
-This site is hosted on Github Pages.
+## How to develop locally?
 
-To develop locally:
+This site is hosted on Github Pages.
 
 ### Option 1 - use Jekyll (Ruby)
 
-[Setting up your Github Pages site locally with Jekyll](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll)
+Follow the steps described in this Github help [article](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll).
 
 ### Option 2 - use Grip (Python)
 
