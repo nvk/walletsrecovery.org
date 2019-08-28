@@ -35,20 +35,20 @@ Status|Wallet|Path and/or Script|BIP39 Pass|BIP174 PSBT|Note
 ️⚠️|Bisq[↗︎](https://bisq.network/)|`m/44'/0'/0'`|N/A||[Github Issue](https://github.com/bisq-network/bisq/issues/1853)
 🛑|Bither[↗︎](https://bither.net/)||||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Blockchain.com[↗︎](https://www.blockchain.com/en/wallet)|`m/44'/0'/n'`|||[Docs](https://support.blockchain.com/hc/en-us/articles/115001298143-Your-Recovery-Phrase-The-Failsafe), [xPub](https://support.blockchain.com/hc/en-us/articles/207746403-Wallets-Addresses)
-✅|Blockstream Green (GreenAddress)[↗︎](https://blockstream.com/green/)| Custom 2-of-2 Script|Optional (on restore)||[Recovery tool](https://github.com/greenaddress/garecovery)
+✅|Blockstream Green (GreenAddress)[↗︎](https://blockstream.com/green/)|Custom 2-of-2 Script|Optional (on restore)||[Recovery tool](https://github.com/greenaddress/garecovery)
 ✅|BlueWallet[↗︎](https://bluewallet.io/)|`m/44'`\|`m/49'`\|`84'/0'/0'`|||[Docs](http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet), [Archive](https://web.archive.org/save/http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet), [Features](https://bluewallet.io/features.html)
 ️⚠️|BRD (Bread Wallet)[↗︎](https://brd.com/)|`m/0'`|N/A||[Github Issue](https://github.com/voisine/breadwallet-ios/issues/131), [Reddit Post](https://www.reddit.com/r/Bitcoin/comments/6btevz/how_do_i_import_my_12_breadwallet_seed_words_into/)
 🛑|BTC.com app[↗︎](https://btc.com/applications/app)||||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ⚠️|Casa Keymaster[↗︎](https://keys.casa/keymaster/)|`m/49/0/X` (X increments with each key rotation)|||[Unofficial Docs](https://github.com/nvk/wallets-recovery/blob/master/recovery-docs/casakeymaster-recovery.md)
-🛑|Coin Wallet[↗︎](https://www.coin.space/) ||||[EXTERNAL RECOVERY NOT DOCUMENTED]
+🛑|Coin Wallet[↗︎](https://www.coin.space/)||||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Coinomi[↗︎](https://www.coinomi.com)|`m/44'`\|`49'`\|`84'/0'/0'`|||[Export](https://coinomi.freshdesk.com/support/solutions/articles/29000009717-what-is-the-recovery-tool-and-how-do-i-export-my-private-keys-), [Import](https://coinomi.freshdesk.com/support/solutions/articles/29000009715-how-to-import-a-coinomi-seed-into-electrum-)
 ✅|Copay[↗︎](https://copay.io/)|`m/44'`\|`48'/0'/0'`|Optional||[Docs](https://github.com/bitpay/copay#wallet-export-format), [Recovery tool](https://bitpay.github.io/copay-recovery/),❌[Endangered users by misrepresenting Bitcoin](https://web.archive.org/web/20170817153138/https://blog.bitpay.com/bitcore-segwit-activation/)
 ✅|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)|`m/49'/0'/0'`|Optional||[Docs](https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-)
-✅|Edge Wallet[↗︎](https://edge.app/) |`m/44'`\|`49'/0'/0'`|||[Docs](https://support.edge.app/support/solutions/articles/8000080183-edge-private-seeds-derivation-and-export)
-✅|Electrum[↗︎](https://electrum.org) |Single Signer: `m/44'`\|`49'`\|`84/0'/0'` Multisig: `m/45'/0/0/0`\|`m/48'/0'/0'/1' `\|`m/48'/0'/0'/2'` [Does not use BIP39 seeds](https://electrum.readthedocs.io/en/latest/seedphrase.html) but can import them|Optional|Supported|[Docs](https://electrum.readthedocs.io)
-✅|Hodl Wallet[↗︎](https://hodlwallet.com) | `m/0'` | N/A | |[Docs iOS](https://github.com/hodlwallet/hodl-wallet-ios/blob/master/README.md), [Docs Android](https://github.com/hodlwallet/hodl-wallet-android/blob/master/README.md)
+✅|Edge Wallet[↗︎](https://edge.app/)|`m/44'`\|`49'/0'/0'`|||[Docs](https://support.edge.app/support/solutions/articles/8000080183-edge-private-seeds-derivation-and-export)
+✅|Electrum[↗︎](https://electrum.org)|Single Signer: `m/44'`\|`49'`\|`84/0'/0'` Multisig: `m/45'/0/0/0`\|`m/48'/0'/0'/1' `\|`m/48'/0'/0'/2'` [Does not use BIP39 seeds](https://electrum.readthedocs.io/en/latest/seedphrase.html) but can import them|Optional|Supported|[Docs](https://electrum.readthedocs.io)
+✅|Hodl Wallet[↗︎](https://hodlwallet.com)|`m/0'`|N/A||[Docs iOS](https://github.com/hodlwallet/hodl-wallet-ios/blob/master/README.md), [Docs Android](https://github.com/hodlwallet/hodl-wallet-android/blob/master/README.md)
 ✅|JoinMarket[↗︎](https://github.com/JoinMarket-Org/joinmarket-clientserver)|`m/49'/0'/n'`|||[Docs](https://github.com/JoinMarket-Org/joinmarket/wiki/Using-the-JoinMarket-internal-wallet) (not updated for BIP49)
-⚠ |Multibit HD[↗︎](https://multibit.org/)|`m/0'`|N/A||[Github Issue](https://github.com/Multibit-Legacy/multibit-hd/issues/445)
+⚠|Multibit HD[↗︎](https://multibit.org/)|`m/0'`|N/A||[Github Issue](https://github.com/Multibit-Legacy/multibit-hd/issues/445)
 ✅|Mycelium[↗︎](https://wallet.mycelium.com/)|`m/44'/0'/0'`|Optional (on restore)||[Docs](https://mycelium-support.zendesk.com/hc/en-us/articles/115003713872-Hierarchical-Deterministic-Wallets)
 ✅|OpenBazaar[↗︎](https://openbazaar.org/)|`m/44'/0'`\|`1'`\|`133'`\|`145'/0'`|||[Docs](https://openbazaar.zendesk.com/hc/en-us/articles/360002820331-How-do-I-restore-OpenBazaar-from-a-mnemonic-seed-)
 ⚠️|Rise Wallet[↗︎](https://www.risewallet.com/)|`m/49'/0'/0'`|||[EXTERNAL RECOVERY NOT DOCUMENTED]

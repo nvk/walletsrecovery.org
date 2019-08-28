@@ -6,7 +6,7 @@ title: Wallet Name
 
 ## History
 
-ie Launch, people, bips, fork support, etc...
+I.e. Launch, people, bips, fork support, etc...
 
 ## Special Features
 
