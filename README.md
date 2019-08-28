@@ -46,6 +46,7 @@ Status|Wallet|Path and/or Script|BIP39 Pass|BIP174 PSBT|Note
 ✅|Edge Wallet[↗︎](https://edge.app/)|`m/44'`\|`49'/0'/0'`|||[Docs](https://support.edge.app/support/solutions/articles/8000080183-edge-private-seeds-derivation-and-export)
 ✅|Electrum[↗︎](https://electrum.org)|Single Signer: `m/44'`\|`49'`\|`84/0'/0'` Multisig: `m/45'/0/0/0`\|`m/48'/0'/0'/1' `\|`m/48'/0'/0'/2'` [Does not use BIP39 seeds](https://electrum.readthedocs.io/en/latest/seedphrase.html) but can import them|Optional|Supported|[Docs](https://electrum.readthedocs.io)
 ✅|Electrum (Ledger S/Nano)[↗︎](https://ledger.com/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional||[Docs](https://support.ledger.com/hc/en-us)
+✅|Exodus[↗︎](https://exodus.io)|`m/44'`\|`84/0'/0'`|||[Docs](https://support.exodus.io/article/159-import-your-bitcoin-wallet-into-electrum)
 ✅|Hodl Wallet[↗︎](https://hodlwallet.com)|`m/0'`|N/A||[Docs iOS](https://github.com/hodlwallet/hodl-wallet-ios/blob/master/README.md), [Docs Android](https://github.com/hodlwallet/hodl-wallet-android/blob/master/README.md)
 ✅|JoinMarket[↗︎](https://github.com/JoinMarket-Org/joinmarket-clientserver)|`m/49'/0'/n'`|Optional||[Docs](https://github.com/JoinMarket-Org/joinmarket-clientserver/blob/master/docs/USAGE.md#recover)
 ✅|Ledger Live[↗︎](https://ledger.com/)|`m/44'`\|`49'/0'/0'`|||[Docs](https://support.ledger.com/hc/en-us/articles/360006444193)
