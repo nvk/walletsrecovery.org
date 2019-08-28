@@ -20,8 +20,6 @@ If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL 
 Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---
 ✅|ColdCard[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional||[Docs](https://coldcardwallet.com/docs/)
-✅|Ledger S/Nano with Electrum[↗︎](https://ledger.com/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional||[Docs](https://support.ledger.com/hc/en-us)
-✅|Ledger S/Nano with Ledger Live[↗︎](https://ledger.com/)|`m/44'`\|`49'/0'/0'`|||[Docs](https://support.ledger.com/hc/en-us/articles/360006444193)
 ✅|Trezor One / T[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|Optional||[Docs](https://wiki.trezor.io)
 ✅|Opendime[↗︎](https://opendime.com)|WIF|||[Docs](https://opendime.com/faq), [Archive](https://web.archive.org/save/https://opendime.com/faq)
 ✅|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)|`m/44'/0'/0'`|Optional||[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
@@ -47,8 +45,10 @@ Status|Wallet|Path and/or Script|BIP39 Pass|BIP174 PSBT|Note
 ✅|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)|`m/49'/0'/0'`|Optional||[Docs](https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-)
 ✅|Edge Wallet[↗︎](https://edge.app/)|`m/44'`\|`49'/0'/0'`|||[Docs](https://support.edge.app/support/solutions/articles/8000080183-edge-private-seeds-derivation-and-export)
 ✅|Electrum[↗︎](https://electrum.org)|Single Signer: `m/44'`\|`49'`\|`84/0'/0'` Multisig: `m/45'/0/0/0`\|`m/48'/0'/0'/1' `\|`m/48'/0'/0'/2'` [Does not use BIP39 seeds](https://electrum.readthedocs.io/en/latest/seedphrase.html) but can import them|Optional|Supported|[Docs](https://electrum.readthedocs.io)
+✅|Electrum (Ledger S/Nano)[↗︎](https://ledger.com/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional||[Docs](https://support.ledger.com/hc/en-us)
 ✅|Hodl Wallet[↗︎](https://hodlwallet.com)|`m/0'`|N/A||[Docs iOS](https://github.com/hodlwallet/hodl-wallet-ios/blob/master/README.md), [Docs Android](https://github.com/hodlwallet/hodl-wallet-android/blob/master/README.md)
 ✅|JoinMarket[↗︎](https://github.com/JoinMarket-Org/joinmarket-clientserver)|`m/49'/0'/n'`|Optional||[Docs](https://github.com/JoinMarket-Org/joinmarket-clientserver/blob/master/docs/USAGE.md#recover)
+✅|Ledger Live[↗︎](https://ledger.com/)|`m/44'`\|`49'/0'/0'`|||[Docs](https://support.ledger.com/hc/en-us/articles/360006444193)
 ⚠|Multibit HD[↗︎](https://multibit.org/)|`m/0'`|N/A||[Github Issue](https://github.com/Multibit-Legacy/multibit-hd/issues/445)
 ✅|Mycelium[↗︎](https://wallet.mycelium.com/)|`m/44'/0'/0'`|Optional (on restore)||[Docs](https://mycelium-support.zendesk.com/hc/en-us/articles/115003713872-Hierarchical-Deterministic-Wallets)
 ✅|OpenBazaar[↗︎](https://openbazaar.org/)|`m/44'/0'`\|`1'`\|`133'`\|`145'/0'`|||[Docs](https://openbazaar.zendesk.com/hc/en-us/articles/360002820331-How-do-I-restore-OpenBazaar-from-a-mnemonic-seed-)
