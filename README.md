@@ -19,16 +19,17 @@ If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL 
 
 Status|Hardware Wallets|Supported Paths|BIP39 Pass|Exploits|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---|---
+⚠️|BitBox01[↗︎](https://shiftcrypto.ch/bitbox01/)|Single Signer: `m/44'/0'/0'` Multisig: `m/100'/45'/0'`|||[Docs](https://shiftcrypto.ch/bitbox01/wallet-sweep/), [☠️ Hosted Insecure Recovery Tool](https://shiftcrypto.ch/bitbox01/backup-center/)|
+🛑|BitBox02[↗︎](https://shiftcrypto.ch/bitbox02/)||||[EXTERNAL RECOVERY NOT DOCUMENTED]|
 ✅|ColdCard Mk1[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional||Yes|[Docs](https://coldcardwallet.com/docs/)
 ✅|ColdCard Mk2[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional||Yes|[Docs](https://coldcardwallet.com/docs/)
 ✅|ColdCard Mk3[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional||Yes|[Docs](https://coldcardwallet.com/docs/)
+✅|Ledger Nano[↗︎](https://ledger.com/)|`m/44'/0'/0'`|Optional||[Docs](https://support.ledger.com/hc/en-us)
+✅|Ledger S[↗︎](https://ledger.com/)|`m/44'/0'/0'`|Optional||[Docs](https://support.ledger.com/hc/en-us)
 ✅|Trezor One[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|Optional||[Docs](https://wiki.trezor.io)
 ✅|Trezor Model T[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|Optional||[Docs](https://wiki.trezor.io)
-✅|Opendime[↗︎](https://opendime.com)|WIF|||[Docs](https://opendime.com/faq), [Archive](https://web.archive.org/save/https://opendime.com/faq)
 ✅|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)|`m/44'/0'/0'`|Optional||[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
-⚠️|BitBox01[↗︎](https://shiftcrypto.ch/bitbox01/)|Single Signer: `m/44'/0'/0'` Multisig: `m/100'/45'/0'`|||[Docs](https://shiftcrypto.ch/bitbox01/wallet-sweep/), [☠️ Hosted Insecure Recovery Tool](https://shiftcrypto.ch/bitbox01/backup-center/)|
-🛑|BitBox02[↗︎](https://shiftcrypto.ch/bitbox02/)||||[EXTERNAL RECOVERY NOT DOCUMENTED]|
-
+✅|Opendime[↗︎](https://opendime.com)|WIF|||[Docs](https://opendime.com/faq), [Archive](https://web.archive.org/save/https://opendime.com/faq)
 
 Status|Wallet|Path and/or Script|BIP39 Pass|Exploits|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---|---
