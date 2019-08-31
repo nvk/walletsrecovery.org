@@ -53,11 +53,13 @@ Status|Wallet|Path and/or Script|BIP39 Pass|Exploits|BIP174 PSBT|Note
 ✅|Hodl Wallet[↗︎](https://hodlwallet.com)|`m/0'`|N/A|||[Docs iOS](https://github.com/hodlwallet/hodl-wallet-ios/blob/master/README.md), [Docs Android](https://github.com/hodlwallet/hodl-wallet-android/blob/master/README.md)
 ✅|JoinMarket[↗︎](https://github.com/JoinMarket-Org/joinmarket-clientserver)|`m/49'/0'/n'`|Optional|||[Docs](https://github.com/JoinMarket-Org/joinmarket-clientserver/blob/master/docs/USAGE.md#recover)
 ✅|Ledger Live[↗︎](https://ledger.com/)|`m/44'`\|`49'/0'/0'`||||[Docs](https://support.ledger.com/hc/en-us/articles/360006444193)
+✅|KeepKey Client[↗︎](https://chrome.google.com/webstore/detail/keepkey-client/idgiipeogajjpkgheijapngmlbohdhjg)|`m/44'/0'/0'`||||[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
 ⚠|Multibit HD[↗︎](https://multibit.org/)|`m/0'`|N/A|||[Github Issue](https://github.com/Multibit-Legacy/multibit-hd/issues/445)
 ✅|Mycelium[↗︎](https://wallet.mycelium.com/)|`m/44'/0'/0'`|Optional (on restore)|||[Docs](https://mycelium-support.zendesk.com/hc/en-us/articles/115003713872-Hierarchical-Deterministic-Wallets)
 ✅|OpenBazaar[↗︎](https://openbazaar.org/)|`m/44'/0'`\|`1'`\|`133'`\|`145'/0'`||||[Docs](https://openbazaar.zendesk.com/hc/en-us/articles/360002820331-How-do-I-restore-OpenBazaar-from-a-mnemonic-seed-)
 ⚠️|Rise Wallet[↗︎](https://www.risewallet.com/)|`m/49'/0'/0'`||||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Samourai[↗︎](https://samouraiwallet.com/)|Deposit: `m/44'`\|`49'`\|`84'`\|`47'/0'/0'`Post Mix: `m/84'/0'/2147483646'`|Required||Experimental|[Docs](https://support.samourai.io/article/46-reveal-all-individual-private-keys-in-the-wallet), [BIPs Supported](https://samouraiwallet.com/bips)
+✅|Trezor Web Wallet[↗︎](https://wallet.trezor.io)|`m/44'`\|`49'/0'/0'`|Optional|||[Docs](https://wiki.trezor.io)
 ⚠️|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45’/0’/0’/0/0` + Redeem Script||||[Docs](https://www.unchained-capital.com/faq/), [Archive](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/), [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig)
 ✅|Wasabi[↗︎](https://docs.wasabiwallet.io/)|`m/84'/0'/0'` Very Deep Depths|Optional||Supported|[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#what-derivation-paths-does-wasabi-use), [BIPs Supported](https://docs.wasabiwallet.io/using-wasabi/BIP.html)
 ✅|BLW (Bitcoin Lightning Wallet)[↗︎](https://lightning-wallet.com/)|`m/84'/0'/0'` BIP32 non 44 Compatible|N/A|||[Docs](https://lightning-wallet.com/recovering-lost-balance)
@@ -65,7 +67,8 @@ Status|Wallet|Path and/or Script|BIP39 Pass|Exploits|BIP174 PSBT|Note
 Status|Combo HW+SW|Path and/or Script|BIP39 Pass|Exploits|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---|---
 ✅|Electrum (Ledger S/Nano)[↗︎](https://ledger.com/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|||[Docs](https://support.ledger.com/hc/en-us)
-
+✅|Electrum (KeepKey)[↗︎](https://shapeshift.io/keepkey/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|||[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
+✅|Electrum (Trezor One / T Wallet)[↗︎](https://trezor.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|||[Docs](https://wiki.trezor.io)
 Notes:
 - Hardware wallets don't care about derivation in certain modes.
 - Wallets which have been frequently exploited, or which have endangered users by misrepresenting forked coins as if they are Bitcoin, may only be included with a warning.
