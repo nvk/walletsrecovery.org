@@ -110,7 +110,7 @@ m / purpose' / coin_type' / account' / change / address_index
 + **Change:** This field, if the constant `0` is present, indicates "external chain" (regular) addresses; if the constant `1`, indicates "internal chain" (change) addresses. *Note that if finalized, BIP47 would designate this level as space for the notification keys and ephemeral payment codes.*
 + **Address Index:** This field indicates the specific address number in a sequence, within an account.
 
-Note that many of the sequential fields start at zero (0), like how the first / ground floor of a building is level zero in the U.K. and Europe. 
+Note that the sequential fields, 'Account' and 'Address Index', start at zero (0). Remember how the first / ground floor of a building is level zero in the U.K. and Europe? Accounts and addresses are numbered starting from zero too.
 
 Practical Example: A user has a wallet that displays the derivation path sequence for a **BIP44** compliant **bitcoin** wallet, and wants to locate the **second** change address in their **third** account. The derivation path for the **second change address** in the **third account** would look like this: `m/44'/0'/2'/1/1`.
 
