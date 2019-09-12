@@ -112,7 +112,7 @@ m / purpose' / coin_type' / account' / change / address_index
 
 Note that the sequential fields, 'Account' and 'Address Index', start at zero (0). Remember how the first / ground floor of a building is level zero in the U.K. and Europe? Accounts and addresses are numbered starting from zero too.
 
-Practical Example: A user has a wallet that displays the derivation path sequence for a **BIP44** compliant **bitcoin** wallet, and wants to locate the **second** change address in their **third** account. The derivation path for the **second change address** in the **third account** would look like this: `m/44'/0'/2'/1/1`.
+Practical Example: A user has a **BIP44** compliant **bitcoin** wallet, and wants to locate the **second** change address in their **third** account. The derivation path for the **second change address** in the **third account** would look like this: `m/44'/0'/2'/1/1`.
 
 The meaning of "public" / unhardened versus hardened derivation, indicated in the fields by apostrophes, is explained [here](https://wiki.trezor.io/Hardened_and_non-hardened_derivation), [here](https://medium.com/@sevcsik/working-with-bitcoin-hd-wallets-ii-deriving-public-keys-c48341629388), and [here](https://bitcoin.stackexchange.com/questions/62533/key-derivation-in-hd-wallets-using-the-extended-private-key-vs-hardened-derivati?rq=1).
 
