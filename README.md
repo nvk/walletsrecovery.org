@@ -9,9 +9,7 @@ While great advances have been made in interoperability and recoverability, deve
 + Implement a BIP standard, but one that has not been widely adopted (and perhaps only by them).
 + Don't have clear documentation about their derivation paths, backup and recovery processes.
 
-This list is meant to gather information about wallet defaults for external recovery. Wallets come and go, information gets lost and users are left with tears. Responsible wallet makers document external recovery.
-
-Users should not have to read or dig through the source code of a wallet to figure out the Derivation Paths or Redeem Scripts.
+This list is meant to gather information about wallet defaults for external recovery. Wallets come and go, information gets lost and users are left with tears. Responsible wallet makers document external recovery. Users should not have to read or dig through the source code to figure out the Derivation Paths or Redeem Scripts.
 
 If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL RECOVERY NOT DOCUMENTED].
 
