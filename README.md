@@ -5,7 +5,7 @@
 
 While great advances have been made in interoperability and recoverability, developers across the industry continue to build wallets that either:
 + Don't implement BIP standard(s).
-+ Implement a BIP standard, but with important differences from other wallets that also implemented it.
++ Implement a BIP standard, but inconsistently when compared with other wallets.
 + Implement a BIP standard, but one that has not been widely adopted (and perhaps only by them).
 + Don't have clear documentation about their derivation paths, backup and recovery processes.
 
