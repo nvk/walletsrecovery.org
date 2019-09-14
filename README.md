@@ -44,7 +44,6 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|Exploits|BIP174 PSBT|Note
 ⚠️|Coin Wallet[↗︎](https://www.coin.space/)|`m/0'`||||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Coinomi[↗︎](https://www.coinomi.com)|`m/44'`\|`49'`\|`84'/0'/0'`||||[Export](https://coinomi.freshdesk.com/support/solutions/articles/29000009717-what-is-the-recovery-tool-and-how-do-i-export-my-private-keys-), [Import](https://coinomi.freshdesk.com/support/solutions/articles/29000009715-how-to-import-a-coinomi-seed-into-electrum-)
 ✅|Copay[↗︎](https://copay.io/)|Single Signer: ≥ v1.2 `m/44/0'/0'` Multisig: < v1.2 `m/45'/2147483647/0/x` `m/45'/2147483647/1/y` ≥ v1.2 `m/44/0'/0'` ≥ v1.5 `m/48'/0'/0'/1'` `m/48'/0'/0'/2'`|Optional|||[Docs](https://github.com/bitpay/copay#wallet-export-format), [Recovery tool](https://bitpay.github.io/copay-recovery/), ❌[Endangered users by misrepresenting Bitcoin](https://web.archive.org/web/20170817153138/https://blog.bitpay.com/bitcore-segwit-activation/)
-✅|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)|`m/49'/0'/0'`|Optional|||[Docs](https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-)
 ✅|Edge Wallet[↗︎](https://edge.app/)|`m/44'`\|`49'/0'/0'`||||[Docs](https://support.edge.app/support/solutions/articles/8000080183-edge-private-seeds-derivation-and-export)
 ✅|Electrum[↗︎](https://electrum.org)|Single Signer: `m/44'`\|`49'`\|`84/0'/0'` Multisig: `m/45'/0/0/0` `m/48'/0'/0'/1'` `m/48'/0'/0'/2'` [Does not use BIP39 seeds](https://electrum.readthedocs.io/en/latest/seedphrase.html) but can import them|Optional||Supported|[Docs](https://electrum.readthedocs.io)
 ✅|Exodus[↗︎](https://exodus.io)|`m/44'`\|`84/0'/0'`||||[Docs](https://support.exodus.io/article/159-import-your-bitcoin-wallet-into-electrum)
@@ -60,8 +59,12 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|Exploits|BIP174 PSBT|Note
 ✅|Trezor Web Wallet[↗︎](https://wallet.trezor.io)|`m/44'`\|`49'/0'/0'`|Optional|||[Docs](https://wiki.trezor.io)
 ⚠️|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45’/0’/0’/0/0` + Redeem Script||||[Docs](https://www.unchained-capital.com/faq/), [Archive](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/), [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig)
 ✅|Wasabi[↗︎](https://docs.wasabiwallet.io/)|`m/84'/0'/0'` Very Deep Depths|Optional||Supported|[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#what-derivation-paths-does-wasabi-use), [BIPs Supported](https://docs.wasabiwallet.io/using-wasabi/BIP.html)
-✅|BLW (Bitcoin Lightning Wallet)[↗︎](https://lightning-wallet.com/)|`m/84'/0'/0'` BIP32 non 44 Compatible|N/A|||[Docs](https://lightning-wallet.com/recovering-lost-balance)
 
+Status|Lightning Wallet|Path and/or Script|Passphrase|Exploits|BIP174 PSBT|Note
+:---:|:---|:---:|---|---|---|---
+✅|BLW (Bitcoin Lightning Wallet)[↗︎](https://lightning-wallet.com/)|`m/84'/0'/0'` BIP32 non 44 Compatible|N/A|||[Docs](https://lightning-wallet.com/recovering-lost-balance)
+✅|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)|`m/49'/0'/0'`|Optional|||[Docs](https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-)
+✅|LND (Lightning Network Daemon)[↗︎](https://github.com/lightningnetwork/lnd)|aezeed|Optional|||[Docs](https://github.com/lightningnetwork/lnd/tree/master/aezeed)
 
 Status|Combo HW+SW|Path and/or Script|BIP39 Pass|Exploits|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---|---
