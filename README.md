@@ -63,6 +63,7 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|Exploits|BIP174 PSBT|Note
 Status|Lightning Wallet|Path and/or Script|Passphrase|Exploits|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---|---
 ✅|BLW (Bitcoin Lightning Wallet)[↗︎](https://lightning-wallet.com/)|`m/84'/0'/0'` BIP32 non 44 Compatible|N/A|||[Docs](https://lightning-wallet.com/recovering-lost-balance)
+⚠️|c-Lightning[↗︎](https://github.com/ElementsProject/lightning)|`m/0'/0'`|N/A|||[Github Issue](https://github.com/ElementsProject/lightning/issues/2459)
 ✅|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)|`m/49'/0'/0'`|Optional|||[Docs](https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-)
 ✅|LND (Lightning Network Daemon)[↗︎](https://github.com/lightningnetwork/lnd)|aezeed|Optional|||[Docs](https://github.com/lightningnetwork/lnd/tree/master/aezeed)
 
