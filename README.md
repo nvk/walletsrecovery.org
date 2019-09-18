@@ -48,6 +48,7 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|Exploits|BIP174 PSBT|Note
 ✅|Electrum[↗︎](https://electrum.org)|Single Signer: `m/44'`\|`49'`\|`84/0'/0'` Multisig: `m/45'/0/0/0` `m/48'/0'/0'/1'` `m/48'/0'/0'/2'` [Does not use BIP39 seed phrases](https://electrum.readthedocs.io/en/latest/seedphrase.html) but can import them|Optional||Supported|[Docs](https://electrum.readthedocs.io)
 ✅|Exodus[↗︎](https://exodus.io)|`m/44'`\|`84/0'/0'`||||[Docs](https://support.exodus.io/article/159-import-your-bitcoin-wallet-into-electrum)
 ✅|Hodl Wallet[↗︎](https://hodlwallet.com)|`m/0'`|N/A|||[Docs iOS](https://github.com/hodlwallet/hodl-wallet-ios/blob/master/README.md), [Docs Android](https://github.com/hodlwallet/hodl-wallet-android/blob/master/README.md)
+⚠️|Jaxx Liberty[↗︎](https://jaxx.io/downloads)|`m/44'/0'/0'`||||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|JoinMarket[↗︎](https://github.com/JoinMarket-Org/joinmarket-clientserver)|`m/49'/0'/n'`|Optional|||[Docs](https://github.com/JoinMarket-Org/joinmarket-clientserver/blob/master/docs/USAGE.md#recover)
 ✅|Ledger Live[↗︎](https://shop.ledger.com/pages/ledger-live)|`m/44'`\|`49'/0'/0'`||||[Docs](https://support.ledger.com/hc/en-us/articles/360006444193)
 ✅|KeepKey Client[↗︎](https://chrome.google.com/webstore/detail/keepkey-client/idgiipeogajjpkgheijapngmlbohdhjg)|`m/44'/0'/0'`|Optional|||[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
@@ -60,12 +61,12 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|Exploits|BIP174 PSBT|Note
 ⚠️|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45’/0’/0’/0/0` + Redeem Script||||[Docs](https://www.unchained-capital.com/faq/), [Archive](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/), [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig)
 ✅|Wasabi[↗︎](https://docs.wasabiwallet.io/)|`m/84'/0'/0'` Very Deep Depths|Optional||Supported|[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#what-derivation-paths-does-wasabi-use), [BIPs Supported](https://docs.wasabiwallet.io/using-wasabi/BIP.html)
 
-Status|Lightning Wallet|Path and/or Script|Passphrase|Exploits|BIP174 PSBT|Note
-:---:|:---|:---:|---|---|---|---
-✅|BLW (Bitcoin Lightning Wallet)[↗︎](https://lightning-wallet.com/)|`m/84'/0'/0'` BIP32 non 44 Compatible|N/A|||[Docs](https://lightning-wallet.com/recovering-lost-balance)
-⚠️|c-Lightning[↗︎](https://github.com/ElementsProject/lightning)|`m/0/0/`Keys derived from hsm_secret file|N/A|||[Github Issue](https://github.com/ElementsProject/lightning/issues/2459) [Does not use BIP39 seed phrases](https://github.com/ElementsProject/lightning/blob/bad0ac6ed615107e129458f0d40915847bdddd08/hsmd/hsmd.c#L300-L304) [BIP32](https://github.com/ElementsProject/lightning/blob/697b501132c4222da444f6c63f35818169292efb/hsmd/hsmd.c#L426-L445)
-✅|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)|`m/49'/0'/0'`|Optional|||[Docs](https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-)
-✅|LND (Lightning Network Daemon)[↗︎](https://github.com/lightningnetwork/lnd)|aezeed|Optional|||[Docs](https://github.com/lightningnetwork/lnd/tree/master/aezeed)
+Status|Lightning Wallet|Path and/or Script|Passphrase|Exploits|Note
+:---:|:---|:---:|---|---|---
+✅|BLW (Bitcoin Lightning Wallet)[↗︎](https://lightning-wallet.com/)|`m/84'/0'/0'` BIP32 non 44 Compatible|N/A||[Docs](https://lightning-wallet.com/recovering-lost-balance)
+⚠️|c-Lightning[↗︎](https://github.com/ElementsProject/lightning)|`m/0/0/`Keys derived from hsm_secret file|N/A||[Github Issue](https://github.com/ElementsProject/lightning/issues/2459), [Does not use BIP39 seed phrases](https://github.com/ElementsProject/lightning/blob/bad0ac6ed615107e129458f0d40915847bdddd08/hsmd/hsmd.c#L300-L304), [BIP32](https://github.com/ElementsProject/lightning/blob/697b501132c4222da444f6c63f35818169292efb/hsmd/hsmd.c#L426-L445)
+✅|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)|`m/49'/0'/0'`|Optional||[Docs](https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-)
+✅|LND (Lightning Network Daemon)[↗︎](https://github.com/lightningnetwork/lnd)|aezeed|Optional||[Docs](https://github.com/lightningnetwork/lnd/tree/master/aezeed)
 
 Status|Combo HW+SW|Path and/or Script|BIP39 Pass|Exploits|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---|---
