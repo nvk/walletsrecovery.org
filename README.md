@@ -17,8 +17,8 @@ If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL 
 
 Status|Hardware Wallets|Supported Paths|BIP39 Pass|Exploits|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---|---
-⚠️|BitBox01[↗︎](https://shiftcrypto.ch/bitbox01/)|`m/44'`\|`49'`\|`84'/0'/0'`|required||Not Supported|[Docs](https://shiftcrypto.ch/bitbox01/wallet-sweep/), [☠️ Hosted Insecure Recovery Tool](https://shiftcrypto.ch/bitbox01/backup-center/)|
-🛑|BitBox02[↗︎](https://shiftcrypto.ch/bitbox02/)|`m/44'`\|`49'`\|`84'/0'/0'`|optional||Not Supported|[EXTERNAL RECOVERY NOT DOCUMENTED]|
+✅|BitBox01[↗︎](https://shiftcrypto.ch/bitbox01/)|`m/44'`\|`49'`\|`84'/0'/0'`|Required||Not Supported|[Docs](https://shiftcrypto.ch/bitbox01/wallet-sweep/), [Recovery Tool](https://github.com/digitalbitbox/html_backup)|
+🛑|BitBox02[↗︎](https://shiftcrypto.ch/bitbox02/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional||Not Supported|[EXTERNAL RECOVERY NOT DOCUMENTED]|
 ✅|ColdCard Mk1[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional||Supported|[Docs](https://coldcardwallet.com/docs/)
 ✅|ColdCard Mk2[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional||Supported|[Docs](https://coldcardwallet.com/docs/)
 ✅|ColdCard Mk3[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional||Supported|[Docs](https://coldcardwallet.com/docs/)
