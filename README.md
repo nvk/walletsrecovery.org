@@ -64,7 +64,7 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|Exploits|BIP174 PSBT|Note
 Status|Lightning Wallet|Path and/or Script|Passphrase|Exploits|Note
 :---:|:---|:---:|---|---|---
 ✅|BLW (Bitcoin Lightning Wallet)[↗︎](https://lightning-wallet.com/)|`m/84'/0'/0'` BIP32 non 44 Compatible|N/A||[Docs](https://lightning-wallet.com/recovering-lost-balance)
-⚠️|c-Lightning[↗︎](https://github.com/ElementsProject/lightning)|`m/0/0/`Keys derived from hsm_secret file|N/A||[Github Issue](https://github.com/ElementsProject/lightning/issues/2459), [Does not use BIP39 seed phrases](https://github.com/ElementsProject/lightning/blob/bad0ac6ed615107e129458f0d40915847bdddd08/hsmd/hsmd.c#L300-L304), [BIP32](https://github.com/ElementsProject/lightning/blob/697b501132c4222da444f6c63f35818169292efb/hsmd/hsmd.c#L426-L445)
+⚠️|c-Lightning[↗︎](https://github.com/ElementsProject/lightning)|`m/84'`\|`141'/0'/0'/`Keys derived from `hsm_secret` file|N/A||[BIP32 layout explained](https://github.com/ElementsProject/lightning/blob/697b501132c4222da444f6c63f35818169292efb/hsmd/hsmd.c#L426-L445), [xPriv/xPub Export Tool](https://github.com/rsbondi/clightning-go-plugin/tree/master/dump_keys)
 ✅|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)|`m/49'/0'/0'`|Optional||[Docs](https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-)
 ✅|LND (Lightning Network Daemon)[↗︎](https://github.com/lightningnetwork/lnd)|aezeed|Optional||[Docs](https://github.com/lightningnetwork/lnd/tree/master/aezeed)
 
