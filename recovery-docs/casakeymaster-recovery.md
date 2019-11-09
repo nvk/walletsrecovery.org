@@ -77,7 +77,7 @@ Once you click "send" you will be prompted to confirm the amount and destination
 
 Upon completing the third signature, the "broadcast" button will no longer be greyed out. Click "broadcast" and then copy the transaction id into a block explorer to check that the transaction has propagated across the network.
 
-# Casa Basic Multisig recovery
+# Casa Basic Multisig (with mobile key) recovery
 
 How to recover funds from a 2-of-3 Casa Bitcoin Wallet without using Casa software or servers
 
@@ -148,6 +148,68 @@ Electrum will now initialize your wallet and display all of the transactions tha
 To send your assets to a new wallet, click on the "send" tab and fill in the "pay to" field with and address owned by your new wallet. Click the "max" button to sweep all of the value out of the wallet, and slide the "fee" bar to an appropriate fee depending upon your urgency.
 
 Once you click "send" you will be prompted to confirm the amount and destination address on the hardware device.
+
+Upon completing the second signature, the "broadcast" button will no longer be greyed out. Click "broadcast" and then copy the transaction id into a block explorer to check that the transaction has propagated across the network.
+
+# Casa Basic Multisig (with 2 hardware devices) recovery
+
+How to recover funds from a 2-of-3 Casa Bitcoin Wallet without using Casa software or servers
+
+Find your Casa recovery data email that contains your extended public keys
+
+Install the latest version of Electrum: https://electrum.org/#download
+
+NOTE: Electrum can be finicky with hardware signing device support, especially on Linux. In order to prevent errors, ensure that you only have ONE electrum instance running and plug ALL of your hardware devices in simultaneously rather than plugging and unplugging the devices as you sign.
+
+## Linux Only
+
+Install the appropriate libraries for your hardware wallets:
+
+1. `sudo apt-get install libusb-1.0-0-dev libudev-dev`
+2. `sudo pip3 install btchip-python`
+3. `sudo pip3 install trezor`
+4. Set udev rules for ledger: https://support.ledgerwallet.com/hc/en-us/articles/115005165269-Fix-connection-issues
+5. Set udev rules for trezor: https://doc.satoshilabs.com/trezor-user/settingupchromeonlinux.html
+6. After setting the udev rules for the first time, reboot your computer.
+
+## Step-By-Step Guide
+
+1. Run electrum. For testnet, run "electrum --testnet"
+2. Create a new wallet and give it a name
+3. Choose "multi-signature wallet"
+4. Select "From 3 cosigners"
+5. Select "Require 2 signatures"
+6. Click next.
+
+### For cosigner 1 of 3:
+1. Choose "hardware wallet"
+2. Plug in hardware device 1 if it isn't already
+3. Click next
+4. Select your hardware device and click next
+5. Select p2sh-segwit multisig
+6. The derivation path should change to something like m/48'/0'/0'/1' - replace it with the derivation path from your recovery data, which will look something like: m/49/0/0
+7. Click next, then next again on the master public key screen
+
+### For cosigner 2 of 3:
+1. Choose "hardware wallet"
+2. Plug in hardware device 2 if it isn't already
+3. Click next
+4. Select your hardware device and click next
+5. Select p2sh-segwit multisig
+6. The derivation path should change to something like m/48'/0'/0'/1' - replace it with the derivation path from your recovery data, which will look something like: m/49/0/0
+7. Click next, then next again on the master public key screen
+
+### For cosigner 3 of 3:
+1. Choose "Enter cosigner key" and click next.
+2. Paste the "Recovery Device Key" for the appropriate account from your recovery data.
+3. Click next.
+4. On the password screen, leave both fields blank and click next.
+
+Electrum will now initialize your wallet and display all of the transactions that have been received and sent by it. If you don't see your transactions show up after a minute or so, something went wrong during the process and electrum derived the wrong set of addresses.
+
+To send your assets to a new wallet, click on the "send" tab and fill in the "pay to" field with and address owned by your new wallet. Click the "max" button to sweep all of the value out of the wallet, and slide the "fee" bar to an appropriate fee depending upon your urgency.
+
+Once you click "send" you will be prompted to confirm the amount and destination address on each hardware device.
 
 Upon completing the second signature, the "broadcast" button will no longer be greyed out. Click "broadcast" and then copy the transaction id into a block explorer to check that the transaction has propagated across the network.
 
