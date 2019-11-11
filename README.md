@@ -29,7 +29,7 @@ Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP174 PSBT|Note
 ✅|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)|`m/44'/0'/0'`|Optional|No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
 ✅|Opendime[↗︎](https://opendime.com)|WIF|N/A|N/A|[Docs](https://opendime.com/faq), [Archive](https://web.archive.org/save/https://opendime.com/faq)
 
-Status|Software Wallet|Path and/or Script|BIP39 Pass|Exploits|BIP174 PSBT|Note
+Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---|---
 ️⚠️|Bitcoin Core[↗︎](https://bitcoin.org)|`m/0'/0'`|N/A||WIP|[Github Issue](https://github.com/bitcoin/bitcoin/issues/13302)
 ✅|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)|BIP32 non 44 Compatible|||No|[Docs](https://github.com/bitcoin-wallet/bitcoin-wallet/blob/master/wallet/README.recover.md), [Archive](./recovery-docs/bitcoinwallet-recovery.md)
@@ -61,21 +61,21 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|Exploits|BIP174 PSBT|Note
 ⚠️|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45’/0’/0’/0/0` + Redeem Script|||No|[Docs](https://www.unchained-capital.com/faq/), [Archive](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/), [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig)
 ✅|Wasabi[↗︎](https://docs.wasabiwallet.io/)|`m/84'/0'/0'` Very Deep Depths|Optional||Yes|[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#what-derivation-paths-does-wasabi-use), [BIPs Supported](https://docs.wasabiwallet.io/using-wasabi/BIP.html)
 
-Status|Lightning Wallet|Path and/or Script|Passphrase|Exploits|Note
+Status|Lightning Wallet|Path and/or Script|Passphrase|Note
 :---:|:---|:---:|---|---|---
-✅|BLW (Bitcoin Lightning Wallet)[↗︎](https://lightning-wallet.com/)|`m/84'/0'/0'` BIP32 non 44 Compatible|N/A||[Docs](https://lightning-wallet.com/recovering-lost-balance)
-⚠️|c-Lightning[↗︎](https://github.com/ElementsProject/lightning)|`m/84'`\|`141'/0'/0'/`Keys derived from `hsm_secret` file|N/A||[BIP32 layout explained](https://github.com/ElementsProject/lightning/blob/697b501132c4222da444f6c63f35818169292efb/hsmd/hsmd.c#L426-L445), [xPriv/xPub Export Tool](https://github.com/rsbondi/clightning-go-plugin/tree/master/dump_keys)
-✅|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)|`m/49'/0'/0'`|Optional||[Docs](https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-)
-✅|LND (Lightning Network Daemon)[↗︎](https://github.com/lightningnetwork/lnd)|aezeed|Optional||[Docs](https://github.com/lightningnetwork/lnd/tree/master/aezeed)
+✅|BLW (Bitcoin Lightning Wallet)[↗︎](https://lightning-wallet.com/)|`m/84'/0'/0'` BIP32 non 44 Compatible|N/A|[Docs](https://lightning-wallet.com/recovering-lost-balance)
+⚠️|c-Lightning[↗︎](https://github.com/ElementsProject/lightning)|`m/84'`\|`141'/0'/0'/`Keys derived from `hsm_secret` file|N/A|[BIP32 layout explained](https://github.com/ElementsProject/lightning/blob/697b501132c4222da444f6c63f35818169292efb/hsmd/hsmd.c#L426-L445), [xPriv/xPub Export Tool](https://github.com/rsbondi/clightning-go-plugin/tree/master/dump_keys)
+✅|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)|`m/49'/0'/0'`|Optional|[Docs](https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-)
+✅|LND (Lightning Network Daemon)[↗︎](https://github.com/lightningnetwork/lnd)|aezeed|Optional|[Docs](https://github.com/lightningnetwork/lnd/tree/master/aezeed)
 
-Status|Combo HW+SW|Path and/or Script|BIP39 Pass|Exploits|BIP174 PSBT|Note
+Status|Combo HW+SW|Path and/or Script|BIP39 Pass|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---|---
-✅|BTCPay Server (Coldcard)[↗︎](https://coldcardwallet.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional||Yes|[Docs](https://docs.btcpayserver.org/getting-started/connectwallet/coldcardwallet#coldcard-wallet-setup)
-✅|Electrum (Coldcard)[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional||Yes|[Docs](https://coldcardwallet.com/docs/quick)
-✅|Electrum (Ledger S/Nano)[↗︎](https://ledger.com/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional||No|[Docs](https://support.ledger.com/hc/en-us)
-✅|Electrum (KeepKey)[↗︎](https://shapeshift.io/keepkey/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional||No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
-✅|Electrum (Trezor One / Model T)[↗︎](https://trezor.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional||No|[Docs](https://wiki.trezor.io)
-✅|Wasabi (Coldcard)[↗︎](https://coldcardwallet.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional||Yes|[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#how-can-i-generate-a-wasabi-skeleton-wallet-file-in-coldcard)
+✅|BTCPay Server (Coldcard)[↗︎](https://coldcardwallet.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|Yes|[Docs](https://docs.btcpayserver.org/getting-started/connectwallet/coldcardwallet#coldcard-wallet-setup)
+✅|Electrum (Coldcard)[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|Yes|[Docs](https://coldcardwallet.com/docs/quick)
+✅|Electrum (Ledger S/Nano)[↗︎](https://ledger.com/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://support.ledger.com/hc/en-us)
+✅|Electrum (KeepKey)[↗︎](https://shapeshift.io/keepkey/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
+✅|Electrum (Trezor One / Model T)[↗︎](https://trezor.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://wiki.trezor.io)
+✅|Wasabi (Coldcard)[↗︎](https://coldcardwallet.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|Yes|[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#how-can-i-generate-a-wasabi-skeleton-wallet-file-in-coldcard)
 
 Notes:
 - Hardware wallets don't care about derivation in certain modes.
