@@ -15,19 +15,19 @@ If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL 
 
 **This list is not an endorsement of the security or the quality of any of the wallets.**
 
-Status|Hardware Wallets|Supported Paths|BIP39 Pass|Exploits|BIP174 PSBT|Note
-:---:|:---|:---:|---|---|---|---
-✅|BitBox01[↗︎](https://shiftcrypto.ch/bitbox01/)|`m/44'`\|`49'`\|`84'/0'/0'`|Required||No|[Docs](https://shiftcrypto.ch/bitbox01/wallet-sweep/), [Recovery Tool](https://github.com/digitalbitbox/html_backup)|
-🛑|BitBox02[↗︎](https://shiftcrypto.ch/bitbox02/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional||No|[EXTERNAL RECOVERY NOT DOCUMENTED]|
-✅|ColdCard Mk1[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional||Yes|[Docs](https://coldcardwallet.com/docs/)
-✅|ColdCard Mk2[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional||Yes|[Docs](https://coldcardwallet.com/docs/)
-✅|ColdCard Mk3[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional||Yes|[Docs](https://coldcardwallet.com/docs/)
-✅|Ledger Nano[↗︎](https://ledger.com/)|`m/44'/0'/0'`|Optional||No|[Docs](https://support.ledger.com/hc/en-us)
-✅|Ledger S[↗︎](https://ledger.com/)|`m/44'/0'/0'`|Optional||No|[Docs](https://support.ledger.com/hc/en-us)
-✅|Trezor One[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|Optional||No|[Docs](https://wiki.trezor.io)
-✅|Trezor Model T[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|Optional||No|[Docs](https://wiki.trezor.io)
-✅|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)|`m/44'/0'/0'`|Optional||No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
-✅|Opendime[↗︎](https://opendime.com)|WIF|||N/A|[Docs](https://opendime.com/faq), [Archive](https://web.archive.org/save/https://opendime.com/faq)
+Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP174 PSBT|Note
+:---:|:---|:---:|---|---|---
+✅|BitBox01[↗︎](https://shiftcrypto.ch/bitbox01/)|`m/44'`\|`49'`\|`84'/0'/0'`|Required|No|[Docs](https://shiftcrypto.ch/bitbox01/wallet-sweep/), [Recovery Tool](https://github.com/digitalbitbox/html_backup)|
+🛑|BitBox02[↗︎](https://shiftcrypto.ch/bitbox02/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[EXTERNAL RECOVERY NOT DOCUMENTED]|
+✅|ColdCard Mk1[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional|Yes|[Docs](https://coldcardwallet.com/docs/)
+✅|ColdCard Mk2[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional|Yes|[Docs](https://coldcardwallet.com/docs/)
+✅|ColdCard Mk3[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional|Yes|[Docs](https://coldcardwallet.com/docs/)
+✅|Ledger Nano[↗︎](https://ledger.com/)|`m/44'/0'/0'`|Optional|No|[Docs](https://support.ledger.com/hc/en-us)
+✅|Ledger S[↗︎](https://ledger.com/)|`m/44'/0'/0'`|Optional|No|[Docs](https://support.ledger.com/hc/en-us)
+✅|Trezor One[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|Optional|No|[Docs](https://wiki.trezor.io)
+✅|Trezor Model T[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|Optional|No|[Docs](https://wiki.trezor.io)
+✅|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)|`m/44'/0'/0'`|Optional|No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
+✅|Opendime[↗︎](https://opendime.com)|WIF|N/A|N/A|[Docs](https://opendime.com/faq), [Archive](https://web.archive.org/save/https://opendime.com/faq)
 
 Status|Software Wallet|Path and/or Script|BIP39 Pass|Exploits|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---|---
