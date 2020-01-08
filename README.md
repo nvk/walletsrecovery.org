@@ -55,6 +55,7 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Not
 ⚠|Multibit HD[↗︎](https://multibit.org/)|`m/0'`|N/A||No|[Github Issue](https://github.com/Multibit-Legacy/multibit-hd/issues/445)
 ✅|Mycelium[↗︎](https://wallet.mycelium.com/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional (on restore)|Yes|No|[Docs](https://mycelium-support.zendesk.com/hc/en-us/articles/115003713872-Hierarchical-Deterministic-Wallets), [Github Issue](https://github.com/mycelium-com/wallet-android/issues/483)
 ✅|OpenBazaar[↗︎](https://openbazaar.org/)|`m/44'/0'`\|`1'`\|`133'`\|`145'/0'`|||No|[Docs](https://openbazaar.zendesk.com/hc/en-us/articles/360002820331-How-do-I-restore-OpenBazaar-from-a-mnemonic-seed-)
+⚠️|Pine[↗︎](https://pine.pm/)|`m/49'/0'/0'`|No|No|No|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ⚠️|Rise Wallet[↗︎](https://www.risewallet.com/)|`m/49'/0'/0'`|||No|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Samourai[↗︎](https://samouraiwallet.com/)|Deposit: `m/44'`\|`49'`\|`84'`\|`47'/0'/0'`Pre Mix: `m/84'/0'/2147483645'`Post Mix: `m/84'/0'/2147483646'`|Required|Yes|WIP|[Docs](https://support.samourai.io/article/46-reveal-all-individual-private-keys-in-the-wallet), [BIPs Supported](https://samouraiwallet.com/bips)
 ✅|Trezor Web Wallet[↗︎](https://wallet.trezor.io)|`m/44'`\|`49'/0'/0'`|Optional||No|[Docs](https://wiki.trezor.io)
