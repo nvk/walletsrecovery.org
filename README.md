@@ -52,6 +52,7 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Not
 ⚠️|Jaxx Liberty[↗︎](https://jaxx.io/downloads)|`m/44'/0'/0'`|||No|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|JoinMarket[↗︎](https://github.com/JoinMarket-Org/joinmarket-clientserver)|`m/49'/0'/n'`|Optional||No|[Docs](https://github.com/JoinMarket-Org/joinmarket-clientserver/blob/master/docs/USAGE.md#recover)
 ✅|Ledger Live[↗︎](https://shop.ledger.com/pages/ledger-live)|`m/44'`\|`49'/0'/0'`|||No|[Docs](https://support.ledger.com/hc/en-us/articles/360006444193)
+⚠|Luxstack[↗︎](https://luxstack.com)|`m/0'`||||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|KeepKey Client[↗︎](https://chrome.google.com/webstore/detail/keepkey-client/idgiipeogajjpkgheijapngmlbohdhjg)|`m/44'/0'/0'`|Optional||No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
 ⚠|Multibit HD[↗︎](https://multibit.org/)|`m/0'`|N/A||No|[Github Issue](https://github.com/Multibit-Legacy/multibit-hd/issues/445)
 ✅|Mycelium[↗︎](https://wallet.mycelium.com/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional (on restore)|Yes|No|[Docs](https://mycelium-support.zendesk.com/hc/en-us/articles/115003713872-Hierarchical-Deterministic-Wallets), [Github Issue](https://github.com/mycelium-com/wallet-android/issues/483)
