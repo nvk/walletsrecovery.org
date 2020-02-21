@@ -3,6 +3,7 @@
 How to recover funds from a 3-of-5 Casa Bitcoin Wallet without using Casa software or servers.
 
 Install the latest version of Electrum: https://electrum.org/#download.
+Electrum 4.0.0 or later is required for Coldcard support.
 
 NOTE: Electrum can be finicky with hardware signing device support, especially on Linux. In order to prevent errors, ensure that you only have ONE Electrum instance running and make sure ALL your hardware devices are plugged in rather than plugging and unplugging the devices as you sign.
 
@@ -13,9 +14,11 @@ Install the appropriate libraries for your hardware wallets:
 1. `sudo apt-get install libusb-1.0-0-dev libudev-dev`
 2. `sudo pip3 install btchip-python`
 3. `sudo pip3 install trezor`
-4. Set udev rules for ledger: https://support.ledgerwallet.com/hc/en-us/articles/115005165269-Fix-connection-issues
-5. Set udev rules for trezor: https://doc.satoshilabs.com/trezor-user/settingupchromeonlinux.html
-6. After setting the udev rules for the first time, reboot your computer.
+4. `sudo pip3 install ckcc-protocol`
+5. Set udev rules for ledger: https://support.ledgerwallet.com/hc/en-us/articles/115005165269-Fix-connection-issues
+6. Set udev rules for trezor: https://doc.satoshilabs.com/trezor-user/settingupchromeonlinux.html
+7. Set udev rules for coldcard: https://raw.githubusercontent.com/Coldcard/ckcc-protocol/master/51-coinkite.rules
+8. After setting the udev rules for the first time, reboot your computer.
 
 ## Step-By-Step Guide
 
