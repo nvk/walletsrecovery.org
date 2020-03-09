@@ -1,6 +1,4 @@
-# Casa Keymaster Recovery
-
-## Finding your public and private keys
+## Finding your recovery data
 
 In Sovereign Recovery, you should operate on the assumption that the Casa Recovery Key is unavailable, meaning you have 4-of-5 or 2-of-3 signing keys left.  To complete a transaction, you need all of your public keys.
 
@@ -15,6 +13,7 @@ IMPORTANT - Your public keys and Mobile Key seed are secured locally on your iOS
 ## Casa Key Shield recovery
 
 How to recover funds from a 3-of-5 Casa bitcoin wallet without using Casa software or servers.
+First, gather your recovery data from either your Sovereign Recovery email or from the Keymaster app as described above.
 
 Install the latest version of Electrum: https://electrum.org/#download.
 Electrum 4.0.0 or later is required for Coldcard support.
@@ -113,7 +112,7 @@ NOTE: Electrum can be finicky with hardware signing device support, especially o
 
 How to recover funds from a 2-of-3 Casa bitcoin wallet without using Casa software or servers
 
-Find your Casa recovery data email that contains your extended public keys
+First, gather your recovery data from the Keymaster app as described above.
 
 1. In the Casa Keymaster app, tap the "Mobile Key" wallet
 2. Tap the mobile device
@@ -190,7 +189,7 @@ NOTE: Electrum can be finicky with hardware signing device support, especially o
 
 How to recover funds from a 2-of-3 Casa bitcoin wallet without using Casa software or servers
 
-Find your Casa recovery data email that contains your extended public keys
+First, gather your recovery data from the Keymaster app as described above.
 
 Install the latest version of Electrum: https://electrum.org/#download
 Electrum 4.0.0 or later is required for Coldcard support.
