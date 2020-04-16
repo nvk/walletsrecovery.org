@@ -1,4 +1,4 @@
-# CASA Hodl Recovery informatin
+# CASA Hodl Recovery Informatin
 
 ## Finding your recovery data
 
