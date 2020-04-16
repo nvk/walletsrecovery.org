@@ -17,9 +17,9 @@ If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL 
 
 Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---
-✅|BitBox01[↗︎](https://shiftcrypto.ch/bitbox01/)|`m/44'`\|`49'`\|`84'/0'/0'`|Required|No|[Docs](https://shiftcrypto.ch/bitbox01/wallet-sweep/), [Recovery Tool](https://github.com/digitalbitbox/html_backup)|
+✅😵|BitBox01[↗︎](https://shiftcrypto.ch/bitbox01/)|`m/44'`\|`49'`\|`84'/0'/0'`|Required|No|[Docs](https://shiftcrypto.ch/bitbox01/wallet-sweep/), [Recovery Tool](https://github.com/digitalbitbox/html_backup)|
 ✅|BitBox02[↗︎](https://shiftcrypto.ch/bitbox02/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://guides.shiftcrypto.ch/bitbox02/advanced/backup-recovery/), [Recovery tool](https://github.com/digitalbitbox/bitbox02-backup-recovery)|
-✅|ColdCard Mk1[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional|Yes|[Docs](https://coldcardwallet.com/docs/)
+✅😵|ColdCard Mk1[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional|Yes|[Docs](https://coldcardwallet.com/docs/)
 ✅|ColdCard Mk2[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional|Yes|[Docs](https://coldcardwallet.com/docs/)
 ✅|ColdCard Mk3[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional|Yes|[Docs](https://coldcardwallet.com/docs/)
 ✅|Ledger Nano[↗︎](https://ledger.com/)|`m/44'/0'/0'`|Optional|No|[Docs](https://support.ledger.com/hc/en-us)
@@ -43,13 +43,13 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Not
 ⚠️|Casa Keymaster[↗︎](https://keys.casa/keymaster/)|`m/49/0/X` (X increments with each key rotation)|||No|[Unofficial Docs](./recovery-docs/casakeymaster-recovery.md)
 ⚠️|Coin Wallet[↗︎](https://www.coin.space/)|`m/0'`|||No|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Coinomi[↗︎](https://www.coinomi.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Yes||No|[Export](https://coinomi.freshdesk.com/support/solutions/articles/29000009717-what-is-the-recovery-tool-and-how-do-i-export-my-private-keys-), [Import](https://coinomi.freshdesk.com/support/solutions/articles/29000009715-how-to-import-a-coinomi-seed-into-electrum-)
-✅|Copay[↗︎](https://copay.io/)|Single Signer: ≥ v1.2 `m/44/0'/0'` Multisig: < v1.2 `m/45'/2147483647/0/x` `m/45'/2147483647/1/y` ≥ v1.2 `m/44/0'/0'` ≥ v1.5 `m/48'/0'/0'/1'` `m/48'/0'/0'/2'`|Optional|Yes|No|[Docs](https://github.com/bitpay/copay#wallet-export-format), [Recovery tool](https://bitpay.github.io/copay-recovery/), ❌[Endangered users by misrepresenting Bitcoin](https://web.archive.org/web/20170817153138/https://blog.bitpay.com/bitcore-segwit-activation/)
+✅😵|Copay[↗︎](https://copay.io/)|Single Signer: ≥ v1.2 `m/44/0'/0'` Multisig: < v1.2 `m/45'/2147483647/0/x` `m/45'/2147483647/1/y` ≥ v1.2 `m/44/0'/0'` ≥ v1.5 `m/48'/0'/0'/1'` `m/48'/0'/0'/2'`|Optional|Yes|No|[Docs](https://github.com/bitpay/copay#wallet-export-format), [Recovery tool](https://bitpay.github.io/copay-recovery/), ❌[Endangered users by misrepresenting Bitcoin](https://web.archive.org/web/20170817153138/https://blog.bitpay.com/bitcore-segwit-activation/)
 ⚠️|DropBit[↗︎](https://dropbit.app/)|New Wallets: `m/84/0'/0'` Old Wallets: `m/44/0'/0'`|No|No|No|
 ✅|Edge Wallet[↗︎](https://edge.app/)|`m/44'`\|`49'/0'/0'`|||No|[Docs](https://support.edge.app/support/solutions/articles/8000080183-edge-private-seeds-derivation-and-export)
 ✅|Electrum[↗︎](https://electrum.org)|Single Signer: `m/44'`\|`49'`\|`84/0'/0'` Multisig: `m/45'/0/0/0` `m/48'/0'/0'/1'` `m/48'/0'/0'/2'` [Does not use BIP39 seed phrases](https://electrum.readthedocs.io/en/latest/seedphrase.html) but can import them|Optional|Yes|Yes|[Docs](https://electrum.readthedocs.io)
 ✅|Exodus[↗︎](https://exodus.io)|`m/44'`\|`84/0'/0'`|||No|[Docs](https://support.exodus.io/article/159-import-your-bitcoin-wallet-into-electrum)
 ✅|Hodl Wallet[↗︎](https://hodlwallet.com)|`m/0'`|N/A|Yes|No|[Docs iOS](https://github.com/hodlwallet/hodl-wallet-ios/blob/master/README.md), [Docs Android](https://github.com/hodlwallet/hodl-wallet-android/blob/master/README.md)
-⚠️|Jaxx Liberty[↗︎](https://jaxx.io/downloads)|`m/44'/0'/0'`|||No|[EXTERNAL RECOVERY NOT DOCUMENTED]
+⚠️😵|Jaxx Liberty[↗︎](https://jaxx.io/downloads)|`m/44'/0'/0'`|||No|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|JoinMarket[↗︎](https://github.com/JoinMarket-Org/joinmarket-clientserver)|`m/49'/0'/n'`|Optional||No|[Docs](https://github.com/JoinMarket-Org/joinmarket-clientserver/blob/master/docs/USAGE.md#recover)
 ✅|Ledger Live[↗︎](https://shop.ledger.com/pages/ledger-live)|`m/44'`\|`49'/0'/0'`|||No|[Docs](https://support.ledger.com/hc/en-us/articles/360006444193)
 ✅|KeepKey Client[↗︎](https://chrome.google.com/webstore/detail/keepkey-client/idgiipeogajjpkgheijapngmlbohdhjg)|`m/44'/0'/0'`|Optional||No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
@@ -86,6 +86,7 @@ Notes:
 Icon|Legend
 :---:|---
 🛑|Unknown. No obvious docs, research in progress
+😵|Discontinued and/or no-longer maintained
 ☠️|Not publicly available, or complex without a external tool available for the average user
 ⚠️|Known, but unofficially documented
 ✅|Documented + Link to doc
