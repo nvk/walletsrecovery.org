@@ -79,7 +79,7 @@ Status|Combo HW+SW|Path and/or Script|BIP39 Pass|BIP174 PSBT|Note
 ✅|Electrum (Ledger S/Nano)[↗︎](https://ledger.com/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://support.ledger.com/hc/en-us)
 ✅|Electrum (KeepKey)[↗︎](https://shapeshift.io/keepkey/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
 ✅|Electrum (Trezor One / Model T)[↗︎](https://trezor.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://wiki.trezor.io)
-✅|Wasabi (Coldcard)[↗︎](https://coldcardwallet.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|Yes|[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#how-can-i-generate-a-wasabi-skeleton-wallet-file-in-coldcard)
+✅|Wasabi (Coldcard)[↗︎](https://coldcardwallet.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|Yes|[Docs](https://docs.wasabiwallet.io/using-wasabi/ColdWasabi.html#connecting-coldcard-via-sd-card)
 
 Notes:
 - Hardware wallets don't care about derivation in certain modes.
