@@ -119,9 +119,11 @@ m / purpose' / coin_type' / account' / change / address_index
 + **Change:** This field, if the constant `0` is present, indicates "external chain" (regular) addresses; if the constant `1`, indicates "internal chain" (change) addresses. *Note that if finalized, BIP47 would designate this level as space for the notification keys and ephemeral payment codes.*
 + **Address Index:** This field indicates the specific address number in a sequence, within an account.
 
-Note that the sequential fields, 'Account' and 'Address Index', start at zero (0). Remember how the first / ground floor of a building is level zero in the U.K. and Europe? Accounts and addresses are numbered starting from zero too.
+Note that the sequential fields, 'Account' and 'Address Index', start at zero (0). Remember how the ground floor of a building is considered level zero in the U.K. and Europe? Accounts and addresses are numbered starting from zero too.
 
 Practical Example: A user has a **BIP44** compliant **bitcoin** wallet, and wants to locate the **second** change address in their **third** account. The derivation path for the **second change address** in the **third account** would look like this: `m/44'/0'/2'/1/1`.
+
+Another point of confusion may occur when wallets use the same derivation path for different script types. Especially if you are using any newer / more novel script types, wallets that have earmarked those paths for other scripts may cause errors during import. Example with Bread Wallet and Multibit mentioned [here](https://github.com/spesmilo/electrum/issues/6155#issuecomment-626811245).
 
 The meaning of "public" / unhardened versus hardened derivation, indicated in the fields by apostrophes, is explained [here](https://wiki.trezor.io/Hardened_and_non-hardened_derivation), [here](https://medium.com/@sevcsik/working-with-bitcoin-hd-wallets-ii-deriving-public-keys-c48341629388), and [here](https://bitcoin.stackexchange.com/questions/62533/key-derivation-in-hd-wallets-using-the-extended-private-key-vs-hardened-derivati?rq=1).
 
