@@ -49,7 +49,7 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Not
 ✅|Edge Wallet[↗︎](https://edge.app/)|`m/44'`\|`49'/0'/0'`|||No|[Docs](https://support.edge.app/support/solutions/articles/8000080183-edge-private-seeds-derivation-and-export)
 ✅|Electrum[↗︎](https://electrum.org)|Single Signer: `m/44'`\|`49'`\|`84/0'/0'` Multisig: `m/45'/0/0/0` `m/48'/0'/0'/1'` `m/48'/0'/0'/2'` [Does not use BIP39 seed phrases](https://electrum.readthedocs.io/en/latest/seedphrase.html) but can import them|Optional|Yes|Yes|[Docs](https://electrum.readthedocs.io)
 ✅|Exodus[↗︎](https://exodus.io)|`m/44'`\|`84/0'/0'`|||No|[Docs](https://support.exodus.io/article/159-import-your-bitcoin-wallet-into-electrum)
-TBD|FullyNoded[↗︎](https://github.com/Fonta1n3/FullyNoded)|||Yes||TBD
+TBD|FullyNoded[↗︎](https://github.com/Fonta1n3/FullyNoded)|||[Yes](https://twitter.com/fullynoded/status/1193525236689321984)||TBD
 ✅|Hodl Wallet[↗︎](https://hodlwallet.com)|`m/0'`|N/A|Yes|No|[Docs iOS](https://github.com/hodlwallet/hodl-wallet-ios/blob/master/README.md), [Docs Android](https://github.com/hodlwallet/hodl-wallet-android/blob/master/README.md)
 ⚠️😵|Jaxx Liberty[↗︎](https://jaxx.io/downloads)|`m/44'/0'/0'`|||No|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|JoinMarket[↗︎](https://github.com/JoinMarket-Org/joinmarket-clientserver)|`m/49'/0'/n'`|Optional||No|[Docs](https://github.com/JoinMarket-Org/joinmarket-clientserver/blob/master/docs/USAGE.md#recover)
