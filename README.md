@@ -17,54 +17,54 @@ If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL 
 
 Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---
-✅😵|BitBox01[↗︎](https://shiftcrypto.ch/bitbox01/)|`m/44'`\|`49'`\|`84'/0'/0'`|Required|No|[Docs](https://shiftcrypto.ch/bitbox01/wallet-sweep/), [Recovery Tool](https://github.com/digitalbitbox/html_backup)|
-✅|BitBox02[↗︎](https://shiftcrypto.ch/bitbox02/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://guides.shiftcrypto.ch/bitbox02/advanced/backup-recovery/), [Recovery tool](https://github.com/digitalbitbox/bitbox02-backup-recovery)|
+✅😵👁|BitBox01[↗︎](https://shiftcrypto.ch/bitbox01/)|`m/44'`\|`49'`\|`84'/0'/0'`|Required|No|[Docs](https://shiftcrypto.ch/bitbox01/wallet-sweep/), [Recovery Tool](https://github.com/digitalbitbox/html_backup)|
+✅👁|BitBox02[↗︎](https://shiftcrypto.ch/bitbox02/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://guides.shiftcrypto.ch/bitbox02/advanced/backup-recovery/), [Recovery tool](https://github.com/digitalbitbox/bitbox02-backup-recovery)|
 ⚠️|CoboVault[↗︎](https://cobo.com/hardware-wallet/cobo-vault)|`m/49'/0'/0'`|Optional|No|[Docs](https://support.cobo.com/hc/en-us/articles/360046375373-Passphrase), [EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅😵|ColdCard Mk1[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional|Yes|[Docs](https://coldcardwallet.com/docs/)
 ✅|ColdCard Mk2[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional|Yes|[Docs](https://coldcardwallet.com/docs/)
 ✅|ColdCard Mk3[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional|Yes|[Docs](https://coldcardwallet.com/docs/)
-✅|Ledger Nano S[↗︎](https://ledger.com/)|`m/49'`\|`84'/0'/0'`|Optional|No|[Docs](https://support.ledger.com/hc/en-us)
-✅|Ledger Nano X[↗︎](https://ledger.com/)|`m/49'`\|`84'/0'/0'`|Optional|No|[Docs](https://support.ledger.com/hc/en-us)
-✅|Trezor One[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|Optional|No|[Docs](https://wiki.trezor.io)
-✅|Trezor Model T[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|Optional|No|[Docs](https://wiki.trezor.io)
-✅|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)|`m/44'/0'/0'`|Optional|No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
+✅👁|Ledger Nano S[↗︎](https://ledger.com/)|`m/49'`\|`84'/0'/0'`|Optional|No|[Docs](https://support.ledger.com/hc/en-us)
+✅👁|Ledger Nano X[↗︎](https://ledger.com/)|`m/49'`\|`84'/0'/0'`|Optional|No|[Docs](https://support.ledger.com/hc/en-us)
+✅🚸👁|Trezor One[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|Optional|No|[Docs](https://wiki.trezor.io)
+✅🚸👁|Trezor Model T[↗︎](https://trezor.com)|`m/44'`\|`49'/0'/0'`|Optional|No|[Docs](https://wiki.trezor.io)
+✅🚸👁|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)|`m/44'/0'/0'`|Optional|No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
 ✅|Opendime[↗︎](https://opendime.com)|WIF|N/A|N/A|[Docs](https://opendime.com/faq), [Archive](https://web.archive.org/save/https://opendime.com/faq)
 
 Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---|---
 ☠   | Atomic Wallet[↗︎](atomicwallet.io)|`m/44'/0'/0'/0/0` (Single Address Wallet)|No|No|No| Non-Standard derivation path for non-BTC coins, [EXTERNAL RECOVERY NOT DOCUMENTED].
 ️⚠️|Bitcoin Core[↗︎](https://bitcoin.org)|`m/0'/0'`|N/A|Yes|WIP|[Github Issue](https://github.com/bitcoin/bitcoin/issues/13302)
-✅|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)|BIP32 non 44 Compatible|||No|[Docs](https://github.com/bitcoin-wallet/bitcoin-wallet/blob/master/wallet/README.recover.md), [Archive](./recovery-docs/bitcoinwallet-recovery.md)
+✅👁⑂|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)|BIP32 non 44 Compatible|||No|[Docs](https://github.com/bitcoin-wallet/bitcoin-wallet/blob/master/wallet/README.recover.md), [Archive](./recovery-docs/bitcoinwallet-recovery.md)
 ️⚠️|Bisq[↗︎](https://bisq.network/)|`m/44'/0'/0'`|N/A||No|[Github Issue](https://github.com/bisq-network/bisq/issues/1853)
 ⚠️|Bither[↗︎](https://bither.net/)|`m/44'`\|`49'/0'/0'`|||No|[EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|Blockchain.com[↗︎](https://www.blockchain.com/en/wallet)|`m/44'/0'/n'`|||No|[Docs](https://support.blockchain.com/hc/en-us/articles/115001298143-Your-Recovery-Phrase-The-Failsafe), [xPub](https://support.blockchain.com/hc/en-us/articles/207746403-Wallets-Addresses)
-✅|Blockstream Green (GreenAddress)[↗︎](https://blockstream.com/green/)|Custom 2-of-2 Script|Optional (on restore)||Yes|[Recovery tool](https://github.com/greenaddress/garecovery)
-✅|BlueWallet[↗︎](https://bluewallet.io/)|`m/44'`\|`m/49'`\|`84'/0'/0'`|N/A|Yes|Yes|[Docs](http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet), [Archive](https://web.archive.org/save/http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet), [Features](https://bluewallet.io/features.html)
-️⚠️|BRD (Bread Wallet)[↗︎](https://brd.com/)|`m/0'`|N/A|Yes|No|[Github Issue](https://github.com/voisine/breadwallet-ios/issues/131), [Reddit Post](https://www.reddit.com/r/Bitcoin/comments/6btevz/how_do_i_import_my_12_breadwallet_seed_words_into/)
-⚠️|BTC.com app[↗︎](https://btc.com/applications/app)|Multisig: `m/0'`|||No|[Unofficial Docs](https://gist.github.com/rubensayshi/da922774d43976e0804c)
-⚠️|Casa Keymaster[↗︎](https://keys.casa/keymaster/)|`m/49/0/X` (X increments with each key rotation)|||No|[Unofficial Docs](./recovery-docs/casakeymaster-recovery.md)
-⚠️|Coin Wallet[↗︎](https://www.coin.space/)|`m/0'`|||No|[EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|Coinomi[↗︎](https://www.coinomi.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Yes|Yes|No|[Export](https://coinomi.freshdesk.com/support/solutions/articles/29000009717-what-is-the-recovery-tool-and-how-do-i-export-my-private-keys-), [Import](https://coinomi.freshdesk.com/support/solutions/articles/29000009715-how-to-import-a-coinomi-seed-into-electrum-)
-✅😵|Copay[↗︎](https://copay.io/)|Single Signer: ≥ v1.2 `m/44/0'/0'` Multisig: < v1.2 `m/45'/2147483647/0/x` `m/45'/2147483647/1/y` ≥ v1.2 `m/44/0'/0'` ≥ v1.5 `m/48'/0'/0'/1'` `m/48'/0'/0'/2'`|Optional|Yes|No|[Docs](https://github.com/bitpay/copay#wallet-export-format), [Recovery tool](https://bitpay.github.io/copay-recovery/), ❌[Endangered users by misrepresenting Bitcoin](https://web.archive.org/web/20170817153138/https://blog.bitpay.com/bitcore-segwit-activation/)
-⚠️|DropBit[↗︎](https://dropbit.app/)|New Wallets: `m/84/0'/0'` Old Wallets: `m/44/0'/0'`|No|No|No|
-✅|Edge Wallet[↗︎](https://edge.app/)|`m/44'`\|`49'/0'/0'`|||No|[Docs](https://support.edge.app/support/solutions/articles/8000080183-edge-private-seeds-derivation-and-export)
-✅|Electrum[↗︎](https://electrum.org)|Single Signer: `m/44'`\|`49'`\|`84/0'/0'` Multisig: `m/45'/0/0/0` `m/48'/0'/0'/1'` `m/48'/0'/0'/2'` [Does not use BIP39 seed phrases](https://electrum.readthedocs.io/en/latest/seedphrase.html) but can import them|Optional|Yes|Yes|[Docs](https://electrum.readthedocs.io)
-✅|Exodus[↗︎](https://exodus.io)|`m/44'`\|`84/0'/0'`|||No|[Docs](https://support.exodus.io/article/159-import-your-bitcoin-wallet-into-electrum)
+✅👁⑂|Blockchain.com[↗︎](https://www.blockchain.com/en/wallet)|`m/44'/0'/n'`|||No|[Docs](https://support.blockchain.com/hc/en-us/articles/115001298143-Your-Recovery-Phrase-The-Failsafe), [xPub](https://support.blockchain.com/hc/en-us/articles/207746403-Wallets-Addresses)
+✅👁⑂|Blockstream Green (GreenAddress)[↗︎](https://blockstream.com/green/)|Custom 2-of-2 Script|Optional (on restore)||Yes|[Recovery tool](https://github.com/greenaddress/garecovery)
+✅👁⑂|BlueWallet[↗︎](https://bluewallet.io/)|`m/44'`\|`m/49'`\|`84'/0'/0'`|N/A|Yes|Yes|[Docs](http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet), [Archive](https://web.archive.org/save/http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet), [Features](https://bluewallet.io/features.html)
+️⚠️👁⑂|BRD (Bread Wallet)[↗︎](https://brd.com/)|`m/0'`|N/A|Yes|No|[Github Issue](https://github.com/voisine/breadwallet-ios/issues/131), [Reddit Post](https://www.reddit.com/r/Bitcoin/comments/6btevz/how_do_i_import_my_12_breadwallet_seed_words_into/)
+⚠️👁⑂|BTC.com app[↗︎](https://btc.com/applications/app)|Multisig: `m/0'`|||No|[Unofficial Docs](https://gist.github.com/rubensayshi/da922774d43976e0804c)
+⚠️👁|Casa Keymaster[↗︎](https://keys.casa/keymaster/)|`m/49/0/X` (X increments with each key rotation)|||No|[Unofficial Docs](./recovery-docs/casakeymaster-recovery.md)
+⚠️👁⑂|Coin Wallet[↗︎](https://www.coin.space/)|`m/0'`|||No|[EXTERNAL RECOVERY NOT DOCUMENTED]
+✅👁⑂|Coinomi[↗︎](https://www.coinomi.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Yes|Yes|No|[Export](https://coinomi.freshdesk.com/support/solutions/articles/29000009717-what-is-the-recovery-tool-and-how-do-i-export-my-private-keys-), [Import](https://coinomi.freshdesk.com/support/solutions/articles/29000009715-how-to-import-a-coinomi-seed-into-electrum-)
+✅😵👁⑂|Copay[↗︎](https://copay.io/)|Single Signer: ≥ v1.2 `m/44/0'/0'` Multisig: < v1.2 `m/45'/2147483647/0/x` `m/45'/2147483647/1/y` ≥ v1.2 `m/44/0'/0'` ≥ v1.5 `m/48'/0'/0'/1'` `m/48'/0'/0'/2'`|Optional|Yes|No|[Docs](https://github.com/bitpay/copay#wallet-export-format), [Recovery tool](https://bitpay.github.io/copay-recovery/), ❌[Endangered users by misrepresenting Bitcoin](https://web.archive.org/web/20170817153138/https://blog.bitpay.com/bitcore-segwit-activation/)
+⚠️👁⑂|DropBit[↗︎](https://dropbit.app/)|New Wallets: `m/84/0'/0'` Old Wallets: `m/44/0'/0'`|No|No|No|
+✅👁⑂|Edge Wallet[↗︎](https://edge.app/)|`m/44'`\|`49'/0'/0'`|||No|[Docs](https://support.edge.app/support/solutions/articles/8000080183-edge-private-seeds-derivation-and-export)
+✅👁⑂|Electrum[↗︎](https://electrum.org)|Single Signer: `m/44'`\|`49'`\|`84/0'/0'` Multisig: `m/45'/0/0/0` `m/48'/0'/0'/1'` `m/48'/0'/0'/2'` [Does not use BIP39 seed phrases](https://electrum.readthedocs.io/en/latest/seedphrase.html) but can import them|Optional|Yes|Yes|[Docs](https://electrum.readthedocs.io)
+✅👁⑂|Exodus[↗︎](https://exodus.io)|`m/44'`\|`84/0'/0'`|||No|[Docs](https://support.exodus.io/article/159-import-your-bitcoin-wallet-into-electrum)
 TBD|FullyNoded[↗︎](https://github.com/Fonta1n3/FullyNoded)|||[Yes](https://twitter.com/fullynoded/status/1193525236689321984)||TBD
-✅|Hodl Wallet[↗︎](https://hodlwallet.com)|`m/0'`|N/A|Yes|No|[Docs iOS](https://github.com/hodlwallet/hodl-wallet-ios/blob/master/README.md), [Docs Android](https://github.com/hodlwallet/hodl-wallet-android/blob/master/README.md)
+✅👁⑂|Hodl Wallet[↗︎](https://hodlwallet.com)|`m/0'`|N/A|Yes|No|[Docs iOS](https://github.com/hodlwallet/hodl-wallet-ios/blob/master/README.md), [Docs Android](https://github.com/hodlwallet/hodl-wallet-android/blob/master/README.md)
 ⚠️😵|Jaxx Liberty[↗︎](https://jaxx.io/downloads)|`m/44'/0'/0'`|||No|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|JoinMarket[↗︎](https://github.com/JoinMarket-Org/joinmarket-clientserver)|`m/49'/0'/n'`|Optional||No|[Docs](https://github.com/JoinMarket-Org/joinmarket-clientserver/blob/master/docs/USAGE.md#recover)
-✅|Ledger Live[↗︎](https://shop.ledger.com/pages/ledger-live)|`m/44'`\|`49'/0'/0'`|||No|[Docs](https://support.ledger.com/hc/en-us/articles/360006444193)
+✅👁⑂|Ledger Live[↗︎](https://shop.ledger.com/pages/ledger-live)|`m/44'`\|`49'/0'/0'`|||No|[Docs](https://support.ledger.com/hc/en-us/articles/360006444193)
 ⚠|Luxstack[↗︎](https://luxstack.com)|`m/0'`||||[EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|KeepKey Client[↗︎](https://chrome.google.com/webstore/detail/keepkey-client/idgiipeogajjpkgheijapngmlbohdhjg)|`m/44'/0'/0'`|Optional||No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
-⚠|Multibit HD[↗︎](https://multibit.org/)|`m/0'`|N/A||No|[Github Issue](https://github.com/Multibit-Legacy/multibit-hd/issues/445)
-✅|Mycelium[↗︎](https://wallet.mycelium.com/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional (on restore)|Yes|No|[Docs](https://mycelium-support.zendesk.com/hc/en-us/articles/115003713872-Hierarchical-Deterministic-Wallets), [Github Issue](https://github.com/mycelium-com/wallet-android/issues/483)
+✅👁⑂|KeepKey Client[↗︎](https://chrome.google.com/webstore/detail/keepkey-client/idgiipeogajjpkgheijapngmlbohdhjg)|`m/44'/0'/0'`|Optional||No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
+⚠👁⑂|Multibit HD[↗︎](https://multibit.org/)|`m/0'`|N/A||No|[Github Issue](https://github.com/Multibit-Legacy/multibit-hd/issues/445)
+✅👁⑂|Mycelium[↗︎](https://wallet.mycelium.com/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional (on restore)|Yes|No|[Docs](https://mycelium-support.zendesk.com/hc/en-us/articles/115003713872-Hierarchical-Deterministic-Wallets), [Github Issue](https://github.com/mycelium-com/wallet-android/issues/483)
 ✅|OpenBazaar[↗︎](https://openbazaar.org/)|`m/44'/0'`\|`1'`\|`133'`\|`145'/0'`|||No|[Docs](https://openbazaar.zendesk.com/hc/en-us/articles/360002820331-How-do-I-restore-OpenBazaar-from-a-mnemonic-seed-)
 ⚠️|Pine[↗︎](https://pine.pm/)|`m/49'/0'/0'`|No|No|No|[EXTERNAL RECOVERY NOT DOCUMENTED]
-⚠️|Rise Wallet[↗︎](https://www.risewallet.com/)|`m/49'/0'/0'`|||No|[EXTERNAL RECOVERY NOT DOCUMENTED]
+⚠️👁⑂|Rise Wallet[↗︎](https://www.risewallet.com/)|`m/49'/0'/0'`|||No|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Samourai[↗︎](https://samouraiwallet.com/)|Deposit: `m/44'`\|`49'`\|`84'`\|`47'/0'/0'`Bad Bank: `m/84'/0'/2147483644'`Pre Mix: `m/84'/0'/2147483645'`Post Mix: `m/84'/0'/2147483646'`Ricochet: `m/44'`\|`49'`\|`84'/0'/2147483647'`|Required|[Yes](https://twitter.com/samouraidev/status/1193514580816871427)|WIP|[Docs](https://support.samourai.io/article/46-reveal-all-individual-private-keys-in-the-wallet), [BIPs Supported](https://samouraiwallet.com/bips)
-✅|Trezor Web Wallet[↗︎](https://wallet.trezor.io)|`m/44'`\|`49'/0'/0'`|Optional||No|[Docs](https://wiki.trezor.io)
-⚠️|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45’/0’/0’/0/0` + Redeem Script|||No|[Docs](https://www.unchained-capital.com/faq/), [Archive](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/), [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig)
+✅👁⑂|Trezor Web Wallet[↗︎](https://wallet.trezor.io)|`m/44'`\|`49'/0'/0'`|Optional||No|[Docs](https://wiki.trezor.io)
+⚠️👁⑂|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45’/0’/0’/0/0` + Redeem Script|||No|[Docs](https://www.unchained-capital.com/faq/), [Archive](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/), [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig)
 ✅|Wasabi[↗︎](https://docs.wasabiwallet.io/)|`m/84'/0'/0'` Very Deep Depths|Optional|No|Yes|[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#what-derivation-paths-does-wasabi-use), [BIPs Supported](https://docs.wasabiwallet.io/using-wasabi/BIPs.html)
 
 Status|Lightning Wallet|Path and/or Script|Passphrase|Note
@@ -93,6 +93,9 @@ Icon|Legend
 :---:|---
 🛑|Unknown. No obvious docs, research in progress
 😵|Discontinued and/or no-longer maintained
+🚸|HW Phisicaly unsafe with full secret (ie without BIP39 passphrase or multisig) against automated attack (ie chipshouter blackbox)
+👁|Privacy concerns (default is thirdparty node)
+⑂ |Validation concerns (default is thirdparty node)
 ☠️|Not publicly available, or complex without a external tool available for the average user
 ⚠️|Known, but unofficially documented
 ✅|Documented + Link to doc
