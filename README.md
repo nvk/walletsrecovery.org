@@ -19,6 +19,7 @@ Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---
 ✅😵|BitBox01[↗︎](https://shiftcrypto.ch/bitbox01/)|`m/44'`\|`49'`\|`84'/0'/0'`|Required|No|[Docs](https://shiftcrypto.ch/bitbox01/wallet-sweep/), [Recovery Tool](https://github.com/digitalbitbox/html_backup)|
 ✅|BitBox02[↗︎](https://shiftcrypto.ch/bitbox02/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://guides.shiftcrypto.ch/bitbox02/advanced/backup-recovery/), [Recovery tool](https://github.com/digitalbitbox/bitbox02-backup-recovery)|
+⚠️|CoboVault[↗︎](https://cobo.com/hardware-wallet/cobo-vault)|`m/49'/0'/0'`|Optional|No|[Docs](https://support.cobo.com/hc/en-us/articles/360046375373-Passphrase), [EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅😵|ColdCard Mk1[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional|Yes|[Docs](https://coldcardwallet.com/docs/)
 ✅|ColdCard Mk2[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional|Yes|[Docs](https://coldcardwallet.com/docs/)
 ✅|ColdCard Mk3[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'` + Custom|Optional|Yes|[Docs](https://coldcardwallet.com/docs/)
@@ -76,6 +77,7 @@ Status|Lightning Wallet|Path and/or Script|Passphrase|Note
 Status|Combo HW+SW|Path and/or Script|BIP39 Pass|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---
 ✅|BTCPay Server (Coldcard)[↗︎](https://coldcardwallet.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|Yes|[Docs](https://docs.btcpayserver.org/getting-started/connectwallet/coldcardwallet#coldcard-wallet-setup)
+⚠️|Electrum (CoboVault)[↗︎](https://cobo.com/hardware-wallet/cobo-vault)|`m/49'/0'/0'`|Optional|No|[Docs](https://support.cobo.com/hc/en-us/articles/360046375373-Passphrase), [EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Electrum (Coldcard)[↗︎](https://coldcardwallet.com/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|Yes|[Docs](https://coldcardwallet.com/docs/quick)
 ✅|Electrum (Ledger S/Nano)[↗︎](https://ledger.com/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://support.ledger.com/hc/en-us)
 ✅|Electrum (KeepKey)[↗︎](https://shapeshift.io/keepkey/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
