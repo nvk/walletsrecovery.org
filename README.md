@@ -94,8 +94,8 @@ Icon|Legend
 🛑|Unknown. No obvious docs, research in progress
 😵|Discontinued and/or no-longer maintained
 🚸|HW Phisicaly unsafe with full secret (ie without BIP39 passphrase or multisig) against automated attack (ie chipshouter blackbox)
-👁|Privacy concerns (default is thirdparty node)
-⑂ |Validation concerns (default is thirdparty node)
+👁|Privacy concerns (default is third party node)
+⑂ |Validation concerns (default is third party node)
 ☠️|Not publicly available, or complex without a external tool available for the average user
 ⚠️|Known, but unofficially documented
 ✅|Documented + Link to doc
