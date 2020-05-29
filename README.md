@@ -93,7 +93,7 @@ Icon|Legend
 :---:|---
 🛑|Unknown. No obvious docs, research in progress
 😵|Discontinued and/or no-longer maintained
-🚸|HW Physically unsafe with "full secret" (ie without BIP39 passphrase or multisig) against automated attack (ie chipshouter blackbox)
+🚸|HW Physically unsafe with "full secret" (ie without BIP39 passphrase or multisig) against a automated attack and/or unsofisticated attacker (ie chipshouter blackbox)
 👁|Privacy concerns (default is third party node)
 ⑂ |Validation concerns (default is third party node)
 ☠️|Not publicly available, or complex without a external tool available for the average user
