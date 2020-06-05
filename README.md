@@ -42,7 +42,7 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Not
 ✅👁⑂|BlueWallet[↗︎](https://bluewallet.io/)|`m/44'`\|`m/49'`\|`84'/0'/0'`|N/A|Yes|Yes|[Docs](http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet), [Archive](https://web.archive.org/save/http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet), [Features](https://bluewallet.io/features.html)
 ️⚠️👁⑂|BRD (Bread Wallet)[↗︎](https://brd.com/)|`m/0'`|N/A|Yes|No|[Github Issue](https://github.com/voisine/breadwallet-ios/issues/131), [Reddit Post](https://www.reddit.com/r/Bitcoin/comments/6btevz/how_do_i_import_my_12_breadwallet_seed_words_into/)
 ⚠️👁⑂|BTC.com app[↗︎](https://btc.com/applications/app)|Multisig: `m/0'`|||No|[Unofficial Docs](https://gist.github.com/rubensayshi/da922774d43976e0804c)
-⚠️👁|Casa Keymaster[↗︎](https://keys.casa/keymaster/)|`m/49/0/X` (X increments with each key rotation)|||No|[Unofficial Docs](./recovery-docs/casakeymaster-recovery.md)
+⚠️👁|Casa[↗︎](https://keys.casa/)|`m/49/0/X` (X increments with each key rotation)|||No|[Unofficial Docs](./recovery-docs/casa-recovery.md)
 ⚠️👁⑂|Coin Wallet[↗︎](https://www.coin.space/)|`m/0'`|||No|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅👁⑂|Coinomi[↗︎](https://www.coinomi.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Yes|Yes|No|[Export](https://coinomi.freshdesk.com/support/solutions/articles/29000009717-what-is-the-recovery-tool-and-how-do-i-export-my-private-keys-), [Import](https://coinomi.freshdesk.com/support/solutions/articles/29000009715-how-to-import-a-coinomi-seed-into-electrum-)
 ✅😵👁⑂|Copay[↗︎](https://copay.io/)|Single Signer: ≥ v1.2 `m/44/0'/0'` Multisig: < v1.2 `m/45'/2147483647/0/x` `m/45'/2147483647/1/y` ≥ v1.2 `m/44/0'/0'` ≥ v1.5 `m/48'/0'/0'/1'` `m/48'/0'/0'/2'`|Optional|Yes|No|[Docs](https://github.com/bitpay/copay#wallet-export-format), [Recovery tool](https://bitpay.github.io/copay-recovery/), ❌[Endangered users by misrepresenting Bitcoin](https://web.archive.org/web/20170817153138/https://blog.bitpay.com/bitcore-segwit-activation/)
@@ -92,8 +92,8 @@ Notes:
 Icon|Legend
 :---:|---
 🛑|Unknown. No obvious docs, research in progress
-😵|Discontinued and/or no-longer maintained
-🚸|HW Physically unsafe with "full secret" (ie without BIP39 passphrase or multisig) against a automated attack and/or unsofisticated attacker (ie chipshouter blackbox)
+😵|Discontinued and/or no longer maintained
+🚸|HW Physically unsafe with "full secret" (ie without BIP39 passphrase or multisig) against a automated attack and/or unsophisticated attacker (ie chipshouter blackbox)
 👁|Privacy concerns (default is third party node)
 ⑂ |Validation concerns (default is third party node)
 ☠️|Not publicly available, or complex without a external tool available for the average user
