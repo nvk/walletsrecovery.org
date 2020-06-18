@@ -113,7 +113,7 @@ Icon|Legend
 
 ## Explainer: Derivation Paths
 
-In hierarchical deterministic wallets ([BIP32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)), a derivation path is a sequence of fields or levels through which a wallet organizes coins in a multi-currency, multi-account, and multi-address system. According to [BIP44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki), this hierarchy consists of five levels, in addition to the master extended private key ('xpriv') represented by `m`. Derivation paths for the master extended public key or 'xpub' use `M`. Double-check what fields your wallet uses in our chart above, as BIP44 has been implemented inconsistently!
+In hierarchical deterministic wallets ([BIP32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)), a derivation path is a sequence of fields or levels through which a wallet organizes coins in a multi-currency, multi-account, and multi-address system. According to [BIP44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki), this hierarchy consists of five levels, in addition to the master extended private key ('xpriv') represented by `m`. Derivation paths for the master extended public key ('xpub') use `M`. Double-check what fields your wallet uses in our chart above, as BIP44 has been implemented inconsistently!
 
 m / purpose' / coin_type' / account' / change / address_index
 
