@@ -9,6 +9,7 @@ title: Links & Resources
 - Bitcoin Extended Public Key Converter [↗︎](https://jlopp.github.io/xpub-converter/)
 - BIP39 Mnemonic Code Converter [↗︎](https://iancoleman.io/bip39/)
 - HD Wallet Scanner [↗︎](https://github.com/alexk111/HD-Wallet-Scanner/)
+- [In Development] Automated Scanner & BIP39 Recovery Feature for Electrum [↗︎](https://github.com/spesmilo/electrum/pull/6219)
 
 ### General Information
 - Lopp's Bitcoin Resources [↗︎](https://www.lopp.net/bitcoin-information.html)
