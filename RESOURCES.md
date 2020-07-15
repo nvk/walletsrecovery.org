@@ -9,6 +9,7 @@ title: Links & Resources
 - "Bitcoin Extended Public Key Converter" by Jameson Lopp [↗︎](https://jlopp.github.io/xpub-converter/)
 - "Mnemonic Code Converter" by Ian Coleman [↗︎](https://iancoleman.io/bip39/)
 - "HD-Wallet Scanner" by Alex Kaul [↗︎](https://github.com/alexk111/HD-Wallet-Scanner/)
+- "PSBT Toolkit" by Ben Carman [↗︎](https://github.com/benthecarman/PSBT-Toolkit/releases)
 - [In Development] Automated Scanner & BIP39 Recovery Feature for Electrum by Luke Childs [↗︎](https://github.com/spesmilo/electrum/pull/6219)
 
 ### General Information
