@@ -24,14 +24,24 @@ Electrum 4.0.0 or later is required for Coldcard support.
 
 Install the appropriate libraries for your hardware wallets:
 
-1. `sudo apt-get install libusb-1.0-0-dev libudev-dev`
-2. `sudo pip3 install btchip-python`
-3. `sudo pip3 install trezor`
-4. `sudo pip3 install ckcc-protocol`
-5. Set udev rules for ledger: https://support.ledgerwallet.com/hc/en-us/articles/115005165269-Fix-connection-issues
-6. Set udev rules for trezor: https://doc.satoshilabs.com/trezor-user/settingupchromeonlinux.html
-7. Set udev rules for coldcard: https://raw.githubusercontent.com/Coldcard/ckcc-protocol/master/51-coinkite.rules
-8. After setting the udev rules for the first time, reboot your computer.
+1. `sudo apt install libusb-1.0-0-dev libudev-dev python3-pip`
+2. `pip3 install btchip-python`
+3. `pip3 install trezor`
+4. `pip3 install ckcc-protocol`
+
+Set the udev rules for each hardware wallet:
+
+1. `wget https://raw.githubusercontent.com/spesmilo/electrum/master/contrib/udev/20-hw1.rules`
+2. `wget https://raw.githubusercontent.com/spesmilo/electrum/master/contrib/udev/51-trezor.rules`
+3. `wget https://raw.githubusercontent.com/spesmilo/electrum/master/contrib/udev/51-coinkite.rules`
+4. `sudo mv *.rules /etc/udev/rules.d/`
+
+Add your user to the plugdev group
+1. `sudo groupadd plugdev`
+2. `sudo usermod -aG plugdev $(whoami)`
+3. `sudo udevadm control --reload-rules && sudo udevadm trigger`
+
+After this initial setup, restart your computer.
 
 ## Step-By-Step Guide
 
@@ -128,14 +138,24 @@ Electrum 4.0.0 or later is required for Coldcard support.
 
 Install the appropriate libraries for your hardware wallets:
 
-1. `sudo apt-get install libusb-1.0-0-dev libudev-dev`
-2. `sudo pip3 install btchip-python`
-3. `sudo pip3 install trezor`
-4. `sudo pip3 install ckcc-protocol`
-5. Set udev rules for ledger: https://support.ledgerwallet.com/hc/en-us/articles/115005165269-Fix-connection-issues
-6. Set udev rules for trezor: https://doc.satoshilabs.com/trezor-user/settingupchromeonlinux.html
-7. Set udev rules for coldcard: https://raw.githubusercontent.com/Coldcard/ckcc-protocol/master/51-coinkite.rules
-8. After setting the udev rules for the first time, reboot your computer.
+1. `sudo apt install libusb-1.0-0-dev libudev-dev python3-pip`
+2. `pip3 install btchip-python`
+3. `pip3 install trezor`
+4. `pip3 install ckcc-protocol`
+
+Set the udev rules for each hardware wallet:
+
+1. `wget https://raw.githubusercontent.com/spesmilo/electrum/master/contrib/udev/20-hw1.rules`
+2. `wget https://raw.githubusercontent.com/spesmilo/electrum/master/contrib/udev/51-trezor.rules`
+3. `wget https://raw.githubusercontent.com/spesmilo/electrum/master/contrib/udev/51-coinkite.rules`
+4. `sudo mv *.rules /etc/udev/rules.d/`
+
+Add your user to the plugdev group
+1. `sudo groupadd plugdev`
+2. `sudo usermod -aG plugdev $(whoami)`
+3. `sudo udevadm control --reload-rules && sudo udevadm trigger`
+
+After this initial setup, restart your computer.
 
 ## Step-By-Step Guide
 
@@ -236,14 +256,24 @@ Electrum 4.0.0 or later is required for Coldcard support.
 
 Install the appropriate libraries for your hardware wallets:
 
-1. `sudo apt-get install libusb-1.0-0-dev libudev-dev`
-2. `sudo pip3 install btchip-python`
-3. `sudo pip3 install trezor`
-4. `sudo pip3 install ckcc-protocol`
-5. Set udev rules for ledger: https://support.ledgerwallet.com/hc/en-us/articles/115005165269-Fix-connection-issues
-6. Set udev rules for trezor: https://doc.satoshilabs.com/trezor-user/settingupchromeonlinux.html
-7. Set udev rules for coldcard: https://raw.githubusercontent.com/Coldcard/ckcc-protocol/master/51-coinkite.rules
-8. After setting the udev rules for the first time, reboot your computer.
+1. `sudo apt install libusb-1.0-0-dev libudev-dev python3-pip`
+2. `pip3 install btchip-python`
+3. `pip3 install trezor`
+4. `pip3 install ckcc-protocol`
+
+Set the udev rules for each hardware wallet:
+
+1. `wget https://raw.githubusercontent.com/spesmilo/electrum/master/contrib/udev/20-hw1.rules`
+2. `wget https://raw.githubusercontent.com/spesmilo/electrum/master/contrib/udev/51-trezor.rules`
+3. `wget https://raw.githubusercontent.com/spesmilo/electrum/master/contrib/udev/51-coinkite.rules`
+4. `sudo mv *.rules /etc/udev/rules.d/`
+
+Add your user to the plugdev group
+1. `sudo groupadd plugdev`
+2. `sudo usermod -aG plugdev $(whoami)`
+3. `sudo udevadm control --reload-rules && sudo udevadm trigger`
+
+After this initial setup, restart your computer.
 
 ## Step-By-Step Guide
 
@@ -304,14 +334,24 @@ Electrum 4.0.0 or later is required for Coldcard support.
 
 Install the appropriate libraries for your hardware wallets:
 
-1. `sudo apt-get install libusb-1.0-0-dev libudev-dev`
-2. `sudo pip3 install btchip-python`
-3. `sudo pip3 install trezor`
-4. `sudo pip3 install ckcc-protocol`
-5. Set udev rules for ledger: https://support.ledgerwallet.com/hc/en-us/articles/115005165269-Fix-connection-issues
-6. Set udev rules for trezor: https://doc.satoshilabs.com/trezor-user/settingupchromeonlinux.html
-7. Set udev rules for coldcard: https://raw.githubusercontent.com/Coldcard/ckcc-protocol/master/51-coinkite.rules
-8. After setting the udev rules for the first time, reboot your computer.
+1. `sudo apt install libusb-1.0-0-dev libudev-dev python3-pip`
+2. `pip3 install btchip-python`
+3. `pip3 install trezor`
+4. `pip3 install ckcc-protocol`
+
+Set the udev rules for each hardware wallet:
+
+1. `wget https://raw.githubusercontent.com/spesmilo/electrum/master/contrib/udev/20-hw1.rules`
+2. `wget https://raw.githubusercontent.com/spesmilo/electrum/master/contrib/udev/51-trezor.rules`
+3. `wget https://raw.githubusercontent.com/spesmilo/electrum/master/contrib/udev/51-coinkite.rules`
+4. `sudo mv *.rules /etc/udev/rules.d/`
+
+Add your user to the plugdev group
+1. `sudo groupadd plugdev`
+2. `sudo usermod -aG plugdev $(whoami)`
+3. `sudo udevadm control --reload-rules && sudo udevadm trigger`
+
+After this initial setup, restart your computer.
 
 ## Step-By-Step Guide
 
