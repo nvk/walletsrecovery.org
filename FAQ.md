@@ -2,9 +2,6 @@
 title: Frequently Asked Questions
 ---
 
-* [How to contribute?](#how-to-contribute)
-* [How to develop locally?](#how-to-develop-locally)
-
 ## How to contribute?
 
 Make a [Pull Request](https://github.com/nvk/wallets-recovery/pulls).
