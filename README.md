@@ -77,6 +77,7 @@ Status|Lightning Wallet|Path and/or Script|Passphrase|Note
 ⚠️|c-Lightning[↗︎](https://github.com/ElementsProject/lightning)|`m/84'`\|`141'/0'/0'/`Keys derived from `hsm_secret` file|N/A|[BIP32 layout explained](https://github.com/ElementsProject/lightning/blob/697b501132c4222da444f6c63f35818169292efb/hsmd/hsmd.c#L426-L445), [xPriv/xPub Export Tool](https://github.com/rsbondi/clightning-go-plugin/tree/master/dump_keys)
 ✅|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)|`m/49'/0'/0'`|Optional|[Docs](https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-)
 ✅|LND (Lightning Network Daemon)[↗︎](https://github.com/lightningnetwork/lnd)|aezeed|Optional|[Docs](https://github.com/lightningnetwork/lnd/tree/master/aezeed)
+⚠️|Stakenet DEX Open Beta[↗︎](https://medium.com/stakenet/stakenet-dex-open-beta-dd5c78175608)| P2WPKH bech32 addresses `m/44'/0'/0'`|N/A|[EXTERNAL RECOVERY NOT DOCUMENTED]
 
 Status|Combo HW+SW|Path and/or Script|BIP39 Pass|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---
