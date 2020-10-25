@@ -7,7 +7,7 @@ wallets_recovery:
     "script": "p2pkh",
     "passphrase": "optional",
     "psbt": true
-  }
+  },
   {
     "path": "m/84'/0'/0'",
     "script": "p2wpkh",
