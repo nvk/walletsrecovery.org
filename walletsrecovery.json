@@ -2,7 +2,7 @@
 wallets_recovery:
     [
     {"ColdCard Mk1":
-        "gap_limit": 20, 
+        "gapLimit": 20, 
         [
         {
             "path": "m/44'/0'/0'",
