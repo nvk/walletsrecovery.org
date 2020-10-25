@@ -1,8 +1,6 @@
 {
 wallets_recovery: [
- "ColdCard Mk1":
- [
-  {
+ {"ColdCard Mk1":
     "path" : "m/44'/0'/0'",
     "script": "p2pkh",
     "passphrase": "optional",
