@@ -1,19 +1,30 @@
 {
 	"wallets_recovery": [{
 		"wallet": "ColdCard Mk1",
+		"passphrase": "optional",
 		"gapLimit": 20,
+		"psbt": true,
 		"paths": [{
 				"path": "m/44'/0'/0'",
-				"script": "p2pkh",
-				"passphrase": "optional",
-				"psbt": true
+				"script": "p2pkh",				
+			},
+			{
+				"path": "m/48'/0'/0'",
+				"script": "p2wpkh",
+			},
+			{
+				"path": "m/49'/0'/0'",
+				"script": "p2wpkh",
 			},
 			{
 				"path": "m/84'/0'/0'",
 				"script": "p2wpkh",
-				"passphrase": "optional",
-				"psbt": true
+			},
+			{
+				"path": "CUSTOM",
+				"script": "USERINPUT",
 			}
+			
 		]
 	}]
 }
