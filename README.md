@@ -60,7 +60,8 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Not
 ⚠|Luxstack[↗︎](https://luxstack.com)|`m/0'`||||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅👁⑂|KeepKey Client[↗︎](https://chrome.google.com/webstore/detail/keepkey-client/idgiipeogajjpkgheijapngmlbohdhjg)|`m/44'/0'/0'`|Optional||No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
 ⚠👁⑂|Multibit HD[↗︎](https://multibit.org/)|`m/0'`|N/A||No|[Github Issue](https://github.com/Multibit-Legacy/multibit-hd/issues/445)
-✅👁⑂|Mycelium[↗︎](https://wallet.mycelium.com/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional (on restore)|Yes|No|[Docs](https://mycelium-support.zendesk.com/hc/en-us/articles/115003713872-Hierarchical-Deterministic-Wallets), [Github Issue](https://github.com/mycelium-com/wallet-android/issues/483)
+✅👁⑂|Mycelium for Android[↗︎](https://wallet.mycelium.com/)|`m/44'`\|`49'`\|`84'/0'/n'`|Optional (on restore)|Yes|No|[Github Issue](https://github.com/mycelium-com/wallet-android/issues/483)
+✅👁⑂|Mycelium for iPhone[↗︎](https://wallet.mycelium.com/)|`m/44'/0'/n'`|Optional (on restore)|Yes|No|
 ✅|OpenBazaar[↗︎](https://openbazaar.org/)|`m/44'/0'`\|`1'`\|`133'`\|`145'/0'`|||No|[Docs](https://openbazaar.zendesk.com/hc/en-us/articles/360002820331-How-do-I-restore-OpenBazaar-from-a-mnemonic-seed-)
 ⚠️|Pine[↗︎](https://pine.pm/)|`m/49'/0'/0'`|No|No|No|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ⚠️👁⑂|Rise Wallet[↗︎](https://www.risewallet.com/)|`m/49'/0'/0'`|||No|[EXTERNAL RECOVERY NOT DOCUMENTED]
