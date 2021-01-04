@@ -36,7 +36,7 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Not
 ☠   | Atomic Wallet[↗︎](atomicwallet.io)|`m/44'/0'/0'/0/0` (Single Address Wallet)|No|No|No| Non-Standard derivation path for non-BTC coins, [EXTERNAL RECOVERY NOT DOCUMENTED].
 ️⚠️|Bitcoin Core[↗︎](https://bitcoin.org)|`m/0'/0'`|N/A|Yes|WIP|[Github Issue](https://github.com/bitcoin/bitcoin/issues/13302)
 ✅👁⑂|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)|BIP32 non 44 Compatible|||No|[Docs](https://github.com/bitcoin-wallet/bitcoin-wallet/blob/master/wallet/README.recover.md), [Archive](./recovery-docs/bitcoinwallet-recovery.md)
-️⚠️|Bisq[↗︎](https://bisq.network/)|`m/44'/0'/0'`\|`44'/0'/1'`|N/A||No|[Github Issue](https://github.com/bisq-network/bisq/issues/1853),SegWit on 44 deriv path, account 1
+️⚠️|Bisq[↗︎](https://bisq.network/)|`m/44'/0'/0'`\|`44'/0'/1'`|N/A||No|[Github Issue](https://github.com/bisq-network/bisq/issues/1853). SegWit on 44 deriv path, account 1.
 ⚠️|Bither[↗︎](https://bither.net/)|`m/44'`\|`49'/0'/0'`|||No|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅👁⑂|Blockchain.com[↗︎](https://www.blockchain.com/en/wallet)|`m/44'/0'/n'`|||No|[Docs](https://support.blockchain.com/hc/en-us/articles/115001298143-Your-Recovery-Phrase-The-Failsafe), [xPub](https://support.blockchain.com/hc/en-us/articles/207746403-Wallets-Addresses)
 ✅👁⑂|Blockstream Green (GreenAddress)[↗︎](https://blockstream.com/green/)|Custom 2-of-2 Script|Optional (on restore)||Yes|[Recovery tool](https://github.com/greenaddress/garecovery)
