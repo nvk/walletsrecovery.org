@@ -445,7 +445,7 @@ How to recover funds from an m-of-n Casa bitcoin wallet without using Casa softw
      rpcauth=<YOUR_RPC_AUTH_STRING>
      server=1
 `
-4. Install [Specter Desktop](https://github.com/cryptoadvance/specter-desktop) and make sure it can talk to Bitcoin Core.
+4. Install [Specter Desktop](https://github.com/cryptoadvance/specter-desktop) and make sure it can talk to Bitcoin Core. We recommend [this guide](https://www.bitcoinqna.com/post/specter-desktop-101).
 
 For each Hardware Device:
 1. Plug in device to your computer
@@ -455,9 +455,9 @@ For each Hardware Device:
 5. Click "Edit"
 6. Delete any pre-filled derivation paths
 7. Click "Add custom derivation"
-8. Name it "Casa" and paste in derivation path from your Sovereign Recovery email
+8. Use "Casa" for the purpose field and paste in the hardware wallet derivation path from your Sovereign Recovery email
 9. Click "Add"
-10. Click "Get via USB"
+10. Click "Get via USB" - note that for Ledger devices you need to unlock the Ledger and open the Bitcoin app
 11. Click "Add Device"
 12. Click "Add another device" and repeat for other hardware devices
 
@@ -473,17 +473,20 @@ For **signing** with a mobile key:
 8. Click "Edit"
 9. Delete any pre-filled derivation paths
 10. Click "Add custom derivation"
-11. Name it "Casa" and paste in derivation path from your Sovereign Recovery email
+11. Use "Casa" for the purpose field and paste in the hardware wallet derivation path from your Sovereign Recovery email
 12. Click "Add"
 13. Click "Add Device"
 
 For a Casa Recovery Key or a Mobile Key that **won't** be signing:
 1. Click "Add Device"
 2. Select "Other Device"
-3. Click "Paste xpub"
-4. Paste in the Casa extended public key from your Sovereign Recovery Email
-5. Derivation path should be "m/"
-6. Click "Add Device"
+3. Enter a name for the device.
+4. Click "Edit"
+5. Delete any pre-filled derivation paths.
+6. Click "Paste xpub"
+7. Paste in the Casa extended public key from your Sovereign Recovery Email
+8. Derivation path should be "m/"
+9. Click "Add Device"
 
 Once all devices are created:
 1. Click "Add new wallet"
@@ -511,7 +514,7 @@ How to recover funds from a single signature Casa bitcoin wallet without using C
      rpcauth=<YOUR_RPC_AUTH_STRING>
      server=1
 `
-4. Install [Specter Desktop](https://github.com/cryptoadvance/specter-desktop) and make sure it can talk to Bitcoin Core.
+4. Install [Specter Desktop](https://github.com/cryptoadvance/specter-desktop) and make sure it can talk to Bitcoin Core. We recommend [this guide](https://www.bitcoinqna.com/post/specter-desktop-101).
 
 1. In the Casa app, tap the "Mobile Key" wallet
 2. Tap the mobile device
@@ -531,7 +534,7 @@ How to recover funds from a single signature Casa bitcoin wallet without using C
 16. Click "Edit"
 17. Delete any pre-filled derivation paths
 18. Click "Add custom derivation"
-19. Name it "Casa" and paste in derivation path from Sovereign Recovery email
+19. Use "Casa" for the purpose field and paste in the derivation path from the Casa app
 20. Click "Add"
 21. Click "Add Device"
 22. Click "Create Single Key Wallet"
