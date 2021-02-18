@@ -34,8 +34,8 @@ Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP174 PSBT|Note
 
 Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---|---
-☠👁⑂|AirGap Wallet (AirGap Vault)[↗︎](airgap.it)|`m/44'/0'/0'`|Optional|No|No|[EXTERNAL RECOVERY NOT DOCUMENTED].
-☠   | Atomic Wallet[↗︎](atomicwallet.io)|`m/44'/0'/0'/0/0` (Single Address Wallet)|No|No|No| Non-Standard derivation path for non-BTC coins, [EXTERNAL RECOVERY NOT DOCUMENTED].
+☠👁⑂|AirGap Wallet (AirGap Vault)[↗︎](https://airgap.it)|`m/44'/0'/0'`|Optional|No|No|[EXTERNAL RECOVERY NOT DOCUMENTED].
+☠   | Atomic Wallet[↗︎](https://atomicwallet.io)|`m/44'/0'/0'/0/0` (Single Address Wallet)|No|No|No| Non-Standard derivation path for non-BTC coins, [EXTERNAL RECOVERY NOT DOCUMENTED].
 ️⚠️|Bitcoin Core[↗︎](https://bitcoin.org)|`m/0'/0'`|N/A|Yes|WIP|[Github Issue](https://github.com/bitcoin/bitcoin/issues/13302)
 ✅👁⑂|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)|BIP32 non 44 Compatible|||No|[Docs](https://github.com/bitcoin-wallet/bitcoin-wallet/blob/master/wallet/README.recover.md), [Archive](./recovery-docs/bitcoinwallet-recovery.md)
 ️⚠️|Bisq[↗︎](https://bisq.network/)|`m/44'/0'/0'`\|`44'/0'/1'`|N/A||No|[Github Issue](https://github.com/bisq-network/bisq/issues/1853). SegWit on 44 deriv path, account 1.
