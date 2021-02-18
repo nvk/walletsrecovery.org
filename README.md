@@ -72,7 +72,7 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Not
 ✅|Specter Desktop[↗︎](https://github.com/cryptoadvance/specter-desktop)|Single Signer: `m/49'/0'/0'` `m/84'/0'/0'` Multisig: `m/48'/0'/0'/1'` `m/48'/0'/0'/2'`|Optional|No|Yes|Coming soon...
 ✅👁⑂|Trezor Web Wallet[↗︎](https://wallet.trezor.io)|`m/44'`\|`49'/0'/0'`|Optional||No|[Docs](https://wiki.trezor.io)
 ✅👁⑂|Trust Wallet[↗︎](https://trustwallet.com)|`m/84'/0'/0'/0/0`|Yes|No|No|[Docs](https://community.trustwallet.com) [2](https://community.trustwallet.com/c/helpcenter/migration/15) [definition](https://github.com/trustwallet/wallet-core/blob/master/coins.json#L9)
-⚠️👁⑂|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45’/0’/0’/0/0` + Redeem Script|||No|[Docs](https://www.unchained-capital.com/faq/), [Archive](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/), [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig)
+⚠️👁⑂|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45’/0’/0’/0/0` + Redeem Script|||No|[Docs](https://www.unchained-capital.com/faq/), [Archive](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/), [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig-older)
 ☠   | Unstoppable Wallet[↗︎](https://unstoppable.money)|`m/44'`\|`m/49'`\|`84'/0'/0'`|Yes|No|No| [EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Wasabi[↗︎](https://wasabiwallet.io/)|`m/84'/0'/0'` Very Deep Depths|Optional|No|Yes|[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#what-derivation-paths-does-wasabi-use), [BIPs Supported](https://docs.wasabiwallet.io/using-wasabi/BIPs.html)
 
