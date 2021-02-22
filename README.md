@@ -34,8 +34,8 @@ Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP174 PSBT|Note
 
 Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---|---
-☠👁⑂|AirGap Wallet (AirGap Vault)[↗︎](airgap.it)|`m/44'/0'/0'`|Optional|No|No|[EXTERNAL RECOVERY NOT DOCUMENTED].
-☠   | Atomic Wallet[↗︎](atomicwallet.io)|`m/44'/0'/0'/0/0` (Single Address Wallet)|No|No|No| Non-Standard derivation path for non-BTC coins, [EXTERNAL RECOVERY NOT DOCUMENTED].
+☠👁⑂|AirGap Wallet (AirGap Vault)[↗︎](https://airgap.it)|`m/44'/0'/0'`|Optional|No|No|[EXTERNAL RECOVERY NOT DOCUMENTED].
+☠   | Atomic Wallet[↗︎](https://atomicwallet.io)|`m/44'/0'/0'/0/0` (Single Address Wallet)|No|No|No| Non-Standard derivation path for non-BTC coins, [EXTERNAL RECOVERY NOT DOCUMENTED].
 ️⚠️|Bitcoin Core[↗︎](https://bitcoin.org)|`m/0'/0'`|N/A|Yes|WIP|[Github Issue](https://github.com/bitcoin/bitcoin/issues/13302)
 ✅👁⑂|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)|BIP32 non 44 Compatible|||No|[Docs](https://github.com/bitcoin-wallet/bitcoin-wallet/blob/master/wallet/README.recover.md), [Archive](./recovery-docs/bitcoinwallet-recovery.md)
 ️⚠️|Bisq[↗︎](https://bisq.network/)|`m/44'/0'/0'`\|`44'/0'/1'`|N/A||No|[Github Issue](https://github.com/bisq-network/bisq/issues/1853). SegWit on 44 deriv path, account 1.
@@ -72,7 +72,7 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Not
 ✅|Specter Desktop[↗︎](https://github.com/cryptoadvance/specter-desktop)|Single Signer: `m/49'/0'/0'` `m/84'/0'/0'` Multisig: `m/48'/0'/0'/1'` `m/48'/0'/0'/2'`|Optional|No|Yes|Coming soon...
 ✅👁⑂|Trezor Web Wallet[↗︎](https://wallet.trezor.io)|`m/44'`\|`49'/0'/0'`|Optional||No|[Docs](https://wiki.trezor.io)
 ✅👁⑂|Trust Wallet[↗︎](https://trustwallet.com)|`m/84'/0'/0'/0/0`|Yes|No|No|[Docs](https://community.trustwallet.com) [2](https://community.trustwallet.com/c/helpcenter/migration/15) [definition](https://github.com/trustwallet/wallet-core/blob/master/coins.json#L9)
-⚠️👁⑂|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45’/0’/0’/0/0` + Redeem Script|||No|[Docs](https://www.unchained-capital.com/faq/), [Archive](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/), [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig)
+⚠️👁⑂|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45’/0’/0’/0/0` + Redeem Script|||No|[Docs](https://www.unchained-capital.com/faq/), [Archive](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/), [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig-older)
 ☠   | Unstoppable Wallet[↗︎](https://unstoppable.money)|`m/44'`\|`m/49'`\|`84'/0'/0'`|Yes|No|No| [EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Wasabi[↗︎](https://wasabiwallet.io/)|`m/84'/0'/0'` Very Deep Depths|Optional|No|Yes|[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#what-derivation-paths-does-wasabi-use), [BIPs Supported](https://docs.wasabiwallet.io/using-wasabi/BIPs.html)
 
