@@ -67,6 +67,7 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Not
 ✅👁⑂|Mycelium for iPhone[↗︎](https://wallet.mycelium.com/)|`m/44'/0'/n'`|Optional (on restore)|Yes|No|
 ✅|OpenBazaar[↗︎](https://openbazaar.org/)|`m/44'/0'`\|`1'`\|`133'`\|`145'/0'`|||No|[Docs](https://openbazaar.zendesk.com/hc/en-us/articles/360002820331-How-do-I-restore-OpenBazaar-from-a-mnemonic-seed-)
 ⚠️|Pine[↗︎](https://pine.pm/)|`m/49'/0'/0'`|No|No|No|[EXTERNAL RECOVERY NOT DOCUMENTED]
+⚠️👁⑂|Relai[↗︎](https://www.relai.ch/)|`m/49'/0'/0'`<br /><sub>Wallets initiated with app version < 1.2 may also have funds here: `m/44'/0'/0'`</sub>|No|No|No||
 ⚠️👁⑂|Rise Wallet[↗︎](https://www.risewallet.com/)|`m/49'/0'/0'`|||No|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Samourai[↗︎](https://samouraiwallet.com/)|Deposit: `m/44'`\|`49'`\|`84'`\|`47'/0'/0'`Bad Bank: `m/84'/0'/2147483644'`Pre Mix: `m/84'/0'/2147483645'`Post Mix: `m/84'/0'/2147483646'`Ricochet: `m/44'`\|`49'`\|`84'/0'/2147483647'`|Required|[Yes](https://twitter.com/samouraidev/status/1193514580816871427)|WIP|[Docs](https://support.samourai.io/article/46-reveal-all-individual-private-keys-in-the-wallet), [BIPs Supported](https://samouraiwallet.com/bips)
 ✅|Specter Desktop[↗︎](https://github.com/cryptoadvance/specter-desktop)|Single Signer: `m/49'/0'/0'` `m/84'/0'/0'` Multisig: `m/48'/0'/0'/1'` `m/48'/0'/0'/2'`|Optional|No|Yes|Coming soon...
