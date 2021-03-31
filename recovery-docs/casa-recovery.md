@@ -514,7 +514,7 @@ How to recover funds from a single signature Casa bitcoin wallet without using C
      rpcauth=<YOUR_RPC_AUTH_STRING>
      server=1
 `
-4. Install [Specter Desktop](https://github.com/cryptoadvance/specter-desktop) and make sure it can talk to Bitcoin Core. We recommend [this guide](https://www.bitcoinqna.com/post/specter-desktop-101).
+4. Install [Specter Desktop](https://github.com/cryptoadvance/specter-desktop) and make sure it can talk to Bitcoin Core. We recommend [this guide](https://bitcoiner.guide/specter).
 
 1. In the Casa app, tap the "Mobile Key" wallet
 2. Tap the mobile device
