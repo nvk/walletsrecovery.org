@@ -24,6 +24,7 @@ Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP174 PSBT|Note
 ✅😵|ColdCard Mk1[↗︎](https://coldcardwallet.com/)|`m/44'`\|`48'`\|`49'`\|`84'/0'/0'` + Custom|Optional|Yes|[Docs](https://coldcardwallet.com/docs/)
 ✅|ColdCard Mk2[↗︎](https://coldcardwallet.com/)|`m/44'`\|`48'`\|`84'/0'/0'` + Custom|Optional|Yes|[Docs](https://coldcardwallet.com/docs/)
 ✅|ColdCard Mk3[↗︎](https://coldcardwallet.com/)|`m/44'`\|`48'`\|`84'/0'/0'` + Custom|Optional|Yes|[Docs](https://coldcardwallet.com/docs/)
+✅👁|Coolwallet S[↗︎](https://www.coolwallet.io/)|`m/44'/0'/0'` (P2SH-Segwit account on P2PKH path)|No|No|BIP39 Seed words represented as numbers... [Conversion Map](https://www.coolwallet.io/wp-content/uploads/2020/04/Number-seed-conversion-v1.pdf), [Docs](https://help.coolwallet.io/article/160-recover-btc-using-coolwallet-s-seed-without-the-wallet)
 ✅👁|Ledger Nano S[↗︎](https://ledger.com/)|`m/49'`\|`84'/0'/0'`|Optional|No|[Docs](https://support.ledger.com/hc/en-us)
 ✅👁|Ledger Nano X[↗︎](https://ledger.com/)|`m/49'`\|`84'/0'/0'`|Optional|No|[Docs](https://support.ledger.com/hc/en-us)
 ✅🚸👁|Trezor One[↗︎](https://trezor.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://wiki.trezor.io)
