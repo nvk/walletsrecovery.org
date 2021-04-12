@@ -29,7 +29,7 @@ Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP174 PSBT|Note
 ✅🚸👁|Trezor One[↗︎](https://trezor.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://wiki.trezor.io)
 ✅🚸👁|Trezor Model T[↗︎](https://trezor.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://wiki.trezor.io)
 ✅🚸👁|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)|`m/44'/0'/0'`|Optional|No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
-⚠️|KoinKeep[↗︎](https://koinkeep.com)|`m/44’/0’/1’`|No|No|Used for multisig mode, both master key and device keys, [EXTERNAL RECOVERY NOT DOCUMENTED]
+⚠️|KoinKeep[↗︎](https://koinkeep.com)|`m/44'/0'/1'`|No|No|Used for multisig mode, both master key and device keys, [EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Opendime[↗︎](https://opendime.com)|WIF|N/A|N/A|[Docs](https://opendime.com/faq), [Archive](https://web.archive.org/save/https://opendime.com/faq)
 
 Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Note
@@ -61,7 +61,7 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Not
 ✅👁⑂|Ledger Live[↗︎](https://shop.ledger.com/pages/ledger-live)|`m/44'`\|`49'/0'/0'`|||No|[Docs](https://support.ledger.com/hc/en-us/articles/360006444193)
 ⚠|Luxstack[↗︎](https://luxstack.com)|`m/0'`||||[EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅👁⑂|KeepKey Client[↗︎](https://chrome.google.com/webstore/detail/keepkey-client/idgiipeogajjpkgheijapngmlbohdhjg)|`m/44'/0'/0'`|Optional||No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
-⚠️|KoinKeep[↗︎](https://koinkeep.com)|`m/44’/0’/0’`\|`m/44’/n’/0’` (n increments with each new account created)|No|No|No|[EXTERNAL RECOVERY NOT DOCUMENTED]
+⚠️|KoinKeep[↗︎](https://koinkeep.com)|`m/44'/0'/0'`\|`m/44'/n'/0'` (n increments with each new account created)|No|No|No|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ⚠👁⑂|Multibit HD[↗︎](https://multibit.org/)|`m/0'`|N/A||No|[Github Issue](https://github.com/Multibit-Legacy/multibit-hd/issues/445)
 ✅👁⑂|Mycelium for Android[↗︎](https://wallet.mycelium.com/)|`m/44'`\|`49'`\|`84'/0'/n'`|Optional (on restore)|Yes|No|[Github Issue](https://github.com/mycelium-com/wallet-android/issues/483)
 ✅👁⑂|Mycelium for iPhone[↗︎](https://wallet.mycelium.com/)|`m/44'/0'/n'`|Optional (on restore)|Yes|No|
@@ -73,7 +73,7 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Not
 ✅|Specter Desktop[↗︎](https://github.com/cryptoadvance/specter-desktop)|Single Signer: `m/49'/0'/0'` `m/84'/0'/0'` Multisig: `m/48'/0'/0'/1'` `m/48'/0'/0'/2'`|Optional|No|Yes|Coming soon...
 ✅👁⑂|Trezor Web Wallet[↗︎](https://wallet.trezor.io)|`m/44'`\|`49'/0'/0'`|Optional||No|[Docs](https://wiki.trezor.io)
 ✅👁⑂|Trust Wallet[↗︎](https://trustwallet.com)|`m/84'/0'/0'/0/0`|Yes|No|No|[Docs](https://community.trustwallet.com) [2](https://community.trustwallet.com/c/helpcenter/migration/15) [definition](https://github.com/trustwallet/wallet-core/blob/master/coins.json#L9)
-⚠️👁⑂|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45’/0’/0’/0/0` + Redeem Script|||No|[Docs](https://www.unchained-capital.com/faq/), [Archive](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/), [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig-older)
+⚠️👁⑂|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45'/0'/0'/0/0` + Redeem Script|||No|[Docs](https://www.unchained-capital.com/faq/), [Archive](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/), [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig-older)
 ☠   | Unstoppable Wallet[↗︎](https://unstoppable.money)|`m/44'`\|`m/49'`\|`84'/0'/0'`|Yes|No|No| [EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Wasabi[↗︎](https://wasabiwallet.io/)|`m/84'/0'/0'` Very Deep Depths|Optional|No|Yes|[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#what-derivation-paths-does-wasabi-use), [BIPs Supported](https://docs.wasabiwallet.io/using-wasabi/BIPs.html)
 
