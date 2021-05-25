@@ -31,7 +31,7 @@ Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP174 PSBT|Note
 ✅🚸👁|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)|`m/44'/0'/0'`|Optional|No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
 ⚠️|KoinKeep[↗︎](https://koinkeep.com)|`m/44'/0'/1'`|No|No|Used for multisig mode, both master key and device keys, [EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Opendime[↗︎](https://opendime.com)|WIF|N/A|N/A|[Docs](https://opendime.com/faq), [Archive](https://web.archive.org/save/https://opendime.com/faq)
-
+✅🚸👁|Prokey Optimum[↗︎](https://prokey.io)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://support.prokey.io)
 Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---|---
 ☠👁⑂|AirGap Wallet (AirGap Vault)[↗︎](https://airgap.it)|`m/44'/0'/0'`|Optional|No|No|[EXTERNAL RECOVERY NOT DOCUMENTED].
