@@ -445,7 +445,7 @@ How to recover funds from an m-of-n Casa bitcoin wallet without using Casa softw
      rpcauth=<YOUR_RPC_AUTH_STRING>
      server=1
 `
-4. Install [Specter Desktop](https://github.com/cryptoadvance/specter-desktop) and make sure it can talk to Bitcoin Core. We recommend [this guide](https://www.bitcoinqna.com/post/specter-desktop-101).
+4. Install [Specter Desktop](https://github.com/cryptoadvance/specter-desktop) and make sure it can talk to Bitcoin Core. We recommend [this guide](https://bitcoiner.guide/specter).
 
 For each Hardware Device:
 1. Plug in device to your computer
