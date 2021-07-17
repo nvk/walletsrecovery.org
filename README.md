@@ -65,6 +65,7 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Not
 ⚠👁⑂|Multibit HD[↗︎](https://multibit.org/)|`m/0'`|N/A||No|[Github Issue](https://github.com/Multibit-Legacy/multibit-hd/issues/445)
 ✅👁⑂|Mycelium for Android[↗︎](https://wallet.mycelium.com/)|`m/44'`\|`49'`\|`84'/0'/n'`|Optional (on restore)|Yes|No|[Github Issue](https://github.com/mycelium-com/wallet-android/issues/483)
 ✅👁⑂|Mycelium for iPhone[↗︎](https://wallet.mycelium.com/)|`m/44'/0'/n'`|Optional (on restore)|Yes|No|
+✅|nthKey [↗︎](https://nthkey.com/)|`m/48'/0'/0'/2'/{0-1}/*`|No|No|Yes|[Docs](https://nthkey.com/recovery), multisig only
 ✅|OpenBazaar[↗︎](https://openbazaar.org/)|`m/44'/0'`\|`1'`\|`133'`\|`145'/0'`|||No|[Docs](https://openbazaar.zendesk.com/hc/en-us/articles/360002820331-How-do-I-restore-OpenBazaar-from-a-mnemonic-seed-)
 ⚠️|Pine[↗︎](https://pine.pm/)|`m/49'/0'/0'`|No|No|No|[EXTERNAL RECOVERY NOT DOCUMENTED]
 ️👁⑂|Relai[↗︎](https://www.relai.ch/)|`m/49'/0'/0'`<br /><sub>Wallets initiated with app version < 1.2 may also have funds here: `m/44'/0'/0'`</sub>|No|No|No|[Docs](https://relai.ch/restore-relai-bitcoin-wallet/)|
