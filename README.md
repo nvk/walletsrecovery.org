@@ -26,6 +26,7 @@ Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP174 PSBT|Note
 ✅|ColdCard Mk3[↗︎](https://coldcardwallet.com/)|`m/44'`\|`48'`\|`84'/0'/0'` + Custom|Optional|Yes|[Docs](https://coldcardwallet.com/docs/)
 ✅👁|Ledger Nano S[↗︎](https://ledger.com/)|`m/49'`\|`84'/0'/0'`|Optional|No|[Docs](https://support.ledger.com/hc/en-us)
 ✅👁|Ledger Nano X[↗︎](https://ledger.com/)|`m/49'`\|`84'/0'/0'`|Optional|No|[Docs](https://support.ledger.com/hc/en-us)
+✅|SeedSigner[↗︎](https://seedsigner.com)|Single signer: `m/84'/0'/0'` Multisig: `m/48'/0'/0'/2'`|Optional|Yes|[Docs](https://github.com/SeedSigner/seedsigner/blob/main/docs/recovery.md)
 ✅🚸👁|Trezor One[↗︎](https://trezor.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://wiki.trezor.io)
 ✅🚸👁|Trezor Model T[↗︎](https://trezor.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://wiki.trezor.io)
 ✅🚸👁|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)|`m/44'/0'/0'`|Optional|No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
