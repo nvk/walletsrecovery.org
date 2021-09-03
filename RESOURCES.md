@@ -18,3 +18,6 @@ title: Links & Resources
 - "What types of mnemonic seeds are used in Bitcoin?" by Coldbit [↗︎](https://coldbit.com/what-types-of-mnemonic-seeds-are-used-in-bitcoin/)
 - "FAQ Regarding Bitcoin Seeds" by 6102bitcoin [↗︎](https://github.com/6102bitcoin/FAQ/blob/master/seed.md)
 - "How BIP39 Seed Words Work" by jimbocoin [↗︎](https://observablehq.com/@jimbojw/grokking-bip39)
+
+### Security aids
+- [Reproducible Builds proofs](https://bitcoinbinary.org/)
