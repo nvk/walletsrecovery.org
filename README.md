@@ -53,7 +53,7 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Not
 ⚠️👁⑂|DropBit[↗︎](https://dropbit.app/)|New Wallets: `m/84/0'/0'` Old Wallets: `m/44/0'/0'`|No|No|No|
 ✅👁⑂|Edge Wallet[↗︎](https://edge.app/)|`m/44'`\|`49'/0'/0'`|||No|[Docs](https://support.edge.app/support/solutions/articles/8000080183-edge-private-seeds-derivation-and-export)
 ✅👁⑂|Electrum[↗︎](https://electrum.org)|Single Signer: `m/`\|`44'`\|`49'`\|`84'/0'/0'` Multisig: `m/45'/0/0/0` `m/48'/0'/0'/1'` `m/48'/0'/0'/2'` [Does not use BIP39 seed phrases](https://electrum.readthedocs.io/en/latest/seedphrase.html) but can import them|Optional|Yes|Yes|[Docs](https://electrum.readthedocs.io)
-✅👁⑂|Exodus[↗︎](https://exodus.io)|`m/44'`\|`84'/0'/0'`|||No|[Docs](https://support.exodus.io/article/159-import-your-bitcoin-wallet-into-electrum)
+✅👁⑂|Exodus[↗︎](https://exodus.io)|`m/44'`\|`84'/0'/0'`|Yes||No|[Docs](https://support.exodus.io/article/159-import-your-bitcoin-wallet-into-electrum)
 ✅|FullyNoded[↗︎](https://github.com/Fonta1n3/FullyNoded)|`m/84'/0'/0'` However can be used to import/recover any wallet with any derivation, single sig and multisig|Yes|[Yes](https://twitter.com/fullynoded/status/1193525236689321984)|Yes|[Recovery Docs](https://github.com/Fonta1n3/FullyNoded/blob/master/Docs/Recovery.md)
 ✅👁⑂|Hodl Wallet[↗︎](https://hodlwallet.com)|`m/0'`|N/A|Yes|No|[Docs iOS](https://github.com/hodlwallet/hodl-wallet-ios/blob/master/README.md), [Docs Android](https://github.com/hodlwallet/hodl-wallet-android/blob/master/README.md)
 ⚠️😵|Jaxx Liberty[↗︎](https://jaxx.io/downloads)|`m/44'/0'/0'`|||No|[EXTERNAL RECOVERY NOT DOCUMENTED]
