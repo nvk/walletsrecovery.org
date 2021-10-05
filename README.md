@@ -34,6 +34,7 @@ Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP174 PSBT|Note
 ⚠️🧐|KoinKeep[↗︎](https://koinkeep.com)|`m/44'/0'/1'`|No|No|Used for multisig mode, both master key and device keys, [EXTERNAL RECOVERY NOT DOCUMENTED]
 ✅|Opendime[↗︎](https://opendime.com)|WIF|N/A|N/A|[Docs](https://opendime.com/faq), [Archive](https://web.archive.org/save/https://opendime.com/faq)
 ✅🚸👁|Prokey Optimum[↗︎](https://prokey.io)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://support.prokey.io)
+
 Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---|---
 ✅👁⑂|AirGap Wallet (AirGap Vault)[↗︎](https://airgap.it)|`m/44'/0'/0'`|Optional|No|No|[Docs](https://support.airgap.it/account-recovery)
