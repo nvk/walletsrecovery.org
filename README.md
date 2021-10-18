@@ -17,6 +17,7 @@ If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL 
 
 Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---
+✅|AirGap Vault[↗︎](https://airgap.it)|`m/44'`\|`84'/0'/0'` + Custom|Optional|Yes|[Docs](https://support.airgap.it/account-recovery)
 ✅😵👁🚸|BitBox01[↗︎](https://shiftcrypto.ch/bitbox01/)|`m/44'`\|`49'`\|`84'/0'/0'`|Required|No|[Docs](https://shiftcrypto.ch/bitbox01/wallet-sweep/), [Recovery Tool](https://github.com/digitalbitbox/html_backup)|
 ✅👁|BitBox02[↗︎](https://shiftcrypto.ch/bitbox02/)|`m/48'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://guides.shiftcrypto.ch/bitbox02/advanced/backup-recovery/), [Recovery tool](https://github.com/digitalbitbox/bitbox02-backup-recovery)|
 ⚠️🧐|CoboVault[↗︎](https://cobo.com/hardware-wallet/cobo-vault)|`m/49'/0'/0'`|Optional|No|[Docs](https://support.cobo.com/hc/en-us/articles/360046375373-Passphrase), [EXTERNAL RECOVERY NOT DOCUMENTED]
@@ -37,7 +38,7 @@ Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP174 PSBT|Note
 
 Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---|---
-✅👁⑂|AirGap Wallet (AirGap Vault)[↗︎](https://airgap.it)|`m/44'/0'/0'`|Optional|No|No|[Docs](https://support.airgap.it/account-recovery)
+✅👁⑂|AirGap Wallet[↗︎](https://airgap.it)|`m/44'`\|`84'/0'/0'` + Custom|Optional|No|Yes|[Docs](https://support.airgap.it/account-recovery)
 ☠   | Atomic Wallet[↗︎](https://atomicwallet.io)|`m/44'/0'/0'/0/0` (Single Address Wallet)|No|No|No| Non-Standard derivation path for non-BTC coins, [EXTERNAL RECOVERY NOT DOCUMENTED].
 ️⚠️|Bitcoin Core[↗︎](https://bitcoin.org)|`m/0'/0'`|N/A|Yes|WIP|[Github Issue](https://github.com/bitcoin/bitcoin/issues/13302)
 ✅👁⑂|Bitcoin Wallet app[↗︎](https://github.com/bitcoin-wallet/bitcoin-wallet)|BIP32 non 44 Compatible|||No|[Docs](https://github.com/bitcoin-wallet/bitcoin-wallet/blob/master/wallet/README.recover.md), [Archive](./recovery-docs/bitcoinwallet-recovery.md)
