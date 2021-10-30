@@ -60,7 +60,7 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Not
 ✅|FullyNoded[↗︎](https://github.com/Fonta1n3/FullyNoded)|`m/84'/0'/0'` However can be used to import/recover any wallet with any derivation, single sig and multisig|Yes|[Yes](https://twitter.com/fullynoded/status/1193525236689321984)|Yes|[Recovery Docs](https://github.com/Fonta1n3/FullyNoded/blob/master/Docs/Recovery.md)
 ✅👁⑂|Hodl Wallet[↗︎](https://hodlwallet.com)|`m/0'`|N/A|Yes|No|[Docs iOS](https://github.com/hodlwallet/hodl-wallet-ios/blob/master/README.md), [Docs Android](https://github.com/hodlwallet/hodl-wallet-android/blob/master/README.md)
 ⚠️😵|Jaxx Liberty[↗︎](https://jaxx.io/downloads)|`m/44'/0'/0'`|||No|[EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|JoinMarket[↗︎](https://github.com/JoinMarket-Org/joinmarket-clientserver)|`m/49'/0'/n'`|Optional||No|[Docs](https://github.com/JoinMarket-Org/joinmarket-clientserver/blob/master/docs/USAGE.md#recover)
+✅|JoinMarket[↗︎](https://github.com/JoinMarket-Org/joinmarket-clientserver)|BIP 84 `m/84'/0'/n'`|Optional|Yes|Partial|[Docs](https://github.com/JoinMarket-Org/joinmarket-clientserver/blob/master/docs/USAGE.md#recover)
 ✅😵☠️|JoinMarket (legacy)[↗︎](https://github.com/JoinMarket-Org/joinmarket)|`m/0` BIP32 non 44 Compatible|No|Yes|No|[Docs](https://github.com/JoinMarket-Org/joinmarket/wiki/Using-the-JoinMarket-internal-wallet#structure)
 ✅👁⑂|Ledger Live[↗︎](https://shop.ledger.com/pages/ledger-live)|`m/44'`\|`49'/0'/0'`|||No|[Docs](https://support.ledger.com/hc/en-us/articles/360006444193)
 ⚠|Luxstack[↗︎](https://luxstack.com)|`m/0'`||||[EXTERNAL RECOVERY NOT DOCUMENTED]
