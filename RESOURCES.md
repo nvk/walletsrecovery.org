@@ -16,7 +16,7 @@ title: Links & Resources
 - "Bitcoin Information and Resources" by Jameson Lopp [↗︎](https://www.lopp.net/bitcoin-information.html)
 - WeUseCoins FAQ [↗︎](https://www.weusecoins.com/)
 - "What types of mnemonic seeds are used in Bitcoin?" by Coldbit [↗︎](https://coldbit.com/what-types-of-mnemonic-seeds-are-used-in-bitcoin/)
-- "FAQ Regarding Bitcoin Seeds" by 6102bitcoin [↗︎](https://github.com/6102bitcoin/FAQ/blob/master/seed.md)
+- "FAQ Regarding Bitcoin Seeds" by 6102bitcoin [↗︎](https://github.com/6102bitcoin/6102bitcoin/blob/main/content/faq-bitcoin-seed.md) 
 - "How BIP39 Seed Words Work" by jimbocoin [↗︎](https://observablehq.com/@jimbojw/grokking-bip39)
 
 ### Security aids
