@@ -87,11 +87,13 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Not
 
 Status|Lightning Wallet|Path and/or Script|Passphrase|Note
 :---:|:---|:---:|---|---
-✅😵|BLW (Bitcoin Lightning Wallet)[↗︎](https://lightning-wallet.com/)|`m/84'/0'/0'` BIP32 non 44 Compatible|N/A|[Docs](https://lightning-wallet.com/recovering-lost-balance)
-✅|SBW (Simple Bitcoin Wallet)[↗︎](https://lightning-wallet.com/)|`m/0'`, `m/44'`\|`49'`\|`84'/0'/0'`|N/A|[Docs](https://lightning-wallet.com/posts/manual/)
+⛔️|BLW (Bitcoin Lightning Wallet)[↗︎](https://lightning-wallet.com/)|`m/84'/0'/0'` BIP32 non 44 Compatible|N/A|[Docs](https://lightning-wallet.com/recovering-lost-balance)
+⛔️|SBW (Simple Bitcoin Wallet)[↗︎](https://lightning-wallet.com/)|`m/0'`, `m/44'`\|`49'`\|`84'/0'/0'`|N/A|[Docs](https://lightning-wallet.com/posts/manual/)
+✅|OBW (Open Bitcoin Wallet)[↗︎](https://github.com/nbd-wtf/obw)|`m/0'`, `m/44'`\|`49'`\|`84'/0'/0'`|N/A|[Docs](https://darthcoin.substack.com/p/obw-open-bitcoin-wallet)
 ⚠️|c-Lightning[↗︎](https://github.com/ElementsProject/lightning)|`m/84'`\|`141'/0'/0'/`Keys derived from `hsm_secret` file|N/A|[BIP32 layout explained](https://github.com/ElementsProject/lightning/blob/697b501132c4222da444f6c63f35818169292efb/hsmd/hsmd.c#L426-L445), [xPriv/xPub Export Tool](https://github.com/rsbondi/clightning-go-plugin/tree/master/dump_keys)
 ✅|Eclair Mobile[↗︎](https://github.com/ACINQ/eclair-mobile)|`m/49'/0'/0'`|Optional|[Docs](https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-)
 ✅|LND (Lightning Network Daemon)[↗︎](https://github.com/lightningnetwork/lnd)|aezeed|Optional|[Docs](https://github.com/lightningnetwork/lnd/tree/master/aezeed)
+✅|Blixt (LND mobile node wallet)[↗︎](https://github.com/hsjoberg/blixt-wallet)|aezeed `m/84'/0'/0'` BIP32|-|[Docs](https://blixtwallet.github.io/), [Restore procedure A](https://blixtwallet.github.io/faq#blixt-restore), [Restore procedure B](https://darthcoin.substack.com/p/umbrel-btcln-node-shtf-scenario#%C2%A7sparrow-method)
 ⚠️|Stakenet DEX Open Beta[↗︎](https://medium.com/stakenet/stakenet-dex-open-beta-dd5c78175608)| P2WPKH bech32 addresses `m/44'/0'/0'`|N/A|[EXTERNAL RECOVERY NOT DOCUMENTED]
 
 Status|Combo HW+SW|Path and/or Script|BIP39 Pass|BIP174 PSBT|Note
