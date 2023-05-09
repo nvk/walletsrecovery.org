@@ -84,7 +84,7 @@ Status|Software Wallet|Path and/or Script|BIP39 Pass|WIF Support|BIP174 PSBT|Not
 ✅👁⑂|Trust Wallet[↗︎](https://trustwallet.com)|`m/84'/0'/0'/0/0`|Yes|No|No|[Docs](https://community.trustwallet.com) [2](https://community.trustwallet.com/c/helpcenter/migration/15) [definition](https://github.com/trustwallet/wallet-core/blob/master/registry.json#L9)
 ⚠️👁⑂|Unchained Capital[↗︎](https://www.unchained-capital.com/)|`m/45'/0'/0'/0/0` + Redeem Script|||No|[Docs](https://www.unchained-capital.com/faq/), [Archive](https://web.archive.org/web/20190630224057/https://www.unchained-capital.com/faq/), [**Script 404**](https://github.com/unchained-capital/bitcoin-multisig-older)
 ☠   | Unstoppable Wallet[↗︎](https://unstoppable.money)|`m/44'`\|`m/49'`\|`84'/0'/0'`|Yes|No|No| [EXTERNAL RECOVERY NOT DOCUMENTED]
-✅|Wasabi[↗︎](https://wasabiwallet.io/)|`m/84'/0'/0'` Very Deep Depths|Optional|No|Yes|[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#what-derivation-paths-does-wasabi-use), [BIPs Supported](https://docs.wasabiwallet.io/using-wasabi/BIPs.html)
+✅|Wasabi[↗︎](https://wasabiwallet.io/)|`m/84'`\|`m/86'/0'/0'` Very Deep Depths|Optional|No|Yes|[Docs](https://docs.wasabiwallet.io/FAQ/FAQ-UseWasabi.html#what-derivation-paths-does-wasabi-use), [BIPs Supported](https://docs.wasabiwallet.io/using-wasabi/BIPs.html)
 
 Status|Lightning Wallet|Path and/or Script|Passphrase|Note
 :---:|:---|:---:|---|---
@@ -105,7 +105,7 @@ Status|Combo HW+SW|Path and/or Script|BIP39 Pass|BIP174 PSBT|Note
 ✅|Electrum (Ledger S/Nano)[↗︎](https://ledger.com/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://support.ledger.com/hc/en-us)
 ✅|Electrum (KeepKey)[↗︎](https://shapeshift.io/keepkey/)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
 ✅|Electrum (Trezor One / Model T)[↗︎](https://trezor.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://wiki.trezor.io)
-✅|Wasabi (Coldcard)[↗︎](https://coldcardwallet.com)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|Yes|[Docs](https://docs.wasabiwallet.io/using-wasabi/ColdWasabi.html#connecting-coldcard-via-sd-card)
+✅|Wasabi (Coldcard)[↗︎](https://coldcardwallet.com)|`m/44'`\|`49'`\|`m/84'`\|`86'/0'/0'`|Optional|Yes|[Docs](https://docs.wasabiwallet.io/using-wasabi/ColdWasabi.html#connecting-coldcard-via-sd-card)
 
 Notes:
 
