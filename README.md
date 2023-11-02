@@ -97,6 +97,7 @@ Status|Lightning Wallet|Path and/or Script|Passphrase|Note
 ✅|LND (Lightning Network Daemon)[↗︎](https://github.com/lightningnetwork/lnd)|aezeed|Optional|[Docs](https://github.com/lightningnetwork/lnd/tree/master/aezeed)
 ✅|Blixt (LND mobile node wallet)[↗︎](https://github.com/hsjoberg/blixt-wallet)|aezeed `m/84'/0'/0'` BIP32|-|[Docs](https://blixtwallet.github.io/), [Restore procedure A](https://blixtwallet.github.io/faq#blixt-restore), [Restore procedure B](https://darthcoin.substack.com/p/umbrel-btcln-node-shtf-scenario#%C2%A7sparrow-method)
 ⚠️|Stakenet DEX Open Beta[↗︎](https://medium.com/stakenet/stakenet-dex-open-beta-dd5c78175608)| P2WPKH bech32 addresses `m/44'/0'/0'`|N/A|[EXTERNAL RECOVERY NOT DOCUMENTED]
+✅|Mutiny Wallet[↗︎](https://mutinywallet.com/)|`m/86'/0'/0'`|No|[Docs](https://github.com/MutinyWallet/mutiny-web/wiki/Recovery)
 
 Status|Combo HW+SW|Path and/or Script|BIP39 Pass|BIP174 PSBT|Note
 :---:|:---|:---:|---|---|---
