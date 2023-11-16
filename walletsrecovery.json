@@ -1,0 +1,215 @@
+{
+	"wallets_recovery": [{
+		"wallet": "BitBox01",
+		"passphrase": "required",
+		"gapLimit": 20,
+		"psbt": false,
+		"paths": [{
+				"path": "m/44'/0'/0'",
+				"script": "p2pkh"				
+			},
+			{
+				"path": "m/49'/0'/0'",
+				"script": "p2wpkh-p2sh"
+			},
+			{
+				"path": "m/84'/0'/0'",
+				"script": "p2wpkh"
+			}
+		]
+	},
+	{
+		"wallet": "BitBox02",
+		"passphrase": "optional",
+		"gapLimit": 20,
+		"psbt": false,
+		"paths": [{
+				"path": "m/44'/0'/0'",
+				"script": "p2pkh"				
+			},
+			{
+				"path": "m/49'/0'/0'",
+				"script": "p2wpkh-p2sh"
+			},
+			{
+				"path": "m/84'/0'/0'",
+				"script": "p2wpkh"
+			}			
+		]
+	},
+	{
+		"wallet": "CoboVault",
+		"passphrase": "optional",
+		"gapLimit": 20,
+		"psbt": true,
+		"paths": [{
+				"path": "m/49'/0'/0'",
+				"script": "p2wpkh-p2sh"				
+			}			
+		]
+	},
+	{
+		"wallet": "ColdCard Mk1",
+		"passphrase": "optional",
+		"gapLimit": 20,
+		"psbt": true,
+		"paths": [{
+				"path": "m/44'/0'/0'",
+				"script": "p2pkh"				
+			},
+			{
+				"path": "m/48'/0'/0'",
+				"script": "p2sh"
+			},
+			{
+				"path": "m/49'/0'/0'",
+				"script": "p2wpkh-p2sh"
+			},
+			{
+				"path": "m/84'/0'/0'",
+				"script": "p2wpkh"
+			},
+			{
+				"path": "CUSTOM",
+				"script": "USERINPUT"
+			}			
+		]
+	},
+	{
+		"wallet": "ColdCard Mk2",
+		"passphrase": "optional",
+		"gapLimit": 20,
+		"psbt": true,
+		"paths": [{
+				"path": "m/44'/0'/0'",
+				"script": "p2pkh"				
+			},
+			{
+				"path": "m/48'/0'/0'",
+				"script": "p2sh"
+			},
+			{
+				"path": "m/49'/0'/0'",
+				"script": "p2wpkh-p2sh"
+			},
+			{
+				"path": "m/84'/0'/0'",
+				"script": "p2wpkh"
+			},
+			{
+				"path": "CUSTOM",
+				"script": "USERINPUT"
+			}			
+		]
+	},
+	{
+		"wallet": "ColdCard Mk3",
+		"passphrase": "optional",
+		"gapLimit": 20,
+		"psbt": true,
+		"paths": [{
+				"path": "m/44'/0'/0'",
+				"script": "p2pkh"				
+			},
+			{
+				"path": "m/48'/0'/0'",
+				"script": "p2sh"
+			},
+			{
+				"path": "m/49'/0'/0'",
+				"script": "p2wpkh-p2sh"
+			},
+			{
+				"path": "m/84'/0'/0'",
+				"script": "p2wpkh"
+			},
+			{
+				"path": "CUSTOM",
+				"script": "USERINPUT"
+			}			
+		]
+	},
+	{
+		"wallet": "Ledger Nano S",
+		"passphrase": "optional",
+		"gapLimit": 20,
+		"psbt": false,
+		"paths": [{
+				"path": "m/49'/0'/0'",
+				"script": "p2wpkh-p2sh"
+			},
+			{
+				"path": "m/84'/0'/0'",
+				"script": "p2wpkh"
+			}			
+		]
+	},
+	{
+		"wallet": "Ledger Nano X",
+		"passphrase": "optional",
+		"gapLimit": 20,
+		"psbt": false,
+		"paths": [{
+				"path": "m/49'/0'/0'",
+				"script": "p2wpkh-p2sh"
+			},
+			{
+				"path": "m/84'/0'/0'",
+				"script": "p2wpkh"
+			}			
+		]
+	},
+	{
+		"wallet": "Trezor One",
+		"passphrase": "optional",
+		"gapLimit": 20,
+		"psbt": false,
+		"paths": [{
+				"path": "m/44'/0'/0'",
+				"script": "p2pkh"				
+			},			
+			{
+				"path": "m/49'/0'/0'",
+				"script": "p2wpkh-p2sh"
+			}	
+		]
+	},
+	{
+		"wallet": "Trezor Model T",
+		"passphrase": "optional",
+		"gapLimit": 20,
+		"psbt": false,
+		"paths": [{
+				"path": "m/44'/0'/0'",
+				"script": "p2pkh"				
+			},			
+			{
+				"path": "m/49'/0'/0'",
+				"script": "p2wpkh-p2sh"
+			}	
+		]
+	},
+	{
+		"wallet": "KeepKey",
+		"passphrase": "optional",
+		"gapLimit": 20,
+		"psbt": false,
+		"paths": [{
+				"path": "m/44'/0'/0'",
+				"script": "p2pkh"				
+			}	
+		]
+	},
+	{
+		"wallet": "Opendime",
+		"passphrase": null,
+		"gapLimit": null,
+		"psbt": null,
+		"paths": [{
+				"path": "WIF",
+				"script": "WIF"				
+			}	
+		]
+	}
+	]
+}
