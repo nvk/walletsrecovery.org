@@ -37,6 +37,7 @@ Status|Hardware Wallets|Supported Paths|BIP39 Pass|BIP174 PSBT|Note
 ✅🚸👁|Trezor Model T[↗︎](https://trezor.io)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://wiki.trezor.io)
 ✅🚸👁|KeepKey[↗︎](https://keepkey.zendesk.com/hc/en-us)|`m/44'/0'/0'`|Optional|No|[Docs](https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey), [xPub](https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software), [Compatible Wallets](https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-)|
 ⚠️🧐|KoinKeep[↗︎](https://koinkeep.com)|`m/44'/0'/1'`|No|No|Used for multisig mode, both master key and device keys, [EXTERNAL RECOVERY NOT DOCUMENTED]
+✅🧐|Krux[↗︎](https://selfcustody.github.io/krux/)|`m/84'/0'/0'`\|`m/48'/0'/0'/2'`|Optional|Yes|[Docs](https://selfcustody.github.io/krux/getting-started/usage/loading-a-mnemonic/)
 ✅|Opendime[↗︎](https://opendime.com)|WIF|N/A|N/A|[Docs](https://opendime.com/faq), [Archive](https://web.archive.org/save/https://opendime.com/faq)
 ✅🚸👁|Prokey Optimum[↗︎](https://prokey.io)|`m/44'`\|`49'`\|`84'/0'/0'`|Optional|No|[Docs](https://support.prokey.io)
 
