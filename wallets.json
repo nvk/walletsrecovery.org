@@ -1,0 +1,504 @@
+{
+  "categories": [
+    {
+      "name": "Hardware Wallets",
+      "wallets": [
+        {
+          "status": "✅", 
+          "name": "AirGap Vault",
+          "url": "https://airgap.it",
+          "supported_paths": "m/44'|84'/0'/0' + Custom",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": "Docs: https://support.airgap.it/account-recovery"
+        },
+        {
+          "status": "⚠️👁🧐", 
+          "name": "Arculus",
+          "url": "https://www.getarculus.com/",
+          "supported_paths": "m/0'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "No",
+          "notes": "Docs: https://support.arculus.co/hc/en-us/articles/4406450890263-What-is-a-recovery-passphrase-seed-How-does-my-Arculus-recovery-passphrase-seed-work-"
+        },
+        {
+          "status": "✅😵👁🚸", 
+          "name": "BitBox01",
+          "url": "https://shiftcrypto.ch/bitbox01/",
+          "supported_paths": "m/44'|49'|84'/0'/0'",
+          "bip39_pass": "Required",
+          "bip174_psbt": "No",
+          "notes": "Docs: https://shiftcrypto.ch/bitbox01/wallet-sweep/, Recovery Tool: https://github.com/digitalbitbox/html_backup"
+        },
+        {
+          "status": "✅👁", 
+          "name": "BitBox02",
+          "url": "https://shiftcrypto.ch/bitbox02/",
+          "supported_paths": "m/48'|49'|84'/0'/0'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "No",
+          "notes": "Docs: https://guides.shiftcrypto.ch/bitbox02/advanced/backup-recovery/, Recovery tool: https://github.com/digitalbitbox/bitbox02-backup-recovery"
+        },
+        {
+          "status": "⚠️🧐", 
+          "name": "CoboVault",
+          "url": "https://cobo.com/hardware-wallet/cobo-vault",
+          "supported_paths": "m/49'/0'/0'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "No",
+          "notes": "Docs: https://support.cobo.com/hc/en-us/articles/360046375373-Passphrase, EXTERNAL RECOVERY NOT DOCUMENTED"
+        },
+        {
+          "status": "✅🧐", 
+          "name": "Jade",
+          "url": "https://blockstream.com/jade/",
+          "supported_paths": "Single signer: m/49'|m/84'/0'/0' + Custom, Multisig: m/48'/0'/0'/2'|m/48'/0'/0'/1' + Custom",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": "Docs: https://help.blockstream.com/hc/en-us/categories/900000061906-Blockstream-Jade, Xpub: https://help.blockstream.com/hc/en-us/articles/11891963370137"
+        },
+        {
+          "status": "✅🧐", 
+          "name": "CoboVault with BTC only firmware",
+          "url": "https://cobo.com/hardware-wallet/cobo-vault",
+          "supported_paths": "m/44'|48'|84'/0'/0'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": "Docs: https://support.cobo.com/hc/en-us/articles/360046375373-Passphrase, Integration Guide: https://github.com/CoboVault/cobo-vault-docs/blob/master/Integration_guide.md"
+        },
+        {
+          "status": "✅😵", 
+          "name": "ColdCard Mk1",
+          "url": "https://coldcardwallet.com/",
+          "supported_paths": "m/44'|48'|49'|84'/0'/0' + Custom",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": "Docs: https://coldcardwallet.com/docs/"
+        },
+        {
+          "status": "✅😵", 
+          "name": "ColdCard Mk2",
+          "url": "https://coldcardwallet.com/",
+          "supported_paths": "m/44'|48'|84'/0'/0' + Custom",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": "Docs: https://coldcardwallet.com/docs/"
+        },
+        {
+          "status": "✅", 
+          "name": "ColdCard Mk3",
+          "url": "https://coldcardwallet.com/",
+          "supported_paths": "m/44'|48'|84'/0'/0' + Custom + P2TR",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": "Docs: https://coldcardwallet.com/docs/"
+        },
+        {
+          "status": "✅", 
+          "name": "ColdCard Mk4",
+          "url": "https://coldcardwallet.com/",
+          "supported_paths": "m/44'|48'|84'/0'/0' + Custom + P2TR",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": "Docs: https://coldcardwallet.com/docs/"
+        },
+        {
+          "status": "✅", 
+          "name": "ColdCard Q",
+          "url": "https://coldcardwallet.com/",
+          "supported_paths": "m/44'|48'|84'/0'/0' + Custom + P2TR",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": "Docs: https://coldcardwallet.com/docs/"
+        },
+        {
+          "status": "✅👁", 
+          "name": "CoolWallet S",
+          "url": "https://www.coolwallet.io/",
+          "supported_paths": "m/44'/0'/0' (P2SH-Segwit account on P2PKH path)",
+          "bip39_pass": "No",
+          "bip174_psbt": "No",
+          "notes": "BIP39 Seed words represented as numbers... Conversion Map: https://www.coolwallet.io/wp-content/uploads/2020/04/Number-seed-conversion-v1.pdf, Docs: https://help.coolwallet.io/article/160-recover-btc-using-coolwallet-s-seed-without-the-wallet"
+        },
+        {
+          "status": "✅👁", 
+          "name": "Ledger Nano S",
+          "url": "https://ledger.com/",
+          "supported_paths": "m/49'|84'/0'/0'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "No",
+          "notes": "Docs: https://support.ledger.com/hc/en-us"
+        },
+        {
+          "status": "✅👁", 
+          "name": "Ledger Nano X",
+          "url": "https://ledger.com/",
+          "supported_paths": "m/49'|84'/0'/0'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "No",
+          "notes": "Docs: https://support.ledger.com/hc/en-us"
+        },
+        {
+          "status": "✅🧐", 
+          "name": "Passport",
+          "url": "https://foundationdevices.com",
+          "supported_paths": "m/84'/0'/0'|m/48'/0'/0'/2'|Post Mix: m/84'/0'/2147483646'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": "Docs: https://docs.foundationdevices.com"
+        },
+        {
+          "status": "✅🧐", 
+          "name": "SeedSigner",
+          "url": "https://seedsigner.com",
+          "supported_paths": "m/84'/0'/0'|m/48'/0'/0'/2'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": "Docs: https://github.com/SeedSigner/seedsigner/blob/main/docs/recovery.md"
+        },
+        {
+          "status": "✅🚸👁", 
+          "name": "Trezor One",
+          "url": "https://trezor.io",
+          "supported_paths": "m/44'|49'|84'/0'/0'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "No",
+          "notes": "Docs: https://wiki.trezor.io"
+        },
+        {
+          "status": "✅🚸👁", 
+          "name": "Trezor Model T",
+          "url": "https://trezor.io",
+          "supported_paths": "m/44'|49'|84'/0'/0'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "No",
+          "notes": "Docs: https://wiki.trezor.io"
+        },
+        {
+          "status": "✅🚸👁", 
+          "name": "KeepKey",
+          "url": "https://keepkey.zendesk.com/hc/en-us",
+          "supported_paths": "m/44'/0'/0'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "No",
+          "notes": "Docs: https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey, xPub: https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software, Compatible Wallets: https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-"
+        },
+        {
+          "status": "⚠️🧐", 
+          "name": "KoinKeep",
+          "url": "https://koinkeep.com",
+          "supported_paths": "m/44'/0'/1'",
+          "bip39_pass": "No",
+          "bip174_psbt": "No",
+          "notes": "Used for multisig mode, both master key and device keys, EXTERNAL RECOVERY NOT DOCUMENTED"
+        },
+        {
+          "status": "✅🧐", 
+          "name": "Krux",
+          "url": "https://selfcustody.github.io/krux/",
+          "supported_paths": "m/84'/0'/0'|m/48'/0'/0'/2'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": "Docs: https://selfcustody.github.io/krux/getting-started/usage/loading-a-mnemonic/"
+        },
+        {
+          "status": "✅", 
+          "name": "Opendime",
+          "url": "https://opendime.com",
+          "supported_paths": "WIF",
+          "bip39_pass": "N/A",
+          "bip174_psbt": "N/A",
+          "notes": "Docs: https://opendime.com/faq, Archive: https://web.archive.org/save/https://opendime.com/faq"
+        },
+        {
+          "status": "✅🚸👁", 
+          "name": "Prokey Optimum",
+          "url": "https://prokey.io",
+          "supported_paths": "m/44'|49'|84'/0'/0'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "No",
+          "notes": "Docs: https://support.prokey.io"
+        }
+      ]
+    },
+    {
+      "name": "Software Wallets",
+      "wallets": [
+        {
+          "status": "✅👁⑂", 
+          "name": "AirGap Wallet",
+          "url": "https://airgap.it",
+          "supported_paths": "m/44'|84'/0'/0' + Custom",
+          "bip39_pass": "Optional",
+          "wif_support": "No",
+          "bip174_psbt": "Yes",
+          "notes": "Docs: https://support.airgap.it/account-recovery"
+        },
+        {
+          "status": "☠", 
+          "name": "Atomic Wallet",
+          "url": "https://atomicwallet.io",
+          "supported_paths": "m/44'/0'/0'/0/0 (Single Address Wallet)",
+          "bip39_pass": "No",
+          "wif_support": "No",
+          "bip174_psbt": "No",
+          "notes": "Non-Standard derivation path for non-BTC coins, EXTERNAL RECOVERY NOT DOCUMENTED."
+        },
+        {
+          "status": "️⚠️", 
+          "name": "Bitcoin Core",
+          "url": "https://bitcoin.org",
+          "supported_paths": "m/0'/0'",
+          "bip39_pass": "N/A",
+          "wif_support": "Yes",
+          "bip174_psbt": "WIP",
+          "notes": "Github Issue: https://github.com/bitcoin/bitcoin/issues/13302"
+        },
+        {
+          "status": "✅👁⑂", 
+          "name": "Bitcoin Wallet app",
+          "url": "https://github.com/bitcoin-wallet/bitcoin-wallet",
+          "supported_paths": "BIP32 non 44 Compatible",
+          "bip39_pass": "N/A",
+          "wif_support": "No",
+          "bip174_psbt": "No",
+          "notes": "Docs: https://github.com/bitcoin-wallet/bitcoin-wallet/blob/master/wallet/README.recover.md, Archive: ./recovery-docs/bitcoinwallet-recovery.md"
+        },
+        {
+          "status": "️⚠️", 
+          "name": "Bisq",
+          "url": "https://bisq.network/",
+          "supported_paths": "m/44'/0'/0'|44'/0'/1'",
+          "bip39_pass": "N/A",
+          "wif_support": "No",
+          "bip174_psbt": "No",
+          "notes": "Github Issue: https://github.com/bisq-network/bisq/issues/1853. SegWit on 44 deriv path, account 1."
+        },
+        {
+          "status": "⚠️", 
+          "name": "Bither",
+          "url": "https://bither.net/",
+          "supported_paths": "m/44'|49'/0'/0'",
+          "bip39_pass": "N/A",
+          "wif_support": "No",
+          "bip174_psbt": "No",
+          "notes": "EXTERNAL RECOVERY NOT DOCUMENTED"
+        },
+        {
+          "status": "✅👁⑂", 
+          "name": "Blockchain.com",
+          "url": "https://www.blockchain.com/en/wallet",
+          "supported_paths": "m/44'/0'/n'",
+          "bip39_pass": "N/A",
+          "wif_support": "No",
+          "bip174_psbt": "No",
+          "notes": "Docs: https://support.blockchain.com/hc/en-us/articles/115001298143-Your-Recovery-Phrase-The-Failsafe, xPub: https://support.blockchain.com/hc/en-us/articles/207746403-Wallets-Addresses"
+        },
+        {
+          "status": "✅👁⑂", 
+          "name": "Blockstream Green (GreenAddress)",
+          "url": "https://blockstream.com/green/",
+          "supported_paths": "Single signer: m/44'|m/49'|84'/0'/0' Multisig: Custom 2-of-2 Script",
+          "bip39_pass": "Optional (on restore)",
+          "wif_support": "Yes",
+          "bip174_psbt": "No",
+          "notes": "Apps: https://blockstream.com/green/, Docs: https://help.blockstream.com/hc/en-us/categories/900000056183-Blockstream-Green/, Recovery tool for multisig: https://github.com/greenaddress/garecovery"
+        },
+        {
+          "status": "✅👁⑂", 
+          "name": "BlueWallet",
+          "url": "https://bluewallet.io/",
+          "supported_paths": "Single signer: m/44'|m/49'|84'/0'/0' Multisig: m/48'/0'/0'/2'",
+          "bip39_pass": "N/A",
+          "wif_support": "Yes",
+          "bip174_psbt": "Yes",
+          "notes": "Docs: http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet, Docs 2: https://github.com/BlueWallet/BlueWallet/wiki/Supported-wallet-types, Archive: https://web.archive.org/save/http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet, Features: https://bluewallet.io/features/"
+        },
+        {
+          "status": "️⚠️👁⑂", 
+          "name": "BRD (Bread Wallet)",
+          "url": "https://brd.com/",
+          "supported_paths": "m/0'",
+          "bip39_pass": "N/A",
+          "wif_support": "Yes",
+          "bip174_psbt": "No",
+          "notes": "Github Issue: https://github.com/voisine/breadwallet-ios/issues/131, archive of Bitcoin talk: https://archive.md/1knci, Reddit Post: https://www.reddit.com/r/Bitcoin/comments/6btevz/how_do_i_import_my_12_breadwallet_seed_words_into/"
+        },
+        {
+          "status": "⚠️👁⑂", 
+          "name": "BTC.com app",
+          "url": "https://btc.com/applications/app",
+          "supported_paths": "Multisig: m/0'",
+          "bip39_pass": "N/A",
+          "wif_support": "No",
+          "bip174_psbt": "No",
+          "notes": "Unofficial Docs: https://gist.github.com/rubensayshi/da922774d43976e0804c"
+        }
+      ]
+    },
+    {
+      "name": "Lightning Wallets",
+      "wallets": [
+        {
+          "status": "⛔️", 
+          "name": "BLW (Bitcoin Lightning Wallet)",
+          "url": "https://lightning-wallet.com/",
+          "supported_paths": "m/84'/0'/0' BIP32 non 44 Compatible",
+          "passphrase": "N/A",
+          "notes": "Docs: https://lightning-wallet.com/recovering-lost-balance"
+        },
+        {
+          "status": "⛔️", 
+          "name": "SBW (Simple Bitcoin Wallet)",
+          "url": "https://lightning-wallet.com/",
+          "supported_paths": "m/0', m/44'|49'|84'/0'/0'",
+          "passphrase": "N/A",
+          "notes": "Docs: https://lightning-wallet.com/posts/manual/"
+        },
+        {
+          "status": "✅", 
+          "name": "OBW (Open Bitcoin Wallet)",
+          "url": "https://github.com/nbd-wtf/obw",
+          "supported_paths": "m/0', m/44'|49'|84'/0'/0'",
+          "passphrase": "N/A",
+          "notes": "Docs: https://darthcoin.substack.com/p/obw-open-bitcoin-wallet"
+        },
+        {
+          "status": "⚠️", 
+          "name": "c-Lightning",
+          "url": "https://github.com/ElementsProject/lightning",
+          "supported_paths": "m/84'|141'/0'/0'/ Keys derived from hsm_secret file",
+          "passphrase": "N/A",
+          "notes": "BIP32 layout explained: https://github.com/ElementsProject/lightning/blob/697b501132c4222da444f6c63f35818169292efb/hsmd/hsmd.c#L426-L445, xPriv/xPub Export Tool: https://github.com/rsbondi/clightning-go-plugin/tree/master/dump_keys"
+        },
+        {
+          "status": "✅", 
+          "name": "Eclair Mobile",
+          "url": "https://github.com/ACINQ/eclair-mobile",
+          "supported_paths": "m/49'/0'/0'",
+          "passphrase": "Optional",
+          "notes": "Docs: https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-"
+        },
+        {
+          "status": "✅", 
+          "name": "LND (Lightning Network Daemon)",
+          "url": "https://github.com/lightningnetwork/lnd",
+          "supported_paths": "aezeed",
+          "passphrase": "Optional",
+          "notes": "Docs: https://github.com/lightningnetwork/lnd/tree/master/aezeed"
+        },
+        {
+          "status": "✅", 
+          "name": "Blixt (LND mobile node wallet)",
+          "url": "https://github.com/hsjoberg/blixt-wallet",
+          "supported_paths": "aezeed m/84'/0'/0' BIP32",
+          "passphrase": "N/A",
+          "notes": "Docs: https://blixtwallet.github.io/, Restore procedure A: https://blixtwallet.github.io/faq#blixt-restore, Restore procedure B: https://darthcoin.substack.com/p/umbrel-btcln-node-shtf-scenario#%C2%A7sparrow-method"
+        },
+        {
+          "status": "⚠️", 
+          "name": "Stakenet DEX Open Beta",
+          "url": "https://medium.com/stakenet/stakenet-dex-open-beta-dd5c78175608",
+          "supported_paths": "P2WPKH bech32 addresses m/44'/0'/0'",
+          "passphrase": "N/A",
+          "notes": "EXTERNAL RECOVERY NOT DOCUMENTED"
+        },
+        {
+          "status": "✅", 
+          "name": "Mutiny Wallet",
+          "url": "https://mutinywallet.com/",
+          "supported_paths": "m/86'/0'/0'",
+          "passphrase": "No",
+          "notes": "Docs: https://github.com/MutinyWallet/mutiny-web/wiki/Recovery"
+        },
+        {
+          "status": "✅", 
+          "name": "Zeus LN",
+          "url": "https://zeusln.com/",
+          "supported_paths": "m/86'/0'/0'",
+          "passphrase": "No",
+          "notes": "Docs: https://docs.zeusln.app/for-users/embedded-node/backup-and-recovery"
+        }
+      ]
+    },
+    {
+      "name": "Combo HW+SW",
+      "wallets": [
+        {
+          "status": "✅", 
+          "name": "BTCPay Server (Coldcard)",
+          "url": "https://coldcardwallet.com",
+          "supported_paths": "m/44'|49'|84'/0'/0'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": "Docs: https://docs.btcpayserver.org/getting-started/connectwallet/coldcardwallet#coldcard-wallet-setup"
+        },
+        {
+          "status": "⚠️", 
+          "name": "Electrum (CoboVault)",
+          "url": "https://cobo.com/hardware-wallet/cobo-vault",
+          "supported_paths": "m/49'/0'/0'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "No",
+          "notes": "Docs: https://support.cobo.com/hc/en-us/articles/360046375373-Passphrase, EXTERNAL RECOVERY NOT DOCUMENTED"
+        },
+        {
+          "status": "✅", 
+          "name": "Electrum (Coldcard)",
+          "url": "https://coldcardwallet.com/",
+          "supported_paths": "m/44'|49'|84'/0'/0'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": "Docs: https://coldcardwallet.com/docs/quick"
+        },
+        {
+          "status": "✅", 
+          "name": "Electrum (Ledger S/Nano)",
+          "url": "https://ledger.com/",
+          "supported_paths": "m/44'|49'|84'/0'/0'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "No",
+          "notes": "Docs: https://support.ledger.com/hc/en-us"
+        },
+        {
+          "status": "✅", 
+          "name": "Electrum (KeepKey)",
+          "url": "https://shapeshift.io/keepkey/",
+          "supported_paths": "m/44'|49'|84'/0'/0'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "No",
+          "notes": "Docs: https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey, xPub: https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software, Compatible Wallets: https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-"
+        },
+        {
+          "status": "✅", 
+          "name": "Electrum (Trezor One / Model T)",
+          "url": "https://trezor.com",
+          "supported_paths": "m/44'|49'|84'/0'/0'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "No",
+          "notes": "Docs: https://wiki.trezor.io"
+        },
+        {
+          "status": "✅", 
+          "name": "Wasabi (Coldcard)",
+          "url": "https://coldcardwallet.com",
+          "supported_paths": "m/44'|49'|m/84'|86'/0'/0'",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": "Docs: https://docs.wasabiwallet.io/using-wasabi/ColdWasabi.html#connecting-coldcard-via-sd-card"
+        }
+      ]
+    }
+  ],
+  "icons": [
+    {"icon": "🛑", "meaning": "Unknown. No obvious docs, research in progress"},
+    {"icon": "😵", "meaning": "Discontinued and/or no longer maintained"},
+    {"icon": "🚸", "meaning": "HW Physically unsafe with \"full secret\" (ie without BIP39 passphrase or multisig) against a automated attack and/or unsophisticated attacker (ie chipshouter blackbox)"},
+    {"icon": "👁", "meaning": "Privacy concerns (default is third party node)"},
+    {"icon": "⑂", "meaning": "Validation concerns (default is third party node)"},
+    {"icon": "☠️", "meaning": "Not publicly available, or complex without a external tool available for the average user"},
+    {"icon": "⚠️", "meaning": "Known, but unofficially documented"},
+    {"icon": "✅", "meaning": "Documented + Link to doc"},
+    {"icon": "🧐", "meaning": "New project and/or team"}
+  ]
+} 
