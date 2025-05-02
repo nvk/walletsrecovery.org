@@ -1,1 +1,75 @@
-_site
+# Jekyll build output
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Icon?
+desktop.ini
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.project
+.settings/
+.classpath
+
+# Node.js dependencies and logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Python virtual environments and cache
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+ENV/
+.env
+.venv
+.python-version
+*.so
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+
+# Ruby
+.bundle/
+vendor/bundle
+*.gem
+
+# Logs and databases
+*.log
+*.sqlite
+*.sqlite3
+*.db
+
+# Build directories
+dist/
+build/
+out/
+tmp/
+
+# Local development
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wallets Recovery</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <style>
+    :root {
+      --primary-color: #1652f0;
+      --secondary-color: #f7931a;
+      --bg-color: #ffffff;
+      --text-color: #252525;
+      --border-color: #e0e0e0;
+      --hover-color: #f6f8fa;
+      --table-header-bg: #f2f7ff;
+      --table-row-hover: #f7faff;
+      --hero-bg: #0e1526;
+      --hero-text: #ffffff;
+      --navbar-bg: rgba(255, 255, 255, 0.95);
+      --navbar-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      scroll-padding-top: 70px; /* Add padding for sticky navbar */
+    }
+    
+    h1, h2, h3 {
+      margin-top: 1.5em;
+      margin-bottom: 0.8em;
+      font-weight: 600;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+    }
+    
+    /* Sticky Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--navbar-bg);
+      box-shadow: var(--navbar-shadow);
+      z-index: 1000;
+      transform: translateY(0); /* Always visible instead of hidden initially */
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    
+    .navbar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+    }
+    
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .navbar-logo img {
+      height: 30px;
+      margin-right: 12px;
+    }
+    
+    .navbar-logo h1 {
+      font-size: 1.25rem;
+      margin: 0;
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+    
+    .navbar-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .navbar-links li {
+      margin: 0 0 0 20px;
+      position: relative;
+    }
+    
+    .navbar-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 5px 2px;
+      transition: color 0.2s;
+    }
+    
+    .navbar-links a:hover,
+    .navbar-links a.active {
+      color: var(--primary-color);
+    }
+    
+    .navbar-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--primary-color);
+      transition: width 0.3s;
+    }
+    
+    .navbar-links a:hover::after,
+    .navbar-links a.active::after {
+      width: 100%;
+    }
+    
+    .navbar-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 5px;
+    }
+    
+    .navbar-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px 0;
+      background-color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+    
+    header {
+      background-color: var(--hero-bg);
+      color: var(--hero-text);
+      padding: 0;
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-logo {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 30px;
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+      animation: pulse 3s infinite alternate;
+    }
+    
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.05);
+      }
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      margin: 0 0 20px;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      opacity: 0.9;
+    }
+    
+    .hero-btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: var(--secondary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(247, 147, 26, 0.3);
+    }
+    
+    .hero-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(247, 147, 26, 0.4);
+      text-decoration: none;
+    }
+    
+    .hero-background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    
+    .hero-pattern {
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      top: -200px;
+      right: -200px;
+      opacity: 0.07;
+      transform: rotate(30deg);
+      z-index: 0;
+    }
+    
+    .contents {
+      background-color: var(--hover-color);
+      padding: 25px 30px;
+      margin-bottom: 40px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+    
+    .contents h2 {
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+    
+    .contents ul {
+      list-style-type: none;
+      padding-left: 5px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .contents li {
+      margin-bottom: 15px;
+      margin-right: 20px;
+    }
+    
+    .contents li a {
+      padding: 10px 15px;
+      border-radius: 6px;
+      transition: background-color 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+    
+    .contents li a:hover {
+      background-color: rgba(22, 82, 240, 0.1);
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+    
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    
+    a:hover {
+      color: var(--secondary-color);
+      text-decoration: underline;
+    }
+    
+    .wallet-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    .wallet-table th,
+    .wallet-table td {
+      padding: 14px 18px;
+      border: 1px solid var(--border-color);
+    }
+    
+    .wallet-table th {
+      background-color: var(--table-header-bg);
+      font-weight: 600;
+      text-align: left;
+      position: sticky;
+      top: 0;
+    }
+    
+    .wallet-table tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+    
+    .wallet-table tr:hover {
+      background-color: var(--table-row-hover);
+    }
+    
+    .code {
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+      font-size: 0.9em;
+    }
+    
+    .status-cell {
+      text-align: center;
+      font-size: 1.2em;
+    }
+    
+    .notes-cell {
+      max-width: 300px;
+    }
+    
+    .notes-cell a {
+      word-break: break-all;
+    }
+    
+    .icon-legend {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .legend-table {
+      width: auto;
+      margin-bottom: 1rem;
+      border-collapse: collapse;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .legend-table th,
+    .legend-table td {
+      padding: 12px 18px;
+      border: 1px solid var(--border-color);
+    }
+    
+    .legend-table th {
+      background-color: var(--table-header-bg);
+      font-weight: 600;
+    }
+    
+    ul {
+      padding-left: 25px;
+    }
+    
+    li {
+      margin-bottom: 10px;
+    }
+    
+    footer {
+      margin-top: 80px;
+      padding: 40px 0;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.9em;
+      color: #666;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f9fa;
+    }
+    
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+    
+    pre {
+      background-color: #f6f8fa;
+      border-radius: 8px;
+      padding: 20px;
+      overflow: auto;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+    }
+    
+    /* Highlight boxes */
+    .highlight-box, .warning-box, .note-box {
+      padding: 20px 25px;
+      margin: 25px 0;
+      border-radius: 8px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    }
+    
+    .highlight-box {
+      background-color: rgba(22, 82, 240, 0.08);
+      border-left: 5px solid var(--primary-color);
+    }
+    
+    .warning-box {
+      background-color: #fff5f5;
+      border-left: 5px solid #e53e3e;
+    }
+    
+    .note-box {
+      background-color: #f8f9fa;
+      border-left: 5px solid #718096;
+    }
+    
+    .feature-list {
+      margin: 20px 0;
+    }
+    
+    .feature-list li {
+      padding-left: 5px;
+      position: relative;
+    }
+    
+    .feature-list li::before {
+      content: "•";
+      color: var(--primary-color);
+      font-weight: bold;
+      display: inline-block;
+      margin-right: 10px;
+    }
+    
+    /* Section IDs for navigation */
+    section {
+      padding-top: 40px;
+      scroll-margin-top: 80px;
+    }
+    
+    /* Category headings */
+    .wallet-category h3 {
+      color: var(--primary-color);
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border-color);
+      margin-top: 50px;
+    }
+    
+    /* Responsive design improvements */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      .hero-logo {
+        width: 90px;
+        height: 90px;
+      }
+      
+      .contents li {
+        display: block;
+        margin-bottom: 12px;
+      }
+      
+      .wallet-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      
+      body {
+        padding: 0;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      h3 {
+        font-size: 1.3rem;
+      }
+      
+      .highlight-box, .warning-box, .note-box {
+        padding: 15px 20px;
+      }
+      
+      footer .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      footer img {
+        margin-top: 15px;
+      }
+      
+      /* Mobile navbar styles */
+      .navbar-container {
+        padding: 10px 15px;
+      }
+      
+      .navbar-toggle {
+        display: block;
+      }
+      
+      .navbar-links {
+        position: fixed;
+        top: 55px;
+        left: 0;
+        right: 0;
+        background-color: var(--navbar-bg);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: var(--navbar-shadow);
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        pointer-events: none;
+      }
+      
+      .navbar-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+      }
+      
+      .navbar-links li {
+        margin: 10px 0;
+      }
+      
+      .navbar-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+      }
+      
+      .navbar-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .navbar-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+      }
+    }
+    
+    /* Add styles for search and sort features */
+    .search-container {
+      margin-bottom: 20px;
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 1rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .wallet-table th {
+      background-color: var(--table-header-bg);
+      font-weight: 600;
+      text-align: left;
+      position: sticky;
+      top: 0;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.2s;
+    }
+
+    .wallet-table th:hover {
+      background-color: #e4eeff;
+    }
+
+    .wallet-table th::after {
+      margin-left: 5px;
+      display: inline-block;
+    }
+
+    .wallet-table th.sort-asc::after {
+      content: "↑";
+    }
+
+    .wallet-table th.sort-desc::after {
+      content: "↓";
+    }
+
+    /* No results message */
+    .no-results {
+      padding: 20px;
+      text-align: center;
+      font-style: italic;
+      color: #666;
+      background-color: #f8f9fa;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sticky Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">
+        <img src="images/wr-logo-01.svg" alt="Wallets Recovery Logo">
+        <h1>Wallets Recovery</h1>
+      </div>
+      <button class="navbar-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="navbar-links">
+        <li><a href="#intro" class="nav-link">Introduction</a></li>
+        <li><a href="#wallet-tables" class="nav-link">Wallet Tables</a></li>
+        <li><a href="#wallet-types" class="nav-link">Wallet Types</a></li>
+        <li><a href="#derivation-paths" class="nav-link">Derivation Paths</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+        <li><a href="#resources" class="nav-link">Resources</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <img src="images/wr-logo-01.svg" alt="Wallets Recovery Logo" class="hero-logo">
+      <h1>Wallets Recovery</h1>
+      <p>A comprehensive guide to Bitcoin wallet recovery tools and procedures for helping users regain access to their funds</p>
+      <a href="#wallet-tables" class="hero-btn">Explore Wallet Tables</a>
+    </div>
+    <div class="hero-pattern">
+      <img src="images/wr-logo-01.svg" alt="" aria-hidden="true">
+    </div>
+  </header>
+  
+  <div class="container">
+    <div class="contents">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#wallet-tables">Wallet Tables</a></li>
+        <li><a href="#wallet-types">Wallet Types</a></li>
+        <li><a href="#derivation-paths">Derivation Paths</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+    </div>
+    
+    <!-- Main content container to be filled with sections -->
+    <main>
+      <section id="intro">
+        <h2>Introduction</h2>
+        
+        <div class="highlight-box">
+          <p><strong>Giving users their seed phrase is not enough.</strong></p>
+        </div>
+
+        <p>While great advances have been made in interoperability and recoverability, developers across the industry continue to build wallets that either:</p>
+        
+        <ul class="feature-list">
+          <li>Don't implement BIP standard(s).</li>
+          <li>Implement a BIP standard, but inconsistently when compared with other wallets.</li>
+          <li>Implement a BIP standard, but one that has not been widely adopted (and perhaps only by them).</li>
+          <li>Don't have clear documentation about their derivation paths, backup and recovery processes.</li>
+        </ul>
+        
+        <p>This chart is meant to gather information about wallet defaults for external recovery. Wallets come and go, information gets lost, and users are left with tears. Responsible wallet developers document external recovery. Users should not have to dig through the source code to figure out the Derivation Paths or Redeem Scripts.</p>
+        
+        <div class="warning-box">
+          <p>If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL RECOVERY NOT DOCUMENTED].</p>
+        </div>
+        
+        <div class="note-box">
+          <p><strong>This list is not an endorsement of the security or the quality of any of the wallets.</strong></p>
+        </div>
+      </section>
+      
+      <section id="wallet-tables">
+        <h2>Wallet Tables</h2>
+        <div id="wallet-tables-container">
+          <p>Loading wallet data...</p>
+        </div>
+      </section>
+
+      <section id="wallet-types">
+        <h2>Wallet Types</h2>
+        
+        <ul>
+          <li><strong>Paper wallets</strong> are not actually wallets, but rather private keys and addresses printed out on paper. While the keys and addresses can technically be generated non-deterministically or deterministically, the usability is basically the same or poorer than a non-deterministic software wallet. Paper wallets have a number of significant drawbacks, including encouraging address reuse, exposing keys to poorly secured networked devices (printer), and not handling change addresses. Paper wallets should not be confused with <a href="https://wiki.trezor.io/Recovery_seed">recovery seeds</a>.</li>
+          <li><strong>Non-deterministic wallets</strong> randomly generate all private / public key pairs independent of each other. A <a href="https://en.bitcoin.it/wiki/Key_pool">keypool buffer</a> was added to the Bitcoin-Qt / Bitcoin Core wallet in <a href="https://bitcointalk.org/index.php?topic=1414.0">October</a> <a href="https://bitcointalk.org/index.php?topic=1528.0">2010</a>, which allowed the wallet to create a collection of unused addresses, rather than generating new addresses one by one upon use. While this feature allowed for less frequent backups than before, the non-determinism still carried the risk of key loss if the pool was exhausted and a new key was generated beyond what was saved in backup.</li>
+          <li><strong>Deterministic wallets</strong> are essentially any wallet where "<a href="https://bitcointalk.org/index.php?topic=19137.msg239768#msg239768">you can backup once... because all future addresses are determined in advance</a>," which was a massive improvement in recoverability. There are <a href="https://bitcoin.stackexchange.com/questions/18102/does-a-wallet-containing-multiple-addresses-have-a-single-private-key">two different forms</a>:
+            <ul>
+              <li><strong>Sequential deterministic wallets</strong> take a single seed phrase / passphrase and repeatedly increment it in order to generate new keypairs. This meant that the system would only need to store addresses, and then re-generate the private keys when needed.</li>
+              <li><strong>Hierarchical deterministic wallets</strong> take a single seed phrase and randomly generate a master private / public key pair, which is then used to derive child key pairs that generate addresses. This system allows for the generation of addresses to occur without the master private key, with only the public key.</li>
+            </ul>
+          </li>
+          <li><strong>Multi-signature wallets</strong> require multiple signatures or parties to sign a transaction in order to spend bitcoin. An M-of-N <a href="https://github.com/bitcoin/bips/blob/master/bip-0011.mediawiki">BIP11</a> address must first be generated in order to receive bitcoin for spending in multi-signature transactions. While the 2-of-2 and 2-of-3 schemes are the most common, the <a href="https://bitcoin.stackexchange.com/questions/81223/why-is-20-the-maximum-public-keys-in-a-multisig-transaction">maximum number of public keys</a> is higher, and this could increase much more in the future <a href="https://twitter.com/J9Roem/status/991098233828139008">with Schnorr signatures</a> and <a href="https://bitcoinops.org/en/newsletters/2019/05/14/">Taproot</a>. 'Partially Signed Bitcoin Transactions' (PSBT) according to <a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">BIP174</a> (proposed), where unsigned or partially signed transactions are passed around to multiple signers or signing devices, may also be an option.</li>
+        </ul>
+      </section>
+
+      <section id="derivation-paths">
+        <h2>Derivation Paths</h2>
+        
+        <p>In hierarchical deterministic wallets (<a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a>), a derivation path is a sequence of fields or levels through which a wallet organizes coins in a multi-currency, multi-account, and multi-address system. According to <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">BIP44</a>, this hierarchy consists of five levels, in addition to the master extended private key ('xpriv') represented by <code>m</code>. Derivation paths for the master extended public key ('xpub') use <code>M</code>. Double-check what fields your wallet uses in our chart above, as BIP44 has been implemented inconsistently!</p>
+        
+        <p><code>m / purpose' / coin_type' / account' / change / address_index</code></p>
+        
+        <ul>
+          <li><strong>Purpose:</strong> This field, which was added through <a href="https://github.com/bitcoin/bips/blob/master/bip-0043.mediawiki">BIP43</a>, indicates which standard the derivation path follows. Possibilities include <code>0</code> or <code>44</code> referring to the default <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">BIP44</a> P2PKH / '1' legacy addresses, <code>45</code> referring to <a href="https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki">BIP45</a> P2SH multi-party multi-signature wallets (proposed), <code>47</code> referring to <a href="https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki">BIP47</a> reusable payment codes (draft), <code>48</code> referring to hardware multisignature wallets (no BIP or standard proposal), <code>49</code> referring to <a href="https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki">BIP49</a> P2WPKH-nested-in-P2SH / '3' SegWit addresses, or <code>84</code> referring to <a href="https://github.com/bitcoin/bips/blob/master/bip-0084.mediawiki">BIP84</a> P2WPKH / 'bc1' native SegWit addresses. Some wallets support more than one (for example, many wallets now have both the legacy and wrapped or native SegWit address types).</li>
+          <li><strong>Coin Type:</strong> This field indicates which cryptocurrency is being used in a multi-currency wallet. All coins, including testnet bitcoin, are assigned <a href="https://github.com/satoshilabs/slips/blob/master/slip-0044.md">a constant number</a>. For example, a derivation path for a Monero (XMR) account would be <code>m/44'/128'</code>. <em>Note that <a href="https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki">BIP45</a> would designate this level as the 'Cosigner Index' instead.</em></li>
+          <li><strong>Account:</strong> This field, in a multi-account wallet, indicates the identity or collection of addresses, which allows users to segregate funds for different things (ex. savings, donations). <em>Note that <a href="https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki">BIP45</a> would not include this field. <a href="https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki">BIP47</a> would designate this level as 'Identity', though it is equivalent to 'Account.'</em></li>
+          <li><strong>Change:</strong> This field, if the constant <code>0</code> is present, indicates "external chain" (regular) addresses; if the constant <code>1</code>, indicates "internal chain" or change addresses. <em>Note that <a href="https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki">BIP47</a> would designate this level for the notification keys and ephemeral payment codes.</em></li>
+          <li><strong>Address Index:</strong> This field indicates the specific address number in a sequence, within an account.</li>
+        </ul>
+        
+        <p>Note that the fields 'Account' and 'Address Index' start with zero (0). This is because they use <a href="https://en.wikipedia.org/wiki/Zero-based_numbering">zero-based numbering</a>, just as the "ground floor" of buildings in the U.K. and Europe are considered level zero, rather than the first floor / level one in the United States.</p>
+        
+        <p>Practical Example: A user has a <strong>BIP44</strong> compliant <strong>bitcoin</strong> wallet, and wants to locate the <strong>second</strong> change address in their <strong>third</strong> account. The derivation path for the <strong>second change address</strong> in the <strong>third account</strong> would look like this: <code>m/44'/0'/2'/1/1</code>.</p>
+        
+        <p>Another point of confusion may occur when wallets use the same derivation path for different script types. Especially if you are using any newer / more novel script types, wallets that have earmarked those paths for other scripts may cause errors during import. Example with Bread Wallet and Multibit mentioned <a href="https://github.com/spesmilo/electrum/issues/6155#issuecomment-626811245">here</a>.</p>
+        
+        <p>The meaning of "public" / unhardened versus hardened derivation, indicated in the fields by apostrophes, is explained <a href="https://wiki.trezor.io/Hardened_and_non-hardened_derivation">here</a>, <a href="https://medium.com/@sevcsik/working-with-bitcoin-hd-wallets-ii-deriving-public-keys-c48341629388">here</a>, and <a href="https://bitcoin.stackexchange.com/questions/62533/key-derivation-in-hd-wallets-using-the-extended-private-key-vs-hardened-derivati?rq=1">here</a>.</p>
+      </section>
+
+      <section id="faq">
+        <h2>FAQ</h2>
+
+        <h3>How to contribute?</h3>
+        <p>Make a <a href="https://github.com/nvk/wallets-recovery/pulls">Pull Request</a>.</p>
+
+        <h3>How to develop locally?</h3>
+        <p>This site is hosted on Github Pages.</p>
+
+        <h4>Option 1 - use Jekyll (Ruby)</h4>
+        <p>Follow the steps described in this Github help <a href="https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll">article</a>.</p>
+
+        <h4>Option 2 - use Grip (Python)</h4>
+        <pre><code>$ pip install grip
+
+$ grip
+* Serving Flask app "grip.app" (lazy loading)
+* Environment: production
+  WARNING: This is a development server. Do not use it in a production deployment.
+  Use a production WSGI server instead.
+* Debug mode: off
+* Running on http://localhost:6419/ (Press CTRL+C to quit)</code></pre>
+      </section>
+
+      <section id="resources">
+        <h2>Resources</h2>
+
+        <h3>Wallet Specific</h3>
+        <ul>
+          <li>"Compatibility Matrix: SegWit and Replace-by-Fee" by Bitcoin Optech <a href="https://bitcoinops.org/en/compatibility/">↗︎</a></li>
+        </ul>
+
+        <h3>Tools</h3>
+        <ul>
+          <li>"Bitcoin Extended Public Key Converter" by Jameson Lopp <a href="https://jlopp.github.io/xpub-converter/">↗︎</a></li>
+          <li>"Mnemonic Code Converter" by Ian Coleman <a href="https://iancoleman.io/bip39/">↗︎</a></li>
+          <li>"HD-Wallet Scanner" by Alex Kaul <a href="https://github.com/alexk111/HD-Wallet-Scanner/">↗︎</a></li>
+          <li>"PSBT Toolkit" by Ben Carman <a href="https://github.com/benthecarman/PSBT-Toolkit/releases">↗︎</a></li>
+          <li>[Released] Automated Scanner & BIP39 Recovery Feature for Electrum by Luke Childs <a href="https://github.com/spesmilo/electrum/blob/master/RELEASE-NOTES">↗︎</a></li>
+        </ul>
+
+        <h3>General Information</h3>
+        <ul>
+          <li>"Bitcoin Information and Resources" by Jameson Lopp <a href="https://www.lopp.net/bitcoin-information.html">↗︎</a></li>
+          <li>WeUseCoins FAQ <a href="https://www.weusecoins.com/">↗︎</a></li>
+          <li>"What types of mnemonic seeds are used in Bitcoin?" by Coldbit <a href="https://coldbit.com/what-types-of-mnemonic-seeds-are-used-in-bitcoin/">↗︎</a></li>
+          <li>"FAQ Regarding Bitcoin Seeds" by 6102bitcoin <a href="https://github.com/6102bitcoin/6102bitcoin/blob/main/content/faq-bitcoin-seed.md">↗︎</a></li>
+          <li>"How BIP39 Seed Words Work" by jimbocoin <a href="https://observablehq.com/@jimbojw/grokking-bip39">↗︎</a></li>
+        </ul>
+
+        <h3>Security aids</h3>
+        <ul>
+          <li><a href="https://bitcoinbinary.org/">Reproducible Builds proofs</a></li>
+        </ul>
+      </section>
+    </main>
+  </div>
+  
+  <footer>
+    <div class="container">
+      <p>Wallets Recovery - <a href="https://github.com/walletsrecovery/walletsrecovery.org">Contribute on GitHub</a></p>
+      <img src="images/wr-logo-01.svg" alt="Wallets Recovery" style="height: 40px;">
+    </div>
+  </footer>
+
+  <script>
+    // This will contain our embedded wallet data and rendering logic
+    document.addEventListener('DOMContentLoaded', function() {
+      // Embedded wallet data
+      const walletsData = {
+        "categories": [
+          {
+            "name": "Hardware Wallets",
+            "wallets": [
+              {
+                "status": "✅", 
+                "name": "AirGap Vault",
+                "url": "https://airgap.it",
+                "supported_paths": "m/44'|84'/0'/0' + Custom",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "Yes",
+                "notes": "Docs: https://support.airgap.it/account-recovery"
+              },
+              {
+                "status": "⚠️👁🧐", 
+                "name": "Arculus",
+                "url": "https://www.getarculus.com/",
+                "supported_paths": "m/0'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "No",
+                "notes": "Docs: https://support.arculus.co/hc/en-us/articles/4406450890263-What-is-a-recovery-passphrase-seed-How-does-my-Arculus-recovery-passphrase-seed-work-"
+              },
+              {
+                "status": "✅😵👁🚸", 
+                "name": "BitBox01",
+                "url": "https://shiftcrypto.ch/bitbox01/",
+                "supported_paths": "m/44'|49'|84'/0'/0'",
+                "bip39_pass": "Required",
+                "bip174_psbt": "No",
+                "notes": "Docs: https://shiftcrypto.ch/bitbox01/wallet-sweep/, Recovery Tool: https://github.com/digitalbitbox/html_backup"
+              },
+              {
+                "status": "✅👁", 
+                "name": "BitBox02",
+                "url": "https://shiftcrypto.ch/bitbox02/",
+                "supported_paths": "m/48'|49'|84'/0'/0'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "No",
+                "notes": "Docs: https://guides.shiftcrypto.ch/bitbox02/advanced/backup-recovery/, Recovery tool: https://github.com/digitalbitbox/bitbox02-backup-recovery"
+              },
+              {
+                "status": "⚠️🧐", 
+                "name": "CoboVault",
+                "url": "https://cobo.com/hardware-wallet/cobo-vault",
+                "supported_paths": "m/49'/0'/0'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "No",
+                "notes": "Docs: https://support.cobo.com/hc/en-us/articles/360046375373-Passphrase, EXTERNAL RECOVERY NOT DOCUMENTED"
+              },
+              {
+                "status": "✅🧐", 
+                "name": "Jade",
+                "url": "https://blockstream.com/jade/",
+                "supported_paths": "Single signer: m/49'|m/84'/0'/0' + Custom, Multisig: m/48'/0'/0'/2'|m/48'/0'/0'/1' + Custom",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "Yes",
+                "notes": "Docs: https://help.blockstream.com/hc/en-us/categories/900000061906-Blockstream-Jade, Xpub: https://help.blockstream.com/hc/en-us/articles/11891963370137"
+              },
+              {
+                "status": "✅🧐", 
+                "name": "CoboVault with BTC only firmware",
+                "url": "https://cobo.com/hardware-wallet/cobo-vault",
+                "supported_paths": "m/44'|48'|84'/0'/0'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "Yes",
+                "notes": "Docs: https://support.cobo.com/hc/en-us/articles/360046375373-Passphrase, Integration Guide: https://github.com/CoboVault/cobo-vault-docs/blob/master/Integration_guide.md"
+              },
+              {
+                "status": "✅😵", 
+                "name": "ColdCard Mk1",
+                "url": "https://coldcardwallet.com/",
+                "supported_paths": "m/44'|48'|49'|84'/0'/0' + Custom",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "Yes",
+                "notes": "Docs: https://coldcardwallet.com/docs/"
+              },
+              {
+                "status": "✅😵", 
+                "name": "ColdCard Mk2",
+                "url": "https://coldcardwallet.com/",
+                "supported_paths": "m/44'|48'|84'/0'/0' + Custom",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "Yes",
+                "notes": "Docs: https://coldcardwallet.com/docs/"
+              },
+              {
+                "status": "✅", 
+                "name": "ColdCard Mk3",
+                "url": "https://coldcardwallet.com/",
+                "supported_paths": "m/44'|48'|84'/0'/0' + Custom + P2TR",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "Yes",
+                "notes": "Docs: https://coldcardwallet.com/docs/"
+              },
+              {
+                "status": "✅", 
+                "name": "ColdCard Mk4",
+                "url": "https://coldcardwallet.com/",
+                "supported_paths": "m/44'|48'|84'/0'/0' + Custom + P2TR",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "Yes",
+                "notes": "Docs: https://coldcardwallet.com/docs/"
+              },
+              {
+                "status": "✅", 
+                "name": "ColdCard Q",
+                "url": "https://coldcardwallet.com/",
+                "supported_paths": "m/44'|48'|84'/0'/0' + Custom + P2TR",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "Yes",
+                "notes": "Docs: https://coldcardwallet.com/docs/"
+              },
+              {
+                "status": "✅👁", 
+                "name": "CoolWallet S",
+                "url": "https://www.coolwallet.io/",
+                "supported_paths": "m/44'/0'/0' (P2SH-Segwit account on P2PKH path)",
+                "bip39_pass": "No",
+                "bip174_psbt": "No",
+                "notes": "BIP39 Seed words represented as numbers... Conversion Map: https://www.coolwallet.io/wp-content/uploads/2020/04/Number-seed-conversion-v1.pdf, Docs: https://help.coolwallet.io/article/160-recover-btc-using-coolwallet-s-seed-without-the-wallet"
+              },
+              {
+                "status": "✅👁", 
+                "name": "Ledger Nano S",
+                "url": "https://ledger.com/",
+                "supported_paths": "m/49'|84'/0'/0'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "No",
+                "notes": "Docs: https://support.ledger.com/hc/en-us"
+              },
+              {
+                "status": "✅👁", 
+                "name": "Ledger Nano X",
+                "url": "https://ledger.com/",
+                "supported_paths": "m/49'|84'/0'/0'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "No",
+                "notes": "Docs: https://support.ledger.com/hc/en-us"
+              },
+              {
+                "status": "✅🧐", 
+                "name": "Passport",
+                "url": "https://foundationdevices.com",
+                "supported_paths": "m/84'/0'/0'|m/48'/0'/0'/2'|Post Mix: m/84'/0'/2147483646'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "Yes",
+                "notes": "Docs: https://docs.foundationdevices.com"
+              },
+              {
+                "status": "✅🧐", 
+                "name": "SeedSigner",
+                "url": "https://seedsigner.com",
+                "supported_paths": "m/84'/0'/0'|m/48'/0'/0'/2'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "Yes",
+                "notes": "Docs: https://github.com/SeedSigner/seedsigner/blob/main/docs/recovery.md"
+              },
+              {
+                "status": "✅🚸👁", 
+                "name": "Trezor One",
+                "url": "https://trezor.io",
+                "supported_paths": "m/44'|49'|84'/0'/0'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "No",
+                "notes": "Docs: https://wiki.trezor.io"
+              },
+              {
+                "status": "✅🚸👁", 
+                "name": "Trezor Model T",
+                "url": "https://trezor.io",
+                "supported_paths": "m/44'|49'|84'/0'/0'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "No",
+                "notes": "Docs: https://wiki.trezor.io"
+              },
+              {
+                "status": "✅🚸👁", 
+                "name": "KeepKey",
+                "url": "https://keepkey.zendesk.com/hc/en-us",
+                "supported_paths": "m/44'/0'/0'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "No",
+                "notes": "Docs: https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey, xPub: https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software, Compatible Wallets: https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-"
+              },
+              {
+                "status": "⚠️🧐", 
+                "name": "KoinKeep",
+                "url": "https://koinkeep.com",
+                "supported_paths": "m/44'/0'/1'",
+                "bip39_pass": "No",
+                "bip174_psbt": "No",
+                "notes": "Used for multisig mode, both master key and device keys, EXTERNAL RECOVERY NOT DOCUMENTED"
+              },
+              {
+                "status": "✅🧐", 
+                "name": "Krux",
+                "url": "https://selfcustody.github.io/krux/",
+                "supported_paths": "m/84'/0'/0'|m/48'/0'/0'/2'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "Yes",
+                "notes": "Docs: https://selfcustody.github.io/krux/getting-started/usage/loading-a-mnemonic/"
+              },
+              {
+                "status": "✅", 
+                "name": "Opendime",
+                "url": "https://opendime.com",
+                "supported_paths": "WIF",
+                "bip39_pass": "N/A",
+                "bip174_psbt": "N/A",
+                "notes": "Docs: https://opendime.com/faq, Archive: https://web.archive.org/save/https://opendime.com/faq"
+              },
+              {
+                "status": "✅🚸👁", 
+                "name": "Prokey Optimum",
+                "url": "https://prokey.io",
+                "supported_paths": "m/44'|49'|84'/0'/0'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "No",
+                "notes": "Docs: https://support.prokey.io"
+              }
+            ]
+          },
+          {
+            "name": "Software Wallets",
+            "wallets": [
+              {
+                "status": "✅👁⑂", 
+                "name": "AirGap Wallet",
+                "url": "https://airgap.it",
+                "supported_paths": "m/44'|84'/0'/0' + Custom",
+                "bip39_pass": "Optional",
+                "wif_support": "No",
+                "bip174_psbt": "Yes",
+                "notes": "Docs: https://support.airgap.it/account-recovery"
+              },
+              {
+                "status": "☠", 
+                "name": "Atomic Wallet",
+                "url": "https://atomicwallet.io",
+                "supported_paths": "m/44'/0'/0'/0/0 (Single Address Wallet)",
+                "bip39_pass": "No",
+                "wif_support": "No",
+                "bip174_psbt": "No",
+                "notes": "Non-Standard derivation path for non-BTC coins, EXTERNAL RECOVERY NOT DOCUMENTED."
+              },
+              {
+                "status": "️⚠️", 
+                "name": "Bitcoin Core",
+                "url": "https://bitcoin.org",
+                "supported_paths": "m/0'/0'",
+                "bip39_pass": "N/A",
+                "wif_support": "Yes",
+                "bip174_psbt": "WIP",
+                "notes": "Github Issue: https://github.com/bitcoin/bitcoin/issues/13302"
+              },
+              {
+                "status": "✅👁⑂", 
+                "name": "Bitcoin Wallet app",
+                "url": "https://github.com/bitcoin-wallet/bitcoin-wallet",
+                "supported_paths": "BIP32 non 44 Compatible",
+                "bip39_pass": "N/A",
+                "wif_support": "No",
+                "bip174_psbt": "No",
+                "notes": "Docs: https://github.com/bitcoin-wallet/bitcoin-wallet/blob/master/wallet/README.recover.md, Archive: ./recovery-docs/bitcoinwallet-recovery.md"
+              },
+              {
+                "status": "️⚠️", 
+                "name": "Bisq",
+                "url": "https://bisq.network/",
+                "supported_paths": "m/44'/0'/0'|44'/0'/1'",
+                "bip39_pass": "N/A",
+                "wif_support": "No",
+                "bip174_psbt": "No",
+                "notes": "Github Issue: https://github.com/bisq-network/bisq/issues/1853. SegWit on 44 deriv path, account 1."
+              },
+              {
+                "status": "⚠️", 
+                "name": "Bither",
+                "url": "https://bither.net/",
+                "supported_paths": "m/44'|49'/0'/0'",
+                "bip39_pass": "N/A",
+                "wif_support": "No",
+                "bip174_psbt": "No",
+                "notes": "EXTERNAL RECOVERY NOT DOCUMENTED"
+              },
+              {
+                "status": "✅👁⑂", 
+                "name": "Blockchain.com",
+                "url": "https://www.blockchain.com/en/wallet",
+                "supported_paths": "m/44'/0'/n'",
+                "bip39_pass": "N/A",
+                "wif_support": "No",
+                "bip174_psbt": "No",
+                "notes": "Docs: https://support.blockchain.com/hc/en-us/articles/115001298143-Your-Recovery-Phrase-The-Failsafe, xPub: https://support.blockchain.com/hc/en-us/articles/207746403-Wallets-Addresses"
+              },
+              {
+                "status": "✅👁⑂", 
+                "name": "Blockstream Green (GreenAddress)",
+                "url": "https://blockstream.com/green/",
+                "supported_paths": "Single signer: m/44'|m/49'|84'/0'/0' Multisig: Custom 2-of-2 Script",
+                "bip39_pass": "Optional (on restore)",
+                "wif_support": "Yes",
+                "bip174_psbt": "No",
+                "notes": "Apps: https://blockstream.com/green/, Docs: https://help.blockstream.com/hc/en-us/categories/900000056183-Blockstream-Green/, Recovery tool for multisig: https://github.com/greenaddress/garecovery"
+              },
+              {
+                "status": "✅👁⑂", 
+                "name": "BlueWallet",
+                "url": "https://bluewallet.io/",
+                "supported_paths": "Single signer: m/44'|m/49'|84'/0'/0' Multisig: m/48'/0'/0'/2'",
+                "bip39_pass": "N/A",
+                "wif_support": "Yes",
+                "bip174_psbt": "Yes",
+                "notes": "Docs: http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet, Docs 2: https://github.com/BlueWallet/BlueWallet/wiki/Supported-wallet-types, Archive: https://web.archive.org/save/http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet, Features: https://bluewallet.io/features/"
+              },
+              {
+                "status": "️⚠️👁⑂", 
+                "name": "BRD (Bread Wallet)",
+                "url": "https://brd.com/",
+                "supported_paths": "m/0'",
+                "bip39_pass": "N/A",
+                "wif_support": "Yes",
+                "bip174_psbt": "No",
+                "notes": "Github Issue: https://github.com/voisine/breadwallet-ios/issues/131, archive of Bitcoin talk: https://archive.md/1knci, Reddit Post: https://www.reddit.com/r/Bitcoin/comments/6btevz/how_do_i_import_my_12_breadwallet_seed_words_into/"
+              },
+              {
+                "status": "⚠️👁⑂", 
+                "name": "BTC.com app",
+                "url": "https://btc.com/applications/app",
+                "supported_paths": "Multisig: m/0'",
+                "bip39_pass": "N/A",
+                "wif_support": "No",
+                "bip174_psbt": "No",
+                "notes": "Unofficial Docs: https://gist.github.com/rubensayshi/da922774d43976e0804c"
+              },
+              {
+                "status": "⚠️👁", 
+                "name": "Casa",
+                "url": "https://keys.casa/",
+                "supported_paths": "m/49/0/X (X increments with each key rotation)",
+                "bip39_pass": "N/A",
+                "wif_support": "No",
+                "bip174_psbt": "No",
+                "notes": "Unofficial Docs: ./recovery-docs/casa-recovery.md"
+              },
+              {
+                "status": "✅👁⑂", 
+                "name": "Coin Wallet",
+                "url": "https://coin.space/",
+                "supported_paths": "m/44'|49'|84'/0'/0'",
+                "bip39_pass": "Yes",
+                "wif_support": "Yes",
+                "bip174_psbt": "No",
+                "notes": "Docs: https://support.coin.space/hc/en-us/articles/115002934174"
+              },
+              {
+                "status": "✅👁⑂", 
+                "name": "Coinomi",
+                "url": "https://www.coinomi.com",
+                "supported_paths": "m/44'|49'|84'/0'/0'",
+                "bip39_pass": "Yes",
+                "wif_support": "Yes",
+                "bip174_psbt": "No",
+                "notes": "Export: https://coinomi.freshdesk.com/support/solutions/articles/29000009717-what-is-the-recovery-tool-and-how-do-i-export-my-private-keys-, Import: https://coinomi.freshdesk.com/support/solutions/articles/29000009715-how-to-import-a-coinomi-seed-into-electrum-"
+              }
+            ]
+          },
+          {
+            "name": "Lightning Wallets",
+            "wallets": [
+              {
+                "status": "⛔️", 
+                "name": "BLW (Bitcoin Lightning Wallet)",
+                "url": "https://lightning-wallet.com/",
+                "supported_paths": "m/84'/0'/0' BIP32 non 44 Compatible",
+                "passphrase": "N/A",
+                "notes": "Docs: https://lightning-wallet.com/recovering-lost-balance"
+              },
+              {
+                "status": "⛔️", 
+                "name": "SBW (Simple Bitcoin Wallet)",
+                "url": "https://lightning-wallet.com/",
+                "supported_paths": "m/0', m/44'|49'|84'/0'/0'",
+                "passphrase": "N/A",
+                "notes": "Docs: https://lightning-wallet.com/posts/manual/"
+              },
+              {
+                "status": "✅", 
+                "name": "OBW (Open Bitcoin Wallet)",
+                "url": "https://github.com/nbd-wtf/obw",
+                "supported_paths": "m/0', m/44'|49'|84'/0'/0'",
+                "passphrase": "N/A",
+                "notes": "Docs: https://darthcoin.substack.com/p/obw-open-bitcoin-wallet"
+              },
+              {
+                "status": "⚠️", 
+                "name": "c-Lightning",
+                "url": "https://github.com/ElementsProject/lightning",
+                "supported_paths": "m/84'|141'/0'/0'/ Keys derived from hsm_secret file",
+                "passphrase": "N/A",
+                "notes": "BIP32 layout explained: https://github.com/ElementsProject/lightning/blob/697b501132c4222da444f6c63f35818169292efb/hsmd/hsmd.c#L426-L445, xPriv/xPub Export Tool: https://github.com/rsbondi/clightning-go-plugin/tree/master/dump_keys"
+              },
+              {
+                "status": "✅", 
+                "name": "Eclair Mobile",
+                "url": "https://github.com/ACINQ/eclair-mobile",
+                "supported_paths": "m/49'/0'/0'",
+                "passphrase": "Optional",
+                "notes": "Docs: https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-"
+              },
+              {
+                "status": "✅", 
+                "name": "LND (Lightning Network Daemon)",
+                "url": "https://github.com/lightningnetwork/lnd",
+                "supported_paths": "aezeed",
+                "passphrase": "Optional",
+                "notes": "Docs: https://github.com/lightningnetwork/lnd/tree/master/aezeed"
+              },
+              {
+                "status": "✅", 
+                "name": "Blixt (LND mobile node wallet)",
+                "url": "https://github.com/hsjoberg/blixt-wallet",
+                "supported_paths": "aezeed m/84'/0'/0' BIP32",
+                "passphrase": "N/A",
+                "notes": "Docs: https://blixtwallet.github.io/, Restore procedure A: https://blixtwallet.github.io/faq#blixt-restore, Restore procedure B: https://darthcoin.substack.com/p/umbrel-btcln-node-shtf-scenario#%C2%A7sparrow-method"
+              },
+              {
+                "status": "⚠️", 
+                "name": "Stakenet DEX Open Beta",
+                "url": "https://medium.com/stakenet/stakenet-dex-open-beta-dd5c78175608",
+                "supported_paths": "P2WPKH bech32 addresses m/44'/0'/0'",
+                "passphrase": "N/A",
+                "notes": "EXTERNAL RECOVERY NOT DOCUMENTED"
+              },
+              {
+                "status": "✅", 
+                "name": "Mutiny Wallet",
+                "url": "https://mutinywallet.com/",
+                "supported_paths": "m/86'/0'/0'",
+                "passphrase": "No",
+                "notes": "Docs: https://github.com/MutinyWallet/mutiny-web/wiki/Recovery"
+              },
+              {
+                "status": "✅", 
+                "name": "Zeus LN",
+                "url": "https://zeusln.com/",
+                "supported_paths": "m/86'/0'/0'",
+                "passphrase": "No",
+                "notes": "Docs: https://docs.zeusln.app/for-users/embedded-node/backup-and-recovery"
+              }
+            ]
+          },
+          {
+            "name": "Combo HW+SW",
+            "wallets": [
+              {
+                "status": "✅", 
+                "name": "BTCPay Server (Coldcard)",
+                "url": "https://coldcardwallet.com",
+                "supported_paths": "m/44'|49'|84'/0'/0'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "Yes",
+                "notes": "Docs: https://docs.btcpayserver.org/getting-started/connectwallet/coldcardwallet#coldcard-wallet-setup"
+              },
+              {
+                "status": "⚠️", 
+                "name": "Electrum (CoboVault)",
+                "url": "https://cobo.com/hardware-wallet/cobo-vault",
+                "supported_paths": "m/49'/0'/0'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "No",
+                "notes": "Docs: https://support.cobo.com/hc/en-us/articles/360046375373-Passphrase, EXTERNAL RECOVERY NOT DOCUMENTED"
+              },
+              {
+                "status": "✅", 
+                "name": "Electrum (Coldcard)",
+                "url": "https://coldcardwallet.com/",
+                "supported_paths": "m/44'|49'|84'/0'/0'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "Yes",
+                "notes": "Docs: https://coldcardwallet.com/docs/quick"
+              },
+              {
+                "status": "✅", 
+                "name": "Electrum (Ledger S/Nano)",
+                "url": "https://ledger.com/",
+                "supported_paths": "m/44'|49'|84'/0'/0'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "No",
+                "notes": "Docs: https://support.ledger.com/hc/en-us"
+              },
+              {
+                "status": "✅", 
+                "name": "Electrum (KeepKey)",
+                "url": "https://shapeshift.io/keepkey/",
+                "supported_paths": "m/44'|49'|84'/0'/0'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "No",
+                "notes": "Docs: https://keepkey.zendesk.com/hc/en-us/articles/360001449050-How-to-Recover-on-your-KeepKey, xPub: https://keepkey.zendesk.com/hc/en-us/sections/360000520290-Software, Compatible Wallets: https://keepkey.zendesk.com/hc/en-us/articles/360001279444-What-Type-of-Wallet-Can-be-Used-to-Recover-KeepKey-"
+              },
+              {
+                "status": "✅", 
+                "name": "Electrum (Trezor One / Model T)",
+                "url": "https://trezor.com",
+                "supported_paths": "m/44'|49'|84'/0'/0'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "No",
+                "notes": "Docs: https://wiki.trezor.io"
+              },
+              {
+                "status": "✅", 
+                "name": "Wasabi (Coldcard)",
+                "url": "https://coldcardwallet.com",
+                "supported_paths": "m/44'|49'|m/84'|86'/0'/0'",
+                "bip39_pass": "Optional",
+                "bip174_psbt": "Yes",
+                "notes": "Docs: https://docs.wasabiwallet.io/using-wasabi/ColdWasabi.html#connecting-coldcard-via-sd-card"
+              }
+            ]
+          }
+        ],
+        "icons": [
+          {"icon": "🛑", "meaning": "Unknown. No obvious docs, research in progress"},
+          {"icon": "😵", "meaning": "Discontinued and/or no longer maintained"},
+          {"icon": "🚸", "meaning": "HW Physically unsafe with \"full secret\" (ie without BIP39 passphrase or multisig) against a automated attack and/or unsophisticated attacker (ie chipshouter blackbox)"},
+          {"icon": "👁", "meaning": "Privacy concerns (default is third party node)"},
+          {"icon": "⑂", "meaning": "Validation concerns (default is third party node)"},
+          {"icon": "☠️", "meaning": "Not publicly available, or complex without a external tool available for the average user"},
+          {"icon": "⚠️", "meaning": "Known, but unofficially documented"},
+          {"icon": "✅", "meaning": "Documented + Link to doc"},
+          {"icon": "🧐", "meaning": "New project and/or team"}
+        ]
+      };
+      
+      renderWalletData(walletsData);
+      
+      // Setup smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 70, // Account for navbar height
+              behavior: 'smooth'
+            });
+            
+            // Update URL hash without jumping
+            history.pushState(null, null, targetId);
+          }
+        });
+      });
+      
+      // Sticky Navbar Logic
+      const navbar = document.querySelector('.navbar');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const navbarToggle = document.querySelector('.navbar-toggle');
+      const navbarLinks = document.querySelector('.navbar-links');
+      
+      // Handle mobile menu toggle
+      navbarToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navbarLinks.classList.toggle('active');
+      });
+      
+      // Close mobile menu when clicking a link
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navbarToggle.classList.remove('active');
+          navbarLinks.classList.remove('active');
+        });
+      });
+      
+      // Modified scrolling behavior to keep navbar always visible
+      window.addEventListener('scroll', function() {
+        // Update active section in navbar
+        const sections = document.querySelectorAll('section');
+        let currentSection = '';
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 100;
+          if (window.scrollY >= sectionTop) {
+            currentSection = section.getAttribute('id');
+          }
+        });
+        
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+          }
+        });
+      });
+      
+      // No need for this anymore as the navbar is always visible
+      /* 
+      setTimeout(function() {
+        navbar.classList.add('visible');
+      }, 1000);
+      */
+    });
+
+    function renderWalletData(data) {
+      // Get the container where we'll render the tables
+      const container = document.getElementById('wallet-tables-container');
+      if (!container) return;
+
+      // Clear any existing content
+      container.innerHTML = '';
+
+      // Render each category
+      data.categories.forEach(category => {
+        // Create a section for the category
+        const section = document.createElement('section');
+        section.className = 'wallet-category';
+        
+        // Add a heading
+        const heading = document.createElement('h3');
+        heading.textContent = category.name;
+        section.appendChild(heading);
+        
+        // Add count of wallets in this category
+        const walletCount = document.createElement('p');
+        walletCount.className = 'wallet-count';
+        walletCount.textContent = `${category.wallets.length} wallets`;
+        walletCount.style.color = '#666';
+        walletCount.style.marginBottom = '15px';
+        section.appendChild(walletCount);
+
+        // Add search field
+        const searchContainer = document.createElement('div');
+        searchContainer.className = 'search-container';
+        
+        const searchInput = document.createElement('input');
+        searchInput.type = 'text';
+        searchInput.className = 'search-input';
+        searchInput.placeholder = `Search ${category.name}...`;
+        searchInput.setAttribute('data-category', category.name);
+        searchContainer.appendChild(searchInput);
+        section.appendChild(searchContainer);
+
+        // Create a responsive wrapper for the table
+        const tableWrapper = document.createElement('div');
+        tableWrapper.style.overflowX = 'auto';
+        
+        // Create the table
+        const table = document.createElement('table');
+        table.className = 'wallet-table';
+        table.setAttribute('data-category', category.name);
+        
+        // Create the table header
+        const thead = document.createElement('thead');
+        const headerRow = document.createElement('tr');
+        
+        // Add header cells based on the category
+        const headers = ['Status', 'Wallet', 'Supported Paths', 'BIP39 Pass'];
+        
+        if (category.name === 'Lightning Wallets') {
+          headers[3] = 'Passphrase'; // Replace BIP39 Pass with Passphrase for Lightning wallets
+        } else {
+          // Add BIP174 PSBT header for all categories except Lightning
+          headers.push('BIP174 PSBT');
+          
+          // Add WIF Support header only for Software Wallets
+          if (category.name === 'Software Wallets') {
+            headers.splice(4, 0, 'WIF Support');
+          }
+        }
+        
+        // Add Notes header for all categories
+        headers.push('Notes');
+        
+        // Create the header cells
+        headers.forEach((headerText, index) => {
+          const th = document.createElement('th');
+          th.textContent = headerText;
+          th.setAttribute('data-column', index);
+          th.addEventListener('click', () => sortTable(table, index));
+          headerRow.appendChild(th);
+        });
+        
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+        
+        // Create the table body
+        const tbody = document.createElement('tbody');
+        
+        // Add rows for each wallet in the category
+        category.wallets.forEach(wallet => {
+          const row = document.createElement('tr');
+          
+          // Status cell
+          const statusCell = document.createElement('td');
+          statusCell.className = 'status-cell';
+          statusCell.textContent = wallet.status;
+          statusCell.title = getStatusTooltip(wallet.status, data.icons);
+          row.appendChild(statusCell);
+          
+          // Wallet name cell with link
+          const nameCell = document.createElement('td');
+          const nameLink = document.createElement('a');
+          nameLink.href = wallet.url;
+          nameLink.textContent = wallet.name;
+          nameLink.target = '_blank';
+          nameCell.appendChild(nameLink);
+          row.appendChild(nameCell);
+          
+          // Supported paths cell
+          const pathsCell = document.createElement('td');
+          pathsCell.className = 'code';
+          pathsCell.textContent = wallet.supported_paths;
+          row.appendChild(pathsCell);
+          
+          // BIP39 Pass or Passphrase cell
+          const passCell = document.createElement('td');
+          if (category.name === 'Lightning Wallets') {
+            passCell.textContent = wallet.passphrase;
+          } else {
+            passCell.textContent = wallet.bip39_pass;
+          }
+          row.appendChild(passCell);
+          
+          // Add WIF Support cell for Software Wallets
+          if (category.name === 'Software Wallets') {
+            const wifCell = document.createElement('td');
+            wifCell.textContent = wallet.wif_support;
+            row.appendChild(wifCell);
+          }
+          
+          // Add BIP174 PSBT cell for all except Lightning
+          if (category.name !== 'Lightning Wallets') {
+            const psbtCell = document.createElement('td');
+            psbtCell.textContent = wallet.bip174_psbt;
+            row.appendChild(psbtCell);
+          }
+          
+          // Notes cell with links
+          const notesCell = document.createElement('td');
+          notesCell.className = 'notes-cell';
+          notesCell.innerHTML = formatNotes(wallet.notes);
+          row.appendChild(notesCell);
+          
+          tbody.appendChild(row);
+        });
+        
+        table.appendChild(tbody);
+        tableWrapper.appendChild(table);
+        section.appendChild(tableWrapper);
+        
+        // Add no results message element (hidden by default)
+        const noResults = document.createElement('div');
+        noResults.className = 'no-results';
+        noResults.textContent = 'No matching wallets found.';
+        noResults.style.display = 'none';
+        section.appendChild(noResults);
+        
+        container.appendChild(section);
+
+        // Add search functionality
+        searchInput.addEventListener('input', () => {
+          filterTable(table, searchInput.value.toLowerCase(), noResults);
+        });
+      });
+
+      // Add icon legend
+      renderIconLegend(data.icons, container);
+    }
+
+    // Function to filter table rows based on search term
+    function filterTable(table, searchTerm, noResultsElement) {
+      const tbody = table.querySelector('tbody');
+      const rows = tbody.querySelectorAll('tr');
+      let hasVisibleRows = false;
+      
+      rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        let rowText = '';
+        
+        cells.forEach(cell => {
+          rowText += ' ' + cell.textContent.toLowerCase();
+        });
+        
+        if (rowText.includes(searchTerm)) {
+          row.style.display = '';
+          hasVisibleRows = true;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+      
+      // Show "no results" message if needed
+      if (noResultsElement) {
+        noResultsElement.style.display = hasVisibleRows ? 'none' : 'block';
+      }
+    }
+
+    // Function to sort table by column
+    function sortTable(table, columnIndex) {
+      const thead = table.querySelector('thead');
+      const tbody = table.querySelector('tbody');
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      const header = thead.querySelector(`th[data-column="${columnIndex}"]`);
+      
+      // Toggle sort direction
+      const isAscending = !header.classList.contains('sort-asc');
+      
+      // Remove sort classes from all headers
+      thead.querySelectorAll('th').forEach(th => {
+        th.classList.remove('sort-asc', 'sort-desc');
+      });
+      
+      // Add appropriate sort class to current header
+      header.classList.add(isAscending ? 'sort-asc' : 'sort-desc');
+      
+      // Sort the rows
+      rows.sort((rowA, rowB) => {
+        const cellA = rowA.querySelectorAll('td')[columnIndex];
+        const cellB = rowB.querySelectorAll('td')[columnIndex];
+        
+        let valueA = cellA.textContent.trim();
+        let valueB = cellB.textContent.trim();
+        
+        // Special handling for Status column (first column)
+        if (columnIndex === 0) {
+          return isAscending 
+            ? valueA.localeCompare(valueB)
+            : valueB.localeCompare(valueA);
+        }
+        
+        // For wallet name (second column), use the text of the link
+        if (columnIndex === 1) {
+          valueA = cellA.querySelector('a').textContent.trim();
+          valueB = cellB.querySelector('a').textContent.trim();
+        }
+        
+        // Compare as numbers if both values are numeric
+        if (!isNaN(valueA) && !isNaN(valueB)) {
+          return isAscending 
+            ? Number(valueA) - Number(valueB)
+            : Number(valueB) - Number(valueA);
+        }
+        
+        // Otherwise, compare as strings
+        return isAscending 
+          ? valueA.localeCompare(valueB) 
+          : valueB.localeCompare(valueA);
+      });
+      
+      // Reappend rows in sorted order
+      rows.forEach(row => {
+        tbody.appendChild(row);
+      });
+    }
+    
+    function getStatusTooltip(status, icons) {
+      // Get tooltip text based on the icons in the status
+      let tooltip = '';
+      
+      icons.forEach(icon => {
+        if (status.includes(icon.icon)) {
+          tooltip += `${icon.icon} ${icon.meaning}\n`;
+        }
+      });
+      
+      return tooltip || 'Status information';
+    }
+
+    function formatNotes(notes) {
+      // Convert URLs to clickable links with better styling
+      return notes.replace(/(https?:\/\/[^\s,]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+    }
+
+    function renderIconLegend(icons, container) {
+      const legendSection = document.createElement('section');
+      legendSection.className = 'icon-legend';
+      
+      const legendHeading = document.createElement('h3');
+      legendHeading.textContent = 'Icon Legend';
+      legendSection.appendChild(legendHeading);
+      
+      const legendTable = document.createElement('table');
+      legendTable.className = 'legend-table';
+      
+      const legendThead = document.createElement('thead');
+      const legendHeaderRow = document.createElement('tr');
+      
+      const iconHeader = document.createElement('th');
+      iconHeader.textContent = 'Icon';
+      iconHeader.style.width = '70px';
+      legendHeaderRow.appendChild(iconHeader);
+      
+      const meaningHeader = document.createElement('th');
+      meaningHeader.textContent = 'Meaning';
+      legendHeaderRow.appendChild(meaningHeader);
+      
+      legendThead.appendChild(legendHeaderRow);
+      legendTable.appendChild(legendThead);
+      
+      const legendTbody = document.createElement('tbody');
+      
+      icons.forEach(icon => {
+        const row = document.createElement('tr');
+        
+        const iconCell = document.createElement('td');
+        iconCell.textContent = icon.icon;
+        iconCell.style.fontSize = '1.2em';
+        iconCell.style.textAlign = 'center';
+        row.appendChild(iconCell);
+        
+        const meaningCell = document.createElement('td');
+        meaningCell.textContent = icon.meaning;
+        row.appendChild(meaningCell);
+        
+        legendTbody.appendChild(row);
+      });
+      
+      legendTable.appendChild(legendTbody);
+      legendSection.appendChild(legendTable);
+      container.appendChild(legendSection);
+      
+      // Add a back to top button
+      const backToTop = document.createElement('div');
+      backToTop.className = 'back-to-top';
+      backToTop.innerHTML = '↑ Back to top';
+      backToTop.style.textAlign = 'right';
+      backToTop.style.margin = '30px 0';
+      backToTop.style.cursor = 'pointer';
+      backToTop.style.color = 'var(--primary-color)';
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+      container.appendChild(backToTop);
+    }
+  </script>
+</body>
+</html> 
