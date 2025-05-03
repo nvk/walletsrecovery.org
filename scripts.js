@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.add('modal-active');
   }
   
-  fetch('wallets.json')
+  fetch('walletsrecovery.json')
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);

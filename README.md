@@ -204,4 +204,4 @@ Alternatively, run the Python HTTP server directly:
 python3 -m http.server 8002
 ```
 
-This method ensures all assets (CSS, JavaScript, images) are loaded properly and the fetch API can load the wallets.json data.
+This method ensures all assets (CSS, JavaScript, images) are loaded properly and the fetch API can load the walletsrecovery.json data.
