@@ -1,0 +1,1523 @@
+:root {
+  --primary-color: #1652f0;
+  --secondary-color: #f7931a;
+  --bg-color: #ffffff;
+  --text-color: #252525;
+  --border-color: #e0e0e0;
+  --hover-color: #f6f8fa;
+  --table-header-bg: #f2f7ff;
+  --table-row-hover: #f7faff;
+  --hero-bg: #0e1526;
+  --hero-text: #ffffff;
+  --navbar-bg: rgba(255, 255, 255, 0.95);
+  --navbar-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  scroll-padding-top: 70px; /* Add padding for sticky navbar */
+  font-size: 16px;
+  letter-spacing: -0.011em;
+}
+
+h1, h2, h3 {
+  margin-top: 1.75em;
+  margin-bottom: 1em;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+/* Sticky Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--navbar-bg);
+  box-shadow: var(--navbar-shadow);
+  z-index: 1000;
+  transform: translateY(0); /* Always visible instead of hidden initially */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 30px;
+  margin-right: 12px;
+}
+
+.navbar-logo h1 {
+  font-size: 1.25rem;
+  margin: 0;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-links li {
+  margin: 0 0 0 20px;
+  position: relative;
+}
+
+.navbar-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 5px 2px;
+  transition: color 0.2s;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+  color: var(--primary-color);
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s;
+}
+
+.navbar-links a:hover::after,
+.navbar-links a.active::after {
+  width: 100%;
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.navbar-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background-color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+header {
+  background-color: var(--hero-bg);
+  color: var(--hero-text);
+  padding: 0;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-logo {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 30px;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+  animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin: 0 0 20px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  opacity: 0.9;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--secondary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(247, 147, 26, 0.3);
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(247, 147, 26, 0.4);
+  text-decoration: none;
+}
+
+.hero-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.hero-pattern {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  top: -200px;
+  right: -200px;
+  opacity: 0.07;
+  transform: rotate(30deg);
+  z-index: 0;
+}
+
+.contents {
+  background-color: var(--hover-color);
+  padding: 25px 30px;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.contents h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.contents ul {
+  list-style-type: none;
+  padding-left: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 15px;
+}
+
+.contents li {
+  margin-bottom: 8px;
+  margin-right: 15px;
+}
+
+.contents li a {
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s, transform 0.2s;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.contents li a:hover {
+  background-color: rgba(22, 82, 240, 0.1);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+/* Improved paragraph readability */
+p {
+  margin-bottom: 1.2em;
+  max-width: 80ch;
+}
+
+/* Improve code readability */
+code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.85em;
+  padding: 0.2em 0.4em;
+  background-color: rgba(0,0,0,0.05);
+  border-radius: 3px;
+}
+
+.wallet-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 0.85rem;
+}
+
+.wallet-table th,
+.wallet-table td {
+  padding: 7px 8px;
+  border: 1px solid var(--border-color);
+  vertical-align: top;
+}
+
+.wallet-table th {
+  background-color: var(--table-header-bg);
+  font-weight: 600;
+  text-align: left;
+  position: sticky;
+  top: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  text-transform: uppercase;
+  z-index: 10;
+  box-shadow: 0 1px 0 var(--border-color);
+}
+
+.wallet-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.wallet-table tr:hover {
+  background-color: var(--table-row-hover);
+}
+
+.code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.8em;
+}
+
+.status-cell {
+  text-align: center;
+  min-width: 26px;
+  width: 26px;
+  max-width: 26px;
+  font-size: 1em;
+  padding: 5px 0;
+  border: 1px solid var(--border-color);
+}
+
+.status-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 40px;
+  min-height: 30px;
+  border-right: 1px solid var(--border-color);
+}
+
+.status-doc {
+  background-color: rgba(0, 200, 83, 0.05);
+}
+
+.status-project {
+  background-color: rgba(33, 150, 243, 0.05);
+}
+
+.status-security {
+  background-color: rgba(244, 67, 54, 0.05);
+}
+
+.status-privacy {
+  background-color: rgba(156, 39, 176, 0.05);
+}
+
+.notes-cell {
+  max-width: 240px;
+  font-size: 0.8em;
+}
+
+.notes-cell a {
+  word-break: break-all;
+}
+
+.wallet-path-tag {
+  display: inline-block;
+  padding: 2px 5px;
+  margin: 1px;
+  border-radius: 3px;
+  font-size: 0.65rem;
+  background-color: rgba(22, 82, 240, 0.08);
+  border: 1px solid rgba(22, 82, 240, 0.15);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.wallet-path-tag.active {
+  background-color: rgba(22, 82, 240, 0.15);
+  border-color: rgba(22, 82, 240, 0.25);
+  font-weight: 500;
+}
+
+.wallet-path-tag.custom {
+  background-color: rgba(247, 147, 26, 0.1);
+  border-color: rgba(247, 147, 26, 0.2);
+}
+
+.wallet-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  font-size: 0.8em;
+}
+
+.wallet-feature {
+  display: inline-block;
+  padding: 3px 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+  text-align: center;
+  min-width: 50px;
+  font-size: 0.75em;
+  letter-spacing: 0.02em;
+}
+
+.wallet-feature.yes {
+  background-color: rgba(0, 200, 83, 0.1);
+  border: 1px solid rgba(0, 200, 83, 0.2);
+}
+
+.wallet-feature.no {
+  background-color: rgba(244, 67, 54, 0.05);
+  border: 1px solid rgba(244, 67, 54, 0.1);
+  color: #777;
+}
+
+.wallet-feature.optional, .wallet-feature.wip {
+  background-color: rgba(255, 193, 7, 0.1);
+  border: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+.wallet-feature.na {
+  background-color: rgba(189, 189, 189, 0.1);
+  border: 1px solid rgba(189, 189, 189, 0.2);
+  color: #777;
+}
+
+.icon-legend {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.legend-table {
+  width: auto;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 0.85rem;
+}
+
+.legend-table th,
+.legend-table td {
+  padding: 8px 16px;
+  border: 1px solid var(--border-color);
+}
+
+.legend-table th {
+  background-color: var(--table-header-bg);
+  font-weight: 600;
+}
+
+ul {
+  padding-left: 25px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+footer {
+  margin-top: 80px;
+  padding: 40px 0;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9em;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+pre {
+  background-color: #f6f8fa;
+  border-radius: 8px;
+  padding: 20px;
+  overflow: auto;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+}
+
+/* Highlight boxes */
+.highlight-box, .warning-box, .note-box {
+  padding: 20px 25px;
+  margin: 30px 0;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+  line-height: 1.5;
+}
+
+.highlight-box {
+  background-color: rgba(22, 82, 240, 0.08);
+  border-left: 5px solid var(--primary-color);
+}
+
+.warning-box {
+  background-color: #fff5f5;
+  border-left: 5px solid #e53e3e;
+}
+
+.note-box {
+  background-color: #f8f9fa;
+  border-left: 5px solid #718096;
+}
+
+.highlight-box p, .warning-box p, .note-box p {
+  margin-bottom: 0;
+}
+
+.feature-list {
+  margin: 20px 0;
+  list-style-type: none;
+  padding-left: 15px;
+}
+
+.feature-list li {
+  padding-left: 5px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.feature-list li::before {
+  content: "•";
+  color: var(--primary-color);
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Section IDs for navigation */
+section {
+  padding-top: 25px;
+  scroll-margin-top: 80px;
+  margin-bottom: 2.5rem;
+}
+
+/* Category headings */
+.wallet-category h3 {
+  color: var(--primary-color);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border-color);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.6rem;
+}
+
+/* Wallet count styling */
+.wallet-count {
+  color: #666;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .hero-logo {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .contents li {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  /* Improve table scrolling for mobile */
+  .wallet-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Make status cells slightly smaller on mobile */
+  .status-cell {
+    min-width: 24px;
+    width: 24px;
+    max-width: 24px;
+    font-size: 0.9em;
+    padding: 4px 0;
+  }
+  
+  /* Make rotated headers more compact */
+  .rotated-header {
+    height: 110px;
+    width: 24px;
+  }
+  
+  .rotated-header > div {
+    font-size: 0.65rem;
+  }
+  
+  /* Improve category headings on mobile */
+  .wallet-category h3 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+  }
+  
+  body {
+    padding: 0;
+    font-size: 15px;
+  }
+  
+  h1 {
+    font-size: 1.7rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+  
+  .highlight-box, .warning-box, .note-box {
+    padding: 15px;
+  }
+  
+  /* Optimize path tags and features for small screens */
+  .wallet-path-tag {
+    font-size: 0.6rem;
+    padding: 1px 4px;
+  }
+  
+  .wallet-feature {
+    font-size: 0.65rem;
+    padding: 1px 3px;
+    min-width: 35px;
+  }
+  
+  /* Fix table headers on mobile */
+  .wallet-table th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  /* Make search and filters better on mobile */
+  .search-input {
+    padding: 6px 10px;
+  }
+  
+  .path-filter-btn {
+    padding: 3px 6px;
+    font-size: 0.7rem;
+  }
+  
+  /* Mobile navbar styles */
+  .navbar-container {
+    padding: 10px 15px;
+  }
+  
+  .navbar-toggle {
+    display: block;
+  }
+  
+  .navbar-links {
+    position: fixed;
+    top: 55px;
+    left: 0;
+    right: 0;
+    background-color: var(--navbar-bg);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: var(--navbar-shadow);
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .navbar-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  .navbar-links li {
+    margin: 10px 0;
+  }
+  
+  .navbar-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+  
+  .navbar-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .navbar-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
+  
+  /* Footer adjustments */
+  footer .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  footer img {
+    margin-top: 15px;
+  }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+  
+  .hero p {
+    font-size: 0.9rem;
+  }
+  
+  .hero-logo {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .hero-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  /* Further optimize table for very small screens */
+  .wallet-table th, 
+  .wallet-table td {
+    padding: 5px 6px;
+  }
+  
+  .status-cell {
+    min-width: 22px;
+    width: 22px;
+    max-width: 22px;
+  }
+  
+  .rotated-header {
+    height: 100px;
+    width: 22px;
+  }
+  
+  .rotated-header::before {
+    font-size: 14px;
+    top: 4px;
+  }
+  
+  /* Make wallet names more readable */
+  .wallet-table td:nth-child(10) {
+    min-width: 120px;
+  }
+  
+  /* Improve the notes cell formatting */
+  .notes-cell {
+    max-width: 180px;
+  }
+  
+  .external-link-icon {
+    padding: 1px 3px;
+    margin-right: 2px;
+  }
+  
+  /* Better container padding */
+  .container {
+    padding: 0 15px 30px;
+  }
+}
+
+/* Make sure tables scroll horizontally on all screens */
+.wallet-table-wrapper {
+  overflow-x: auto;
+  overflow-y: visible;
+  margin-bottom: 1.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  background-color: var(--bg-color);
+  margin: 0 auto;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+  animation: modalFadeIn 0.3s ease-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.close-modal {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  color: #777;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-modal:hover {
+  color: #333;
+}
+
+.modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+.modal-table td,
+.modal-table th {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.path-code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.9em;
+  background-color: #f5f5f5;
+  padding: 2px 5px;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+}
+
+.path-explanation {
+  margin-top: 20px;
+}
+
+.path-explanation h4 {
+  margin-bottom: 10px;
+}
+
+.modal-table tr:last-child td {
+  border-bottom: none;
+}
+
+.modal-table .emoji-cell {
+  font-size: 1.5rem;
+  text-align: center;
+  width: 60px;
+}
+
+.modal-active {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+/* Add styles for search and sort features */
+.search-container {
+  margin-bottom: 15px;
+}
+
+.search-input {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+}
+
+.path-filters {
+  margin-top: 8px !important;
+  margin-bottom: 12px !important;
+}
+
+.path-filter-btn {
+  padding: 4px 8px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  font-size: 0.75rem;
+}
+
+.wallet-table th {
+  background-color: var(--table-header-bg);
+  font-weight: 600;
+  text-align: left;
+  position: sticky;
+  top: 0;
+  cursor: pointer; /* Keep this as pointer since it's a sortable column */
+  user-select: none;
+  transition: background-color 0.2s;
+  z-index: 10;
+  box-shadow: 0 1px 0 var(--border-color);
+}
+
+.wallet-table th:hover {
+  background-color: #e4eeff;
+}
+
+.wallet-table th::after {
+  margin-left: 5px;
+  display: inline-block;
+}
+
+.wallet-table th.sort-asc::after {
+  content: "↑";
+}
+
+.wallet-table th.sort-desc::after {
+  content: "↓";
+}
+
+/* No results message */
+.no-results {
+  padding: 20px;
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.path-filter-btn {
+  padding: 4px 8px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  cursor: pointer; /* Keep this as pointer since it's a clickable element */
+  font-size: 0.75rem;
+  transition: all 0.2s;
+}
+
+.path-filter-btn:hover {
+  background-color: #e9ecef;
+}
+
+.path-filter-btn.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* Better visual separation for status icon columns */
+.status-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 40px;
+  min-height: 30px;
+  border-right: 1px solid var(--border-color);
+}
+
+/* Improve feature tags display */
+.wallet-feature {
+  display: inline-block;
+  padding: 3px 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+  text-align: center;
+  min-width: 50px;
+  font-size: 0.75em;
+  letter-spacing: 0.02em;
+}
+
+/* Fix the wallet paths container */
+.wallet-paths-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-top: 2px;
+}
+
+/* Make final refinements to the header styles */
+.rotated-header {
+  height: 140px; /* Increase height to give more space */
+  width: 26px;
+  padding: 0 !important;
+  position: sticky;
+  top: 0;
+  border: 1px solid var(--border-color);
+  background-color: var(--table-header-bg);
+  vertical-align: bottom;
+  display: table-cell;
+  overflow: visible;
+  text-align: center;
+  z-index: 10;
+  cursor: default;
+}
+
+.rotated-header > div {
+  position: absolute;
+  bottom: 8px;
+  left: -2px; 
+  transform-origin: 0 100%;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  padding: 5px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* Add emoji icon at the top of each status column header */
+.rotated-header::before {
+  content: attr(data-icon);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Improve status cell appearance */
+.status-cell {
+  text-align: center;
+  width: 26px;
+  min-width: 26px;
+  max-width: 26px;
+  font-size: 1.1em;
+  padding: 0 !important;
+  height: 40px;
+  border: 1px solid var(--border-color);
+  vertical-align: middle;
+  display: table-cell;
+}
+
+/* Add styles for link icons in the notes column */
+.external-link-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 3px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  background-color: rgba(22, 82, 240, 0.08);
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.external-link-icon:hover {
+  background-color: rgba(22, 82, 240, 0.15);
+  text-decoration: none;
+}
+
+.notes-text {
+  display: inline-block;
+  margin-right: 6px;
+  vertical-align: middle;
+  font-size: 0.9em;
+}
+
+.wallet-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  font-size: 0.75em;
+}
+
+.wallet-feature {
+  display: inline-block;
+  padding: 2px 4px;
+  border-radius: 3px;
+  white-space: nowrap;
+  text-align: center;
+  min-width: 40px;
+  font-size: 0.7rem;
+}
+
+/* Back to top button adjustment */
+.back-to-top {
+  text-align: right;
+  margin: 25px 0;
+  cursor: pointer; /* Keep this as pointer since it's a clickable element */
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+/* Tablet-specific adjustments */
+@media (min-width: 481px) and (max-width: 768px) {
+  .wallet-table td:nth-child(10) {
+    min-width: 140px;
+  }
+  
+  .notes-cell {
+    max-width: 200px;
+  }
+}
+
+/* Add a swipe hint for mobile users */
+.swipe-hint {
+  display: none;
+  color: #666;
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .swipe-hint {
+    display: block;
+  }
+}
+
+/* Medium-sized screens (tablets & small laptops) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 0 15px 30px;
+  }
+  
+  .wallet-table {
+    font-size: 0.82rem;
+  }
+  
+  .wallet-table th, 
+  .wallet-table td {
+    padding: 6px 8px;
+  }
+  
+  .status-cell {
+    min-width: 25px;
+    width: 25px;
+    max-width: 25px;
+  }
+  
+  .rotated-header {
+    height: 135px; /* Adjusted for consistency */
+    width: 25px;
+  }
+  
+  .rotated-header > div {
+    font-size: 0.67rem;
+  }
+  
+  .rotated-header::before {
+    height: 45px;
+    font-size: 15px;
+  }
+  
+  .wallet-path-tag {
+    font-size: 0.65rem;
+  }
+  
+  .wallet-feature {
+    font-size: 0.7rem;
+  }
+  
+  .notes-cell {
+    max-width: 220px;
+  }
+}
+
+/* More efficient use of space on small screens */
+@media (max-width: 480px) {
+  .hero {
+    padding: 60px 15px;
+  }
+  
+  .container {
+    padding: 0 12px 30px;
+  }
+  
+  .contents {
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .contents h2 {
+    font-size: 1.3rem;
+  }
+  
+  .contents li a {
+    padding: 6px 10px;
+  }
+  
+  /* Make tables more compact */
+  .wallet-table th,
+  .wallet-table td {
+    padding: 4px 5px;
+  }
+  
+  /* Make the wallet names stand out better on small screens */
+  .wallet-table td:nth-child(10) a {
+    font-weight: 600;
+  }
+  
+  /* Fine-tune spacing for small screens */
+  .highlight-box, .warning-box, .note-box {
+    padding: 12px;
+    margin: 20px 0;
+  }
+  
+  h1, h2, h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+  }
+  
+  /* Fix the emoji overflow issues on tiny screens */
+  .status-cell {
+    font-size: 0.95em;
+  }
+}
+
+/* Responsive adjustments for rotated headers */
+@media (max-width: 768px) {
+  .rotated-header {
+    height: 130px;
+    width: 24px;
+  }
+  
+  .rotated-header::before {
+    height: 36px;
+    font-size: 15px;
+  }
+  
+  .status-cell {
+    width: 24px;
+    min-width: 24px;
+    max-width: 24px;
+    height: 36px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .rotated-header {
+    height: 120px;
+    width: 22px;
+  }
+  
+  .rotated-header::before {
+    height: 34px;
+    font-size: 14px;
+  }
+  
+  .status-cell {
+    width: 22px;
+    min-width: 22px;
+    max-width: 22px;
+    height: 34px;
+    font-size: 0.95em;
+  }
+}
+
+/* Medium-sized screens (tablets & small laptops) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 0 15px 30px;
+  }
+  
+  .wallet-table {
+    font-size: 0.82rem;
+  }
+  
+  .wallet-table th, 
+  .wallet-table td {
+    padding: 6px 8px;
+  }
+  
+  .status-cell {
+    width: 25px;
+    min-width: 25px;
+    max-width: 25px;
+    height: 38px;
+    padding: 0 !important;
+  }
+  
+  .rotated-header {
+    height: 135px;
+    width: 25px;
+  }
+  
+  .rotated-header > div {
+    font-size: 0.67rem;
+  }
+  
+  .rotated-header::before {
+    height: 38px;
+    font-size: 15px;
+  }
+  
+  .wallet-path-tag {
+    font-size: 0.65rem;
+  }
+  
+  .wallet-feature {
+    font-size: 0.7rem;
+  }
+  
+  .notes-cell {
+    max-width: 220px;
+  }
+}
+
+/* Improved tooltip styling for status cells */
+.status-cell, .rotated-header {
+  position: relative;
+}
+
+/* Status cell styling */
+.status-cell[data-has-content="true"] {
+  cursor: pointer;
+  position: relative;
+}
+
+.status-cell[data-empty="true"], 
+.status-cell:empty {
+  cursor: default;
+}
+
+.status-cell[data-has-content="true"]:hover::after, 
+.rotated-header:hover::after {
+  content: attr(title);
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translate(calc(var(--tooltip-x, 0px) - 50%), calc(var(--tooltip-y, 0px) - 100% - 10px));
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: normal;
+  max-width: 320px;
+  width: max-content;
+  line-height: 1.4;
+  text-align: center;
+  z-index: 2147483647; /* Maximum possible z-index */
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.status-cell[data-has-content="true"]:hover::before, 
+.rotated-header:hover::before {
+  content: '';
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translate(calc(var(--tooltip-x, 0px)), calc(var(--tooltip-y, 0px) - 100%));
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent rgba(0, 0, 0, 0.9) transparent;
+  z-index: 2147483647;
+  pointer-events: none;
+}
+
+/* Special adjustment for rotated header tooltips */
+.rotated-header:hover::after {
+  transform: translate(calc(var(--tooltip-x, 0px) - 50%), calc(var(--tooltip-y, 0px) + 20px));
+}
+
+.rotated-header:hover::before {
+  transform: translate(calc(var(--tooltip-x, 0px)), calc(var(--tooltip-y, 0px) + 10px));
+  border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
+}
+
+/* Special positioning for warning emoji tooltip */
+.status-cell[title*="unsafe"]::after {
+  min-width: 280px !important;
+}
+
+/* Apply wider width to all emoji tooltips to ensure they display well */
+.status-cell[data-has-content="true"]:hover::after {
+  min-width: 200px;
+  left: 0;
+  transform: none;
+}
+
+/* Make tooltip arrow align with content for wider tooltips */
+.status-cell[data-has-content="true"]:hover::before {
+  left: 12px;
+  transform: none;
+  z-index: 100000;
+}
+
+/* Additional safety check for cell contents with specific text */
+td.status-cell {
+  overflow: visible; /* Ensure tooltip isn't clipped */
+}
+
+/* Ensure tooltips don't get cut off by table boundaries */
+.wallet-table-wrapper {
+  overflow: visible;
+}
+
+/* Tooltip enhancement for all cells including header cells */
+.status-cell[data-has-content="true"], .rotated-header {
+  position: relative;
+  overflow: visible;
+  cursor: pointer;
+}
+
+/* Fix for tooltip layers */
+.status-cell[data-has-content="true"], .rotated-header {
+  isolation: isolate;
+}
+
+@media (max-width: 768px) {
+  .status-cell[data-has-content="true"]:hover::after, .rotated-header:hover::after {
+    max-width: 220px;
+  }
+}
+
+/* Ensure tooltips don't get cut off by containing elements but maintain scroll functionality */
+.wallet-category,
+.wallet-category,
+section,
+main,
+.container,
+body {
+  overflow: visible !important;
+}
+
+/* Allow the table wrapper to scroll while keeping headers sticky */
+.wallet-table-wrapper {
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+}
+
+/* Additional fix for table header stickiness */
+.wallet-table {
+  overflow: visible !important;
+  position: relative;
+}
+
+/* Status cell tooltip customization */
+.status-cell[data-has-content="true"]:hover::after {
+  min-width: 160px;
+  max-width: 180px;
+  width: auto;
+  font-size: 0.75rem;
+  padding: 6px 8px;
+  line-height: 1.2;
+  hyphens: auto;
+  white-space: normal;
+  word-wrap: break-word;
+  text-align: left;
+  pointer-events: none;
+}
+
+/* Make tooltips appear in front of all other elements */
+.status-cell[data-has-content="true"]:hover::after,
+.rotated-header:hover::after {
+  z-index: 100000 !important;
+}

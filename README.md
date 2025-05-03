@@ -165,3 +165,43 @@ The meaning of "public" / unhardened versus hardened derivation, indicated in th
 Did we get it wrong? [Just let us know](https://twitter.com/walletsrecovery), and this will be updated. :)
 
 Want to contribute? Open an issue or make a [Pull Request](https://github.com/nvk/wallets-recovery/pulls).
+
+## How to develop locally?
+This site is hosted on Github Pages.
+
+### Option 1 - use Jekyll (Ruby)
+Follow the steps described in this Github help [article](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll).
+
+### Option 2 - use Grip (Python)
+```
+$ pip install grip
+
+$ grip
+* Serving Flask app "grip.app" (lazy loading)
+* Environment: production
+  WARNING: This is a development server. Do not use it in a production deployment.
+  Use a production WSGI server instead.
+* Debug mode: off
+* Running on http://localhost:6419/ (Press CTRL+C to quit)
+```
+
+### Option 3 - use Python's built-in HTTP server
+For the simplest local development setup, you can use the included `serve.sh` script:
+
+```bash
+# Make the script executable (only needed once)
+chmod +x serve.sh
+
+# Run the server
+./serve.sh
+```
+
+This will start a server at http://localhost:8002 and automatically kill any existing process using that port.
+
+Alternatively, run the Python HTTP server directly:
+
+```bash
+python3 -m http.server 8002
+```
+
+This method ensures all assets (CSS, JavaScript, images) are loaded properly and the fetch API can load the wallets.json data.
