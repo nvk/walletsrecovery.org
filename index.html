@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wallets Recovery</title>
+  <title>Wallets Recovery - Bitcoin Wallet Seeds Recovery Guide & Compatibility</title>
+  <meta name="description" content="A comprehensive resource for Bitcoin wallet seed recovery tools, methods, and compatibility information to help users regain access to their funds.">
+  <meta name="keywords" content="bitcoin wallet recovery, bitcoin wallet seed, cryptocurrency recovery, BIP39, BIP44, HD wallet, derivation paths, wallet compatibility">
+  <meta name="author" content="Wallets Recovery">
+  <meta property="og:title" content="Wallets Recovery - Bitcoin Wallet Seeds Recovery Guide">
+  <meta property="og:description" content="A comprehensive resource for Bitcoin wallet seed recovery tools, methods, and compatibility information.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://walletsrecovery.org/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://walletsrecovery.org/">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="images/wr-logo-01.svg" type="image/svg+xml">
@@ -46,8 +56,8 @@
     <div class="hero">
       <img src="images/wr-logo-01.svg" alt="Wallets Recovery Logo" class="hero-logo">
       <h1>Wallets Recovery</h1>
-      <p>A comprehensive guide to Bitcoin wallet recovery tools and procedures for helping users regain access to their funds</p>
-      <a href="#wallet-tables" class="hero-btn">Explore Wallet Tables</a>
+      <p>A comprehensive guide to Bitcoin and cryptocurrency wallet recovery methods, derivation paths, and compatibility tables for securely regaining access to your digital assets</p>
+      <a href="#wallet-tables" class="hero-btn">Explore Bitcoin Wallet Recovery Tables</a>
     </div>
     <div class="hero-pattern">
       <img src="images/wr-logo-01.svg" alt="" aria-hidden="true">
@@ -70,22 +80,22 @@
     <!-- Main content container to be filled with sections -->
     <main>
       <section id="intro">
-        <h2>Introduction</h2>
+        <h2>Introduction to Bitcoin Wallet Recovery</h2>
         
         <div class="highlight-box">
           <p><strong>Giving users their seed phrase is not enough.</strong></p>
         </div>
 
-        <p>While great advances have been made in interoperability and recoverability, developers across the industry continue to build wallets that either:</p>
+        <p>While great advances have been made in Bitcoin wallet interoperability and cryptocurrency recovery methods, developers across the industry continue to build wallets that either:</p>
         
         <ul class="feature-list">
-          <li>Don't implement BIP standard(s).</li>
-          <li>Implement a BIP standard, but inconsistently when compared with other wallets.</li>
+          <li>Don't implement BIP standard(s) for proper seed recovery.</li>
+          <li>Implement a BIP standard, but inconsistently when compared with other cryptocurrency wallets.</li>
           <li>Implement a BIP standard, but one that has not been widely adopted (and perhaps only by them).</li>
           <li>Don't have clear documentation about their derivation paths, backup and recovery processes.</li>
         </ul>
         
-        <p>This chart is meant to gather information about wallet defaults for external recovery. Wallets come and go, information gets lost, and users are left with tears. Responsible wallet developers document external recovery. Users should not have to dig through the source code to figure out the Derivation Paths or Redeem Scripts.</p>
+        <p>This recovery guide and wallet compatibility chart is meant to gather information about wallet defaults for external recovery. Wallets come and go, information gets lost, and users are left with tears. Responsible wallet developers document external recovery. Users should not have to dig through the source code to figure out the Derivation Paths or Redeem Scripts.</p>
         
         <div class="warning-box">
           <p>If we went to your website and couldn't find it => ☠️☠️☠️ [EXTERNAL RECOVERY NOT DOCUMENTED].</p>
@@ -97,40 +107,42 @@
       </section>
       
       <section id="wallet-tables">
+        <h2>Bitcoin Wallet Recovery Compatibility Tables</h2>
+        <p>These tables list Bitcoin wallets and their recovery compatibility features, derivation paths, and support for various BIP standards.</p>
         <div id="wallet-tables-container">
           <p>Loading wallet data...</p>
         </div>
       </section>
 
       <section id="wallet-types">
-        <h2>Wallet Types</h2>
+        <h2>Bitcoin Wallet Types for Recovery</h2>
         
         <ul>
-          <li><strong>Paper wallets</strong> are not actually wallets, but rather private keys and addresses printed out on paper. While the keys and addresses can technically be generated non-deterministically or deterministically, the usability is basically the same or poorer than a non-deterministic software wallet. Paper wallets have a number of significant drawbacks, including encouraging address reuse, exposing keys to poorly secured networked devices (printer), and not handling change addresses. Paper wallets should not be confused with <a href="https://wiki.trezor.io/Recovery_seed">recovery seeds</a>.</li>
-          <li><strong>Non-deterministic wallets</strong> randomly generate all private / public key pairs independent of each other. A <a href="https://en.bitcoin.it/wiki/Key_pool">keypool buffer</a> was added to the Bitcoin-Qt / Bitcoin Core wallet in <a href="https://bitcointalk.org/index.php?topic=1414.0">October</a> <a href="https://bitcointalk.org/index.php?topic=1528.0">2010</a>, which allowed the wallet to create a collection of unused addresses, rather than generating new addresses one by one upon use. While this feature allowed for less frequent backups than before, the non-determinism still carried the risk of key loss if the pool was exhausted and a new key was generated beyond what was saved in backup.</li>
-          <li><strong>Deterministic wallets</strong> are essentially any wallet where "<a href="https://bitcointalk.org/index.php?topic=19137.msg239768#msg239768">you can backup once... because all future addresses are determined in advance</a>," which was a massive improvement in recoverability. There are <a href="https://bitcoin.stackexchange.com/questions/18102/does-a-wallet-containing-multiple-addresses-have-a-single-private-key">two different forms</a>:
+          <li><h3>Paper Wallets</h3> are not actually wallets, but rather private keys and addresses printed out on paper. While the keys and addresses can technically be generated non-deterministically or deterministically, the usability is basically the same or poorer than a non-deterministic software wallet. Paper wallets have a number of significant drawbacks, including encouraging address reuse, exposing keys to poorly secured networked devices (printer), and not handling change addresses. Paper wallets should not be confused with <a href="https://wiki.trezor.io/Recovery_seed">recovery seeds</a>.</li>
+          <li><h3>Non-deterministic Wallets</h3> randomly generate all private / public key pairs independent of each other. A <a href="https://en.bitcoin.it/wiki/Key_pool">keypool buffer</a> was added to the Bitcoin-Qt / Bitcoin Core wallet in <a href="https://bitcointalk.org/index.php?topic=1414.0">October</a> <a href="https://bitcointalk.org/index.php?topic=1528.0">2010</a>, which allowed the wallet to create a collection of unused addresses, rather than generating new addresses one by one upon use. While this feature allowed for less frequent backups than before, the non-determinism still carried the risk of key loss if the pool was exhausted and a new key was generated beyond what was saved in backup.</li>
+          <li><h3>Deterministic Wallets</h3> are essentially any wallet where "<a href="https://bitcointalk.org/index.php?topic=19137.msg239768#msg239768">you can backup once... because all future addresses are determined in advance</a>," which was a massive improvement in recoverability. There are <a href="https://bitcoin.stackexchange.com/questions/18102/does-a-wallet-containing-multiple-addresses-have-a-single-private-key">two different forms</a>:
             <ul>
               <li><strong>Sequential deterministic wallets</strong> take a single seed phrase / passphrase and repeatedly increment it in order to generate new keypairs. This meant that the system would only need to store addresses, and then re-generate the private keys when needed.</li>
               <li><strong>Hierarchical deterministic wallets</strong> take a single seed phrase and randomly generate a master private / public key pair, which is then used to derive child key pairs that generate addresses. This system allows for the generation of addresses to occur without the master private key, with only the public key.</li>
             </ul>
           </li>
-          <li><strong>Multi-signature wallets</strong> require multiple signatures or parties to sign a transaction in order to spend bitcoin. An M-of-N <a href="https://github.com/bitcoin/bips/blob/master/bip-0011.mediawiki">BIP11</a> address must first be generated in order to receive bitcoin for spending in multi-signature transactions. While the 2-of-2 and 2-of-3 schemes are the most common, the <a href="https://bitcoin.stackexchange.com/questions/81223/why-is-20-the-maximum-public-keys-in-a-multisig-transaction">maximum number of public keys</a> is higher, and this could increase much more in the future <a href="https://twitter.com/J9Roem/status/991098233828139008">with Schnorr signatures</a> and <a href="https://bitcoinops.org/en/newsletters/2019/05/14/">Taproot</a>. 'Partially Signed Bitcoin Transactions' (PSBT) according to <a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">BIP174</a> (proposed), where unsigned or partially signed transactions are passed around to multiple signers or signing devices, may also be an option.</li>
+          <li><h3>Multi-signature Wallets</h3> require multiple signatures or parties to sign a transaction in order to spend bitcoin. An M-of-N <a href="https://github.com/bitcoin/bips/blob/master/bip-0011.mediawiki">BIP11</a> address must first be generated in order to receive bitcoin for spending in multi-signature transactions. While the 2-of-2 and 2-of-3 schemes are the most common, the <a href="https://bitcoin.stackexchange.com/questions/81223/why-is-20-the-maximum-public-keys-in-a-multisig-transaction">maximum number of public keys</a> is higher, and this could increase much more in the future <a href="https://twitter.com/J9Roem/status/991098233828139008">with Schnorr signatures</a> and <a href="https://bitcoinops.org/en/newsletters/2019/05/14/">Taproot</a>. 'Partially Signed Bitcoin Transactions' (PSBT) according to <a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">BIP174</a> (proposed), where unsigned or partially signed transactions are passed around to multiple signers or signing devices, may also be an option.</li>
         </ul>
       </section>
 
       <section id="derivation-paths">
-        <h2>Derivation Paths</h2>
+        <h2>Bitcoin Wallet Derivation Paths Explained</h2>
         
         <p>In hierarchical deterministic wallets (<a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a>), a derivation path is a sequence of fields or levels through which a wallet organizes coins in a multi-currency, multi-account, and multi-address system. According to <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">BIP44</a>, this hierarchy consists of five levels, in addition to the master extended private key ('xpriv') represented by <code>m</code>. Derivation paths for the master extended public key ('xpub') use <code>M</code>. Double-check what fields your wallet uses in our chart above, as BIP44 has been implemented inconsistently!</p>
         
         <p><code>m / purpose' / coin_type' / account' / change / address_index</code></p>
         
         <ul>
-          <li><strong>Purpose:</strong> This field, which was added through <a href="https://github.com/bitcoin/bips/blob/master/bip-0043.mediawiki">BIP43</a>, indicates which standard the derivation path follows. Possibilities include <code>0</code> or <code>44</code> referring to the default <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">BIP44</a> P2PKH / '1' legacy addresses, <code>45</code> referring to <a href="https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki">BIP45</a> P2SH multi-party multi-signature wallets (proposed), <code>47</code> referring to <a href="https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki">BIP47</a> reusable payment codes (draft), <code>48</code> referring to hardware multisignature wallets (no BIP or standard proposal), <code>49</code> referring to <a href="https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki">BIP49</a> P2WPKH-nested-in-P2SH / '3' SegWit addresses, or <code>84</code> referring to <a href="https://github.com/bitcoin/bips/blob/master/bip-0084.mediawiki">BIP84</a> P2WPKH / 'bc1' native SegWit addresses. Some wallets support more than one (for example, many wallets now have both the legacy and wrapped or native SegWit address types).</li>
-          <li><strong>Coin Type:</strong> This field indicates which cryptocurrency is being used in a multi-currency wallet. All coins, including testnet bitcoin, are assigned <a href="https://github.com/satoshilabs/slips/blob/master/slip-0044.md">a constant number</a>. For example, a derivation path for a Monero (XMR) account would be <code>m/44'/128'</code>. <em>Note that <a href="https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki">BIP45</a> would designate this level as the 'Cosigner Index' instead.</em></li>
-          <li><strong>Account:</strong> This field, in a multi-account wallet, indicates the identity or collection of addresses, which allows users to segregate funds for different things (ex. savings, donations). <em>Note that <a href="https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki">BIP45</a> would not include this field. <a href="https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki">BIP47</a> would designate this level as 'Identity', though it is equivalent to 'Account.'</em></li>
-          <li><strong>Change:</strong> This field, if the constant <code>0</code> is present, indicates "external chain" (regular) addresses; if the constant <code>1</code>, indicates "internal chain" or change addresses. <em>Note that <a href="https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki">BIP47</a> would designate this level for the notification keys and ephemeral payment codes.</em></li>
-          <li><strong>Address Index:</strong> This field indicates the specific address number in a sequence, within an account.</li>
+          <li><h3>Purpose Level</h3> This field, which was added through <a href="https://github.com/bitcoin/bips/blob/master/bip-0043.mediawiki">BIP43</a>, indicates which standard the derivation path follows. Possibilities include <code>0</code> or <code>44</code> referring to the default <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">BIP44</a> P2PKH / '1' legacy addresses, <code>45</code> referring to <a href="https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki">BIP45</a> P2SH multi-party multi-signature wallets (proposed), <code>47</code> referring to <a href="https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki">BIP47</a> reusable payment codes (draft), <code>48</code> referring to hardware multisignature wallets (no BIP or standard proposal), <code>49</code> referring to <a href="https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki">BIP49</a> P2WPKH-nested-in-P2SH / '3' SegWit addresses, or <code>84</code> referring to <a href="https://github.com/bitcoin/bips/blob/master/bip-0084.mediawiki">BIP84</a> P2WPKH / 'bc1' native SegWit addresses. Some wallets support more than one (for example, many wallets now have both the legacy and wrapped or native SegWit address types).</li>
+          <li><h3>Coin Type Level</h3> This field indicates which cryptocurrency is being used in a multi-currency wallet. All coins, including testnet bitcoin, are assigned <a href="https://github.com/satoshilabs/slips/blob/master/slip-0044.md">a constant number</a>. For example, a derivation path for a Monero (XMR) account would be <code>m/44'/128'</code>. <em>Note that <a href="https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki">BIP45</a> would designate this level as the 'Cosigner Index' instead.</em></li>
+          <li><h3>Account Level</h3> This field, in a multi-account wallet, indicates the identity or collection of addresses, which allows users to segregate funds for different things (ex. savings, donations). <em>Note that <a href="https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki">BIP45</a> would not include this field. <a href="https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki">BIP47</a> would designate this level as 'Identity', though it is equivalent to 'Account.'</em></li>
+          <li><h3>Change Level</h3> This field, if the constant <code>0</code> is present, indicates "external chain" (regular) addresses; if the constant <code>1</code>, indicates "internal chain" or change addresses. <em>Note that <a href="https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki">BIP47</a> would designate this level for the notification keys and ephemeral payment codes.</em></li>
+          <li><h3>Address Index Level</h3> This field indicates the specific address number in a sequence, within an account.</li>
         </ul>
         
         <p>Note that the fields 'Account' and 'Address Index' start with zero (0). This is because they use <a href="https://en.wikipedia.org/wiki/Zero-based_numbering">zero-based numbering</a>, just as the "ground floor" of buildings in the U.K. and Europe are considered level zero, rather than the first floor / level one in the United States.</p>
@@ -143,12 +155,12 @@
       </section>
 
       <section id="faq">
-        <h2>FAQ</h2>
+        <h2>Frequently Asked Questions About Bitcoin Wallet Recovery</h2>
 
-        <h3>How to contribute?</h3>
+        <h3>How to contribute to the Bitcoin Wallet Recovery project?</h3>
         <p>Make a <a href="https://github.com/nvk/wallets-recovery/pulls">Pull Request</a> to update the <code>walletsrecovery.json</code> file.</p>
         
-        <h3>What's the structure of the JSON file?</h3>
+        <h3>What's the structure of the Bitcoin Wallet Recovery JSON file?</h3>
         <p>The <code>walletsrecovery.json</code> file contains all wallet data displayed on this site. It has two main sections:</p>
         <ul>
           <li><strong>categories</strong>: Array of wallet categories (Hardware Wallets, Software Wallets, etc.)</li>
@@ -156,7 +168,7 @@
         </ul>
         <p>Each wallet entry includes fields for status, name, URL, supported paths, and features.</p>
         
-        <h3>How to test changes before submitting?</h3>
+        <h3>How to test Bitcoin Wallet Recovery changes before submitting?</h3>
         <p>You can run the site locally to preview your changes:</p>
 
         <h4>Option 1 - Simple HTTP server</h4>
@@ -176,14 +188,14 @@ $ grip
       </section>
 
       <section id="resources">
-        <h2>Resources</h2>
+        <h2>Bitcoin Wallet Recovery Resources and Tools</h2>
 
-        <h3>Wallet Specific</h3>
+        <h3>Bitcoin Wallet Recovery Guides</h3>
         <ul>
           <li>"Compatibility Matrix: SegWit and Replace-by-Fee" by Bitcoin Optech <a href="https://bitcoinops.org/en/compatibility/">↗︎</a></li>
         </ul>
 
-        <h3>Tools</h3>
+        <h3>Bitcoin Seed Recovery Tools</h3>
         <ul>
           <li>"Bitcoin Extended Public Key Converter" by Jameson Lopp <a href="https://jlopp.github.io/xpub-converter/">↗︎</a></li>
           <li>"Mnemonic Code Converter" by Ian Coleman <a href="https://iancoleman.io/bip39/">↗︎</a></li>
@@ -192,7 +204,7 @@ $ grip
           <li>[Released] Automated Scanner & BIP39 Recovery Feature for Electrum by Luke Childs <a href="https://github.com/spesmilo/electrum/blob/master/RELEASE-NOTES">↗︎</a></li>
         </ul>
 
-        <h3>General Information</h3>
+        <h3>Bitcoin Wallet Recovery Reference Information</h3>
         <ul>
           <li>"Bitcoin Information and Resources" by Jameson Lopp <a href="https://www.lopp.net/bitcoin-information.html">↗︎</a></li>
           <li>WeUseCoins FAQ <a href="https://www.weusecoins.com/">↗︎</a></li>
@@ -201,7 +213,7 @@ $ grip
           <li>"How BIP39 Seed Words Work" by jimbocoin <a href="https://observablehq.com/@jimbojw/grokking-bip39">↗︎</a></li>
         </ul>
 
-        <h3>Security aids</h3>
+        <h3>Bitcoin Wallet Security Resources</h3>
         <ul>
           <li><a href="https://bitcoinbinary.org/">Reproducible Builds proofs</a></li>
         </ul>
@@ -211,8 +223,8 @@ $ grip
   
   <footer>
     <div class="container">
-      <p>Wallets Recovery - <a href="https://github.com/walletsrecovery/walletsrecovery.org">Contribute on GitHub</a></p>
-      <img src="images/wr-logo-01.svg" alt="Wallets Recovery" style="height: 40px;">
+      <p>Bitcoin Wallets Recovery - The definitive guide to cryptocurrency wallet recovery methods and compatibility - <a href="https://github.com/walletsrecovery/walletsrecovery.org">Contribute on GitHub</a></p>
+      <img src="images/wr-logo-01.svg" alt="Bitcoin Wallets Recovery Logo" style="height: 40px;">
     </div>
   </footer>
 
