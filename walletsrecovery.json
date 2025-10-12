@@ -1085,6 +1085,53 @@
             "external_recovery_documented": true,
             "text": "Self-custodial wallet with atomic swaps across Bitcoin, Lightning, and Liquid Network"
           }
+        },
+        {
+          "status": "✅👁⑂🧐",
+          "name": "CakeWallet",
+          "url": "https://cakewallet.com/",
+          "derivation": {
+            "bip44": true,
+            "bip49": true,
+            "bip84": true,
+            "bip48": false,
+            "bip86": false,
+            "brd": false,
+            "custom": null
+          },
+          "output_descriptor": "No",
+          "bip39_pass": "Optional",
+          "wif_support": "No",
+          "bip174_psbt": "No",
+          "notes": {
+            "docs": "https://docs.cakewallet.com/",
+            "external_recovery_documented": true,
+            "text": "Non-custodial multi-currency wallet with built-in exchange, supports Bitcoin, Monero, Ethereum, Litecoin"
+          }
+        },
+        {
+          "status": "✅🧐",
+          "name": "Bitcoin Safe",
+          "url": "https://bitcoin-safe.org/",
+          "derivation": {
+            "bip44": true,
+            "bip49": true,
+            "bip84": true,
+            "bip48": true,
+            "bip86": true,
+            "brd": false,
+            "custom": null
+          },
+          "output_descriptor": "Yes",
+          "bip39_pass": "Optional",
+          "wif_support": "Yes",
+          "bip174_psbt": "Yes",
+          "notes": {
+            "docs": "https://github.com/andreasgriffin/bitcoin-safe",
+            "github": "https://github.com/andreasgriffin/bitcoin-safe",
+            "external_recovery_documented": true,
+            "text": "Secure Bitcoin savings wallet with multisig support, hardware wallet integration, and encrypted cloud backup"
+          }
         }
       ]
     },

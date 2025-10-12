@@ -79,7 +79,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--bg-color);
-  scroll-padding-top: 70px;
+  scroll-padding-top: 80px;
   font-size: var(--text-base);
   letter-spacing: -0.011em;
   transition: background-color var(--transition-normal), color var(--transition-normal);
@@ -320,7 +320,7 @@ header {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: var(--space-3xl) var(--space-lg);
+  padding: calc(var(--space-3xl) + 80px) var(--space-lg) var(--space-3xl);
   position: relative;
   z-index: 1;
   min-height: 60vh;
@@ -1877,7 +1877,7 @@ section::before {
 /* More efficient use of space on small screens */
 @media (max-width: 480px) {
   .hero {
-    padding: 60px 15px;
+    padding: calc(60px + 70px) 15px 60px;
   }
   
   .container {
