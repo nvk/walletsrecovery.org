@@ -241,7 +241,7 @@ function renderWalletData(data) {
     { icon: "🛑", text: "Unknown", meaning: "Unknown. No obvious docs, research in progress" },
     { icon: "☠️", text: "Unavailable", meaning: "Not publicly available, or complex without a external tool available for the average user" },
     { icon: "😵", text: "Discontinued", meaning: "Discontinued and/or no longer maintained" },
-    { icon: "🧐", text: "New Project", meaning: "New project and/or team" },
+    { icon: "🧐", text: "Discontinued", meaning: "New project and/or team" },
     { icon: "🚸", text: "Unsafe HW", meaning: "HW Physically unsafe with \"full secret\" (ie without BIP39 passphrase or multisig) against a automated attack and/or unsophisticated attacker (ie chipshouter blackbox)" },
     { icon: "👁", text: "Privacy", meaning: "Privacy concerns (default is third party node)" },
     { icon: "⑂", text: "Validation", meaning: "Validation concerns (default is third party node)" }
