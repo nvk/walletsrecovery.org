@@ -641,8 +641,10 @@ code {
 }
 
 .icon-legend {
-  margin-top: 1.5rem;
+  margin-top: 0;
   margin-bottom: 2rem;
+  padding: var(--space-xl) 0;
+  border-bottom: 2px solid var(--border-light);
 }
 
 .legend-table {
@@ -930,14 +932,11 @@ section::before {
     padding: 4px 0;
   }
   
-  /* Make rotated headers more compact */
-  .rotated-header {
-    height: 110px;
-    width: 24px;
-  }
-  
-  .rotated-header > div {
-    font-size: 0.65rem;
+  /* Make status headers more compact on mobile */
+  .status-header {
+    font-size: 0.7rem;
+    min-width: 50px;
+    padding: var(--space-xs) 2px !important;
   }
   
   /* Improve category headings on mobile */
@@ -1082,14 +1081,10 @@ section::before {
     max-width: 22px;
   }
   
-  .rotated-header {
-    height: 100px;
-    width: 22px;
-  }
-  
-  .rotated-header::before {
-    font-size: 14px;
-    top: 4px;
+  .status-header {
+    font-size: 0.65rem;
+    min-width: 45px;
+    padding: 2px 1px !important;
   }
   
   /* Make wallet names more readable */
@@ -1343,47 +1338,34 @@ section::before {
   margin-top: 2px;
 }
 
-/* Make final refinements to the header styles */
-.rotated-header {
-  height: 140px; /* Increase height to give more space */
-  width: 26px;
-  padding: 0 !important;
+/* Normal status headers instead of rotated */
+.status-header {
+  height: auto;
+  width: auto;
+  min-width: 60px;
+  padding: var(--space-sm) var(--space-xs) !important;
   position: sticky;
   top: 0;
   border: 1px solid var(--border-color);
   background-color: var(--table-header-bg);
-  vertical-align: bottom;
+  vertical-align: middle;
   display: table-cell;
   overflow: visible;
   text-align: center;
   z-index: 10;
-  cursor: default;
-}
-
-.rotated-header {
-  font-size: 0.7rem;
+  cursor: pointer;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  text-align: center;
-  padding: 5px;
+  white-space: nowrap;
+  transition: background-color var(--transition-fast);
 }
 
-/* Add emoji icon at the top of each status column header */
-.rotated-header::before {
-  content: attr(data-icon);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+.status-header:hover {
+  background-color: var(--hover-color);
 }
+
+/* Remove old rotated header styles - replaced with normal headers */
 
 /* Improve status cell appearance */
 .status-cell {
@@ -1499,18 +1481,10 @@ section::before {
     max-width: 25px;
   }
   
-  .rotated-header {
-    height: 135px; /* Adjusted for consistency */
-    width: 25px;
-  }
-  
-  .rotated-header > div {
-    font-size: 0.67rem;
-  }
-  
-  .rotated-header::before {
-    height: 45px;
-    font-size: 15px;
+  .status-header {
+    font-size: 0.7rem;
+    min-width: 55px;
+    padding: var(--space-xs) 3px !important;
   }
   
   .wallet-path-tag {
@@ -1579,14 +1553,10 @@ section::before {
 
 /* Responsive adjustments for rotated headers */
 @media (max-width: 768px) {
-  .rotated-header {
-    height: 130px;
-    width: 24px;
-  }
-  
-  .rotated-header::before {
-    height: 36px;
-    font-size: 15px;
+  .status-header {
+    font-size: 0.65rem;
+    min-width: 50px;
+    padding: 2px 2px !important;
   }
   
   .status-cell {
@@ -1599,14 +1569,10 @@ section::before {
 }
 
 @media (max-width: 480px) {
-  .rotated-header {
-    height: 120px;
-    width: 22px;
-  }
-  
-  .rotated-header::before {
-    height: 34px;
-    font-size: 14px;
+  .status-header {
+    font-size: 0.6rem;
+    min-width: 45px;
+    padding: 1px 1px !important;
   }
   
   .status-cell {
@@ -1641,18 +1607,10 @@ section::before {
     padding: 0 !important;
   }
   
-  .rotated-header {
-    height: 135px;
-    width: 25px;
-  }
-  
-  .rotated-header > div {
-    font-size: 0.67rem;
-  }
-  
-  .rotated-header::before {
-    height: 38px;
-    font-size: 15px;
+  .status-header {
+    font-size: 0.7rem;
+    min-width: 55px;
+    padding: var(--space-xs) 3px !important;
   }
   
   .wallet-path-tag {
@@ -1669,7 +1627,7 @@ section::before {
 }
 
 /* Improved tooltip styling for status cells */
-.status-cell, .rotated-header {
+.status-cell, .status-header {
   position: relative;
 }
 
@@ -1685,7 +1643,7 @@ section::before {
 }
 
 .status-cell[data-has-content="true"]:hover::after, 
-.rotated-header:hover::after {
+.status-header:hover::after {
   content: attr(title);
   position: fixed;
   left: 0;
@@ -1707,7 +1665,7 @@ section::before {
 }
 
 .status-cell[data-has-content="true"]:hover::before, 
-.rotated-header:hover::before {
+.status-header:hover::before {
   content: '';
   position: fixed;
   left: 0;
@@ -1720,15 +1678,7 @@ section::before {
   pointer-events: none;
 }
 
-/* Special adjustment for rotated header tooltips */
-.rotated-header:hover::after {
-  transform: translate(calc(var(--tooltip-x, 0px) - 50%), calc(var(--tooltip-y, 0px) + 20px));
-}
-
-.rotated-header:hover::before {
-  transform: translate(calc(var(--tooltip-x, 0px)), calc(var(--tooltip-y, 0px) + 10px));
-  border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
-}
+/* Remove old rotated header tooltip styles */
 
 /* Special positioning for warning emoji tooltip */
 .status-cell[title*="unsafe"]::after {
@@ -1760,19 +1710,19 @@ td.status-cell {
 }
 
 /* Tooltip enhancement for all cells including header cells */
-.status-cell[data-has-content="true"], .rotated-header {
+.status-cell[data-has-content="true"], .status-header {
   position: relative;
   overflow: visible;
   cursor: pointer;
 }
 
 /* Fix for tooltip layers */
-.status-cell[data-has-content="true"], .rotated-header {
+.status-cell[data-has-content="true"], .status-header {
   isolation: isolate;
 }
 
 @media (max-width: 768px) {
-  .status-cell[data-has-content="true"]:hover::after, .rotated-header:hover::after {
+  .status-cell[data-has-content="true"]:hover::after, .status-header:hover::after {
     max-width: 220px;
   }
 }
@@ -1816,6 +1766,6 @@ body {
 
 /* Make tooltips appear in front of all other elements */
 .status-cell[data-has-content="true"]:hover::after,
-.rotated-header:hover::after {
+.status-header:hover::after {
   z-index: 100000 !important;
 }

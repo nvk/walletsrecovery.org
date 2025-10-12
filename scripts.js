@@ -150,9 +150,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
     
-    // Handle clicks on rotated headers
-    const rotatedHeader = e.target.closest('.rotated-header');
-    if (rotatedHeader) {
+    // Handle clicks on status headers
+    const statusHeader = e.target.closest('.status-header');
+    if (statusHeader) {
       showAllStatusIcons();
     }
     
@@ -332,6 +332,9 @@ function renderWalletData(data) {
     { icon: "🧐", text: "🧐", meaning: "New project and/or team" }
   ];
 
+  // Add icon legend first (above tables)
+  renderIconLegend(iconMappings, container);
+
   // Render each category
   data.categories.forEach(category => {
     // Create a section for the category
@@ -409,19 +412,17 @@ function renderWalletData(data) {
     const thead = document.createElement('thead');
     const headerRow = document.createElement('tr');
     
-    // Add header cells for each icon type with rotated text
+    // Add header cells for each icon type with normal text
     iconMappings.forEach((iconType, index) => {
       const th = document.createElement('th');
-      th.className = 'rotated-header';
+      th.className = 'status-header';
       
-      // Add the original icon as a data attribute for the ::after content
-      th.setAttribute('data-icon', iconType.icon);
+      // Show the emoji and text label
+      th.textContent = `${iconType.icon} ${iconType.text}`;
       
-      // Add the meaning as an aria-label (removed tooltip)
+      // Add the meaning as an aria-label
       th.setAttribute('aria-label', `${iconType.text}: ${iconType.meaning}`);
       
-      // Just show the emoji, no text labels
-      // th.textContent = iconType.text;
       th.setAttribute('data-column', index);
       th.addEventListener('click', () => sortTable(table, index));
       
@@ -663,9 +664,6 @@ function renderWalletData(data) {
     
     searchInput.addEventListener('input', debouncedSearch);
   });
-
-  // Add icon legend using the same iconMappings as the modal
-  renderIconLegend(iconMappings, container);
 }
 
 // Function to filter table rows based on search term
