@@ -934,7 +934,7 @@ section::before {
   
   /* Make status headers more compact on mobile */
   .status-header {
-    font-size: 0.7rem;
+    font-size: 1rem;
     min-width: 50px;
     padding: var(--space-xs) 2px !important;
   }
@@ -1082,7 +1082,7 @@ section::before {
   }
   
   .status-header {
-    font-size: 0.65rem;
+    font-size: 0.9rem;
     min-width: 45px;
     padding: 2px 1px !important;
   }
@@ -1354,7 +1354,7 @@ section::before {
   text-align: center;
   z-index: 10;
   cursor: pointer;
-  font-size: 0.75rem;
+  font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   white-space: nowrap;
@@ -1554,7 +1554,7 @@ section::before {
 /* Responsive adjustments for rotated headers */
 @media (max-width: 768px) {
   .status-header {
-    font-size: 0.65rem;
+    font-size: 0.9rem;
     min-width: 50px;
     padding: 2px 2px !important;
   }
@@ -1570,7 +1570,7 @@ section::before {
 
 @media (max-width: 480px) {
   .status-header {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     min-width: 45px;
     padding: 1px 1px !important;
   }
@@ -1608,7 +1608,7 @@ section::before {
   }
   
   .status-header {
-    font-size: 0.7rem;
+    font-size: 1rem;
     min-width: 55px;
     padding: var(--space-xs) 3px !important;
   }
