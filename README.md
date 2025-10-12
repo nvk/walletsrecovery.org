@@ -119,7 +119,6 @@ Notes:
 
 Icon|Legend
 :---:|---
-🛑|Unknown. No obvious docs, research in progress
 😵|Discontinued and/or no longer maintained
 🚸|HW Physically unsafe with "full secret" (ie without BIP39 passphrase or multisig) against a automated attack and/or unsophisticated attacker (ie chipshouter blackbox)
 👁|Privacy concerns (default is third party node)

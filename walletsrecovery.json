@@ -5,10 +5,6 @@
   },
   "icons": [
     {
-      "icon": "\ud83d\uded1",
-      "meaning": "Unknown. No obvious docs, research in progress"
-    },
-    {
       "icon": "\ud83d\ude35",
       "meaning": "Discontinued and/or no longer maintained"
     },

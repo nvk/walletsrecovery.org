@@ -185,7 +185,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Get all icon definitions
     const iconMappings = [
-      { icon: "🛑", text: "?", meaning: "Unknown. No obvious docs, research in progress" },
       { icon: "😵", text: "X", meaning: "Discontinued and/or no longer maintained" },
       { icon: "🚸", text: "!", meaning: "HW Physically unsafe with \"full secret\" (ie without BIP39 passphrase or multisig) against a automated attack and/or unsophisticated attacker (ie chipshouter blackbox)" },
       { icon: "👁", text: "👁", meaning: "Privacy concerns (default is third party node)" },
@@ -323,7 +322,6 @@ function renderWalletData(data) {
 
   // Define icon mappings with short descriptive words in a more logical order
   const iconMappings = [
-    { icon: "🛑", text: "?", meaning: "Unknown. No obvious docs, research in progress" },
     { icon: "😵", text: "X", meaning: "Discontinued and/or no longer maintained" },
     { icon: "🚸", text: "!", meaning: "HW Physically unsafe with \"full secret\" (ie without BIP39 passphrase or multisig) against a automated attack and/or unsophisticated attacker (ie chipshouter blackbox)" },
     { icon: "👁", text: "👁", meaning: "Privacy concerns (default is third party node)" },
