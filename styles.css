@@ -1057,17 +1057,12 @@ section {
   cursor: default;
 }
 
-.rotated-header > div {
-  position: absolute;
-  bottom: 8px;
-  left: -2px; 
-  transform-origin: 0 100%;
-  transform: rotate(-90deg);
-  white-space: nowrap;
-  padding: 5px;
+.rotated-header {
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.05em;
+  text-align: center;
+  padding: 5px;
 }
 
 /* Add emoji icon at the top of each status column header */

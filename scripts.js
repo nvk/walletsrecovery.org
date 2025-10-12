@@ -115,15 +115,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Get all icon definitions
     const iconMappings = [
-      { icon: "✅", text: "Documented", meaning: "Documented + Link to doc" },
-      { icon: "⚠️", text: "Unofficial", meaning: "Known, but unofficially documented" },
-      { icon: "🛑", text: "Unknown", meaning: "Unknown. No obvious docs, research in progress" },
-      { icon: "☠️", text: "Unavailable", meaning: "Not publicly available, or complex without a external tool available for the average user" },
-      { icon: "😵", text: "Discontinued", meaning: "Discontinued and/or no longer maintained" },
-      { icon: "🧐", text: "New Project", meaning: "New project and/or team" },
-      { icon: "🚸", text: "Unsafe HW", meaning: "HW Physically unsafe with \"full secret\" (ie without BIP39 passphrase or multisig) against a automated attack and/or unsophisticated attacker (ie chipshouter blackbox)" },
-      { icon: "👁", text: "Privacy", meaning: "Privacy concerns (default is third party node)" },
-      { icon: "⑂", text: "Validation", meaning: "Validation concerns (default is third party node)" }
+      { icon: "🛑", text: "?", meaning: "Unknown. No obvious docs, research in progress" },
+      { icon: "😵", text: "X", meaning: "Discontinued and/or no longer maintained" },
+      { icon: "🚸", text: "!", meaning: "HW Physically unsafe with \"full secret\" (ie without BIP39 passphrase or multisig) against a automated attack and/or unsophisticated attacker (ie chipshouter blackbox)" },
+      { icon: "👁", text: "👁", meaning: "Privacy concerns (default is third party node)" },
+      { icon: "⑂", text: "⑂", meaning: "Validation concerns (default is third party node)" },
+      { icon: "☠️", text: "☠", meaning: "Not publicly available, or complex without a external tool available for the average user" },
+      { icon: "⚠️", text: "⚠", meaning: "Known, but unofficially documented" },
+      { icon: "✅", text: "✓", meaning: "Documented + Link to doc" },
+      { icon: "🧐", text: "🧐", meaning: "New project and/or team" }
     ];
     
     iconMappings.forEach(icon => {
@@ -236,15 +236,15 @@ function renderWalletData(data) {
 
   // Define icon mappings with short descriptive words in a more logical order
   const iconMappings = [
-    { icon: "✅", text: "Documented", meaning: "Documented + Link to doc" },
-    { icon: "⚠️", text: "Unofficial", meaning: "Known, but unofficially documented" },
-    { icon: "🛑", text: "Unknown", meaning: "Unknown. No obvious docs, research in progress" },
-    { icon: "☠️", text: "Unavailable", meaning: "Not publicly available, or complex without a external tool available for the average user" },
-    { icon: "😵", text: "Discontinued", meaning: "Discontinued and/or no longer maintained" },
-    { icon: "🧐", text: "Discontinued", meaning: "New project and/or team" },
-    { icon: "🚸", text: "Unsafe HW", meaning: "HW Physically unsafe with \"full secret\" (ie without BIP39 passphrase or multisig) against a automated attack and/or unsophisticated attacker (ie chipshouter blackbox)" },
-    { icon: "👁", text: "Privacy", meaning: "Privacy concerns (default is third party node)" },
-    { icon: "⑂", text: "Validation", meaning: "Validation concerns (default is third party node)" }
+    { icon: "🛑", text: "?", meaning: "Unknown. No obvious docs, research in progress" },
+    { icon: "😵", text: "X", meaning: "Discontinued and/or no longer maintained" },
+    { icon: "🚸", text: "!", meaning: "HW Physically unsafe with \"full secret\" (ie without BIP39 passphrase or multisig) against a automated attack and/or unsophisticated attacker (ie chipshouter blackbox)" },
+    { icon: "👁", text: "👁", meaning: "Privacy concerns (default is third party node)" },
+    { icon: "⑂", text: "⑂", meaning: "Validation concerns (default is third party node)" },
+    { icon: "☠️", text: "☠", meaning: "Not publicly available, or complex without a external tool available for the average user" },
+    { icon: "⚠️", text: "⚠", meaning: "Known, but unofficially documented" },
+    { icon: "✅", text: "✓", meaning: "Documented + Link to doc" },
+    { icon: "🧐", text: "🧐", meaning: "New project and/or team" }
   ];
 
   // Render each category
@@ -329,17 +329,14 @@ function renderWalletData(data) {
       const th = document.createElement('th');
       th.className = 'rotated-header';
       
-      // Create a div for the rotated text
-      const rotatedDiv = document.createElement('div');
-      rotatedDiv.textContent = iconType.text;
-      
       // Add the original icon as a data attribute for the ::after content
       th.setAttribute('data-icon', iconType.icon);
       
       // Add the meaning as an aria-label (removed tooltip)
       th.setAttribute('aria-label', `${iconType.text}: ${iconType.meaning}`);
       
-      th.appendChild(rotatedDiv);
+      // Just show the emoji, no text labels
+      // th.textContent = iconType.text;
       th.setAttribute('data-column', index);
       th.addEventListener('click', () => sortTable(table, index));
       
