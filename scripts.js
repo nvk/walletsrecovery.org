@@ -417,8 +417,8 @@ function renderWalletData(data) {
       const th = document.createElement('th');
       th.className = 'status-header';
       
-      // Show the emoji and text label
-      th.textContent = `${iconType.icon} ${iconType.text}`;
+      // Show only the emoji icon
+      th.textContent = iconType.icon;
       
       // Add the meaning as an aria-label
       th.setAttribute('aria-label', `${iconType.text}: ${iconType.meaning}`);
