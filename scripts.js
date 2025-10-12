@@ -664,8 +664,8 @@ function renderWalletData(data) {
     searchInput.addEventListener('input', debouncedSearch);
   });
 
-  // Add icon legend
-  renderIconLegend(data.icons, container);
+  // Add icon legend using the same iconMappings as the modal
+  renderIconLegend(iconMappings, container);
 }
 
 // Function to filter table rows based on search term
