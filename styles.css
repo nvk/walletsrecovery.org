@@ -519,6 +519,13 @@ code {
   box-shadow: 0 1px 0 var(--border-color);
 }
 
+/* Override font size and styling for status headers */
+.wallet-table th.status-header {
+  font-size: 1.1em !important;
+  text-align: center !important;
+  text-transform: none !important;
+}
+
 .wallet-table tr:nth-child(even) {
   background-color: #fafafa;
 }
@@ -1258,6 +1265,12 @@ section::before {
   box-shadow: 0 1px 0 var(--border-color);
 }
 
+/* Override font size for status headers specifically */
+.wallet-table th.status-header {
+  font-size: 1.1em !important;
+  text-align: center !important;
+}
+
 .wallet-table th:hover {
   background-color: #e4eeff;
 }
@@ -1354,7 +1367,7 @@ section::before {
   text-align: center;
   z-index: 10;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.1em;
   font-weight: 600;
   letter-spacing: 0.05em;
   white-space: nowrap;

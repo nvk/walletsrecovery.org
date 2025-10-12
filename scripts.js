@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Use modern fetch with better error handling and caching
-  fetch('walletsrecovery.json?v=202501121900', {
+  fetch('walletsrecovery.json?v=202501122200', {
     cache: 'no-cache',
     headers: {
       'Accept': 'application/json',
