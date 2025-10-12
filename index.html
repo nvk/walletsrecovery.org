@@ -17,6 +17,22 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://walletsrecovery.org/">
+  
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Wallets Recovery",
+    "description": "A comprehensive resource for Bitcoin wallet seed recovery tools, methods, and compatibility information",
+    "url": "https://walletsrecovery.org/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://walletsrecovery.org/#wallet-tables",
+      "query-input": "required name=wallet"
+    }
+  }
+  </script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="images/wr-logo-01.svg" type="image/svg+xml">
@@ -24,26 +40,40 @@
 <body>
   
   <!-- Sticky Navbar -->
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar-container">
       <div class="navbar-logo">
-        <img src="images/wr-logo-01.svg" alt="Wallets Recovery Logo">
+        <img src="images/wr-logo-01.svg" alt="Wallets Recovery Logo" width="32" height="32">
         <h1>Wallets Recovery</h1>
       </div>
-      <button class="navbar-toggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="navbar-links">
-        <li><a href="#intro" class="nav-link">Introduction</a></li>
-        <li><a href="#wallet-tables" class="nav-link">Wallet Tables</a></li>
-        <li><a href="#wallet-types" class="nav-link">Wallet Types</a></li>
-        <li><a href="#derivation-paths" class="nav-link">Derivation Paths</a></li>
-        <li><a href="#faq" class="nav-link">FAQ</a></li>
-        <li><a href="#resources" class="nav-link">Resources</a></li>
-        <li><a href="https://github.com/nvk/walletsrecovery.org" class="nav-link" target="_blank" rel="noopener noreferrer">Contribute</a></li>
+      
+      <ul class="navbar-links" id="navbar-links" role="menubar">
+        <li role="none"><a href="#intro" class="nav-link" role="menuitem">Introduction</a></li>
+        <li role="none"><a href="#wallet-tables" class="nav-link" role="menuitem">Wallet Tables</a></li>
+        <li role="none"><a href="#wallet-types" class="nav-link" role="menuitem">Wallet Types</a></li>
+        <li role="none"><a href="#derivation-paths" class="nav-link" role="menuitem">Derivation Paths</a></li>
+        <li role="none"><a href="#faq" class="nav-link" role="menuitem">FAQ</a></li>
+        <li role="none"><a href="#resources" class="nav-link" role="menuitem">Resources</a></li>
+        <li role="none"><a href="https://github.com/nvk/walletsrecovery.org" class="nav-link" target="_blank" rel="noopener noreferrer" role="menuitem">Contribute</a></li>
       </ul>
+      
+      <div class="navbar-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        
+        <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navbar-links">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -61,7 +91,12 @@
       <img src="images/wr-logo-01.svg" alt="Wallets Recovery Logo" class="hero-logo">
       <h1>Wallets Recovery</h1>
       <p>A comprehensive guide to Bitcoin and cryptocurrency wallet recovery methods, derivation paths, and compatibility tables for securely regaining access to your digital assets</p>
-      <a href="#wallet-tables" class="hero-btn">Explore Bitcoin Wallet Recovery Tables</a>
+      <a href="#wallet-tables" class="hero-btn">
+        Explore Bitcoin Wallet Recovery Tables
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
     </div>
     <div class="hero-pattern">
       <img src="images/wr-logo-01.svg" alt="" aria-hidden="true">
@@ -87,7 +122,7 @@
         <h2>Introduction to Bitcoin Wallet Recovery</h2>
         
         <div class="highlight-box">
-          <p><strong>Giving users their seed phrase is not enough.</strong></p>
+          <p><strong>Seeds are a super power! Giving users their seed phrase is not enough.</strong></p>
         </div>
 
         <p>While great advances have been made in Bitcoin wallet interoperability and cryptocurrency recovery methods, developers across the industry continue to build wallets that either:</p>

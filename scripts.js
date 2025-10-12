@@ -1,5 +1,8 @@
 // Debug direct click handler
 document.addEventListener('DOMContentLoaded', function() {
+  // Initialize dark mode
+  initializeDarkMode();
+  
   // Direct click handler for testing
   document.body.addEventListener('click', function(e) {
     if (e.target.matches('.wallet-path-tag')) {
@@ -12,9 +15,76 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// Dark mode functionality
+function initializeDarkMode() {
+  const themeToggle = document.getElementById('theme-toggle');
+  const sunIcon = themeToggle.querySelector('.sun-icon');
+  const moonIcon = themeToggle.querySelector('.moon-icon');
+  
+  // Check for saved theme preference or default to 'light'
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  
+  // Update icon visibility
+  updateThemeIcon(currentTheme, sunIcon, moonIcon);
+  
+  // Theme toggle event listener
+  themeToggle.addEventListener('click', function() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme, sunIcon, moonIcon);
+    
+    // Update aria-pressed for accessibility
+    themeToggle.setAttribute('aria-pressed', newTheme === 'dark' ? 'true' : 'false');
+  });
+}
+
+function updateThemeIcon(theme, sunIcon, moonIcon) {
+  if (theme === 'dark') {
+    sunIcon.style.display = 'none';
+    moonIcon.style.display = 'block';
+  } else {
+    sunIcon.style.display = 'block';
+    moonIcon.style.display = 'none';
+  }
+}
+
+// Debounce utility function for performance optimization
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+// Throttle utility function for scroll events
+function throttle(func, limit) {
+  let inThrottle;
+  return function() {
+    const args = arguments;
+    const context = this;
+    if (!inThrottle) {
+      func.apply(context, args);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
+    }
+  }
+}
+
 // Wallet data loading and rendering logic
 document.addEventListener('DOMContentLoaded', function() {
   console.log('Starting to fetch wallet data...');
+  
+  // Initialize performance monitoring
+  const startTime = performance.now();
   
   // Modal handling - set references to the existing global variables
   modal = document.getElementById('status-modal');
@@ -147,7 +217,13 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.add('modal-active');
   }
   
-  fetch('walletsrecovery.json')
+  // Use modern fetch with better error handling and caching
+  fetch('walletsrecovery.json', {
+    cache: 'force-cache',
+    headers: {
+      'Accept': 'application/json',
+    }
+  })
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -156,7 +232,15 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .then(walletsData => {
       globalWalletsData = walletsData;
-      renderWalletData(walletsData);
+      
+      // Use requestAnimationFrame for smooth rendering
+      requestAnimationFrame(() => {
+        renderWalletData(walletsData);
+        
+        // Log performance metrics
+        const endTime = performance.now();
+        console.log(`Wallet data loaded and rendered in ${(endTime - startTime).toFixed(2)}ms`);
+      });
     })
     .catch(error => {
       console.error('Error loading wallet data:', error);
@@ -190,10 +274,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const navbarToggle = document.querySelector('.navbar-toggle');
   const navbarLinks = document.querySelector('.navbar-links');
   
-  // Handle mobile menu toggle
+  // Handle mobile menu toggle with accessibility
   navbarToggle.addEventListener('click', function() {
+    const isExpanded = this.getAttribute('aria-expanded') === 'true';
     this.classList.toggle('active');
     navbarLinks.classList.toggle('active');
+    this.setAttribute('aria-expanded', !isExpanded);
   });
   
   // Close mobile menu when clicking a link
@@ -201,11 +287,12 @@ document.addEventListener('DOMContentLoaded', function() {
     link.addEventListener('click', function() {
       navbarToggle.classList.remove('active');
       navbarLinks.classList.remove('active');
+      navbarToggle.setAttribute('aria-expanded', 'false');
     });
   });
   
-  // Modified scrolling behavior to keep navbar always visible
-  window.addEventListener('scroll', function() {
+  // Modified scrolling behavior to keep navbar always visible (throttled for performance)
+  window.addEventListener('scroll', throttle(function() {
     // Update active section in navbar
     const sections = document.querySelectorAll('section');
     let currentSection = '';
@@ -223,7 +310,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link.classList.add('active');
       }
     });
-  });
+  }, 100));
 });
 
 function renderWalletData(data) {
@@ -562,8 +649,8 @@ function renderWalletData(data) {
     
     container.appendChild(section);
 
-    // Add search functionality
-    searchInput.addEventListener('input', () => {
+    // Add search functionality with debouncing for better performance
+    const debouncedSearch = debounce(() => {
       const activePathFilter = pathFiltersDiv.querySelector('.path-filter-btn.active');
       const pathType = activePathFilter ? activePathFilter.getAttribute('data-path') || 'all' : 'all';
       
@@ -574,7 +661,9 @@ function renderWalletData(data) {
       if (pathType !== 'all') {
         filterTableByPath(table, pathType, pathFiltersDiv, noResults);
       }
-    });
+    }, 150);
+    
+    searchInput.addEventListener('input', debouncedSearch);
   });
 
   // Add icon legend
