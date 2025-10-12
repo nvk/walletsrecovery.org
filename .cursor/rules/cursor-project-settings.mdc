@@ -1,0 +1,8 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+- this project is hosted on server less static site infrastructure
+- only front end code will run there
+- keep things simple when it comes to logic
