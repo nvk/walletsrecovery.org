@@ -52,6 +52,7 @@
         <li role="none"><a href="#wallet-tables" class="nav-link" role="menuitem">Wallet Tables</a></li>
         <li role="none"><a href="#wallet-types" class="nav-link" role="menuitem">Wallet Types</a></li>
         <li role="none"><a href="#derivation-paths" class="nav-link" role="menuitem">Derivation Paths</a></li>
+        <li role="none"><a href="#output-descriptors" class="nav-link" role="menuitem">Output Descriptors</a></li>
         <li role="none"><a href="#faq" class="nav-link" role="menuitem">FAQ</a></li>
         <li role="none"><a href="#resources" class="nav-link" role="menuitem">Resources</a></li>
         <li role="none"><a href="https://github.com/nvk/walletsrecovery.org" class="nav-link" target="_blank" rel="noopener noreferrer" role="menuitem">Contribute</a></li>
@@ -276,6 +277,7 @@
         <li><a href="#wallet-tables">Wallet Tables</a></li>
         <li><a href="#wallet-types">Wallet Types</a></li>
         <li><a href="#derivation-paths">Derivation Paths</a></li>
+        <li><a href="#output-descriptors">Output Descriptors</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#resources">Resources</a></li>
       </ul>
@@ -363,6 +365,70 @@
         <p>Another point of confusion may occur when wallets use the same derivation path for different script types. Especially if you are using any newer / more novel script types, wallets that have earmarked those paths for other scripts may cause errors during import. Example with Bread Wallet and Multibit mentioned <a href="https://github.com/spesmilo/electrum/issues/6155#issuecomment-626811245">here</a>.</p>
         
         <p>The meaning of "public" / unhardened versus hardened derivation, indicated in the fields by apostrophes, is explained <a href="https://wiki.trezor.io/Hardened_and_non-hardened_derivation">here</a>, <a href="https://medium.com/@sevcsik/working-with-bitcoin-hd-wallets-ii-deriving-public-keys-c48341629388">here</a>, and <a href="https://bitcoin.stackexchange.com/questions/62533/key-derivation-in-hd-wallets-using-the-extended-private-key-vs-hardened-derivati?rq=1">here</a>.</p>
+      </section>
+
+      <section id="output-descriptors">
+        <h2>Bitcoin Output Descriptors Explained</h2>
+        
+        <p>Output descriptors are a standardized way to describe Bitcoin wallet configurations and spending conditions. Introduced in <a href="https://github.com/bitcoin/bips/blob/master/bip-0380.mediawiki">BIP380</a>, they provide a human-readable and machine-parseable format for describing how Bitcoin outputs can be spent.</p>
+        
+        <div class="info-box">
+          <h3>🔑 What are Output Descriptors?</h3>
+          <p><strong>Definition:</strong> Output descriptors are strings that describe the conditions under which Bitcoin can be spent from a particular wallet or address. They specify the script type, public keys, and any additional conditions like multisig requirements.</p>
+          <p><strong>Purpose:</strong> They solve the problem of wallet interoperability by providing a standard way to communicate wallet configurations between different software implementations.</p>
+        </div>
+        
+        <h3>Common Output Descriptor Types</h3>
+        
+        <ul>
+          <li><h3>Legacy P2PKH (Pay-to-Public-Key-Hash)</h3> 
+            <p><code>pkh(02f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9)</code></p>
+            <p>Describes addresses starting with "1" (legacy Bitcoin addresses). Uses the public key hash for spending.</p>
+          </li>
+          
+          <li><h3>SegWit P2SH-P2WPKH (Wrapped SegWit)</h3>
+            <p><code>sh(wpkh(02f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9))</code></p>
+            <p>Describes addresses starting with "3" (SegWit addresses wrapped in P2SH). More efficient than legacy addresses.</p>
+          </li>
+          
+          <li><h3>Native SegWit P2WPKH</h3>
+            <p><code>wpkh(02f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9)</code></p>
+            <p>Describes addresses starting with "bc1" (native SegWit addresses). Most efficient Bitcoin address format.</p>
+          </li>
+          
+          <li><h3>Taproot P2TR</h3>
+            <p><code>tr(02f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9)</code></p>
+            <p>Describes addresses starting with "bc1p" (Taproot addresses). Latest Bitcoin address format with enhanced privacy and efficiency.</p>
+          </li>
+          
+          <li><h3>Multisig Descriptors</h3>
+            <p><code>multi(2,02f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9,03c287d5c4a3312c8630d247829374b6bc2c0cbb9ffc4a5f7595b15c192f1ee6e)</code></p>
+            <p>Describes 2-of-2 multisig addresses. Requires 2 signatures from the 2 specified public keys to spend.</p>
+          </li>
+          
+          <li><h3>HD Wallet Descriptors</h3>
+            <p><code>wpkh([d34db33f/84'/0'/0']xpub6ERApfZwUNrhLCkDtcHTcxd75RbzS1ed54G1LkBUHQVHQKqhMkhgbmJbZRkrgZw4koxb5JaHWkY4ALHY2grBGRjaDMzQLcgJvLJuZZvRcEL/0/*)</code></p>
+            <p>Describes HD wallet configurations with extended public keys, derivation paths, and wildcards for address generation.</p>
+          </li>
+        </ul>
+        
+        <h3>Why Output Descriptors Matter for Recovery</h3>
+        
+        <p>Output descriptors are crucial for wallet recovery because they:</p>
+        
+        <ul class="feature-list">
+          <li><strong>Standardize wallet communication</strong> - Different wallets can understand each other's configurations</li>
+          <li><strong>Enable precise recovery</strong> - Specify exactly how funds can be spent, including multisig conditions</li>
+          <li><strong>Support complex scripts</strong> - Handle advanced Bitcoin features like Taproot and complex multisig setups</li>
+          <li><strong>Improve interoperability</strong> - Make it easier to migrate between different wallet software</li>
+          <li><strong>Document spending conditions</strong> - Provide clear documentation of wallet requirements</li>
+        </ul>
+        
+        <div class="warning-box">
+          <p><strong>Important:</strong> When recovering funds using output descriptors, ensure you have all the required private keys and understand the spending conditions. Some descriptors may require specific hardware or software to spend from.</p>
+        </div>
+        
+        <p>For more detailed information about output descriptors, see <a href="https://github.com/bitcoin/bips/blob/master/bip-0380.mediawiki">BIP380</a> and the <a href="https://bitcoinops.org/en/topics/output-descriptors/">Bitcoin Optech Output Descriptors guide</a>.</p>
       </section>
 
       <section id="faq">
