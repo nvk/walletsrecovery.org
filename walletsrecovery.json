@@ -1,40 +1,40 @@
 {
   "metadata": {
     "version": "1.0",
-    "last_updated": "2023-05-02"
+    "last_updated": "2025-01-12"
   },
   "icons": [
     {
-      "icon": "\ud83d\ude35",
+      "icon": "😵",
       "meaning": "Discontinued and/or no longer maintained"
     },
     {
-      "icon": "\ud83d\udeb8",
+      "icon": "🚸",
       "meaning": "HW Physically unsafe with \"full secret\" (ie without BIP39 passphrase or multisig) against a automated attack and/or unsophisticated attacker (ie chipshouter blackbox)"
     },
     {
-      "icon": "\ud83d\udc41",
+      "icon": "👁",
       "meaning": "Privacy concerns (default is third party node)"
     },
     {
-      "icon": "\u2442",
+      "icon": "⑂",
       "meaning": "Validation concerns (default is third party node)"
     },
     {
-      "icon": "\u2620\ufe0f",
+      "icon": "☠️",
       "meaning": "Not publicly available, or complex without a external tool available for the average user"
     },
     {
-      "icon": "\u26a0\ufe0f",
+      "icon": "⚠️",
       "meaning": "Known, but unofficially documented"
     },
     {
-      "icon": "\u2705",
+      "icon": "✅",
       "meaning": "Documented + Link to doc"
     },
     {
-      "icon": "\ud83e\uddd0",
-      "meaning": "New project and/or team"
+      "icon": "🧐",
+      "meaning": "New project and/or team (less than 5 years since last Bitcoin halving - April 19, 2024)"
     }
   ],
   "schema": {
@@ -43,15 +43,16 @@
         "status": "String of status icons",
         "name": "Wallet name",
         "url": "Website URL",
-        "paths": {
+        "derivation": {
           "bip44": "Boolean - supports m/44'/0'/0' (Legacy P2PKH)",
           "bip49": "Boolean - supports m/49'/0'/0' (SegWit P2SH-P2WPKH)",
           "bip84": "Boolean - supports m/84'/0'/0' (Native SegWit P2WPKH)",
           "bip48": "Boolean - supports m/48'/0'/0'/2' (Multisig)",
           "bip86": "Boolean - supports m/86'/0'/0' (Taproot P2TR)",
           "brd": "Boolean - supports m/0' (BRD style)",
-          "custom": "String with any custom paths description"
+          "custom": "String with any custom derivation paths description"
         },
+        "output_descriptor": "Yes|No|N/A|WIP",
         "bip39_pass": "Yes|No|Optional|N/A|Required",
         "bip174_psbt": "Yes|No|N/A|WIP",
         "wif_support": "Yes|No|N/A",
@@ -63,15 +64,16 @@
         "status": "String of status icons",
         "name": "Wallet name",
         "url": "Website URL",
-        "paths": {
+        "derivation": {
           "bip44": "Boolean - supports m/44'/0'/0' (Legacy P2PKH)",
           "bip49": "Boolean - supports m/49'/0'/0' (SegWit P2SH-P2WPKH)",
           "bip84": "Boolean - supports m/84'/0'/0' (Native SegWit P2WPKH)",
           "bip48": "Boolean - supports m/48'/0'/0'/2' (Multisig)",
           "bip86": "Boolean - supports m/86'/0'/0' (Taproot P2TR)",
           "brd": "Boolean - supports m/0' (BRD style)",
-          "custom": "String with any custom paths description"
+          "custom": "String with any custom derivation paths description"
         },
+        "output_descriptor": "Yes|No|N/A|WIP",
         "passphrase": "Yes|No|Optional|N/A",
         "notes": "Documentation and additional information"
       }
@@ -82,10 +84,10 @@
       "name": "Hardware Wallets",
       "wallets": [
         {
-          "status": "\u2705",
+          "status": "✅",
           "name": "AirGap Vault",
           "url": "https://airgap.it",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": false,
             "bip84": true,
@@ -94,6 +96,7 @@
             "brd": false,
             "custom": "Custom"
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
@@ -102,10 +105,10 @@
           }
         },
         {
-          "status": "\u26a0\ufe0f\ud83d\udc41\ud83e\uddd0\u2442\ud83d\udeb8",
+          "status": "⚠️👁🧐⑂🚸",
           "name": "Arculus",
           "url": "https://www.getarculus.com/",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": false,
             "bip84": false,
@@ -114,6 +117,7 @@
             "brd": true,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
@@ -122,10 +126,10 @@
           }
         },
         {
-          "status": "\u2705\ud83d\ude35\ud83d\udc41\ud83d\udeb8",
+          "status": "✅😵👁🚸",
           "name": "BitBox01",
           "url": "https://shiftcrypto.ch/bitbox01/",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": true,
             "bip84": true,
@@ -134,6 +138,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Required",
           "bip174_psbt": "No",
           "notes": {
@@ -143,10 +148,10 @@
           }
         },
         {
-          "status": "\u2705\ud83d\udc41",
+          "status": "✅👁",
           "name": "BitBox02",
           "url": "https://shiftcrypto.ch/bitbox02/",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": true,
             "bip84": true,
@@ -155,6 +160,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
@@ -165,10 +171,10 @@
           }
         },
         {
-          "status": "\u2705\u26a0\ufe0f\ud83d\udc80\ud83e\uddd0\ud83d\udc41\ud83d\ude38\u2442",
+          "status": "✅⚠️💀🧐👁😸⑂",
           "name": "BitKey",
           "url": "https://bitkey.world/",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": true,
             "bip84": true,
@@ -187,10 +193,10 @@
           }
         },
         {
-          "status": "\u26a0\ufe0f\ud83e\uddd0\u2442",
+          "status": "⚠️🧐⑂",
           "name": "CoboVault",
           "url": "https://cobo.com/hardware-wallet/cobo-vault",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": true,
             "bip84": false,
@@ -199,6 +205,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
@@ -207,10 +214,10 @@
           }
         },
         {
-          "status": "\u2705\ud83e\uddd0",
+          "status": "✅🧐",
           "name": "Jade",
           "url": "https://blockstream.com/jade/",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": true,
             "bip84": true,
@@ -219,6 +226,7 @@
             "brd": false,
             "custom": "Single signer: Custom, Multisig: m/48'/0'/0'/1' + Custom"
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
@@ -231,10 +239,10 @@
           }
         },
         {
-          "status": "\u2705\ud83e\uddd0",
+          "status": "✅🧐",
           "name": "CoboVault with BTC only firmware",
           "url": "https://cobo.com/hardware-wallet/cobo-vault",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": false,
             "bip84": true,
@@ -243,6 +251,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
@@ -252,10 +261,32 @@
           }
         },
         {
-          "status": "\u2705\ud83d\ude35",
+          "status": "✅🧐",
+          "name": "Ellipal Titan 2.0",
+          "url": "https://www.ellipal.com/",
+          "derivation": {
+            "bip44": true,
+            "bip49": true,
+            "bip84": true,
+            "bip48": true,
+            "bip86": true,
+            "brd": false,
+            "custom": null
+          },
+          "output_descriptor": "No",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "No",
+          "notes": {
+            "docs": "https://www.ellipal.com/support",
+            "external_recovery_documented": true,
+            "text": "Air-gapped design, 4-inch touchscreen"
+          }
+        },
+        {
+          "status": "✅😵",
           "name": "ColdCard Mk1",
           "url": "https://coldcardwallet.com/",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": true,
             "bip84": true,
@@ -264,6 +295,7 @@
             "brd": false,
             "custom": "Custom"
           },
+          "output_descriptor": "Yes",
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
@@ -272,10 +304,10 @@
           }
         },
         {
-          "status": "\u2705\ud83d\ude35",
+          "status": "✅😵",
           "name": "ColdCard Mk2",
           "url": "https://coldcardwallet.com/",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": false,
             "bip84": true,
@@ -284,6 +316,7 @@
             "brd": false,
             "custom": "Custom"
           },
+          "output_descriptor": "Yes",
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
@@ -292,10 +325,10 @@
           }
         },
         {
-          "status": "\u2705",
+          "status": "✅",
           "name": "ColdCard Mk3",
           "url": "https://coldcardwallet.com/",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": false,
             "bip84": true,
@@ -304,6 +337,7 @@
             "brd": false,
             "custom": "Custom"
           },
+          "output_descriptor": "Yes",
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
@@ -312,10 +346,10 @@
           }
         },
         {
-          "status": "\u2705",
+          "status": "✅",
           "name": "ColdCard Mk4",
           "url": "https://coldcardwallet.com/",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": false,
             "bip84": true,
@@ -324,6 +358,7 @@
             "brd": false,
             "custom": "Custom"
           },
+          "output_descriptor": "Yes",
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
@@ -332,10 +367,10 @@
           }
         },
         {
-          "status": "\u2705",
+          "status": "✅",
           "name": "ColdCard Q",
           "url": "https://coldcardwallet.com/",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": false,
             "bip84": true,
@@ -344,6 +379,7 @@
             "brd": false,
             "custom": "Custom"
           },
+          "output_descriptor": "Yes",
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
@@ -352,10 +388,10 @@
           }
         },
         {
-          "status": "\u2705\ud83d\udc41\u2442",
+          "status": "✅👁⑂",
           "name": "CoolWallet S",
           "url": "https://www.coolwallet.io/",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": false,
             "bip84": false,
@@ -364,6 +400,7 @@
             "brd": false,
             "custom": "P2SH-Segwit account on P2PKH path"
           },
+          "output_descriptor": "No",
           "bip39_pass": "No",
           "bip174_psbt": "No",
           "notes": {
@@ -376,10 +413,10 @@
           }
         },
         {
-          "status": "\u2705\ud83d\udc41\u2442",
+          "status": "✅👁⑂",
           "name": "Ledger Nano S",
           "url": "https://ledger.com/",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": true,
             "bip84": true,
@@ -388,6 +425,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
@@ -396,10 +434,10 @@
           }
         },
         {
-          "status": "\u2705\ud83d\udc41\u2442",
+          "status": "✅👁⑂",
           "name": "Ledger Nano X",
           "url": "https://ledger.com/",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": true,
             "bip84": true,
@@ -408,6 +446,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
@@ -416,10 +455,32 @@
           }
         },
         {
-          "status": "\u2705\ud83e\uddd0",
+          "status": "✅🧐👁⑂",
+          "name": "Ledger Flex",
+          "url": "https://ledger.com/",
+          "derivation": {
+            "bip44": false,
+            "bip49": true,
+            "bip84": true,
+            "bip48": true,
+            "bip86": true,
+            "brd": false,
+            "custom": null
+          },
+          "output_descriptor": "No",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": {
+            "docs": "https://support.ledger.com/hc/en-us",
+            "external_recovery_documented": true,
+            "text": "Premium model with large touchscreen"
+          }
+        },
+        {
+          "status": "✅🧐",
           "name": "Passport",
           "url": "https://foundationdevices.com",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": false,
             "bip84": true,
@@ -428,6 +489,7 @@
             "brd": false,
             "custom": "Post Mix: m/84'/0'/2147483646'"
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
@@ -436,10 +498,10 @@
           }
         },
         {
-          "status": "\u2705\ud83e\uddd0\ud83d\udeb8",
+          "status": "✅🧐🚸",
           "name": "SeedSigner",
           "url": "https://seedsigner.com",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": false,
             "bip84": true,
@@ -448,6 +510,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
@@ -456,10 +519,10 @@
           }
         },
         {
-          "status": "\u2705\ud83d\udeb8\ud83d\udc41",
+          "status": "✅🚸👁",
           "name": "Trezor One",
           "url": "https://trezor.io",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": true,
             "bip84": true,
@@ -468,6 +531,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
@@ -476,10 +540,10 @@
           }
         },
         {
-          "status": "\u2705\ud83d\udeb8\ud83d\udc41",
+          "status": "✅🚸👁",
           "name": "Trezor Model T",
           "url": "https://trezor.io",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": true,
             "bip84": true,
@@ -488,6 +552,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
@@ -496,10 +561,54 @@
           }
         },
         {
-          "status": "\u2705\ud83d\udeb8\ud83d\udc41",
+          "status": "✅🧐",
+          "name": "Trezor Safe 3",
+          "url": "https://trezor.io",
+          "derivation": {
+            "bip44": true,
+            "bip49": true,
+            "bip84": true,
+            "bip48": true,
+            "bip86": true,
+            "brd": false,
+            "custom": null
+          },
+          "output_descriptor": "No",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": {
+            "docs": "https://wiki.trezor.io",
+            "external_recovery_documented": true,
+            "text": "EAL6+ certification, Shamir backup support"
+          }
+        },
+        {
+          "status": "✅🧐",
+          "name": "Trezor Safe 5",
+          "url": "https://trezor.io",
+          "derivation": {
+            "bip44": true,
+            "bip49": true,
+            "bip84": true,
+            "bip48": true,
+            "bip86": true,
+            "brd": false,
+            "custom": null
+          },
+          "output_descriptor": "No",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": {
+            "docs": "https://wiki.trezor.io",
+            "external_recovery_documented": true,
+            "text": "1.54-inch touchscreen, Bitcoin-only version available"
+          }
+        },
+        {
+          "status": "✅🚸👁",
           "name": "KeepKey",
           "url": "https://keepkey.zendesk.com/hc/en-us",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": false,
             "bip84": false,
@@ -508,6 +617,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
@@ -518,10 +628,10 @@
           }
         },
         {
-          "status": "\u26a0\ufe0f\ud83e\uddd0",
+          "status": "⚠️🧐",
           "name": "KoinKeep",
           "url": "https://koinkeep.com",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": false,
             "bip84": false,
@@ -530,6 +640,7 @@
             "brd": false,
             "custom": "Used on account 1: m/44'/0'/1'"
           },
+          "output_descriptor": "No",
           "bip39_pass": "No",
           "bip174_psbt": "No",
           "notes": {
@@ -538,10 +649,10 @@
           }
         },
         {
-          "status": "\u2705\ud83e\uddd0",
+          "status": "✅🧐",
           "name": "Krux",
           "url": "https://selfcustody.github.io/krux/",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": false,
             "bip84": true,
@@ -550,6 +661,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
@@ -558,10 +670,10 @@
           }
         },
         {
-          "status": "\u2705",
+          "status": "✅",
           "name": "Opendime",
           "url": "https://opendime.com",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": false,
             "bip84": false,
@@ -570,6 +682,7 @@
             "brd": false,
             "custom": "WIF"
           },
+          "output_descriptor": "N/A",
           "bip39_pass": "N/A",
           "bip174_psbt": "N/A",
           "notes": {
@@ -579,10 +692,10 @@
           }
         },
         {
-          "status": "\u2705\ud83d\udeb8\ud83d\udc41",
+          "status": "✅🚸👁",
           "name": "Prokey Optimum",
           "url": "https://prokey.io",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": true,
             "bip84": true,
@@ -591,11 +704,56 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
             "docs": "https://support.prokey.io",
             "external_recovery_documented": true
+          }
+        },
+        {
+          "status": "✅🧐",
+          "name": "Tangem Wallet 2.0",
+          "url": "https://tangem.com/",
+          "derivation": {
+            "bip44": true,
+            "bip49": true,
+            "bip84": true,
+            "bip48": true,
+            "bip86": true,
+            "brd": false,
+            "custom": null
+          },
+          "output_descriptor": "No",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "No",
+          "notes": {
+            "docs": "https://tangem.com/en/support/",
+            "external_recovery_documented": true,
+            "text": "Card-based design with NFC, optional seed phrase backup"
+          }
+        },
+        {
+          "status": "✅🧐",
+          "name": "Keystone 3 Pro",
+          "url": "https://keyst.one/",
+          "derivation": {
+            "bip44": true,
+            "bip49": true,
+            "bip84": true,
+            "bip48": true,
+            "bip86": true,
+            "brd": false,
+            "custom": null
+          },
+          "output_descriptor": "No",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": {
+            "docs": "https://keyst.one/support",
+            "external_recovery_documented": true,
+            "text": "Air-gapped QR code signing, 4-inch touchscreen"
           }
         }
       ]
@@ -604,10 +762,10 @@
       "name": "Software Wallets",
       "wallets": [
         {
-          "status": "\u2705\ud83d\udc41\u2442",
+          "status": "✅👁⑂",
           "name": "AirGap Wallet",
           "url": "https://airgap.it",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": false,
             "bip84": true,
@@ -616,6 +774,7 @@
             "brd": false,
             "custom": "Custom"
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "wif_support": "No",
           "bip174_psbt": "Yes",
@@ -625,10 +784,10 @@
           }
         },
         {
-          "status": "\u2620",
+          "status": "☠",
           "name": "Atomic Wallet",
           "url": "https://atomicwallet.io",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": false,
             "bip84": false,
@@ -637,6 +796,7 @@
             "brd": false,
             "custom": "m/44'/0'/0'/0/0 (Single Address Wallet)"
           },
+          "output_descriptor": "No",
           "bip39_pass": "No",
           "wif_support": "No",
           "bip174_psbt": "No",
@@ -646,10 +806,10 @@
           }
         },
         {
-          "status": "\ufe0f\u26a0\ufe0f",
+          "status": "️⚠️",
           "name": "Bitcoin Core",
           "url": "https://bitcoin.org",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": false,
             "bip84": false,
@@ -658,6 +818,7 @@
             "brd": false,
             "custom": "m/0'/0'"
           },
+          "output_descriptor": "Yes",
           "bip39_pass": "N/A",
           "wif_support": "Yes",
           "bip174_psbt": "WIP",
@@ -666,10 +827,32 @@
           }
         },
         {
-          "status": "\u2705\ud83d\udc41\u2442",
+          "status": "✅",
+          "name": "Sparrow Wallet",
+          "url": "https://sparrowwallet.com/",
+          "derivation": {
+            "bip44": true,
+            "bip49": true,
+            "bip84": true,
+            "bip48": true,
+            "bip86": true,
+            "brd": false,
+            "custom": null
+          },
+          "output_descriptor": "WIP",
+          "bip39_pass": "Optional",
+          "wif_support": "Yes",
+          "bip174_psbt": "Yes",
+          "notes": {
+            "docs": "https://sparrowwallet.com/docs/",
+            "github": "https://github.com/sparrowwallet/sparrow",
+            "features": "Desktop wallet with multisig support, hardware wallet integration"
+          }
+        },
+        {
+          "status": "✅👁⑂",
           "name": "Bitcoin Wallet app",
-          "url": "https://github.com/bitcoin-wallet/bitcoin-wallet",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": false,
             "bip84": false,
@@ -678,6 +861,7 @@
             "brd": false,
             "custom": "BIP32 non 44 Compatible"
           },
+          "output_descriptor": "N/A",
           "bip39_pass": "N/A",
           "wif_support": "No",
           "bip174_psbt": "No",
@@ -688,10 +872,10 @@
           }
         },
         {
-          "status": "\ufe0f\u26a0\ufe0f",
+          "status": "️⚠️",
           "name": "Bisq",
           "url": "https://bisq.network/",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": false,
             "bip84": false,
@@ -700,6 +884,7 @@
             "brd": false,
             "custom": "44'/0'/1' (SegWit on 44 deriv path, account 1)"
           },
+          "output_descriptor": "N/A",
           "bip39_pass": "N/A",
           "wif_support": "No",
           "bip174_psbt": "No",
@@ -709,10 +894,10 @@
           }
         },
         {
-          "status": "\u26a0\ufe0f",
+          "status": "⚠️",
           "name": "Bither",
           "url": "https://bither.net/",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": true,
             "bip84": false,
@@ -721,6 +906,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "N/A",
           "bip39_pass": "N/A",
           "wif_support": "No",
           "bip174_psbt": "No",
@@ -729,10 +915,10 @@
           }
         },
         {
-          "status": "\u2705\ud83d\udc41\u2442",
+          "status": "✅👁⑂",
           "name": "Blockchain.com",
           "url": "https://www.blockchain.com/en/wallet",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": false,
             "bip84": false,
@@ -741,6 +927,7 @@
             "brd": false,
             "custom": "m/44'/0'/n'"
           },
+          "output_descriptor": "N/A",
           "bip39_pass": "N/A",
           "wif_support": "No",
           "bip174_psbt": "No",
@@ -751,10 +938,10 @@
           }
         },
         {
-          "status": "\u2705\ud83d\udc41\u2442",
+          "status": "✅👁⑂",
           "name": "Blockstream Green (GreenAddress)",
           "url": "https://blockstream.com/green/",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": true,
             "bip84": true,
@@ -777,10 +964,10 @@
           }
         },
         {
-          "status": "\u2705\ud83d\udc41\u2442",
+          "status": "✅👁⑂",
           "name": "BlueWallet",
           "url": "https://bluewallet.io/",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": true,
             "bip84": true,
@@ -789,6 +976,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "WIP",
           "bip39_pass": "N/A",
           "wif_support": "Yes",
           "bip174_psbt": "Yes",
@@ -804,10 +992,10 @@
           }
         },
         {
-          "status": "\ufe0f\u26a0\ufe0f\ud83d\udc41\u2442",
+          "status": "️⚠️👁⑂",
           "name": "BRD (Bread Wallet)",
           "url": "https://brd.com/",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": false,
             "bip84": false,
@@ -816,6 +1004,7 @@
             "brd": true,
             "custom": null
           },
+          "output_descriptor": "N/A",
           "bip39_pass": "N/A",
           "wif_support": "Yes",
           "bip174_psbt": "No",
@@ -829,10 +1018,10 @@
           }
         },
         {
-          "status": "\u26a0\ufe0f\ud83d\udc41\u2442",
+          "status": "⚠️👁⑂",
           "name": "BTC.com app",
           "url": "https://btc.com/applications/app",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": false,
             "bip84": false,
@@ -841,6 +1030,7 @@
             "brd": true,
             "custom": "Multisig: m/0'"
           },
+          "output_descriptor": "N/A",
           "bip39_pass": "N/A",
           "wif_support": "No",
           "bip174_psbt": "No",
@@ -851,10 +1041,10 @@
           }
         },
         {
-          "status": "\u2705\ud83d\udc41\u2442",
+          "status": "✅👁⑂🧐",
           "name": "Cove Wallet",
           "url": "https://www.covewallet.com/",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": true,
             "bip84": true,
@@ -863,6 +1053,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "wif_support": "No",
           "bip174_psbt": "No",
@@ -873,10 +1064,10 @@
           }
         },
         {
-          "status": "\u2705\ud83d\udc41\u2442",
+          "status": "✅👁⑂🧐",
           "name": "Bull Bitcoin Wallet",
           "url": "https://play.google.com/store/apps/details?id=com.bullbitcoin.mobile",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": true,
             "bip84": true,
@@ -885,6 +1076,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "wif_support": "No",
           "bip174_psbt": "No",
@@ -900,10 +1092,10 @@
       "name": "Lightning Wallets",
       "wallets": [
         {
-          "status": "\u26d4\ufe0f",
+          "status": "⛔️",
           "name": "BLW (Bitcoin Lightning Wallet)",
           "url": "https://lightning-wallet.com/",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": false,
             "bip84": true,
@@ -912,6 +1104,7 @@
             "brd": false,
             "custom": "BIP32 non 44 Compatible"
           },
+          "output_descriptor": "N/A",
           "passphrase": "N/A",
           "notes": {
             "docs": "https://lightning-wallet.com/recovering-lost-balance",
@@ -919,10 +1112,10 @@
           }
         },
         {
-          "status": "\u26d4\ufe0f",
+          "status": "⛔️",
           "name": "SBW (Simple Bitcoin Wallet)",
           "url": "https://lightning-wallet.com/",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": true,
             "bip84": true,
@@ -931,6 +1124,7 @@
             "brd": true,
             "custom": null
           },
+          "output_descriptor": "N/A",
           "passphrase": "N/A",
           "notes": {
             "docs": "https://lightning-wallet.com/posts/manual/",
@@ -938,10 +1132,10 @@
           }
         },
         {
-          "status": "\u2705",
+          "status": "✅",
           "name": "OBW (Open Bitcoin Wallet)",
           "url": "https://github.com/nbd-wtf/obw",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": true,
             "bip84": true,
@@ -950,6 +1144,7 @@
             "brd": true,
             "custom": null
           },
+          "output_descriptor": "N/A",
           "passphrase": "N/A",
           "notes": {
             "docs": "https://darthcoin.substack.com/p/obw-open-bitcoin-wallet",
@@ -957,10 +1152,10 @@
           }
         },
         {
-          "status": "\u26a0\ufe0f",
+          "status": "⚠️",
           "name": "c-Lightning",
           "url": "https://github.com/ElementsProject/lightning",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": false,
             "bip84": true,
@@ -969,6 +1164,7 @@
             "brd": false,
             "custom": "m/141'/0'/0'/ Keys derived from hsm_secret file"
           },
+          "output_descriptor": "N/A",
           "passphrase": "N/A",
           "notes": {
             "links": [
@@ -979,10 +1175,10 @@
           }
         },
         {
-          "status": "\u2705",
+          "status": "✅",
           "name": "Eclair Mobile",
           "url": "https://github.com/ACINQ/eclair-mobile",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": true,
             "bip84": false,
@@ -991,6 +1187,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "passphrase": "Optional",
           "notes": {
             "docs": "https://github.com/ACINQ/eclair-mobile/wiki/FAQ#can-i-restore-my-seed-on-another-bitcoin-wallet-",
@@ -998,10 +1195,10 @@
           }
         },
         {
-          "status": "\u2705",
+          "status": "✅",
           "name": "LND (Lightning Network Daemon)",
           "url": "https://github.com/lightningnetwork/lnd",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": false,
             "bip84": false,
@@ -1010,6 +1207,7 @@
             "brd": false,
             "custom": "aezeed"
           },
+          "output_descriptor": "No",
           "passphrase": "Optional",
           "notes": {
             "docs": "https://github.com/lightningnetwork/lnd/tree/master/aezeed",
@@ -1017,10 +1215,10 @@
           }
         },
         {
-          "status": "\u2705",
+          "status": "✅🧐",
           "name": "Blixt (LND mobile node wallet)",
           "url": "https://github.com/hsjoberg/blixt-wallet",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": false,
             "bip84": true,
@@ -1029,6 +1227,7 @@
             "brd": false,
             "custom": "aezeed BIP32"
           },
+          "output_descriptor": "N/A",
           "passphrase": "N/A",
           "notes": {
             "docs": "https://blixtwallet.github.io/",
@@ -1040,10 +1239,10 @@
           }
         },
         {
-          "status": "\u26a0\ufe0f",
+          "status": "⚠️",
           "name": "Stakenet DEX Open Beta",
           "url": "https://medium.com/stakenet/stakenet-dex-open-beta-dd5c78175608",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": false,
             "bip84": false,
@@ -1052,16 +1251,17 @@
             "brd": false,
             "custom": "P2WPKH bech32 addresses on m/44'/0'/0'"
           },
+          "output_descriptor": "N/A",
           "passphrase": "N/A",
           "notes": {
             "external_recovery_documented": false
           }
         },
         {
-          "status": "\u2705",
+          "status": "✅🧐",
           "name": "Mutiny Wallet",
           "url": "https://mutinywallet.com/",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": false,
             "bip84": false,
@@ -1070,6 +1270,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "passphrase": "No",
           "notes": {
             "docs": "https://github.com/MutinyWallet/mutiny-web/wiki/Recovery",
@@ -1077,10 +1278,10 @@
           }
         },
         {
-          "status": "\u2705",
+          "status": "✅🧐",
           "name": "Zeus LN",
           "url": "https://zeusln.com/",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": false,
             "bip84": false,
@@ -1089,6 +1290,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "passphrase": "No",
           "notes": {
             "docs": "https://docs.zeusln.app/for-users/embedded-node/backup-and-recovery",
@@ -1101,10 +1303,10 @@
       "name": "Combo HW+SW",
       "wallets": [
         {
-          "status": "\u2705",
+          "status": "✅",
           "name": "BTCPay Server (Coldcard)",
           "url": "https://coldcardwallet.com",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": true,
             "bip84": true,
@@ -1113,6 +1315,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
@@ -1121,10 +1324,10 @@
           }
         },
         {
-          "status": "\u26a0\ufe0f",
+          "status": "⚠️",
           "name": "Electrum (CoboVault)",
           "url": "https://cobo.com/hardware-wallet/cobo-vault",
-          "paths": {
+          "derivation": {
             "bip44": false,
             "bip49": true,
             "bip84": false,
@@ -1133,6 +1336,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
@@ -1141,10 +1345,10 @@
           }
         },
         {
-          "status": "\u2705",
+          "status": "✅",
           "name": "Electrum (Coldcard)",
           "url": "https://coldcardwallet.com/",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": true,
             "bip84": true,
@@ -1153,6 +1357,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
@@ -1161,10 +1366,10 @@
           }
         },
         {
-          "status": "\u2705",
+          "status": "✅",
           "name": "Electrum (Ledger S/Nano)",
           "url": "https://ledger.com/",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": true,
             "bip84": true,
@@ -1173,6 +1378,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
@@ -1181,10 +1387,10 @@
           }
         },
         {
-          "status": "\u2705",
+          "status": "✅",
           "name": "Electrum (KeepKey)",
           "url": "https://shapeshift.io/keepkey/",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": true,
             "bip84": true,
@@ -1193,6 +1399,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
@@ -1203,10 +1410,10 @@
           }
         },
         {
-          "status": "\u2705",
+          "status": "✅",
           "name": "Electrum (Trezor One / Model T)",
           "url": "https://trezor.com",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": true,
             "bip84": true,
@@ -1215,6 +1422,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
@@ -1223,10 +1431,10 @@
           }
         },
         {
-          "status": "\u2705",
+          "status": "✅",
           "name": "Wasabi (Coldcard)",
           "url": "https://coldcardwallet.com",
-          "paths": {
+          "derivation": {
             "bip44": true,
             "bip49": true,
             "bip84": true,
@@ -1235,6 +1443,7 @@
             "brd": false,
             "custom": null
           },
+          "output_descriptor": "No",
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
@@ -1245,7 +1454,7 @@
       ]
     }
   ],
-  "paths": {
+  "derivation": {
     "p2pkh": "m/44'/0'/0'",
     "p2sh": "m/49'/0'/0'",
     "p2wpkh": "m/84'/0'/0'",
@@ -1265,6 +1474,15 @@
     },
     "bip174_psbt": {
       "description": "Partially Signed Bitcoin Transaction support",
+      "values": [
+        "Yes",
+        "No",
+        "WIP",
+        "N/A"
+      ]
+    },
+    "output_descriptor": {
+      "description": "Output Descriptor support",
       "values": [
         "Yes",
         "No",

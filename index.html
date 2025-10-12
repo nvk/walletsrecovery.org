@@ -34,7 +34,7 @@
   }
   </script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=202501121500">
   <link rel="icon" href="images/wr-logo-01.svg" type="image/svg+xml">
 </head>
 <body>
@@ -104,6 +104,163 @@
   </header>
   
   <div class="container">
+    <!-- Quick Stats Section -->
+    <section class="quick-stats">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="total-wallets">-</div>
+          <div class="stat-label">Total Wallets</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="hardware-wallets">-</div>
+          <div class="stat-label">Hardware Wallets</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="software-wallets">-</div>
+          <div class="stat-label">Software Wallets</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="lightning-wallets">-</div>
+          <div class="stat-label">Lightning Wallets</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="documented-wallets">-</div>
+          <div class="stat-label">Well Documented</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="psbt-wallets">-</div>
+          <div class="stat-label">PSBT Support</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Wallets Section -->
+    <section class="featured-wallets">
+      <h2>Quick Access: Top Recovery-Friendly Wallets</h2>
+      <div class="featured-grid">
+        <div class="featured-card warning-card">
+          <h3>⚠️ Avoid for Recovery</h3>
+          <div class="wallet-list">
+            <a href="#wallet-tables" class="wallet-link">Arculus</a>
+            <a href="#wallet-tables" class="wallet-link">BitKey</a>
+            <a href="#wallet-tables" class="wallet-link">Atomic Wallet</a>
+          </div>
+        </div>
+        <div class="featured-card">
+          <h3>🏆 Best Overall</h3>
+          <div class="wallet-list">
+            <a href="#wallet-tables" class="wallet-link">ColdCard Series</a>
+            <a href="#wallet-tables" class="wallet-link">Trezor Model T</a>
+            <a href="#wallet-tables" class="wallet-link">Ledger Nano X</a>
+          </div>
+        </div>
+        <div class="featured-card">
+          <h3>🔧 PSBT Support</h3>
+          <div class="wallet-list">
+            <a href="#wallet-tables" class="wallet-link">ColdCard Series</a>
+            <a href="#wallet-tables" class="wallet-link">Jade</a>
+            <a href="#wallet-tables" class="wallet-link">SeedSigner</a>
+          </div>
+        </div>
+        <div class="featured-card">
+          <h3>⚡ Lightning Ready</h3>
+          <div class="wallet-list">
+            <a href="#wallet-tables" class="wallet-link">Mutiny Wallet</a>
+            <a href="#wallet-tables" class="wallet-link">Zeus LN</a>
+            <a href="#wallet-tables" class="wallet-link">Blixt</a>
+          </div>
+        </div>
+        <div class="featured-card">
+          <h3>📱 Mobile Apps</h3>
+          <div class="wallet-list">
+            <a href="#wallet-tables" class="wallet-link">BlueWallet</a>
+            <a href="#wallet-tables" class="wallet-link">Blockstream Green</a>
+            <a href="#wallet-tables" class="wallet-link">Cove Wallet</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Recovery Tools -->
+    <section class="recovery-tools">
+      <h2>Essential Recovery Tools</h2>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <h3>🔑 Seed Recovery</h3>
+          <ul>
+            <li><a href="https://iancoleman.io/bip39/" target="_blank" rel="noopener">BIP39 Mnemonic Converter</a></li>
+            <li><a href="https://jlopp.github.io/xpub-converter/" target="_blank" rel="noopener">Extended Public Key Converter</a></li>
+            <li><a href="https://github.com/alexk111/HD-Wallet-Scanner/" target="_blank" rel="noopener">HD Wallet Scanner</a></li>
+          </ul>
+        </div>
+        <div class="tool-card">
+          <h3>🔧 PSBT Tools</h3>
+          <ul>
+            <li><a href="https://github.com/benthecarman/PSBT-Toolkit/releases" target="_blank" rel="noopener">PSBT Toolkit</a></li>
+            <li><a href="https://github.com/spesmilo/electrum" target="_blank" rel="noopener">Electrum (PSBT Support)</a></li>
+            <li><a href="https://sparrowwallet.com/" target="_blank" rel="noopener">Sparrow Wallet</a></li>
+          </ul>
+        </div>
+        <div class="tool-card">
+          <h3>🔍 Verification</h3>
+          <ul>
+            <li><a href="https://bitcoinbinary.org/" target="_blank" rel="noopener">Reproducible Builds</a></li>
+            <li><a href="https://bitcoinops.org/en/compatibility/" target="_blank" rel="noopener">Compatibility Matrix</a></li>
+            <li><a href="https://www.lopp.net/bitcoin-information.html" target="_blank" rel="noopener">Bitcoin Resources</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Derivation Path Reference -->
+    <section class="derivation-quick-ref">
+      <h2>Common Derivation Paths Quick Reference</h2>
+      <div class="path-reference">
+        <div class="path-card">
+          <div class="path-code">m/44'/0'/0'</div>
+          <div class="path-info">
+            <strong>Legacy P2PKH</strong>
+            <span>Addresses starting with "1"</span>
+          </div>
+        </div>
+        <div class="path-card">
+          <div class="path-code">m/49'/0'/0'</div>
+          <div class="path-info">
+            <strong>SegWit P2SH</strong>
+            <span>Addresses starting with "3"</span>
+          </div>
+        </div>
+        <div class="path-card">
+          <div class="path-code">m/84'/0'/0'</div>
+          <div class="path-info">
+            <strong>Native SegWit</strong>
+            <span>Addresses starting with "bc1"</span>
+          </div>
+        </div>
+        <div class="path-card">
+          <div class="path-code">m/86'/0'/0'</div>
+          <div class="path-info">
+            <strong>Taproot P2TR</strong>
+            <span>Addresses starting with "bc1p"</span>
+          </div>
+        </div>
+        <div class="path-card">
+          <div class="path-code">m/48'/0'/0'/2'</div>
+          <div class="path-info">
+            <strong>Multisig</strong>
+            <span>Multi-signature wallets</span>
+          </div>
+        </div>
+        <div class="path-card">
+          <div class="path-code">m/0'</div>
+          <div class="path-info">
+            <strong>BRD Style</strong>
+            <span>Bread Wallet format</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="contents">
       <h2>Contents</h2>
       <ul>
@@ -123,6 +280,13 @@
         
         <div class="highlight-box">
           <p><strong>Seeds are a super power! Giving users their seed phrase is not enough.</strong></p>
+        </div>
+
+        <div class="info-box">
+          <h3>🧐 New Team Specification</h3>
+          <p><strong>Definition:</strong> A "New Team" is defined as any project or team that has been operating for less than 5 years since the most recent Bitcoin halving (April 19, 2024). This means teams established after April 19, 2029, will be considered "new" and marked with the 🧐 icon.</p>
+          <p><strong>Rationale:</strong> Bitcoin halvings occur approximately every 4 years, and adding one year provides a 5-year stability benchmark. This helps users identify teams that may lack the long-term track record and experience needed for reliable wallet development and support.</p>
+          <p><strong>Current Threshold:</strong> As of 2025, teams established after April 19, 2019, are considered established. Teams formed between April 19, 2019, and April 19, 2029, are marked as "new teams" with the 🧐 warning icon.</p>
         </div>
 
         <p>While great advances have been made in Bitcoin wallet interoperability and cryptocurrency recovery methods, developers across the industry continue to build wallets that either:</p>
@@ -267,6 +431,6 @@ $ grip
     </div>
   </footer>
 
-  <script src="scripts.js?v=202501122200"></script>
+  <script src="scripts.js?v=202501121500"></script>
 </body>
 </html> 

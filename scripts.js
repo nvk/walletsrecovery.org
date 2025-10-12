@@ -79,6 +79,51 @@ function throttle(func, limit) {
   }
 }
 
+// Statistics calculation function
+function updateStatistics(walletsData) {
+  let totalWallets = 0;
+  let hardwareWallets = 0;
+  let softwareWallets = 0;
+  let lightningWallets = 0;
+  let documentedWallets = 0;
+  let psbtWallets = 0;
+  
+  // Count wallets by category
+  walletsData.categories.forEach(category => {
+    const walletCount = category.wallets.length;
+    totalWallets += walletCount;
+    
+    if (category.name === 'Hardware Wallets') {
+      hardwareWallets = walletCount;
+    } else if (category.name === 'Software Wallets') {
+      softwareWallets = walletCount;
+    } else if (category.name === 'Lightning Wallets') {
+      lightningWallets = walletCount;
+    }
+    
+    // Count documented wallets and PSBT support
+    category.wallets.forEach(wallet => {
+      // Check if wallet is well documented (has ✅ status)
+      if (wallet.status && wallet.status.includes('✅')) {
+        documentedWallets++;
+      }
+      
+      // Check for PSBT support
+      if (wallet.bip174_psbt === 'Yes') {
+        psbtWallets++;
+      }
+    });
+  });
+  
+  // Update the DOM elements
+  document.getElementById('total-wallets').textContent = totalWallets;
+  document.getElementById('hardware-wallets').textContent = hardwareWallets;
+  document.getElementById('software-wallets').textContent = softwareWallets;
+  document.getElementById('lightning-wallets').textContent = lightningWallets;
+  document.getElementById('documented-wallets').textContent = documentedWallets;
+  document.getElementById('psbt-wallets').textContent = psbtWallets;
+}
+
 // Wallet data loading and rendering logic
 document.addEventListener('DOMContentLoaded', function() {
   console.log('Starting to fetch wallet data...');
@@ -192,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
       { icon: "☠️", text: "☠", meaning: "Not publicly available, or complex without a external tool available for the average user" },
       { icon: "⚠️", text: "⚠", meaning: "Known, but unofficially documented" },
       { icon: "✅", text: "✓", meaning: "Documented + Link to doc" },
-      { icon: "🧐", text: "🧐", meaning: "New project and/or team" }
+      { icon: "🧐", text: "🧐", meaning: "New project and/or team (less than 5 years since last Bitcoin halving - April 19, 2024)" }
     ];
     
     iconMappings.forEach(icon => {
@@ -235,6 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Use requestAnimationFrame for smooth rendering
       requestAnimationFrame(() => {
         renderWalletData(walletsData);
+        updateStatistics(walletsData);
         
         // Log performance metrics
         const endTime = performance.now();
@@ -329,7 +375,7 @@ function renderWalletData(data) {
     { icon: "☠️", text: "☠", meaning: "Not publicly available, or complex without a external tool available for the average user" },
     { icon: "⚠️", text: "⚠", meaning: "Known, but unofficially documented" },
     { icon: "✅", text: "✓", meaning: "Documented + Link to doc" },
-    { icon: "🧐", text: "🧐", meaning: "New project and/or team" }
+    { icon: "🧐", text: "🧐", meaning: "New project and/or team (less than 5 years since last Bitcoin halving - April 19, 2024)" }
   ];
 
   // Add icon legend first (above tables)
@@ -432,11 +478,11 @@ function renderWalletData(data) {
     // Add other headers based on the category
     let additionalHeaders;
     if (category.name === 'Lightning Wallets') {
-      additionalHeaders = ['Wallet', 'Supported Paths', 'Pass', 'Notes'];
+      additionalHeaders = ['Wallet', 'Derivation', 'Output Descriptor', 'Pass', 'Notes'];
     } else if (category.name === 'Software Wallets') {
-      additionalHeaders = ['Wallet', 'Supported Paths', 'BIP39', 'WIF', 'PSBT', 'Notes'];
+      additionalHeaders = ['Wallet', 'Derivation', 'Output Descriptor', 'BIP39', 'WIF', 'PSBT', 'Notes'];
     } else {
-      additionalHeaders = ['Wallet', 'Supported Paths', 'BIP39', 'PSBT', 'Notes'];
+      additionalHeaders = ['Wallet', 'Derivation', 'Output Descriptor', 'BIP39', 'PSBT', 'Notes'];
     }
     
     // Create the remaining header cells
@@ -449,8 +495,10 @@ function renderWalletData(data) {
       // Set width for specific columns
       if (headerText === 'Wallet') {
         th.style.minWidth = '150px';
-      } else if (headerText === 'Supported Paths') {
+      } else if (headerText === 'Derivation') {
         th.style.minWidth = '180px';
+      } else if (headerText === 'Output Descriptor') {
+        th.style.minWidth = '120px';
       } else if (headerText === 'BIP39' || headerText === 'WIF' || headerText === 'PSBT' || headerText === 'Pass') {
         th.style.minWidth = '80px';
         th.style.textAlign = 'center';
@@ -481,6 +529,7 @@ function renderWalletData(data) {
         if (wallet.status.includes(iconType.icon)) {
           cell.textContent = iconType.icon;
           cell.setAttribute('aria-label', iconType.meaning);
+          cell.setAttribute('title', iconType.meaning);
           cell.setAttribute('data-has-content', 'true');
         } else {
           // Mark as empty - use a space but no tooltip
@@ -504,16 +553,16 @@ function renderWalletData(data) {
       nameCell.style.fontWeight = '500';
       row.appendChild(nameCell);
       
-      // Supported paths cell with improved display
-      const pathsCell = document.createElement('td');
-      pathsCell.className = 'wallet-paths';
+      // Derivation cell with improved display
+      const derivationCell = document.createElement('td');
+      derivationCell.className = 'wallet-derivation';
       
-      if (wallet.paths) {
-        const pathContainer = document.createElement('ul');
-        pathContainer.className = 'wallet-paths-container';
-        pathContainer.style.listStyle = 'none';
-        pathContainer.style.padding = '0';
-        pathContainer.style.margin = '0';
+      if (wallet.derivation) {
+        const derivationContainer = document.createElement('ul');
+        derivationContainer.className = 'wallet-derivation-container';
+        derivationContainer.style.listStyle = 'none';
+        derivationContainer.style.padding = '0';
+        derivationContainer.style.margin = '0';
         
         // Display supported paths as tags
         const pathMapping = {
@@ -527,7 +576,7 @@ function renderWalletData(data) {
         
         // First show standard paths
         Object.entries(pathMapping).forEach(([key, value]) => {
-          if (wallet.paths[key]) {
+          if (wallet.derivation[key]) {
             const tagItem = document.createElement('li');
             tagItem.style.display = 'inline-block';
             tagItem.style.marginBottom = '0';
@@ -539,12 +588,12 @@ function renderWalletData(data) {
             tag.setAttribute('data-path', value.path);
             tag.setAttribute('data-path-name', value.name);
             tagItem.appendChild(tag);
-            pathContainer.appendChild(tagItem);
+            derivationContainer.appendChild(tagItem);
           }
         });
         
         // Then show custom paths if any
-        if (wallet.paths.custom) {
+        if (wallet.derivation.custom) {
           const tagItem = document.createElement('li');
           tagItem.style.display = 'inline-block';
           tagItem.style.marginBottom = '0';
@@ -552,22 +601,64 @@ function renderWalletData(data) {
           const tag = document.createElement('span');
           tag.className = 'wallet-path-tag custom';
           tag.textContent = 'Custom';
-          tag.setAttribute('aria-label', wallet.paths.custom);
-          tag.setAttribute('data-path', wallet.paths.custom);
+          tag.setAttribute('aria-label', wallet.derivation.custom);
+          tag.setAttribute('data-path', wallet.derivation.custom);
           tag.setAttribute('data-path-name', 'Custom');
           tagItem.appendChild(tag);
-          pathContainer.appendChild(tagItem);
+          derivationContainer.appendChild(tagItem);
         }
         
-        pathsCell.appendChild(pathContainer);
-      } else if (wallet.supported_paths) {
+        derivationCell.appendChild(derivationContainer);
+      } else if (wallet.paths) {
         // Fallback for old format
-        pathsCell.textContent = wallet.supported_paths;
+        derivationCell.textContent = 'Legacy format';
       } else {
-        pathsCell.textContent = 'N/A';
+        derivationCell.textContent = 'N/A';
       }
       
-      row.appendChild(pathsCell);
+      row.appendChild(derivationCell);
+      
+      // Output Descriptor cell
+      const outputDescCell = document.createElement('td');
+      outputDescCell.style.textAlign = 'center';
+      outputDescCell.style.fontSize = '0.9em';
+      
+      if (wallet.output_descriptor) {
+        const statusSpan = document.createElement('span');
+        statusSpan.className = 'wallet-status-tag';
+        
+        switch (wallet.output_descriptor) {
+          case 'Yes':
+            statusSpan.textContent = '✓';
+            statusSpan.style.color = '#22c55e';
+            statusSpan.setAttribute('title', 'Output Descriptor supported - BIP380 compliant, enables easy wallet recovery and interoperability');
+            break;
+          case 'No':
+            statusSpan.textContent = '✗';
+            statusSpan.style.color = '#ef4444';
+            statusSpan.setAttribute('title', 'Output Descriptor not supported - recovery may require manual derivation path configuration');
+            break;
+          case 'WIP':
+            statusSpan.textContent = '⚠';
+            statusSpan.style.color = '#f59e0b';
+            statusSpan.setAttribute('title', 'Output Descriptor support in progress - feature is being developed, may not be fully reliable yet');
+            break;
+          case 'N/A':
+            statusSpan.textContent = '—';
+            statusSpan.style.color = '#6b7280';
+            statusSpan.setAttribute('title', 'Not applicable - output descriptors not relevant for this wallet type');
+            break;
+          default:
+            statusSpan.textContent = wallet.output_descriptor;
+            statusSpan.setAttribute('title', `Output Descriptor: ${wallet.output_descriptor}`);
+        }
+        
+        outputDescCell.appendChild(statusSpan);
+      } else {
+        outputDescCell.textContent = 'N/A';
+      }
+      
+      row.appendChild(outputDescCell);
       
       // BIP39 Pass/Passphrase cell with improved display
       const passCell = document.createElement('td');
@@ -583,6 +674,50 @@ function renderWalletData(data) {
       const passTag = document.createElement('span');
       passTag.className = `wallet-feature ${passValue.toLowerCase().replace(/\s+/g, '')}`;
       passTag.textContent = passValue;
+      
+      // Add tooltip for BIP39 passphrase
+      if (category.name === 'Lightning Wallets') {
+        switch (passValue) {
+          case 'Yes':
+            passTag.setAttribute('title', 'Passphrase supported - additional security layer for seed phrase');
+            break;
+          case 'No':
+            passTag.setAttribute('title', 'Passphrase not supported - no additional security layer available');
+            break;
+          case 'Optional':
+            passTag.setAttribute('title', 'Passphrase optional - can be used for additional security');
+            break;
+          case 'Required':
+            passTag.setAttribute('title', 'Passphrase required - mandatory additional security layer');
+            break;
+          case 'N/A':
+            passTag.setAttribute('title', 'Not applicable - passphrase not relevant for this wallet type');
+            break;
+          default:
+            passTag.setAttribute('title', `Passphrase: ${passValue}`);
+        }
+      } else {
+        switch (passValue) {
+          case 'Yes':
+            passTag.setAttribute('title', 'BIP39 passphrase supported - additional security layer for seed phrase');
+            break;
+          case 'No':
+            passTag.setAttribute('title', 'BIP39 passphrase not supported - no additional security layer available');
+            break;
+          case 'Optional':
+            passTag.setAttribute('title', 'BIP39 passphrase optional - can be used for additional security');
+            break;
+          case 'Required':
+            passTag.setAttribute('title', 'BIP39 passphrase required - mandatory additional security layer');
+            break;
+          case 'N/A':
+            passTag.setAttribute('title', 'Not applicable - BIP39 passphrase not relevant for this wallet type');
+            break;
+          default:
+            passTag.setAttribute('title', `BIP39 passphrase: ${passValue}`);
+        }
+      }
+      
       passCell.appendChild(passTag);
       row.appendChild(passCell);
       
@@ -594,6 +729,22 @@ function renderWalletData(data) {
         const wifTag = document.createElement('span');
         wifTag.className = `wallet-feature ${wifValue.toLowerCase().replace(/\s+/g, '')}`;
         wifTag.textContent = wifValue;
+        
+        // Add tooltip for WIF support
+        switch (wifValue) {
+          case 'Yes':
+            wifTag.setAttribute('title', 'WIF support - can import/export private keys in WIF format');
+            break;
+          case 'No':
+            wifTag.setAttribute('title', 'No WIF support - cannot import/export private keys in WIF format');
+            break;
+          case 'N/A':
+            wifTag.setAttribute('title', 'Not applicable - WIF support not relevant for this wallet type');
+            break;
+          default:
+            wifTag.setAttribute('title', `WIF support: ${wifValue}`);
+        }
+        
         wifCell.appendChild(wifTag);
         row.appendChild(wifCell);
       }
@@ -606,6 +757,25 @@ function renderWalletData(data) {
         const psbtTag = document.createElement('span');
         psbtTag.className = `wallet-feature ${psbtValue.toLowerCase().replace(/\s+/g, '')}`;
         psbtTag.textContent = psbtValue;
+        
+        // Add tooltip for PSBT support
+        switch (psbtValue) {
+          case 'Yes':
+            psbtTag.setAttribute('title', 'BIP174 PSBT supported - enables secure multi-party transactions');
+            break;
+          case 'No':
+            psbtTag.setAttribute('title', 'BIP174 PSBT not supported - cannot participate in multi-party transactions');
+            break;
+          case 'WIP':
+            psbtTag.setAttribute('title', 'BIP174 PSBT support in progress - feature is being developed');
+            break;
+          case 'N/A':
+            psbtTag.setAttribute('title', 'Not applicable - PSBT support not relevant for this wallet type');
+            break;
+          default:
+            psbtTag.setAttribute('title', `BIP174 PSBT: ${psbtValue}`);
+        }
+        
         psbtCell.appendChild(psbtTag);
         row.appendChild(psbtCell);
       }
@@ -723,7 +893,7 @@ function filterTableByPath(table, pathType, filterContainer, noResultsElement) {
     const category = table.getAttribute('data-category');
     const wallet = findWalletInData(walletName, category);
     
-    if (wallet && wallet.paths && wallet.paths[pathType]) {
+    if (wallet && wallet.derivation && wallet.derivation[pathType]) {
       row.style.display = '';
       visibleCount++;
     } else {
@@ -1378,4 +1548,23 @@ function showPathDetails(path, pathName, walletName) {
   modalBody.innerHTML = content;
   modal.style.display = 'block';
   document.body.classList.add('modal-active');
-} 
+}
+
+// Tooltip positioning for wallet feature elements
+document.addEventListener('DOMContentLoaded', function() {
+  // Add mouse move event listener for tooltip positioning
+  document.addEventListener('mousemove', function(e) {
+    // Update CSS custom properties for tooltip positioning
+    document.documentElement.style.setProperty('--tooltip-x', e.clientX + 'px');
+    document.documentElement.style.setProperty('--tooltip-y', e.clientY + 'px');
+  });
+  
+  // Add hover event listeners to wallet feature elements
+  document.addEventListener('mouseover', function(e) {
+    if (e.target.classList.contains('wallet-feature') && e.target.getAttribute('title')) {
+      // Ensure tooltip positioning is updated
+      document.documentElement.style.setProperty('--tooltip-x', e.clientX + 'px');
+      document.documentElement.style.setProperty('--tooltip-y', e.clientY + 'px');
+    }
+  });
+});
