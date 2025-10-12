@@ -169,6 +169,28 @@
           }
         },
         {
+          "status": "\u2705\u26a0\ufe0f\ud83d\udeb8\ud83d\udc80\ud83d\ude35\ud83e\uddd0\ud83d\udc41\ud83d\ude38\u2462",
+          "name": "BitKey",
+          "url": "https://bitkey.world/",
+          "paths": {
+            "bip44": false,
+            "bip49": true,
+            "bip84": true,
+            "bip48": true,
+            "bip86": false,
+            "brd": false,
+            "custom": null
+          },
+          "bip39_pass": "not supported",
+          "bip174_psbt": "No",
+          "notes": {
+            "docs": "https://support.bitkey.world/hc/en-us/categories/11308448277652-Bitkey-Help-Content",
+            "recovery_tool": "https://support.bitkey.world/hc/en-us/sections/37113184560020-Recovery-Tools",
+            "external_recovery_documented": true,
+            "text": "Proprietary schema, dangerous recovery"
+          }
+        },
+        {
           "status": "\u26a0\ufe0f\ud83e\uddd0",
           "name": "CoboVault",
           "url": "https://cobo.com/hardware-wallet/cobo-vault",
@@ -830,6 +852,50 @@
             "docs": "https://gist.github.com/rubensayshi/da922774d43976e0804c",
             "external_recovery_documented": true,
             "text": "Unofficial"
+          }
+        },
+        {
+          "status": "\u2705\ud83d\udc41\u2442",
+          "name": "Cove Wallet",
+          "url": "https://www.covewallet.com/",
+          "paths": {
+            "bip44": true,
+            "bip49": true,
+            "bip84": true,
+            "bip48": false,
+            "bip86": false,
+            "brd": false,
+            "custom": null
+          },
+          "bip39_pass": "Optional",
+          "wif_support": "No",
+          "bip174_psbt": "No",
+          "notes": {
+            "docs": "https://www.covewallet.com/",
+            "external_recovery_documented": true,
+            "text": "Self-custody Bitcoin wallet with intuitive interface"
+          }
+        },
+        {
+          "status": "\u2705\ud83d\udc41\u2442",
+          "name": "Bull Bitcoin Wallet",
+          "url": "https://play.google.com/store/apps/details?id=com.bullbitcoin.mobile",
+          "paths": {
+            "bip44": true,
+            "bip49": true,
+            "bip84": true,
+            "bip48": false,
+            "bip86": false,
+            "brd": false,
+            "custom": null
+          },
+          "bip39_pass": "Optional",
+          "wif_support": "No",
+          "bip174_psbt": "No",
+          "notes": {
+            "docs": "https://www.bullbitcoin.com/",
+            "external_recovery_documented": true,
+            "text": "Self-custodial wallet with atomic swaps across Bitcoin, Lightning, and Liquid Network"
           }
         }
       ]
