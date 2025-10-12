@@ -895,6 +895,14 @@ section {
   margin-bottom: var(--space-2xl);
 }
 
+.loading-placeholder {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-xl);
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
