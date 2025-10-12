@@ -102,7 +102,7 @@
           }
         },
         {
-          "status": "\u26a0\ufe0f\ud83d\udc41\ud83e\uddd0\u2442",
+          "status": "\u26a0\ufe0f\ud83d\udc41\ud83e\uddd0\u2442\ud83d\udeb8",
           "name": "Arculus",
           "url": "https://www.getarculus.com/",
           "paths": {
@@ -436,7 +436,7 @@
           }
         },
         {
-          "status": "\u2705\ud83e\uddd0",
+          "status": "\u2705\ud83e\uddd0\ud83d\udeb8",
           "name": "SeedSigner",
           "url": "https://seedsigner.com",
           "paths": {
