@@ -1,7 +1,8 @@
 {
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-01-12"
+    "last_updated": "2026-06-02",
+    "last_reviewed": "2026-06-02"
   },
   "icons": [
     {
@@ -10,31 +11,35 @@
     },
     {
       "icon": "🚸",
-      "meaning": "HW Physically unsafe with \"full secret\" (ie without BIP39 passphrase or multisig) against a automated attack and/or unsophisticated attacker (ie chipshouter blackbox)"
+      "meaning": "HW physically unsafe with a full secret (without BIP39 passphrase or multisig) against automated or unsophisticated physical attacks"
     },
     {
       "icon": "👁",
-      "meaning": "Privacy concerns (default is third party node)"
+      "meaning": "Privacy concerns (default is third-party node or service)"
     },
     {
       "icon": "⑂",
-      "meaning": "Validation concerns (default is third party node)"
+      "meaning": "Validation concerns (default is third-party node or service)"
     },
     {
       "icon": "☠️",
-      "meaning": "Not publicly available, or complex without a external tool available for the average user"
+      "meaning": "Not publicly available, proprietary, or complex recovery without external tooling for average users"
+    },
+    {
+      "icon": "⛔️",
+      "meaning": "Lightning/channel-state caveat: seed alone may not recover all funds without channel backup or wallet-specific process"
     },
     {
       "icon": "⚠️",
-      "meaning": "Known, but unofficially documented"
+      "meaning": "Known but unofficially, incompletely, or weakly documented"
     },
     {
       "icon": "✅",
-      "meaning": "Documented + Link to doc"
+      "meaning": "External recovery documented with a public link"
     },
     {
       "icon": "🧐",
-      "meaning": "New project and/or team (less than 5 years since last Bitcoin halving - April 19, 2024)"
+      "meaning": "Newer project/team/product with less than five years of operating history at last review"
     }
   ],
   "schema": {
@@ -56,7 +61,9 @@
         "bip39_pass": "Yes|No|Optional|N/A|Required",
         "bip174_psbt": "Yes|No|N/A|WIP",
         "wif_support": "Yes|No|N/A",
-        "notes": "Documentation and additional information"
+        "notes": "Documentation and additional information",
+        "last_verified": "YYYY-MM-DD date when this entry was last checked against public sources",
+        "availability": "current|legacy|discontinued|self-host-only|unknown"
       }
     },
     "lightning_wallet": {
@@ -75,7 +82,9 @@
         },
         "output_descriptor": "Yes|No|N/A|WIP",
         "passphrase": "Yes|No|Optional|N/A",
-        "notes": "Documentation and additional information"
+        "notes": "Documentation and additional information",
+        "last_verified": "YYYY-MM-DD date when this entry was last checked against public sources",
+        "availability": "current|legacy|discontinued|self-host-only|unknown"
       }
     }
   },
@@ -128,7 +137,7 @@
         {
           "status": "✅😵👁🚸",
           "name": "BitBox01",
-          "url": "https://shiftcrypto.ch/bitbox01/",
+          "url": "https://bitbox.swiss/bitbox01/",
           "derivation": {
             "bip44": true,
             "bip49": true,
@@ -142,36 +151,67 @@
           "bip39_pass": "Required",
           "bip174_psbt": "No",
           "notes": {
-            "docs": "https://shiftcrypto.ch/bitbox01/wallet-sweep/",
-            "recovery_tool": "https://github.com/digitalbitbox/html_backup",
+            "docs": "https://bitbox.swiss/bitbox01/wallet-sweep/",
+            "recovery_tool": "https://github.com/BitBoxSwiss/html_backup",
             "external_recovery_documented": true
-          }
+          },
+          "availability": "discontinued",
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅👁",
           "name": "BitBox02",
-          "url": "https://shiftcrypto.ch/bitbox02/",
+          "url": "https://bitbox.swiss/bitbox02/",
           "derivation": {
             "bip44": false,
             "bip49": true,
             "bip84": true,
             "bip48": true,
-            "bip86": false,
+            "bip86": true,
             "brd": false,
             "custom": null
           },
-          "output_descriptor": "No",
+          "output_descriptor": "Yes",
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
-            "docs": "https://guides.shiftcrypto.ch/bitbox02/advanced/backup-recovery/",
-            "recovery_tool": "https://github.com/digitalbitbox/bitbox02-backup-recovery",
+            "docs": "https://support.bitbox.swiss/en_US/how-to-restore-from-recovery-words",
+            "recovery_tool": "https://github.com/BitBoxSwiss/bitbox02-backup-recovery",
             "external_recovery_documented": true,
-            "text": "Recovery tool:"
-          }
+            "text": "Recovery words, Taproot account details, and wallet descriptors documented in current BitBox support docs.",
+            "features": "https://support.bitbox.swiss/en_US/wallet-descriptors-bitboxapp"
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
         },
         {
-          "status": "✅⚠️💀🧐👁😸⑂",
+          "status": "✅🧐👁",
+          "name": "BitBox02 Nova",
+          "url": "https://bitbox.swiss/bitbox02/",
+          "derivation": {
+            "bip44": false,
+            "bip49": true,
+            "bip84": true,
+            "bip48": true,
+            "bip86": true,
+            "brd": false,
+            "custom": null
+          },
+          "output_descriptor": "Yes",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "No",
+          "notes": {
+            "docs": "https://support.bitbox.swiss/en_US/nova/how-to-set-up-bitbox02-nova-ios",
+            "features": "https://support.bitbox.swiss/en_US/wallet-descriptors-bitboxapp",
+            "recovery_tool": "https://github.com/BitBoxSwiss/bitbox02-backup-recovery",
+            "external_recovery_documented": true,
+            "text": "Newer BitBox02 variant with iOS Bluetooth support; recovery words, Taproot account details, and wallet descriptors follow current BitBoxApp docs."
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
+        },
+        {
+          "status": "✅⚠️☠️🧐👁⑂",
           "name": "BitKey",
           "url": "https://bitkey.world/",
           "derivation": {
@@ -190,12 +230,15 @@
             "recovery_tool": "https://support.bitkey.world/hc/en-us/sections/37113184560020-Recovery-Tools",
             "external_recovery_documented": true,
             "text": "Proprietary schema, dangerous recovery"
-          }
+          },
+          "output_descriptor": "No",
+          "availability": "current",
+          "last_verified": "2026-06-02"
         },
         {
-          "status": "⚠️🧐⑂",
+          "status": "😵⚠️🧐⑂",
           "name": "CoboVault",
-          "url": "https://cobo.com/hardware-wallet/cobo-vault",
+          "url": "https://www.cobo.com/post/cobo-vault-offline-notice",
           "derivation": {
             "bip44": false,
             "bip49": true,
@@ -209,9 +252,13 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
-            "docs": "https://support.cobo.com/hc/en-us/articles/360046375373-Passphrase",
-            "external_recovery_documented": false
-          }
+            "docs": "https://www.cobo.com/post/cobo-vault-offline-notice",
+            "external_recovery_documented": false,
+            "archive": "https://support.keyst.one/miscellaneous/cv-companion-app",
+            "text": "Legacy Cobo Vault hardware business was shut down by Cobo on September 15, 2021; keep as historical recovery reference only."
+          },
+          "availability": "discontinued",
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅🧐",
@@ -230,18 +277,49 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
-            "docs": "https://help.blockstream.com/hc/en-us/categories/900000061906-Blockstream-Jade",
+            "docs": "https://help.blockstream.com/hc/en-us/articles/4407812259225-Jade-overview",
             "external_recovery_documented": true,
             "links": [
-              "https://help.blockstream.com/hc/en-us/articles/11891963370137"
+              "https://help.blockstream.com/hc/en-us/articles/19629901272345-Set-up-Jade",
+              "https://help.blockstream.com/hc/en-us/sections/900000124103-Set-Up-Transact-Recover-Your-Wallet"
             ],
-            "text": "Xpub:"
-          }
+            "text": "Supports PSBT signing and multisig workflows; Jade Plus is tracked separately because of newer hardware/QR/NFC workflows."
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅🧐",
+          "name": "Jade Plus",
+          "url": "https://blockstream.com/jade/",
+          "derivation": {
+            "bip44": false,
+            "bip49": true,
+            "bip84": true,
+            "bip48": true,
+            "bip86": false,
+            "brd": false,
+            "custom": "Single signer: Custom, Multisig: m/48'/0'/0'/1' + Custom"
+          },
+          "output_descriptor": "No",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": {
+            "docs": "https://help.blockstream.com/hc/en-us/articles/20272658303385-Air-gapped-Jade-Plus-setup",
+            "links": [
+              "https://help.blockstream.com/hc/en-us/articles/20272487890841-Supported-QR-code-types",
+              "https://help.blockstream.com/hc/en-us/articles/20270907312665-Verify-receive-addresses-with-an-air-gapped-Jade"
+            ],
+            "external_recovery_documented": true,
+            "text": "Jade Plus adds camera/SD workflows for air-gapped PSBTs, SeedQR, address verification, and multisig configuration handling."
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
+        },
+        {
+          "status": "😵✅🧐",
           "name": "CoboVault with BTC only firmware",
-          "url": "https://cobo.com/hardware-wallet/cobo-vault",
+          "url": "https://www.cobo.com/post/cobo-vault-offline-notice",
           "derivation": {
             "bip44": true,
             "bip49": false,
@@ -255,10 +333,14 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
-            "docs": "https://support.cobo.com/hc/en-us/articles/360046375373-Passphrase",
+            "docs": "https://www.cobo.com/post/cobo-vault-offline-notice",
             "integration_guide": "https://github.com/CoboVault/cobo-vault-docs/blob/master/Integration_guide.md",
-            "external_recovery_documented": true
-          }
+            "external_recovery_documented": true,
+            "archive": "https://support.keyst.one/miscellaneous/cv-companion-app",
+            "text": "Legacy Cobo Vault hardware business was shut down by Cobo on September 15, 2021; keep as historical recovery reference only."
+          },
+          "availability": "discontinued",
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅🧐",
@@ -277,15 +359,15 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
-            "docs": "https://www.ellipal.com/support",
+            "docs": "https://www.ellipal.com/pages/contact-us",
             "external_recovery_documented": true,
             "text": "Air-gapped design, 4-inch touchscreen"
           }
         },
         {
           "status": "✅😵",
-          "name": "ColdCard Mk1",
-          "url": "https://coldcardwallet.com/",
+          "name": "COLDCARD Mk1",
+          "url": "https://coldcard.com/",
           "derivation": {
             "bip44": true,
             "bip49": true,
@@ -299,14 +381,15 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
-            "docs": "https://coldcardwallet.com/docs/",
+            "docs": "https://coldcard.com/docs/",
             "external_recovery_documented": true
-          }
+          },
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅😵",
-          "name": "ColdCard Mk2",
-          "url": "https://coldcardwallet.com/",
+          "name": "COLDCARD Mk2",
+          "url": "https://coldcard.com/",
           "derivation": {
             "bip44": true,
             "bip49": false,
@@ -320,14 +403,15 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
-            "docs": "https://coldcardwallet.com/docs/",
+            "docs": "https://coldcard.com/docs/",
             "external_recovery_documented": true
-          }
+          },
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅",
-          "name": "ColdCard Mk3",
-          "url": "https://coldcardwallet.com/",
+          "name": "COLDCARD Mk3",
+          "url": "https://coldcard.com/",
           "derivation": {
             "bip44": true,
             "bip49": false,
@@ -341,14 +425,15 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
-            "docs": "https://coldcardwallet.com/docs/",
+            "docs": "https://coldcard.com/docs/",
             "external_recovery_documented": true
-          }
+          },
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅",
-          "name": "ColdCard Mk4",
-          "url": "https://coldcardwallet.com/",
+          "name": "COLDCARD Mk4",
+          "url": "https://coldcard.com/",
           "derivation": {
             "bip44": true,
             "bip49": false,
@@ -362,14 +447,25 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
-            "docs": "https://coldcardwallet.com/docs/",
-            "external_recovery_documented": true
-          }
+            "docs": "https://coldcard.com/docs/",
+            "external_recovery_documented": true,
+            "features": "https://coldcard.com/docs/learn/",
+            "links": [
+              "https://coldcard.com/docs/descriptor_export/",
+              "https://coldcard.com/docs/bip85",
+              "https://coldcard.com/docs/temporary-seeds/",
+              "https://coldcard.com/docs/coldcard-cosigning/",
+              "https://coldcard.com/docs/upgrade/"
+            ],
+            "text": "Descriptor export (BIP380), PSBT signing via microSD/NFC/USB virtual disk, BIP85 child seeds, Temporary Seed/Seed Vault recovery workflows, and COLDCARD Co-Signing spending policies."
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅",
-          "name": "ColdCard Q",
-          "url": "https://coldcardwallet.com/",
+          "name": "COLDCARD Q",
+          "url": "https://coldcard.com/",
           "derivation": {
             "bip44": true,
             "bip49": false,
@@ -383,9 +479,53 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
-            "docs": "https://coldcardwallet.com/docs/",
-            "external_recovery_documented": true
-          }
+            "docs": "https://coldcard.com/docs/",
+            "external_recovery_documented": true,
+            "features": "https://coldcard.com/docs/learn/",
+            "links": [
+              "https://coldcard.com/docs/descriptor_export/",
+              "https://coldcard.com/docs/bip85",
+              "https://coldcard.com/docs/temporary-seeds/",
+              "https://coldcard.com/docs/coldcard-cosigning/",
+              "https://coldcard.com/docs/upgrade/"
+            ],
+            "text": "Descriptor export (BIP380), PSBT signing via microSD/NFC/USB virtual disk, BIP85 child seeds, Temporary Seed/Seed Vault recovery workflows, and COLDCARD Co-Signing spending policies."
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
+        },
+        {
+          "status": "✅🧐",
+          "name": "COLDCARD Mk5",
+          "url": "https://coldcard.com/mk5",
+          "derivation": {
+            "bip44": true,
+            "bip49": false,
+            "bip84": true,
+            "bip48": true,
+            "bip86": true,
+            "brd": false,
+            "custom": "Custom"
+          },
+          "output_descriptor": "Yes",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": {
+            "docs": "https://coldcard.com/docs/coldcard-mk5",
+            "features": "https://coldcard.com/docs/learn/",
+            "links": [
+              "https://coldcard.com/docs/specs/",
+              "https://coldcard.com/docs/descriptor_export/",
+              "https://coldcard.com/docs/bip85",
+              "https://coldcard.com/docs/temporary-seeds/",
+              "https://coldcard.com/docs/coldcard-cosigning/",
+              "https://coldcard.com/docs/upgrade/"
+            ],
+            "external_recovery_documented": true,
+            "text": "Latest Mk-series COLDCARD; same firmware image/lineage as Mk4 with improved screen/keypad/NFC, relocated USB-C, descriptor export, PSBT transfer over microSD/NFC/USB virtual disk, BIP85, Temporary Seed/Seed Vault, and CCC policies."
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅👁⑂",
@@ -413,53 +553,11 @@
           }
         },
         {
-          "status": "✅👁⑂",
+          "status": "😵✅👁⑂",
           "name": "Ledger Nano S",
           "url": "https://ledger.com/",
           "derivation": {
-            "bip44": false,
-            "bip49": true,
-            "bip84": true,
-            "bip48": false,
-            "bip86": false,
-            "brd": false,
-            "custom": null
-          },
-          "output_descriptor": "No",
-          "bip39_pass": "Optional",
-          "bip174_psbt": "No",
-          "notes": {
-            "docs": "https://support.ledger.com/hc/en-us",
-            "external_recovery_documented": true
-          }
-        },
-        {
-          "status": "✅👁⑂",
-          "name": "Ledger Nano X",
-          "url": "https://ledger.com/",
-          "derivation": {
-            "bip44": false,
-            "bip49": true,
-            "bip84": true,
-            "bip48": false,
-            "bip86": false,
-            "brd": false,
-            "custom": null
-          },
-          "output_descriptor": "No",
-          "bip39_pass": "Optional",
-          "bip174_psbt": "No",
-          "notes": {
-            "docs": "https://support.ledger.com/hc/en-us",
-            "external_recovery_documented": true
-          }
-        },
-        {
-          "status": "✅🧐👁⑂",
-          "name": "Ledger Flex",
-          "url": "https://ledger.com/",
-          "derivation": {
-            "bip44": false,
+            "bip44": true,
             "bip49": true,
             "bip84": true,
             "bip48": true,
@@ -471,21 +569,168 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
-            "docs": "https://support.ledger.com/hc/en-us",
+            "docs": "https://www.ledger.com/the-ledger-nano-s-sunset-the-next-phase-in-our-web3-hardware-journey",
             "external_recovery_documented": true,
-            "text": "Premium model with large touchscreen"
-          }
+            "features": "https://www.ledger.com/coin/wallet/bitcoin",
+            "links": [
+              "https://www.ledger.com/blog/building-a-best-in-class-hardware-bitcoin-multisig",
+              "https://www.ledger.com/blog-musig2-ledger-bitcoin-app"
+            ],
+            "text": "Legacy/retired model; retain as historical recovery reference. Current Ledger Bitcoin app supports Legacy, Native SegWit, Taproot, multisig, and PSBT flows."
+          },
+          "availability": "discontinued",
+          "last_verified": "2026-06-02"
+        },
+        {
+          "status": "✅👁⑂",
+          "name": "Ledger Nano S Plus",
+          "url": "https://shop.ledger.com/products/ledger-nano-s-plus",
+          "derivation": {
+            "bip44": true,
+            "bip49": true,
+            "bip84": true,
+            "bip48": true,
+            "bip86": true,
+            "brd": false,
+            "custom": null
+          },
+          "output_descriptor": "No",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": {
+            "docs": "https://www.ledger.com/coin/wallet/bitcoin",
+            "features": "https://shop.ledger.com/products/ledger-nano-s-plus",
+            "links": [
+              "https://www.ledger.com/blog/building-a-best-in-class-hardware-bitcoin-multisig"
+            ],
+            "external_recovery_documented": true,
+            "text": "Current entry-tier Ledger signer; Ledger Bitcoin app supports Legacy, Native SegWit, Taproot, multisig, and PSBT flows."
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
+        },
+        {
+          "status": "✅👁⑂",
+          "name": "Ledger Nano X",
+          "url": "https://ledger.com/",
+          "derivation": {
+            "bip44": true,
+            "bip49": true,
+            "bip84": true,
+            "bip48": true,
+            "bip86": true,
+            "brd": false,
+            "custom": null
+          },
+          "output_descriptor": "No",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": {
+            "docs": "https://www.ledger.com/coin/wallet/bitcoin",
+            "external_recovery_documented": true,
+            "links": [
+              "https://www.ledger.com/blog/building-a-best-in-class-hardware-bitcoin-multisig",
+              "https://www.ledger.com/blog-musig2-ledger-bitcoin-app"
+            ],
+            "text": "Ledger Bitcoin app supports Legacy, Native SegWit, Taproot, multisig, and PSBT flows."
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
+        },
+        {
+          "status": "✅🧐👁⑂",
+          "name": "Ledger Flex",
+          "url": "https://ledger.com/",
+          "derivation": {
+            "bip44": true,
+            "bip49": true,
+            "bip84": true,
+            "bip48": true,
+            "bip86": true,
+            "brd": false,
+            "custom": null
+          },
+          "output_descriptor": "No",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": {
+            "docs": "https://www.ledger.com/coin/wallet/bitcoin",
+            "external_recovery_documented": true,
+            "text": "Ledger Bitcoin app supports Legacy, Native SegWit, Taproot, multisig, and PSBT flows.",
+            "links": [
+              "https://www.ledger.com/blog/building-a-best-in-class-hardware-bitcoin-multisig",
+              "https://www.ledger.com/blog-musig2-ledger-bitcoin-app"
+            ]
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
+        },
+        {
+          "status": "✅🧐👁⑂",
+          "name": "Ledger Stax",
+          "url": "https://shop.ledger.com/products/ledger-stax",
+          "derivation": {
+            "bip44": true,
+            "bip49": true,
+            "bip84": true,
+            "bip48": true,
+            "bip86": true,
+            "brd": false,
+            "custom": null
+          },
+          "output_descriptor": "No",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": {
+            "docs": "https://www.ledger.com/coin/wallet/bitcoin",
+            "features": "https://shop.ledger.com/products/ledger-stax",
+            "links": [
+              "https://www.ledger.com/blog-musig2-ledger-bitcoin-app"
+            ],
+            "external_recovery_documented": true,
+            "text": "Premium touchscreen Ledger signer; Ledger Bitcoin app supports Legacy, Native SegWit, Taproot, multisig, and PSBT flows."
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
+        },
+        {
+          "status": "✅🧐👁⑂",
+          "name": "Ledger Nano Gen5",
+          "url": "https://shop.ledger.com/products/ledger-nano-gen5",
+          "derivation": {
+            "bip44": true,
+            "bip49": true,
+            "bip84": true,
+            "bip48": true,
+            "bip86": true,
+            "brd": false,
+            "custom": null
+          },
+          "output_descriptor": "No",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": {
+            "docs": "https://www.ledger.com/coin/wallet/bitcoin",
+            "features": "https://shop.ledger.com/products/ledger-nano-gen5",
+            "links": [
+              "https://www.ledger.com/academy/topics/ledgersolutions/introducing-ledger-nano-gen5"
+            ],
+            "external_recovery_documented": true,
+            "text": "Newest Ledger Nano touchscreen signer; Ledger Bitcoin app supports Legacy, Native SegWit, Taproot, multisig, and PSBT flows."
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅🧐",
-          "name": "Passport",
-          "url": "https://foundationdevices.com",
+          "name": "Passport Core",
+          "url": "https://foundation.xyz/",
           "derivation": {
             "bip44": false,
             "bip49": false,
             "bip84": true,
             "bip48": true,
-            "bip86": false,
+            "bip86": true,
             "brd": false,
             "custom": "Post Mix: m/84'/0'/2147483646'"
           },
@@ -493,9 +738,44 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
-            "docs": "https://docs.foundationdevices.com",
-            "external_recovery_documented": true
-          }
+            "docs": "https://docs.foundation.xyz/backups/passport-core/",
+            "external_recovery_documented": true,
+            "features": "https://docs.foundation.xyz/passport/setup/",
+            "links": [
+              "https://docs.foundation.xyz/passport/setup/"
+            ],
+            "text": "Passport Core docs cover encrypted backups and BIP39 recovery; firmware v2.3.0 added full Taproot support."
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
+        },
+        {
+          "status": "✅🧐",
+          "name": "Passport Prime",
+          "url": "https://foundation.xyz/",
+          "derivation": {
+            "bip44": false,
+            "bip49": false,
+            "bip84": true,
+            "bip48": true,
+            "bip86": true,
+            "brd": false,
+            "custom": "Prime Magic Backups / restored BIP39-compatible wallets"
+          },
+          "output_descriptor": "No",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": {
+            "docs": "https://docs.foundation.xyz/backups/prime/",
+            "features": "https://docs.foundation.xyz/prime/setup/",
+            "links": [
+              "https://docs.foundation.xyz/prime-safety-handling-support"
+            ],
+            "external_recovery_documented": true,
+            "text": "Passport Prime uses Magic Backups with a 2-of-3 Shamir-style master key backup; can restore existing Passport Core encrypted backups and compatible wallet backups."
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅🧐🚸",
@@ -535,9 +815,11 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
-            "docs": "https://wiki.trezor.io",
+            "docs": "https://trezor.io/guides/backups-recovery/general-standards/how-to-use-a-wallet-backup",
             "external_recovery_documented": true
-          }
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅🚸👁",
@@ -556,9 +838,11 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
-            "docs": "https://wiki.trezor.io",
+            "docs": "https://trezor.io/guides/backups-recovery/general-standards/how-to-use-a-wallet-backup",
             "external_recovery_documented": true
-          }
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅🧐",
@@ -577,10 +861,12 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
-            "docs": "https://wiki.trezor.io",
+            "docs": "https://trezor.io/guides/backups-recovery/general-standards/how-to-use-a-wallet-backup",
             "external_recovery_documented": true,
             "text": "EAL6+ certification, Shamir backup support"
-          }
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅🧐",
@@ -599,10 +885,37 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
-            "docs": "https://wiki.trezor.io",
+            "docs": "https://trezor.io/guides/backups-recovery/general-standards/how-to-use-a-wallet-backup",
             "external_recovery_documented": true,
             "text": "1.54-inch touchscreen, Bitcoin-only version available"
-          }
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
+        },
+        {
+          "status": "✅🧐",
+          "name": "Trezor Safe 7",
+          "url": "https://trezor.io/trezor-safe-7",
+          "derivation": {
+            "bip44": true,
+            "bip49": true,
+            "bip84": true,
+            "bip48": true,
+            "bip86": true,
+            "brd": false,
+            "custom": null
+          },
+          "output_descriptor": "No",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "Yes",
+          "notes": {
+            "docs": "https://trezor.io/guides/trezor-devices/trezor-safe-7",
+            "features": "https://trezor.io/trezor-safe-7",
+            "external_recovery_documented": true,
+            "text": "Current Trezor flagship with 12-, 20-, and 24-word wallet backups plus advanced multi-share backup support."
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅🚸👁",
@@ -729,10 +1042,12 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
-            "docs": "https://tangem.com/en/support/",
+            "docs": "https://tangem.com/en/help-center/introduction-to-tangem-wallet/tangem-wallet-comparison/",
             "external_recovery_documented": true,
             "text": "Card-based design with NFC, optional seed phrase backup"
-          }
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅🧐",
@@ -751,10 +1066,12 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
-            "docs": "https://keyst.one/support",
+            "docs": "https://support.keyst.one/",
             "external_recovery_documented": true,
             "text": "Air-gapped QR code signing, 4-inch touchscreen"
-          }
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
         }
       ]
     },
@@ -784,7 +1101,7 @@
           }
         },
         {
-          "status": "☠",
+          "status": "☠️",
           "name": "Atomic Wallet",
           "url": "https://atomicwallet.io",
           "derivation": {
@@ -803,10 +1120,12 @@
           "notes": {
             "external_recovery_documented": false,
             "text": "Non-Standard derivation path for non-BTC coins, ."
-          }
+          },
+          "availability": "unknown",
+          "last_verified": "2026-06-02"
         },
         {
-          "status": "️⚠️",
+          "status": "⚠️",
           "name": "Bitcoin Core",
           "url": "https://bitcoin.org",
           "derivation": {
@@ -845,9 +1164,13 @@
           "bip174_psbt": "Yes",
           "notes": {
             "docs": "https://sparrowwallet.com/docs/",
-            "github": "https://github.com/sparrowwallet/sparrow",
-            "features": "Desktop wallet with multisig support, hardware wallet integration"
-          }
+            "features": "https://sparrowwallet.com/",
+            "links": [
+              "https://github.com/sparrowwallet/sparrow"
+            ],
+            "text": "Desktop wallet with multisig support, hardware wallet integration"
+          },
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅👁⑂",
@@ -869,10 +1192,13 @@
             "docs": "https://github.com/bitcoin-wallet/bitcoin-wallet/blob/master/wallet/README.recover.md",
             "external_recovery_documented": true,
             "text": "Archive: ./recovery-docs/bitcoinwallet-recovery.md"
-          }
+          },
+          "url": "https://github.com/bitcoin-wallet/bitcoin-wallet",
+          "availability": "current",
+          "last_verified": "2026-06-02"
         },
         {
-          "status": "️⚠️",
+          "status": "⚠️",
           "name": "Bisq",
           "url": "https://bisq.network/",
           "derivation": {
@@ -961,7 +1287,10 @@
               "https://github.com/greenaddress/garecovery"
             ],
             "text": "Apps: , Recovery tool for multisig:"
-          }
+          },
+          "output_descriptor": "No",
+          "availability": "current",
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅👁⑂",
@@ -981,20 +1310,22 @@
           "wif_support": "Yes",
           "bip174_psbt": "Yes",
           "notes": {
-            "docs": "http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet",
-            "archive": "https://web.archive.org/save/http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet",
+            "docs": "https://bluewallet.io/docs/backup-wallet/",
+            "archive": "https://web.archive.org/web/http://help.bluewallet.io/en/articles/2847190-how-to-backup-export-and-import-your-wallet",
             "features": "https://bluewallet.io/features/",
             "external_recovery_documented": true,
             "links": [
               "https://github.com/BlueWallet/BlueWallet/wiki/Supported-wallet-types"
             ],
             "text": "Docs 2:"
-          }
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
         },
         {
-          "status": "️⚠️👁⑂",
+          "status": "😵⚠️👁⑂",
           "name": "BRD (Bread Wallet)",
-          "url": "https://brd.com/",
+          "url": "https://github.com/breadwallet/breadwallet-ios",
           "derivation": {
             "bip44": false,
             "bip49": false,
@@ -1009,13 +1340,15 @@
           "wif_support": "Yes",
           "bip174_psbt": "No",
           "notes": {
-            "github_issue": "https://github.com/voisine/breadwallet-ios/issues/131",
+            "github_issue": "https://github.com/breadwallet/breadwallet-ios/issues/131",
             "links": [
               "https://archive.md/1knci",
               "https://www.reddit.com/r/Bitcoin/comments/6btevz/how_do_i_import_my_12_breadwallet_seed_words_into/"
             ],
-            "text": "archive of Bitcoin talk: , Reddit Post:"
-          }
+            "text": "Legacy Bread/BRD path reference; BRD was acquired by Coinbase and public product site is no longer reliable."
+          },
+          "availability": "discontinued",
+          "last_verified": "2026-06-02"
         },
         {
           "status": "⚠️👁⑂",
@@ -1104,10 +1437,17 @@
           "wif_support": "No",
           "bip174_psbt": "No",
           "notes": {
-            "docs": "https://docs.cakewallet.com/",
+            "docs": "https://docs.cakewallet.com/get-started/",
+            "features": "https://docs.cakewallet.com/cryptos/bitcoin/",
+            "links": [
+              "https://docs.cakewallet.com/get-started/setup/restore-existing-wallet",
+              "https://docs.cakewallet.com/features/advanced/seed-keys",
+              "https://docs.cakewallet.com/cupcake/getting-started"
+            ],
             "external_recovery_documented": true,
-            "text": "Non-custodial multi-currency wallet with built-in exchange, supports Bitcoin, Monero, Ethereum, Litecoin"
-          }
+            "text": "Official docs list Android, iOS, macOS, Linux, and Windows; Bitcoin defaults to BIP39 seed format with BIP84 path and also supports legacy Electrum seed restore plus multiple receive address types."
+          },
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅🧐",
@@ -1127,11 +1467,16 @@
           "wif_support": "Yes",
           "bip174_psbt": "Yes",
           "notes": {
-            "docs": "https://github.com/andreasgriffin/bitcoin-safe",
-            "github": "https://github.com/andreasgriffin/bitcoin-safe",
+            "docs": "https://bitcoin-safe.org/en/features/readme/",
+            "features": "https://bitcoin-safe.org/en/",
+            "links": [
+              "https://bitcoin-safe.org/en/knowledge/compact-block-filters/",
+              "https://github.com/andreasgriffin/bitcoin-safe"
+            ],
             "external_recovery_documented": true,
-            "text": "Secure Bitcoin savings wallet with multisig support, hardware wallet integration, and encrypted cloud backup"
-          }
+            "text": "Desktop Bitcoin savings wallet for hardware signers; supports current devices including COLDCARD Mk5/Q, Jade Plus, BitBox02 Nova, Trezor Safe 7, descriptors in backup PDFs, PSBT workflows, Electrum/Esplora, and Compact Block Filters."
+          },
+          "last_verified": "2026-06-02"
         }
       ]
     },
@@ -1305,9 +1650,9 @@
           }
         },
         {
-          "status": "✅🧐",
+          "status": "😵✅🧐",
           "name": "Mutiny Wallet",
-          "url": "https://mutinywallet.com/",
+          "url": "https://blog.mutinywallet.com/mutiny-wallet-is-shutting-down/",
           "derivation": {
             "bip44": false,
             "bip49": false,
@@ -1321,28 +1666,40 @@
           "passphrase": "No",
           "notes": {
             "docs": "https://github.com/MutinyWallet/mutiny-web/wiki/Recovery",
-            "external_recovery_documented": true
-          }
+            "external_recovery_documented": true,
+            "archive": "https://blog.mutinywallet.com/mutiny-wallet-is-shutting-down/",
+            "text": "Hosted Mutiny Wallet shut down at the end of 2024; keep as self-host/open-source recovery reference only."
+          },
+          "availability": "self-host-only",
+          "last_verified": "2026-06-02"
         },
         {
-          "status": "✅🧐",
+          "status": "✅⛔️",
           "name": "Zeus LN",
           "url": "https://zeusln.com/",
           "derivation": {
             "bip44": false,
             "bip49": false,
-            "bip84": false,
+            "bip84": true,
             "bip48": false,
             "bip86": true,
             "brd": false,
-            "custom": null
+            "custom": "LDK Node wallet seed; legacy Embedded LND aezeed"
           },
           "output_descriptor": "No",
           "passphrase": "No",
           "notes": {
-            "docs": "https://docs.zeusln.app/for-users/embedded-node/backup-and-recovery",
-            "external_recovery_documented": true
-          }
+            "docs": "https://zeusln.com/blog/new-release-zeus-v13-0-0/",
+            "features": "https://github.com/ZeusLN/zeus/releases",
+            "links": [
+              "https://github.com/ZeusLN/zeus",
+              "https://github.com/ZeusLN/zeus-docs"
+            ],
+            "external_recovery_documented": true,
+            "text": "v13 replaced the default embedded LND backend with LDK Node; LDK migration can restore channels from the 12-word seed, while legacy Embedded LND recovery/migration still has channel-state caveats."
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
         }
       ]
     },
@@ -1351,8 +1708,8 @@
       "wallets": [
         {
           "status": "✅",
-          "name": "BTCPay Server (Coldcard)",
-          "url": "https://coldcardwallet.com",
+          "name": "BTCPay Server (COLDCARD)",
+          "url": "https://coldcard.com",
           "derivation": {
             "bip44": true,
             "bip49": true,
@@ -1366,14 +1723,16 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
-            "docs": "https://docs.btcpayserver.org/getting-started/connectwallet/coldcardwallet#coldcard-wallet-setup",
+            "docs": "https://docs.btcpayserver.org/getting-started/connectwallet/coldcardwallet/",
             "external_recovery_documented": true
-          }
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
         },
         {
-          "status": "⚠️",
+          "status": "😵⚠️🧐⑂",
           "name": "Electrum (CoboVault)",
-          "url": "https://cobo.com/hardware-wallet/cobo-vault",
+          "url": "https://www.cobo.com/post/cobo-vault-offline-notice",
           "derivation": {
             "bip44": false,
             "bip49": true,
@@ -1387,14 +1746,18 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
-            "docs": "https://support.cobo.com/hc/en-us/articles/360046375373-Passphrase",
-            "external_recovery_documented": false
-          }
+            "docs": "https://www.cobo.com/post/cobo-vault-offline-notice",
+            "external_recovery_documented": false,
+            "archive": "https://support.keyst.one/miscellaneous/cv-companion-app",
+            "text": "Legacy Cobo Vault hardware business was shut down by Cobo on September 15, 2021; keep as historical recovery reference only."
+          },
+          "availability": "discontinued",
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅",
-          "name": "Electrum (Coldcard)",
-          "url": "https://coldcardwallet.com/",
+          "name": "Electrum (COLDCARD)",
+          "url": "https://coldcard.com",
           "derivation": {
             "bip44": true,
             "bip49": true,
@@ -1408,9 +1771,11 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
-            "docs": "https://coldcardwallet.com/docs/quick",
+            "docs": "https://coldcard.com/docs/quick/",
             "external_recovery_documented": true
-          }
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅",
@@ -1459,7 +1824,7 @@
         {
           "status": "✅",
           "name": "Electrum (Trezor One / Model T)",
-          "url": "https://trezor.com",
+          "url": "https://trezor.io",
           "derivation": {
             "bip44": true,
             "bip49": true,
@@ -1473,14 +1838,16 @@
           "bip39_pass": "Optional",
           "bip174_psbt": "No",
           "notes": {
-            "docs": "https://wiki.trezor.io",
+            "docs": "https://trezor.io/guides/third-party-wallet-apps/bitcoin-apps/electrum-and-trezor",
             "external_recovery_documented": true
-          }
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
         },
         {
           "status": "✅",
-          "name": "Wasabi (Coldcard)",
-          "url": "https://coldcardwallet.com",
+          "name": "Wasabi (COLDCARD)",
+          "url": "https://coldcard.com",
           "derivation": {
             "bip44": true,
             "bip49": true,
@@ -1496,7 +1863,9 @@
           "notes": {
             "docs": "https://docs.wasabiwallet.io/using-wasabi/ColdWasabi.html#connecting-coldcard-via-sd-card",
             "external_recovery_documented": true
-          }
+          },
+          "availability": "current",
+          "last_verified": "2026-06-02"
         }
       ]
     }

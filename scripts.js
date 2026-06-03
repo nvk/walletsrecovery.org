@@ -1,18 +1,5 @@
-// Debug direct click handler
 document.addEventListener('DOMContentLoaded', function() {
-  // Initialize dark mode
   initializeDarkMode();
-  
-  // Direct click handler for testing
-  document.body.addEventListener('click', function(e) {
-    if (e.target.matches('.wallet-path-tag')) {
-      console.log('Direct click on path tag:', {
-        element: e.target,
-        path: e.target.getAttribute('data-path'),
-        pathName: e.target.getAttribute('data-path-name')
-      });
-    }
-  });
 });
 
 // Dark mode functionality
@@ -124,10 +111,103 @@ function updateStatistics(walletsData) {
   document.getElementById('psbt-wallets').textContent = psbtWallets;
 }
 
+function getIconDefinitions(data) {
+  return (data.icons || []).map(icon => ({
+    ...icon,
+    text: icon.text || icon.icon
+  }));
+}
+
+function slugify(value) {
+  return String(value)
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function getWalletAnchorId(walletName) {
+  return `wallet-${slugify(walletName)}`;
+}
+
+function updateLastReviewed(walletsData) {
+  const lastReviewed = document.getElementById('last-reviewed');
+  if (!lastReviewed || !walletsData.metadata) return;
+
+  const reviewedDate = walletsData.metadata.last_reviewed || walletsData.metadata.last_updated;
+  if (!reviewedDate) return;
+
+  lastReviewed.textContent = `Data last reviewed ${reviewedDate}`;
+  lastReviewed.dateTime = reviewedDate;
+}
+
+function renderFeaturedWallets(walletsData) {
+  const featuredGrid = document.getElementById('featured-grid');
+  if (!featuredGrid) return;
+
+  const sections = [
+    {
+      title: '⚠️ Avoid / Legacy',
+      className: 'warning-card',
+      names: ['Arculus', 'BitKey', 'Atomic Wallet', 'Mutiny Wallet']
+    },
+    {
+      title: '🏆 Best Overall',
+      names: ['COLDCARD Mk5', 'COLDCARD Q', 'COLDCARD Mk4', 'Trezor Safe 7']
+    },
+    {
+      title: '🔧 PSBT + Signers',
+      names: ['COLDCARD Mk5', 'Jade Plus', 'SeedSigner', 'Passport Core']
+    },
+    {
+      title: '⚡ Lightning Recovery',
+      names: ['Zeus LN', 'Blixt (LND mobile node wallet)', 'LND (Lightning Network Daemon)', 'OBW (Open Bitcoin Wallet)']
+    },
+    {
+      title: '📱 Mobile Apps',
+      names: ['BlueWallet', 'Blockstream Green (GreenAddress)', 'CakeWallet', 'Cove Wallet']
+    },
+    {
+      title: '💻 Recovery Apps',
+      names: ['Sparrow Wallet', 'Bitcoin Safe', 'Bitcoin Core', 'Bitcoin Wallet app']
+    }
+  ];
+
+  const walletByName = new Map();
+  walletsData.categories.forEach(category => {
+    category.wallets.forEach(wallet => walletByName.set(wallet.name, wallet));
+  });
+
+  featuredGrid.innerHTML = '';
+
+  sections.forEach(section => {
+    const card = document.createElement('div');
+    card.className = `featured-card ${section.className || ''}`.trim();
+
+    const heading = document.createElement('h3');
+    heading.textContent = section.title;
+    card.appendChild(heading);
+
+    const list = document.createElement('div');
+    list.className = 'wallet-list';
+
+    section.names.forEach(name => {
+      const wallet = walletByName.get(name);
+      const link = document.createElement('a');
+      link.className = 'wallet-link';
+      link.href = wallet ? `#${getWalletAnchorId(wallet.name)}` : '#wallet-tables';
+      link.textContent = name;
+      list.appendChild(link);
+    });
+
+    card.appendChild(list);
+    featuredGrid.appendChild(card);
+  });
+}
+
 // Wallet data loading and rendering logic
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('Starting to fetch wallet data...');
-  
   // Initialize performance monitoring
   const startTime = performance.now();
   
@@ -208,10 +288,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const pathName = pathTag.getAttribute('data-path-name');
       
       // Get wallet name - find the wallet cell in the same row (more reliable than using column number)
-      let walletNameElem = pathTag.closest('tr').querySelector('td a');
+      let walletNameElem = pathTag.closest('tr').querySelector('.wallet-name-cell a, .wallet-name-cell span');
       const walletName = walletNameElem ? walletNameElem.textContent : 'Wallet';
-      
-      console.log("Path tag clicked:", { path, pathName, walletName });
       
       if (path && pathName) {
         showPathDetails(path, pathName, walletName);
@@ -228,17 +306,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <table class="modal-table">
     `;
     
-    // Get all icon definitions
-    const iconMappings = [
-      { icon: "😵", text: "X", meaning: "Discontinued and/or no longer maintained" },
-      { icon: "🚸", text: "!", meaning: "HW Physically unsafe with \"full secret\" (ie without BIP39 passphrase or multisig) against a automated attack and/or unsophisticated attacker (ie chipshouter blackbox)" },
-      { icon: "👁", text: "👁", meaning: "Privacy concerns (default is third party node)" },
-      { icon: "⑂", text: "⑂", meaning: "Validation concerns (default is third party node)" },
-      { icon: "☠️", text: "☠", meaning: "Not publicly available, or complex without a external tool available for the average user" },
-      { icon: "⚠️", text: "⚠", meaning: "Known, but unofficially documented" },
-      { icon: "✅", text: "✓", meaning: "Documented + Link to doc" },
-      { icon: "🧐", text: "🧐", meaning: "New project and/or team (less than 5 years since last Bitcoin halving - April 19, 2024)" }
-    ];
+    const iconMappings = getIconDefinitions(globalWalletsData || {});
     
     iconMappings.forEach(icon => {
       content += `
@@ -262,7 +330,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Use modern fetch with better error handling and caching
-  fetch('walletsrecovery.json?v=202501122200', {
+  fetch('walletsrecovery.json?v=202606022000', {
     cache: 'no-cache',
     headers: {
       'Accept': 'application/json',
@@ -280,11 +348,13 @@ document.addEventListener('DOMContentLoaded', function() {
       // Use requestAnimationFrame for smooth rendering
       requestAnimationFrame(() => {
         renderWalletData(walletsData);
+        renderFeaturedWallets(walletsData);
         updateStatistics(walletsData);
+        updateLastReviewed(walletsData);
         
-        // Log performance metrics
+        // Keep performance calculation available for debugging without noisy console output.
         const endTime = performance.now();
-        console.log(`Wallet data loaded and rendered in ${(endTime - startTime).toFixed(2)}ms`);
+        document.documentElement.dataset.renderMs = (endTime - startTime).toFixed(0);
       });
     })
     .catch(error => {
@@ -366,17 +436,7 @@ function renderWalletData(data) {
   // Clear any existing content
   container.innerHTML = '';
 
-  // Define icon mappings with short descriptive words in a more logical order
-  const iconMappings = [
-    { icon: "😵", text: "X", meaning: "Discontinued and/or no longer maintained" },
-    { icon: "🚸", text: "!", meaning: "HW Physically unsafe with \"full secret\" (ie without BIP39 passphrase or multisig) against a automated attack and/or unsophisticated attacker (ie chipshouter blackbox)" },
-    { icon: "👁", text: "👁", meaning: "Privacy concerns (default is third party node)" },
-    { icon: "⑂", text: "⑂", meaning: "Validation concerns (default is third party node)" },
-    { icon: "☠️", text: "☠", meaning: "Not publicly available, or complex without a external tool available for the average user" },
-    { icon: "⚠️", text: "⚠", meaning: "Known, but unofficially documented" },
-    { icon: "✅", text: "✓", meaning: "Documented + Link to doc" },
-    { icon: "🧐", text: "🧐", meaning: "New project and/or team (less than 5 years since last Bitcoin halving - April 19, 2024)" }
-  ];
+  const iconMappings = getIconDefinitions(data);
 
   // Add icon legend first (above tables)
   renderIconLegend(iconMappings, container);
@@ -467,7 +527,8 @@ function renderWalletData(data) {
       th.textContent = iconType.icon;
       
       // Add the meaning as an aria-label
-      th.setAttribute('aria-label', `${iconType.text}: ${iconType.meaning}`);
+      th.setAttribute('aria-label', iconType.meaning);
+      th.setAttribute('title', iconType.meaning);
       
       th.setAttribute('data-column', index);
       th.addEventListener('click', () => sortTable(table, index));
@@ -517,7 +578,12 @@ function renderWalletData(data) {
     
     // Add rows for each wallet in the category
     category.wallets.forEach(wallet => {
+      const walletStatus = wallet.status || '';
       const row = document.createElement('tr');
+      row.id = getWalletAnchorId(wallet.name);
+      row.setAttribute('data-wallet-name', wallet.name);
+      row.classList.toggle('wallet-discontinued', walletStatus.includes('😵'));
+      row.classList.toggle('wallet-warning', walletStatus.includes('⚠️') || walletStatus.includes('☠️') || walletStatus.includes('⛔️'));
       
       // Add a cell for each icon type
       iconMappings.forEach(iconType => {
@@ -526,7 +592,7 @@ function renderWalletData(data) {
         cell.style.textAlign = 'center';
         
         // Check if this wallet's status includes this icon
-        if (wallet.status.includes(iconType.icon)) {
+        if (walletStatus.includes(iconType.icon)) {
           cell.textContent = iconType.icon;
           cell.setAttribute('aria-label', iconType.meaning);
           cell.setAttribute('title', iconType.meaning);
@@ -545,11 +611,19 @@ function renderWalletData(data) {
       
       // Wallet name cell with link
       const nameCell = document.createElement('td');
-      const nameLink = document.createElement('a');
-      nameLink.href = wallet.url;
-      nameLink.textContent = wallet.name;
-      nameLink.target = '_blank';
-      nameCell.appendChild(nameLink);
+      nameCell.className = 'wallet-name-cell';
+      if (wallet.url) {
+        const nameLink = document.createElement('a');
+        nameLink.href = wallet.url;
+        nameLink.textContent = wallet.name;
+        nameLink.target = '_blank';
+        nameLink.rel = 'noopener';
+        nameCell.appendChild(nameLink);
+      } else {
+        const nameText = document.createElement('span');
+        nameText.textContent = wallet.name;
+        nameCell.appendChild(nameText);
+      }
       nameCell.style.fontWeight = '500';
       row.appendChild(nameCell);
       
@@ -822,14 +896,8 @@ function renderWalletData(data) {
     const debouncedSearch = debounce(() => {
       const activePathFilter = pathFiltersDiv.querySelector('.path-filter-btn.active');
       const pathType = activePathFilter ? activePathFilter.getAttribute('data-path') || 'all' : 'all';
-      
-      // First filter by text search
-      filterTable(table, searchInput.value.toLowerCase(), noResults);
-      
-      // Then apply path filtering if not "all"
-      if (pathType !== 'all') {
-        filterTableByPath(table, pathType, pathFiltersDiv, noResults);
-      }
+
+      filterTableByPath(table, pathType, pathFiltersDiv, noResults);
     }, 150);
     
     searchInput.addEventListener('input', debouncedSearch);
@@ -879,21 +947,30 @@ function filterTableByPath(table, pathType, filterContainer, noResultsElement) {
   const tbody = table.querySelector('tbody');
   const rows = tbody.querySelectorAll('tr');
   let visibleCount = 0;
+  const categorySection = table.closest('.wallet-category');
+  const searchInput = categorySection ? categorySection.querySelector('.search-input') : null;
+  const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
   
   rows.forEach(row => {
+    const rowText = row.textContent.toLowerCase();
+    const matchesSearch = !searchTerm || rowText.includes(searchTerm);
+
     // If showing all, make all rows visible
     if (pathType === 'all') {
-      row.style.display = '';
-      visibleCount++;
+      row.style.display = matchesSearch ? '' : 'none';
+      if (matchesSearch) visibleCount++;
       return;
     }
     
-    // Get the wallet object for this row
-    const walletName = row.querySelector('td:nth-child(2) a').textContent;
+    // Get the wallet object for this row. Wallet is after the dynamic status
+    // columns, so use the explicit data attribute instead of nth-child.
+    const walletName = row.getAttribute('data-wallet-name') ||
+      row.querySelector('.wallet-name-cell a, .wallet-name-cell span')?.textContent ||
+      '';
     const category = table.getAttribute('data-category');
     const wallet = findWalletInData(walletName, category);
     
-    if (wallet && wallet.derivation && wallet.derivation[pathType]) {
+    if (matchesSearch && wallet && wallet.derivation && wallet.derivation[pathType]) {
       row.style.display = '';
       visibleCount++;
     } else {
@@ -907,8 +984,7 @@ function filterTableByPath(table, pathType, filterContainer, noResultsElement) {
   }
   
   // Update wallet count
-  const categorySection = table.closest('.wallet-category');
-  const walletCountElem = categorySection.querySelector('.wallet-count');
+  const walletCountElem = categorySection ? categorySection.querySelector('.wallet-count') : null;
   if (walletCountElem) {
     const totalWallets = rows.length;
     if (visibleCount === totalWallets) {
@@ -936,6 +1012,8 @@ function sortTable(table, columnIndex) {
   const tbody = table.querySelector('tbody');
   const rows = Array.from(tbody.querySelectorAll('tr'));
   const header = thead.querySelector(`th[data-column="${columnIndex}"]`);
+  const walletColumnIndex = thead.querySelectorAll('th.status-header').length;
+  if (!header) return;
   
   // Toggle sort direction
   const isAscending = !header.classList.contains('sort-asc');
@@ -963,10 +1041,10 @@ function sortTable(table, columnIndex) {
         : valueB.localeCompare(valueA);
     }
     
-    // For wallet name (second column), use the text of the link
-    if (columnIndex === 1) {
-      valueA = cellA.querySelector('a').textContent.trim();
-      valueB = cellB.querySelector('a').textContent.trim();
+    // For wallet name, use the text of the link/span after status columns.
+    if (columnIndex === walletColumnIndex) {
+      valueA = (cellA.querySelector('a, span') || cellA).textContent.trim();
+      valueB = (cellB.querySelector('a, span') || cellB).textContent.trim();
     }
     
     // Compare as numbers if both values are numeric
