@@ -1,0 +1,24 @@
+name: Link check
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 10 1 * *'
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate JSON
+        run: python3 -m json.tool walletsrecovery.json >/dev/null
+      - name: Check JavaScript syntax
+        run: node --check scripts.js
+      - name: Check links
+        run: python3 tools/link_check.py --allow-blocked

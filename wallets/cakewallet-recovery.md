@@ -1,66 +1,58 @@
 ---
 title: CakeWallet Recovery
+reviewed: 2026-06-02
 ---
 
 ## Description
 
-CakeWallet is a non-custodial, open-source cryptocurrency wallet that supports multiple cryptocurrencies including Bitcoin, Monero, Ethereum, Litecoin, and Haven. Launched in 2018, it has gained trust from over 500,000 users worldwide. The wallet emphasizes privacy, user control, and provides built-in exchange functionality.
+Cake Wallet is a non-custodial, open-source multi-currency wallet. Current official docs list Android, iOS, macOS, Linux, and Windows installation paths.
 
-## History
+## Current Status
 
-- **2018**: CakeWallet launched as a mobile wallet
-- **August 2022**: Introduced Cake Pay for gift card purchases
-- **February 2023**: Expanded to desktop platforms (Apple Silicon Macs)
-- **Current**: Supports multiple cryptocurrencies with hardware wallet integration via Cupcake
-
-## Special Features
-
-- **Multi-currency support**: Bitcoin, Monero, Ethereum, Litecoin, Haven
-- **Built-in exchange**: Seamless cryptocurrency exchanges without limits
-- **Cake Pay**: Purchase gift cards with crypto at 150,000+ US locations
-- **Cupcake integration**: Transform old phones into hardware wallets
-- **Desktop support**: Available on macOS (Apple Silicon), with Linux and Windows planned
-- **Background synchronization**: Automatic wallet sync
-- **Multiple wallets**: Support for multiple accounts and wallets
+- **Platforms:** Android, iOS, macOS, Linux, Windows.
+- **Bitcoin seed format:** official Bitcoin docs say Cake Wallet generates BIP39 seeds by default and can restore legacy Electrum-style seed phrases when needed.
+- **Bitcoin address support:** docs list SegWit, Taproot, SegWit-compatible, Legacy, Silent Payments, and other Bitcoin receive address types.
+- **Cupcake:** Cake-family app focused on turning old phones into offline security devices; official docs currently list Bitcoin and Monero support.
 
 ## Recovery Information
 
-### Supported Derivation Paths
-- **BIP44**: `m/44'/0'/0'` (Legacy P2PKH)
-- **BIP49**: `m/49'/0'/0'` (SegWit P2SH-P2WPKH) 
-- **BIP84**: `m/84'/0'/0'` (Native SegWit P2WPKH)
+### Bitcoin Recovery Basics
 
-### Recovery Process
-1. **Seed Phrase Recovery**: CakeWallet uses standard BIP39 seed phrases
-2. **Passphrase Support**: Optional BIP39 passphrase support
-3. **Cross-platform Recovery**: Seeds can be recovered on any compatible wallet
-4. **Hardware Wallet Integration**: Seeds can be imported into hardware wallets via Cupcake
+1. Install Cake Wallet from an official source.
+2. Choose **Restore existing wallet**.
+3. Select the wallet type/asset you are restoring.
+4. Enter the seed phrase or keys exactly as backed up.
+5. Use the correct seed type and restore date/blockheight where the asset requires it.
+6. Let the wallet finish synchronization before assuming funds are missing.
+
+### Bitcoin Derivation Notes
+
+Cake's Bitcoin docs currently state:
+
+- **BIP39 default:** `m/84'/0'/0`
+- **Legacy Electrum-style restore:** `m/0'`
+
+Because Cake supports multiple Bitcoin address types, users recovering outside Cake should verify the exact script/address type used by the original wallet before concluding funds are absent.
 
 ### External Recovery Tools
-- **Electrum**: Can import CakeWallet seeds using standard BIP39 recovery
-- **Sparrow Wallet**: Compatible with CakeWallet derivation paths
-- **BlueWallet**: Supports same derivation paths for Bitcoin recovery
-- **Hardware Wallets**: Seeds can be imported into Ledger, Trezor, Coldcard, etc.
 
-### Recovery Steps
-1. Open CakeWallet app
-2. Select "Restore Wallet" or "Import Wallet"
-3. Enter your 12 or 24-word seed phrase
-4. Optionally enter BIP39 passphrase if used
-5. Select derivation path (BIP44, BIP49, or BIP84)
-6. Wait for blockchain synchronization
+For Bitcoin-only recovery, try descriptor/path-aware wallets such as Sparrow, Electrum, BlueWallet, or Bitcoin Core. Confirm the seed type, address type, and derivation path before sweeping or moving funds.
 
-### Important Notes
-- CakeWallet is non-custodial - you control your private keys
-- Seeds are generated locally on your device
-- Always verify seed phrase accuracy before confirming
-- Test recovery process with small amounts first
-- Keep seed phrases secure and offline
+## Important Notes
+
+- Cake Wallet is non-custodial; seed/key backups are the recovery authority.
+- Different assets in Cake can use different seed/key formats and restore parameters.
+- Never share seed phrases or keys with support accounts, recovery services, or strangers.
+- Test any migration or external restore with a small amount first.
 
 ## Security Events
 
-No major security incidents reported as of 2025. CakeWallet maintains a strong security track record with:
-- Open-source code for transparency
-- Non-custodial architecture
-- Local key generation and storage
-- Regular security audits and updates
+No major public wallet-level recovery incident was found during the 2026-06-02 review. Users should still verify downloads, keep offline seed backups, and consult official docs for asset-specific restore steps.
+
+## Sources
+
+- https://docs.cakewallet.com/get-started/
+- https://docs.cakewallet.com/cryptos/bitcoin/
+- https://docs.cakewallet.com/get-started/setup/restore-existing-wallet
+- https://docs.cakewallet.com/features/advanced/seed-keys
+- https://docs.cakewallet.com/cupcake/getting-started

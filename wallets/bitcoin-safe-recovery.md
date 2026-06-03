@@ -1,93 +1,57 @@
 ---
 title: Bitcoin Safe Recovery
+reviewed: 2026-06-02
 ---
 
 ## Description
 
-Bitcoin Safe is a secure Bitcoin savings wallet designed for family use, emphasizing security and ease of use. Developed by Andreas Griffin, it provides comprehensive multisig wallet setup with step-by-step instructions and supports various hardware wallets. The wallet focuses on Bitcoin-only functionality with advanced features like encrypted cloud backup and label synchronization.
+Bitcoin Safe is an open-source desktop Bitcoin savings wallet by Andreas Griffin for Windows, macOS, and Linux. It is focused on singlesig and multisig cold-storage management with hardware signers rather than software-held mainnet seeds.
 
-## History
+## Current Status
 
-- **Development**: Active development by Andreas Griffin
-- **Platform Support**: Available on Windows, macOS, and Linux
-- **Multisig Focus**: Specialized in secure multisignature wallet setup
-- **Hardware Integration**: Extensive hardware wallet support
-- **Language Support**: Multi-language interface including English, Chinese, Spanish, Japanese, Russian, Portuguese, Hindi, Arabic, Italian, French, German, and more
-
-## Special Features
-
-- **Easy Multisig Setup**: Step-by-step instructions for secure multisignature wallets
-- **Hardware Wallet Support**: Compatible with Coldcard, Bitbox02, Trezor, Ledger, Jade, and others
-- **PDF Backup Sheets**: Automated generation of backup documentation
-- **Multi-language Support**: Available in 15+ languages
-- **Transaction Management**: 
-  - Transaction flow diagrams
-  - Automatic coin selection within categories
-  - One-click fee selection via mempool-blocks
-- **Synchronization Features**:
-  - Encrypted cloud backup via Nostr
-  - Label synchronization between devices
-  - Wallet chat and PSBT sharing
-- **Advanced Features**:
-  - Output descriptor support
-  - PSBT (Partially Signed Bitcoin Transaction) support
-  - WIF (Wallet Import Format) support
-  - Electrum server syncing
-  - Planned Compact Block Filters for Bitcoin Safe 2.0
+- **Platforms:** Windows, macOS, Linux.
+- **Signer model:** hardware signers required for safe seed storage on mainnet.
+- **Current hardware coverage:** official materials list COLDCARD Mk4, COLDCARD Mk5, COLDCARD Q, BitBox02 / BitBox02 Nova, Foundation Passport, Jade / Jade Plus, Keystone, Krux, Ledger Nano models, SeedSigner, Specter DIY, and Trezor Safe models.
+- **Sync options:** Electrum/Esplora servers and Compact Block Filters.
+- **Interoperability:** descriptors, PSBT import/export/sharing, QR/USB/SD-card signer workflows, and BIP329 label import/export.
 
 ## Recovery Information
 
-### Supported Derivation Paths
-- **BIP44**: `m/44'/0'/0'` (Legacy P2PKH)
-- **BIP49**: `m/49'/0'/0'` (SegWit P2SH-P2WPKH)
-- **BIP84**: `m/84'/0'/0'` (Native SegWit P2WPKH)
-- **BIP48**: `m/48'/0'/0'/2'` (Multisig)
-- **BIP86**: `m/86'/0'/0'` (Taproot P2TR)
+### Recovery Materials to Preserve
 
-### Recovery Process
-1. **Seed Phrase Recovery**: Standard BIP39 seed phrase support
-2. **Passphrase Support**: Optional BIP39 passphrase
-3. **Multisig Recovery**: Support for multisignature wallet recovery
-4. **Hardware Wallet Integration**: Seeds can be imported into supported hardware wallets
-5. **Output Descriptor Recovery**: Advanced recovery using output descriptors
+1. Every signer seed backup and passphrase, if used.
+2. The Bitcoin Safe backup PDF, especially the wallet descriptor and cosigner details.
+3. Labels/metadata backups if you rely on them for UTXO categories.
+4. For multisig wallets: all cosigner xpubs, script policy, quorum, derivation paths, and address type.
 
-### External Recovery Tools
-- **Electrum**: Compatible with Bitcoin Safe derivation paths
-- **Sparrow Wallet**: Full compatibility including multisig support
-- **BlueWallet**: Supports same derivation paths
-- **Hardware Wallets**: Direct integration with supported hardware wallets
-- **Bitcoin Core**: Can import via output descriptors
+### Supported Recovery Patterns
 
-### Recovery Steps
-1. Launch Bitcoin Safe application
-2. Select "Restore Wallet" or "Import Wallet"
-3. Choose wallet type (single-sig or multisig)
-4. Enter seed phrase(s) for multisig wallets
-5. Select derivation path
-6. Optionally enter BIP39 passphrase
-7. Configure hardware wallet integration if needed
-8. Wait for blockchain synchronization
+- **Output descriptors:** backup PDFs include descriptor data; descriptors can be imported into descriptor-aware tools such as Bitcoin Core or Sparrow.
+- **PSBT workflows:** transactions can be moved between participants/signers with PSBT files, QR, USB, SD card, and collaboration plugins.
+- **Hardware-wallet recovery:** if a signer fails, restore that signer's seed/passphrase on compatible replacement hardware, then re-open the saved descriptor/policy in Bitcoin Safe or another compatible coordinator.
+- **Blockchain scanning:** use Electrum/Esplora for faster setup or Compact Block Filters for improved privacy.
 
-### Multisig Recovery
-1. **Gather Signatures**: Collect required number of signatures
-2. **Hardware Integration**: Connect supported hardware wallets
-3. **PSBT Handling**: Use PSBT for secure transaction signing
-4. **Backup Verification**: Verify PDF backup sheets
-5. **Test Recovery**: Test with small amounts first
+### Common Derivation Paths
 
-### Important Notes
-- Bitcoin Safe is designed for Bitcoin-only use
-- No seed generation on mainnet (security feature)
-- Requires separate hardware signer for seed storage
-- Update notifications and signature verification included
-- Powered by Bitcoin Development Kit (BDK)
-- Compact Block Filters planned for version 2.0
+Bitcoin Safe coordinates hardware signers, so the exact path depends on the signer and wallet policy. Common paths include:
+
+- **BIP84 singlesig:** `m/84'/0'/0'`
+- **BIP48 multisig:** `m/48'/0'/0'/2'`
+- **BIP86 Taproot:** `m/86'/0'/0'` when supported by the signer/policy
+
+## Important Notes
+
+- Do not treat the Bitcoin Safe app data alone as a recovery backup. Keep signer seeds/passphrases and wallet descriptors separately.
+- For multisig, a seed phrase without the multisig descriptor/policy may not be enough to locate funds quickly.
+- Test recovery with a small amount before relying on a new multisig setup.
 
 ## Security Events
 
-No major security incidents reported. Bitcoin Safe maintains strong security practices:
-- No seed generation on mainnet
-- Hardware wallet integration for secure key storage
-- Encrypted cloud backup via Nostr
-- Signature verification for updates
-- Open-source development with community oversight
+No major public wallet-level recovery incident was found during the 2026-06-02 review. Continue to verify releases, keep descriptor backups, and confirm addresses on the hardware signer.
+
+## Sources
+
+- https://bitcoin-safe.org/en/
+- https://bitcoin-safe.org/en/features/readme/
+- https://bitcoin-safe.org/en/knowledge/compact-block-filters/
+- https://github.com/andreasgriffin/bitcoin-safe

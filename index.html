@@ -34,7 +34,7 @@
   }
   </script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="styles.css?v=202501121500">
+  <link rel="stylesheet" href="styles.css?v=202606022000">
   <link rel="icon" href="images/wr-logo-01.svg" type="image/svg+xml">
 </head>
 <body>
@@ -91,7 +91,8 @@
     <div class="hero">
       <img src="images/wr-logo-01.svg" alt="Wallets Recovery Logo" class="hero-logo">
       <h1>Wallets Recovery</h1>
-      <p>A comprehensive guide to Bitcoin and cryptocurrency wallet recovery methods, derivation paths, and compatibility tables for securely regaining access to your digital assets</p>
+      <p>A maintained guide to Bitcoin wallet recovery methods, derivation paths, output descriptors, PSBT support, and external recovery documentation across current and legacy wallets.</p>
+      <time id="last-reviewed" class="last-reviewed" datetime="">Loading wallet data…</time>
       <a href="#wallet-tables" class="hero-btn">
         Explore Bitcoin Wallet Recovery Tables
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -138,54 +139,9 @@
     <!-- Featured Wallets Section -->
     <section class="featured-wallets">
       <h2>Quick Access: Top Recovery-Friendly Wallets</h2>
-      <div class="featured-grid">
-        <div class="featured-card warning-card">
-          <h3>⚠️ Avoid for Recovery</h3>
-          <div class="wallet-list">
-            <a href="#wallet-tables" class="wallet-link">Arculus</a>
-            <a href="#wallet-tables" class="wallet-link">BitKey</a>
-            <a href="#wallet-tables" class="wallet-link">Atomic Wallet</a>
-          </div>
-        </div>
+      <div class="featured-grid" id="featured-grid" aria-live="polite">
         <div class="featured-card">
-          <h3>🏆 Best Overall</h3>
-          <div class="wallet-list">
-            <a href="#wallet-tables" class="wallet-link">ColdCard Series</a>
-            <a href="#wallet-tables" class="wallet-link">Trezor Model T</a>
-            <a href="#wallet-tables" class="wallet-link">Ledger Nano X</a>
-          </div>
-        </div>
-        <div class="featured-card">
-          <h3>🔧 PSBT Support</h3>
-          <div class="wallet-list">
-            <a href="#wallet-tables" class="wallet-link">ColdCard Series</a>
-            <a href="#wallet-tables" class="wallet-link">Jade</a>
-            <a href="#wallet-tables" class="wallet-link">SeedSigner</a>
-          </div>
-        </div>
-        <div class="featured-card">
-          <h3>⚡ Lightning Ready</h3>
-          <div class="wallet-list">
-            <a href="#wallet-tables" class="wallet-link">Mutiny Wallet</a>
-            <a href="#wallet-tables" class="wallet-link">Zeus LN</a>
-            <a href="#wallet-tables" class="wallet-link">Blixt</a>
-          </div>
-        </div>
-        <div class="featured-card">
-          <h3>📱 Mobile Apps</h3>
-          <div class="wallet-list">
-            <a href="#wallet-tables" class="wallet-link">BlueWallet</a>
-            <a href="#wallet-tables" class="wallet-link">Blockstream Green</a>
-            <a href="#wallet-tables" class="wallet-link">Cove Wallet</a>
-          </div>
-        </div>
-        <div class="featured-card">
-          <h3>💻 Best Overall Apps</h3>
-          <div class="wallet-list">
-            <a href="#wallet-tables" class="wallet-link">Electrum</a>
-            <a href="#wallet-tables" class="wallet-link">Sparrow Wallet</a>
-            <a href="#wallet-tables" class="wallet-link">Wasabi Wallet</a>
-          </div>
+          <h3>Loading wallet highlights…</h3>
         </div>
       </div>
     </section>
@@ -294,9 +250,9 @@
 
         <div class="info-box">
           <h3>🧐 New Team Specification</h3>
-          <p><strong>Definition:</strong> A "New Team" is defined as any project or team that has been operating for less than 5 years since the most recent Bitcoin halving (April 19, 2024). This means teams established after April 19, 2029, will be considered "new" and marked with the 🧐 icon.</p>
-          <p><strong>Rationale:</strong> Bitcoin halvings occur approximately every 4 years, and adding one year provides a 5-year stability benchmark. This helps users identify teams that may lack the long-term track record and experience needed for reliable wallet development and support.</p>
-          <p><strong>Current Threshold:</strong> As of 2025, teams established after April 19, 2019, are considered established. Teams formed between April 19, 2019, and April 19, 2029, are marked as "new teams" with the 🧐 warning icon.</p>
+          <p><strong>Definition:</strong> A "New Team" or newer product is marked when it has less than five years of public operating history at the time the entry was reviewed.</p>
+          <p><strong>Rationale:</strong> A five-year public track record is a simple maintenance heuristic. It does not make an older wallet safe or a newer wallet unsafe, but it flags entries that should be rechecked more often.</p>
+          <p><strong>Current Threshold:</strong> As of the current review date, entries with less than five years of public operating history are marked with 🧐.</p>
         </div>
 
         <p>While great advances have been made in Bitcoin wallet interoperability and cryptocurrency recovery methods, developers across the industry continue to build wallets that either:</p>
@@ -331,7 +287,7 @@
         <h2>Bitcoin Wallet Types for Recovery</h2>
         
         <ul>
-          <li><h3>Paper Wallets</h3> are not actually wallets, but rather private keys and addresses printed out on paper. While the keys and addresses can technically be generated non-deterministically or deterministically, the usability is basically the same or poorer than a non-deterministic software wallet. Paper wallets have a number of significant drawbacks, including encouraging address reuse, exposing keys to poorly secured networked devices (printer), and not handling change addresses. Paper wallets should not be confused with <a href="https://wiki.trezor.io/Recovery_seed">recovery seeds</a>.</li>
+          <li><h3>Paper Wallets</h3> are not actually wallets, but rather private keys and addresses printed out on paper. While the keys and addresses can technically be generated non-deterministically or deterministically, the usability is basically the same or poorer than a non-deterministic software wallet. Paper wallets have a number of significant drawbacks, including encouraging address reuse, exposing keys to poorly secured networked devices (printer), and not handling change addresses. Paper wallets should not be confused with <a href="https://trezor.io/guides/backups-recovery/general-standards/how-to-use-a-wallet-backup">recovery seeds</a>.</li>
           <li><h3>Non-deterministic Wallets</h3> randomly generate all private / public key pairs independent of each other. A <a href="https://en.bitcoin.it/wiki/Key_pool">keypool buffer</a> was added to the Bitcoin-Qt / Bitcoin Core wallet in <a href="https://bitcointalk.org/index.php?topic=1414.0">October</a> <a href="https://bitcointalk.org/index.php?topic=1528.0">2010</a>, which allowed the wallet to create a collection of unused addresses, rather than generating new addresses one by one upon use. While this feature allowed for less frequent backups than before, the non-determinism still carried the risk of key loss if the pool was exhausted and a new key was generated beyond what was saved in backup.</li>
           <li><h3>Deterministic Wallets</h3> are essentially any wallet where "<a href="https://bitcointalk.org/index.php?topic=19137.msg239768#msg239768">you can backup once... because all future addresses are determined in advance</a>," which was a massive improvement in recoverability. There are <a href="https://bitcoin.stackexchange.com/questions/18102/does-a-wallet-containing-multiple-addresses-have-a-single-private-key">two different forms</a>:
             <ul>
@@ -364,7 +320,7 @@
         
         <p>Another point of confusion may occur when wallets use the same derivation path for different script types. Especially if you are using any newer / more novel script types, wallets that have earmarked those paths for other scripts may cause errors during import. Example with Bread Wallet and Multibit mentioned <a href="https://github.com/spesmilo/electrum/issues/6155#issuecomment-626811245">here</a>.</p>
         
-        <p>The meaning of "public" / unhardened versus hardened derivation, indicated in the fields by apostrophes, is explained <a href="https://wiki.trezor.io/Hardened_and_non-hardened_derivation">here</a>, <a href="https://medium.com/@sevcsik/working-with-bitcoin-hd-wallets-ii-deriving-public-keys-c48341629388">here</a>, and <a href="https://bitcoin.stackexchange.com/questions/62533/key-derivation-in-hd-wallets-using-the-extended-private-key-vs-hardened-derivati?rq=1">here</a>.</p>
+        <p>The meaning of "public" / unhardened versus hardened derivation, indicated in the fields by apostrophes, is explained <a href="https://trezor.io/learn/advanced/standards-proposals/what-is-bip-32-how-hierarchical-deterministic-wallets-work">here</a>, <a href="https://medium.com/@sevcsik/working-with-bitcoin-hd-wallets-ii-deriving-public-keys-c48341629388">here</a>, and <a href="https://bitcoin.stackexchange.com/questions/62533/key-derivation-in-hd-wallets-using-the-extended-private-key-vs-hardened-derivati?rq=1">here</a>.</p>
       </section>
 
       <section id="output-descriptors">
@@ -428,7 +384,7 @@
           <p><strong>Important:</strong> When recovering funds using output descriptors, ensure you have all the required private keys and understand the spending conditions. Some descriptors may require specific hardware or software to spend from.</p>
         </div>
         
-        <p>For more detailed information about output descriptors, see <a href="https://github.com/bitcoin/bips/blob/master/bip-0380.mediawiki">BIP380</a> and the <a href="https://bitcoinops.org/en/topics/output-descriptors/">Bitcoin Optech Output Descriptors guide</a>.</p>
+        <p>For more detailed information about output descriptors, see <a href="https://github.com/bitcoin/bips/blob/master/bip-0380.mediawiki">BIP380</a> and the <a href="https://bitcoinops.org/en/topics/output-script-descriptors/">Bitcoin Optech Output Descriptors guide</a>.</p>
       </section>
 
       <section id="faq">
@@ -486,7 +442,7 @@ $ grip
           <li>"Bitcoin Information and Resources" by Jameson Lopp <a href="https://www.lopp.net/bitcoin-information.html">↗︎</a></li>
           <li>WeUseCoins FAQ <a href="https://www.weusecoins.com/">↗︎</a></li>
           <li>"What types of mnemonic seeds are used in Bitcoin?" by Coldbit <a href="https://coldbit.com/what-types-of-mnemonic-seeds-are-used-in-bitcoin/">↗︎</a></li>
-          <li>"FAQ Regarding Bitcoin Seeds" by 6102bitcoin <a href="https://github.com/6102bitcoin/6102bitcoin/blob/main/content/faq-bitcoin-seed.md">↗︎</a></li>
+          <li>"FAQ Regarding Bitcoin Seeds" by 6102bitcoin <a href="https://coinexplorers.com/insights/bitcoin-seed-faq-bpsjbi">↗︎</a></li>
           <li>"How BIP39 Seed Words Work" by jimbocoin <a href="https://observablehq.com/@jimbojw/grokking-bip39">↗︎</a></li>
         </ul>
 
@@ -505,6 +461,6 @@ $ grip
     </div>
   </footer>
 
-  <script src="scripts.js?v=202501121500"></script>
+  <script src="scripts.js?v=202606022000"></script>
 </body>
 </html> 
