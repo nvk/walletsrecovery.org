@@ -1489,23 +1489,25 @@
             "bip48": true,
             "bip86": false,
             "brd": false,
-            "custom": null
+            "custom": "Descriptor-based Miniscript P2WSH policies using m/48'/0'/0'/2' key origins; descriptor backup required."
           },
           "output_descriptor": "Yes",
           "bip39_pass": "No",
           "wif_support": "No",
           "bip174_psbt": "Yes",
           "notes": {
-            "docs": "https://lianawallet.com/resources/",
-            "features": "https://lianawallet.com/community/",
+            "docs": "https://lianawallet.com/resources/guides/recovering-your-wallet/",
+            "features": "https://lianawallet.com/",
             "external_recovery_documented": true,
             "links": [
               "https://github.com/wizardsardine/liana",
-              "https://github.com/wizardsardine/liana/tree/master/doc",
-              "https://lianawallet.com/resources/guides/recovering-your-wallet/"
+              "https://github.com/wizardsardine/liana/blob/master/doc/RECOVER.md",
+              "https://github.com/wizardsardine/liana/blob/master/doc/USAGE.md"
             ],
-            "text": "Open-source desktop Bitcoin wallet management software by Wizardsardine, built on Miniscript and on-chain timelocks, letting you design advanced, fully customizable security strategies where a primary path handles day-to-day spending while one or more timelocked recovery paths unlock the funds for recovery or inheritance."
-          }
+            "text": "Descriptor-based desktop Bitcoin wallet by Wizardsardine using Miniscript and on-chain timelocks. Recovery requires the Liana wallet descriptor plus the relevant signing device or seed; seed words alone are insufficient. External recovery is documented through Bitcoin Core descriptor import and sweep instructions."
+          },
+          "availability": "current",
+          "last_verified": "2026-06-09"
         }
       ]
     },
