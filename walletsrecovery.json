@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "1.0",
-    "last_updated": "2026-06-02",
+    "last_updated": "2026-06-09",
     "last_reviewed": "2026-06-02"
   },
   "icons": [
@@ -1477,6 +1477,35 @@
             "text": "Desktop Bitcoin savings wallet for hardware signers; supports current devices including COLDCARD Mk5/Q, Jade Plus, BitBox02 Nova, Trezor Safe 7, descriptors in backup PDFs, PSBT workflows, Electrum/Esplora, and Compact Block Filters."
           },
           "last_verified": "2026-06-02"
+        },
+        {
+          "status": "✅🧐",
+          "name": "Liana",
+          "url": "https://lianawallet.com/",
+          "derivation": {
+            "bip44": false,
+            "bip49": false,
+            "bip84": false,
+            "bip48": true,
+            "bip86": false,
+            "brd": false,
+            "custom": null
+          },
+          "output_descriptor": "Yes",
+          "bip39_pass": "No",
+          "wif_support": "No",
+          "bip174_psbt": "Yes",
+          "notes": {
+            "docs": "https://lianawallet.com/resources/",
+            "features": "https://lianawallet.com/community/",
+            "external_recovery_documented": true,
+            "links": [
+              "https://github.com/wizardsardine/liana",
+              "https://github.com/wizardsardine/liana/tree/master/doc",
+              "https://lianawallet.com/resources/guides/recovering-your-wallet/"
+            ],
+            "text": "Open-source desktop Bitcoin wallet management software by Wizardsardine, built on Miniscript and on-chain timelocks, letting you design advanced, fully customizable security strategies where a primary path handles day-to-day spending while one or more timelocked recovery paths unlock the funds for recovery or inheritance."
+          }
         }
       ]
     },
