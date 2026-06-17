@@ -2997,3 +2997,13 @@ footer,
   background-color: var(--surface-color);
   color: var(--text-secondary);
 }
+
+/* Issue #224: sticky table headers can paint over wallet rows in Firefox/Brave.
+   Keep headers sortable, but let them scroll with each table so columns never overlap. */
+.wallet-table th,
+.wallet-table th.status-header,
+.status-header {
+  position: static !important;
+  top: auto !important;
+  z-index: auto;
+}
