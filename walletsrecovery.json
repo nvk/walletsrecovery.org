@@ -974,13 +974,18 @@
             "brd": false,
             "custom": null
           },
-          "output_descriptor": "No",
+          "output_descriptor": "Yes",
           "bip39_pass": "Optional",
           "bip174_psbt": "Yes",
           "notes": {
             "docs": "https://selfcustody.github.io/krux/getting-started/usage/loading-a-mnemonic/",
+            "features": "https://selfcustody.github.io/krux/getting-started/usage/navigating-the-main-menu/#wallet-descriptor",
+            "integration_guide": "https://selfcustody.github.io/krux/getting-started/usage/setting-a-coordinator-and-signing/#step-3-load-and-backup-wallet-descriptor-multisig-only",
+            "archive": "https://github.com/selfcustody/krux/blob/main/CHANGELOG.md#save-and-load-wallet-output-descriptor-from-sd-card",
+            "text": "Krux supports wallet output descriptors: descriptors can be loaded by QR or SD card, saved/backed up to SD card, and used to verify receive/change addresses.",
             "external_recovery_documented": true
-          }
+          },
+          "last_verified": "2026-06-18"
         },
         {
           "status": "✅",
