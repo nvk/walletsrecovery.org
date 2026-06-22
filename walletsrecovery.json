@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "1.0",
-    "last_updated": "2026-06-09",
+    "last_updated": "2026-06-22",
     "last_reviewed": "2026-06-02"
   },
   "icons": [
@@ -1883,6 +1883,35 @@
           },
           "availability": "current",
           "last_verified": "2026-06-02"
+        },
+        {
+          "status": "✅😵⚠️👁⑂",
+          "name": "Trezor Suite CoinJoin account",
+          "url": "https://trezor.io/trezor-suite",
+          "derivation": {
+            "bip44": false,
+            "bip49": false,
+            "bip84": false,
+            "bip48": false,
+            "bip86": false,
+            "brd": false,
+            "custom": "m/10025'/0'/0'/1'"
+          },
+          "output_descriptor": "No",
+          "bip39_pass": "Optional",
+          "bip174_psbt": "No",
+          "notes": {
+            "docs": "https://trezor.io/learn/advanced/blockchain-architecture-technologies/what-is-coinjoin",
+            "github_issue": "https://github.com/nvk/walletsrecovery.org/issues/213",
+            "links": [
+              "https://github.com/trezor/trezor-suite/blob/develop/suite-common/wallet-config/src/networksConfig.ts",
+              "https://github.com/satoshilabs/slips/blob/master/slip-0025.md"
+            ],
+            "external_recovery_documented": true,
+            "text": "Legacy Trezor Suite CoinJoin account. New CoinJoin rounds were discontinued on June 1, 2024, but existing accounts remain accessible; Trezor Suite uses the SLIP-25 P2TR account path m/10025'/0'/i'/1'."
+          },
+          "availability": "legacy",
+          "last_verified": "2026-06-22"
         },
         {
           "status": "✅",
